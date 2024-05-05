@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "63a8fa38ec910fec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/english/notes/Dopamine-Nation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/english/now/_index.md",
+                "file": "content/english/notes/Dopamine-Nation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/english/now/_index.md",
+                "file": "content/english/notes/Dopamine-Nation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,16 +150,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/english/now/_index.md"
+                "file": "content/english/notes/Dopamine-Nation.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,21 +171,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "51a56d5b37748a2b",
+  "active": "63a8fa38ec910fec",
   "lastOpenFiles": [
+    "resources/_gen/assets/css/style.css_82b067fd6c564693170dff5ae4660239.content",
+    "resources/_gen/assets/css/style.css_82b067fd6c564693170dff5ae4660239.json",
+    "docs/css/style.min.f04e036e375ea0d534c2888c8d3307cc38629221caa343f6d17b7d6ba98dae90.css",
+    "docs/categories/dopamine/index.xml",
+    "docs/categories/dopamine/index.html",
+    "docs/categories/dopamine",
+    "docs/categories/addiction/index.xml",
+    "docs/categories/addiction/index.html",
+    "docs/categories/addiction",
+    "docs/tags/addiction/index.xml",
+    "docs/tags/addiction/index.html",
     "content/english/blog/post-1.md",
     "content/english/blog/_index.md",
+    "content/english/notes/Dopamine-Nation.md",
+    "content/english/notes/_index.md",
     "content/english/about/_index.md",
     "content/english/now/_index.md",
     "content/english/blog/post-4.md",
-    "config/_default/menus.en.toml~",
     "content/english/blog/post-3.md",
     "content/english/blog/post-2.md",
-    "content/english/authors/_index.md",
-    "public/now/untitled/index.html",
-    "public/now/untitled",
-    "public/now/index.xml",
-    "public/now/index.html",
-    "public/now"
+    "content/english/authors/_index.md"
   ]
 }
