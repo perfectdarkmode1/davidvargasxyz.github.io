@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/english/notes/Dopamine-Nation.md",
+                "file": "content/english/notes/_index.md",
                 "mode": "source",
                 "source": false
               }
@@ -45,6 +45,24 @@
           }
         ],
         "currentTab": 2
+      },
+      {
+        "id": "2d06a90eeae5867a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2594de4908ab9735",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/english/blog/_index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/english/notes/Dopamine-Nation.md",
+                "file": "content/english/notes/_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/english/notes/Dopamine-Nation.md",
+                "file": "content/english/notes/_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/english/notes/Dopamine-Nation.md"
+                "file": "content/english/notes/_index.md"
               }
             }
           }
@@ -173,6 +191,11 @@
   },
   "active": "63a8fa38ec910fec",
   "lastOpenFiles": [
+    "resources/_gen/assets/css/style-lazy.css_4aa64dfd10aad995c159f67739a2e5c7.content",
+    "resources/_gen/assets/css/style-lazy.css_4aa64dfd10aad995c159f67739a2e5c7.json",
+    "content/english/blog/_index.md",
+    "content/english/notes/_index.md",
+    "content/english/notes/Dopamine-Nation.md",
     "resources/_gen/assets/css/style.css_82b067fd6c564693170dff5ae4660239.content",
     "resources/_gen/assets/css/style.css_82b067fd6c564693170dff5ae4660239.json",
     "docs/css/style.min.f04e036e375ea0d534c2888c8d3307cc38629221caa343f6d17b7d6ba98dae90.css",
@@ -182,12 +205,7 @@
     "docs/categories/addiction/index.xml",
     "docs/categories/addiction/index.html",
     "docs/categories/addiction",
-    "docs/tags/addiction/index.xml",
-    "docs/tags/addiction/index.html",
     "content/english/blog/post-1.md",
-    "content/english/blog/_index.md",
-    "content/english/notes/Dopamine-Nation.md",
-    "content/english/notes/_index.md",
     "content/english/about/_index.md",
     "content/english/now/_index.md",
     "content/english/blog/post-4.md",
