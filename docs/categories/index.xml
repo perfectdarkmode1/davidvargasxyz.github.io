@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Categories on David Vargas</title><link>https://davidvargas.xyz/categories/</link><description>Recent content in Categories on David Vargas</description><generator>Hugo 0.125.2</generator><language>en-us</language><lastBuildDate>Sun, 05 May 2024 00:00:00 -0400</lastBuildDate><atom:link href="https://davidvargas.xyz/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Addiction</title><link>https://davidvargas.xyz/categories/addiction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/addiction/</guid><description/></item><item><title>Dopamine</title><link>https://davidvargas.xyz/categories/dopamine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/dopamine/</guid><description/></item><item><title>Application</title><link>https://davidvargas.xyz/categories/application/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/application/</guid><description/></item><item><title>Architecture</title><link>https://davidvargas.xyz/categories/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/architecture/</guid><description/></item><item><title>Data</title><link>https://davidvargas.xyz/categories/data/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/data/</guid><description/></item><item><title>Software</title><link>https://davidvargas.xyz/categories/software/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/software/</guid><description/></item><item><title>Technology</title><link>https://davidvargas.xyz/categories/technology/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://davidvargas.xyz/categories/technology/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on David Vargas</title>
+    <link>https://davidvargas.xyz/categories/</link>
+    <description>Recent content in Categories on David Vargas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 May 2024 00:00:00 -0400</lastBuildDate>
+    <atom:link href="https://davidvargas.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Addiction</title>
+      <link>https://davidvargas.xyz/categories/addiction/</link>
+      <pubDate>Sun, 05 May 2024 00:00:00 -0400</pubDate>
+      <guid>https://davidvargas.xyz/categories/addiction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dopamine</title>
+      <link>https://davidvargas.xyz/categories/dopamine/</link>
+      <pubDate>Sun, 05 May 2024 00:00:00 -0400</pubDate>
+      <guid>https://davidvargas.xyz/categories/dopamine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Application</title>
+      <link>https://davidvargas.xyz/categories/application/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>https://davidvargas.xyz/categories/application/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>https://davidvargas.xyz/categories/architecture/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>https://davidvargas.xyz/categories/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data</title>
+      <link>https://davidvargas.xyz/categories/data/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>https://davidvargas.xyz/categories/data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software</title>
+      <link>https://davidvargas.xyz/categories/software/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>https://davidvargas.xyz/categories/software/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>https://davidvargas.xyz/categories/technology/</link>
+      <pubDate>Mon, 04 Apr 2022 05:00:00 +0000</pubDate>
+      <guid>https://davidvargas.xyz/categories/technology/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
