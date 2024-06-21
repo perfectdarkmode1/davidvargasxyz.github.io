@@ -20,7 +20,7 @@ Execute and debug scripts
 Know exit codes and test conditions
 \
 Understand logical constructs: if-then-fi, if-then-else-fi, and if-then-elif-fi">
-    <meta name="author" content="David">
+    <meta name="author" content="David Vargas">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Chapter 21 \
 Shell Scripting \
@@ -36,7 +36,7 @@ Execute and debug scripts
 Know exit codes and test conditions
 \
 Understand logical constructs: if-then-fi, if-then-else-fi, and if-then-elif-fi">
-    <meta property="og:url" content="http://perfectdarkmode.com/linux/21_shell_scripting/">
+    <meta property="og:url" content="http://davidvargas.xyz/linux/21_shell_scripting/">
     <meta property="og:description" content="Chapter 21 \
 Shell Scripting \
 ::: {style=“border-style: double; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.375;”} :::
@@ -51,7 +51,7 @@ Execute and debug scripts
 Know exit codes and test conditions
 \
 Understand logical constructs: if-then-fi, if-then-else-fi, and if-then-elif-fi">
-    <meta property="og:locale" content="en-us">
+    <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linux">
     <meta itemprop="description" content="Chapter 21 \
@@ -70,22 +70,22 @@ Know exit codes and test conditions
 Understand logical constructs: if-then-fi, if-then-else-fi, and if-then-elif-fi">
     <meta itemprop="wordCount" content="4786">
     <title></title>
-    <link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1718973696" rel="stylesheet">
-    <link href="/css/auto-complete.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1718973696" rel="stylesheet">
-    <link href="/css/fonts.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1718973696" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1718973696" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1718973696" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1718973696" rel="stylesheet">
-    <link href="/css/print.css?1718973696" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1718973696"></script>
+    <link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1718995629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1718995629" rel="stylesheet">
+    <link href="/css/fonts.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1718995629" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1718995629" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1718995629" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1718995629" rel="stylesheet">
+    <link href="/css/print.css?1718995629" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1718995629"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.relearn.absBaseUri='http:\/\/davidvargas.xyz';
       window.index_js_url="/index.search.js";
       // variant stuff
       window.variants && variants.init( [ 'amoled' ] );
@@ -107,6 +107,7 @@ Understand logical constructs: if-then-fi, if-then-else-fi, and if-then-elif-fi"
 
   gtag('config', 'G-23N4FSG0HM');
 </script>
+
 
   </head>
   <body class="mobile-support html" data-url="/linux/21_shell_scripting/">
@@ -254,8 +255,8 @@ executed directly at the Linux command prompt. They do not need to be
 compiled as they are interpreted by the shell line by line.</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-fd9f055a26539c941b861aa84902130b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WHEOUCJN.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fd9f055a26539c941b861aa84902130b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WHEOUCJN.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-6e4f7b2c7c8c59de279ad246585d4c71" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WHEOUCJN.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6e4f7b2c7c8c59de279ad246585d4c71"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WHEOUCJN.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>This chapter presents example scripts and analyzes them to solidify the
 learning. These scripts begin with simple programs and advance to more
@@ -304,8 +305,8 @@ with sudo to write the script. Type what you see below. Do not enter the
 line numbers, as they are used for explanation and reference.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-580ca458fa9cee068bfb5f5729e93677" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WBYX6HL9.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-580ca458fa9cee068bfb5f5729e93677"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WBYX6HL9.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-bcec52fa581bd832652188aa60f04248" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WBYX6HL9.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bcec52fa581bd832652188aa60f04248"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WBYX6HL9.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>\</p>
 <p>Within vim, press the ESC key and then type :set nu to view line numbers
@@ -354,8 +355,8 @@ users.</p>
 /usr/local/bin directory:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-961aefe73aa72c67658e3fbaa4b43225" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-U9347GDR.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-961aefe73aa72c67658e3fbaa4b43225"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-U9347GDR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-133a60f66d8f63d6a8dbe21bbf884dff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-U9347GDR.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-133a60f66d8f63d6a8dbe21bbf884dff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-U9347GDR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
 :::</p>
@@ -369,8 +370,8 @@ will need to run the chmod command on the file and add an execute bit
 for everyone:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-0b50188735361ef1755969df4a6e00db" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-V96GO5KX.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0b50188735361ef1755969df4a6e00db"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-V96GO5KX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-52205a9858ccfbd79f115489a13ea085" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-V96GO5KX.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-52205a9858ccfbd79f115489a13ea085"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-V96GO5KX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Any user on the system can now run this script using either its name or
 the full path.</p>
@@ -378,8 +379,8 @@ the full path.</p>
 <p>Let&rsquo;s run the script and see what the output will look like:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-4c5c2bf7e58d72b7bc83021ded85f240" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-HT7WGILI.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4c5c2bf7e58d72b7bc83021ded85f240"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-HT7WGILI.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-d48012c7240761c5628d391937b20c3b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-HT7WGILI.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d48012c7240761c5628d391937b20c3b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-HT7WGILI.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output reflects the execution of the commands as scripted.</p>
 <p>\</p>
@@ -400,8 +401,8 @@ function as expected. You can either append the -x option to the
 -x&rdquo;, or execute the script as follows:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6ef9ab79cfaea89b7ccf2189c904d961" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-S85E88QO.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6ef9ab79cfaea89b7ccf2189c904d961"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-S85E88QO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-0a4d6377c5b46d546bf698b667d6dce1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-S85E88QO.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0a4d6377c5b46d546bf698b667d6dce1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-S85E88QO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The above output now also includes the actual lines from the script
 prefixed by the + sign and followed by the command execution result. It
@@ -426,22 +427,22 @@ variable after the script execution has completed. The comments have
 been excluded for brevity.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-36c4f8dc50ac989ce87ca7f60158abab" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Z5K3LMWN.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-36c4f8dc50ac989ce87ca7f60158abab"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Z5K3LMWN.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-10f70543b0cc006515402f0ad8f11ee1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Z5K3LMWN.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-10f70543b0cc006515402f0ad8f11ee1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Z5K3LMWN.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Add the execute bit to the script. The following output will be
 generated when you run it:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-43411fdb85bb8876ea6522a06318ca8b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DM2GAYSJ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-43411fdb85bb8876ea6522a06318ca8b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DM2GAYSJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-aa2311e09918c64847c7c7bfcb4157c3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DM2GAYSJ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-aa2311e09918c64847c7c7bfcb4157c3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DM2GAYSJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>If you run the echo command to see what is stored in the SYSNAME
 variable, you will get nothing:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-aaf1ed690b45048f7f02c77183b65cfd" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2RTUEEJZ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-aaf1ed690b45048f7f02c77183b65cfd"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2RTUEEJZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-918aa1d3b67f6197b591e4366d140639" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2RTUEEJZ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-918aa1d3b67f6197b591e4366d140639"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2RTUEEJZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output is self-explanatory.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -453,14 +454,14 @@ variable, you will get nothing:</p>
 and LOGNAME environment variables:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-9f1dfff660b444900a95d7a5ffed3181" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-KXAKOW0I.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9f1dfff660b444900a95d7a5ffed3181"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-KXAKOW0I.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-1c4605e9cab8f83cb55aadd8756b7440" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-KXAKOW0I.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1c4605e9cab8f83cb55aadd8756b7440"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-KXAKOW0I.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Add the execute bit to the script, and run to view the result:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-84b72653d005642767b1ca6fbee6457d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BXTG2UOW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-84b72653d005642767b1ca6fbee6457d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BXTG2UOW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-4cec3bc4b21160aa25f757933c4d576e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BXTG2UOW.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4cec3bc4b21160aa25f757933c4d576e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BXTG2UOW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output is self-explanatory.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -477,14 +478,14 @@ substitution. Make sure to use the backticks (normally located with the
 ~ character on the keyboard) to enclose the uname command.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-beaedeaa011c34bb7c188de78cda5a60" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QGX6T5R3.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-beaedeaa011c34bb7c188de78cda5a60"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QGX6T5R3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e3581bacee43551cae3a73615674840c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QGX6T5R3.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3581bacee43551cae3a73615674840c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QGX6T5R3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Add the execute bit and run the script:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-91787e6bb1222bce39351fe5f3177b5a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-831AH0EM.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-91787e6bb1222bce39351fe5f3177b5a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-831AH0EM.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-6885ca6daaff6abc29ea79b1662b5521" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-831AH0EM.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6885ca6daaff6abc29ea79b1662b5521"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-831AH0EM.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output is self-explanatory.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -506,8 +507,8 @@ respect to the calling script. Figure 21-1 gives a pictorial view of the
 special and positional parameters.</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-380d1bb306e67066cd97b83bebb88da1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G1VF6C4I.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-380d1bb306e67066cd97b83bebb88da1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G1VF6C4I.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-faac40684dd6610043cd6b37300a1087" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G1VF6C4I.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-faac40684dd6610043cd6b37300a1087"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G1VF6C4I.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 21-1 Shell Parameters</p>
 <p>\</p>
@@ -524,15 +525,15 @@ positional parameter expansions as well.</a></p>
 count, value of the first argument, and PID of the script:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-4c15342541464a192fcff71a919696a2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EGIJTGSL.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4c15342541464a192fcff71a919696a2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EGIJTGSL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-667f887786e930ee9169f5cfa59ed7cc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EGIJTGSL.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-667f887786e930ee9169f5cfa59ed7cc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EGIJTGSL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The result will be as follows when the script is executed with four
 arguments. Do not forget to add the execute bit prior to running it.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-90279077cd1dc2e807bd0f4136eda659" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2PFHP876.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-90279077cd1dc2e807bd0f4136eda659"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2PFHP876.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-c4e8efcfa0935a0b6a13b04d017cf3ed" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2PFHP876.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c4e8efcfa0935a0b6a13b04d017cf3ed"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2PFHP876.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output is self-explanatory.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -547,15 +548,15 @@ com_line_arg.sh script. It uses the shift command to show what happens
 when arguments are moved.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5f869af4ca37a31c9f944475ecdaef5d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ERHNBPKE.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5f869af4ca37a31c9f944475ecdaef5d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ERHNBPKE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-bfd8941cc57205091f331877ae08f6cd" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ERHNBPKE.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bfd8941cc57205091f331877ae08f6cd"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ERHNBPKE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Let&rsquo;s execute the script with the same four arguments. Notice that a new
 value is assigned to $1 after each shift.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-9a3b491187f767ae355238b279c78cf9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-IWAN4BI1.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9a3b491187f767ae355238b279c78cf9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-IWAN4BI1.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-0fe86974b3c4816a035b04e4b783b9dc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-IWAN4BI1.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0fe86974b3c4816a035b04e4b783b9dc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-IWAN4BI1.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Multiple shifts in a single attempt may be performed by furnishing a
 count of desired shifts to the shift command as an argument. For
@@ -594,8 +595,8 @@ as a return code, and it is stored in a special shell parameter called ?
 their usage:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-29b1d57e158b0b30c5a60d5c2535630b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-IHP0DK8G.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-29b1d57e158b0b30c5a60d5c2535630b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-IHP0DK8G.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-ef16cb87316621a29487d26f0eb90c09" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-IHP0DK8G.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ef16cb87316621a29487d26f0eb90c09"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-IHP0DK8G.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>In the first example, the pwd command ran successfully and it produced
 the desired result, hence a zero exit code was returned and stored in
@@ -673,8 +674,8 @@ exits the construct. The if-then-fi statement begins with an &ldquo;if&rdquo; an
 ends with a &ldquo;fi&rdquo;, as depicted in the flow diagram in Figure 21-2:</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-441d7f2f690961e846c702d7622d319d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7FX8FVMW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-441d7f2f690961e846c702d7622d319d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7FX8FVMW.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-4db6c2acaf08e61dbfe43b0c4978da9a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7FX8FVMW.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4db6c2acaf08e61dbfe43b0c4978da9a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7FX8FVMW.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 21-2 The if-then-fi Construct</p>
 <p>\</p>
@@ -697,29 +698,29 @@ number of arguments and prints an error message if there are none
 provided:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-58344d6f01ee526aa053a20c550a3b41" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-8Y1IGGJV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-58344d6f01ee526aa053a20c550a3b41"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-8Y1IGGJV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-9c514063f5b4df16f705393a23f5d4df" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-8Y1IGGJV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c514063f5b4df16f705393a23f5d4df"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-8Y1IGGJV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>This script will display the following messages on the screen if it is
 executed without exactly two arguments specified at the command line:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-e161b03e4743eb39a902fb65749ea19b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NOUL2V6Q.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e161b03e4743eb39a902fb65749ea19b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NOUL2V6Q.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-0ebeaaa5aae0fe3e92ffb667c04ed4c2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NOUL2V6Q.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0ebeaaa5aae0fe3e92ffb667c04ed4c2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NOUL2V6Q.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>A value of 2 will appear upon examining the return code as follows. This
 value reflects the exit code that you defined in the script on line 6.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3cb37a0bc2f9532ad7c98bbae559c4c8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CCG46V45.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3cb37a0bc2f9532ad7c98bbae559c4c8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CCG46V45.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-4f9c83743fcdb4fb1c10e4ac8874084d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CCG46V45.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4f9c83743fcdb4fb1c10e4ac8874084d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CCG46V45.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Conversely, the return code will be 0 and the message will be as follows
 if you supply a pair of arguments:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-60f33c2bd0e71b1b32ccd0632b951bdc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GJ5ZA27Q.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-60f33c2bd0e71b1b32ccd0632b951bdc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GJ5ZA27Q.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2d8601d2fb82a53f19b54c9d71b75a29" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GJ5ZA27Q.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2d8601d2fb82a53f19b54c9d71b75a29"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GJ5ZA27Q.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
 :::</p>
@@ -734,8 +735,8 @@ true and another action if the condition is false. The flow diagram for
 this structure is shown in Figure 21-3:</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-9b9a17a860d6049bd7aecde1348965eb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CMLV644G.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9b9a17a860d6049bd7aecde1348965eb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CMLV644G.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-24027d5a17f9264d5bd9b0de9dc8af6e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CMLV644G.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-24027d5a17f9264d5bd9b0de9dc8af6e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CMLV644G.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 21-3 The if-then-else-fi Construct</p>
 <p>\</p>
@@ -759,15 +760,15 @@ the condition.</p>
 value as an argument and tell if the value is positive or negative:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-df8d27662fb30a02e9f0f1239ffb13db" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-3YKJ4725.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-df8d27662fb30a02e9f0f1239ffb13db"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-3YKJ4725.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-615317c9ccdbdd9365c6f45170a616eb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-3YKJ4725.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-615317c9ccdbdd9365c6f45170a616eb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-3YKJ4725.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Run this script one time with a positive integer value and the next time
 with a negative value:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-45c7caca81e7fe9d76fb39dbfc143615" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7VU4BPZY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-45c7caca81e7fe9d76fb39dbfc143615"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7VU4BPZY.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-11326e4d1fb14a255a6ca878d9e6474e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7VU4BPZY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-11326e4d1fb14a255a6ca878d9e6474e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7VU4BPZY.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Try the script again but with a non-integer value and see what it does.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -782,8 +783,8 @@ corresponding to the true condition is performed. The flow diagram for
 this structure is shown in Figure 21-4:</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-2b8d93ef7d8d08b2e11dd7334dea7ea1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TNYN7SP2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b8d93ef7d8d08b2e11dd7334dea7ea1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TNYN7SP2.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-18b62130f1bd4e88bde93e167e6090f8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TNYN7SP2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-18b62130f1bd4e88bde93e167e6090f8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TNYN7SP2.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 21-4 The if-then-elif-fi Construct</p>
 <p>\</p>
@@ -824,8 +825,8 @@ script employs the exit command after each action to help you identify
 where it exited.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-177734bf61d9386597a09e138cab0fc3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2ZQ5DZAT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-177734bf61d9386597a09e138cab0fc3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2ZQ5DZAT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2ccadcb92391cc1de5c278ae82ed13b7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2ZQ5DZAT.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2ccadcb92391cc1de5c278ae82ed13b7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2ZQ5DZAT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Run this script four times: the first time with a positive integer, the
 second time with 0, the third time with a negative integer, and the
@@ -833,8 +834,8 @@ fourth time with a non-integer value. Check the exit code after each
 execution to know where the script exited.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-1adb3f22944f8c84321be76c0853e476" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DE8N5FXR.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1adb3f22944f8c84321be76c0853e476"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DE8N5FXR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-65fd97176abe1020ba355952c0210288" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DE8N5FXR.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-65fd97176abe1020ba355952c0210288"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DE8N5FXR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The outputs and exit values reflect the program code.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -849,16 +850,16 @@ Acceptable values are ex200 and ex294&rdquo;. Make sure to add white spaces in
 the conditions as shown.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-771f93a67b308683a9426ea3eba4a071" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6L2U92X3.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-771f93a67b308683a9426ea3eba4a071"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6L2U92X3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-fab99a135d4361946b99d46188f87595" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6L2U92X3.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fab99a135d4361946b99d46188f87595"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6L2U92X3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Run this script three times: the first time with argument ex200, the
 second time with argument ex294, and the third time with something
 random as an argument:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-94e466ec4a5b02927f0664304f6e6e16" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-99I0JRAK.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-94e466ec4a5b02927f0664304f6e6e16"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-99I0JRAK.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-abda38af6c6527223ca041312b247795" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-99I0JRAK.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-abda38af6c6527223ca041312b247795"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-99I0JRAK.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The results are as expected.</p>
 <p>\</p>
@@ -941,8 +942,8 @@ after the other for processing. The flow diagram for this construct is
 displayed in Figure 21-5:</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-3bb465c49ec36ec07b36bc5ab99e9938" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BPQ7RWER.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3bb465c49ec36ec07b36bc5ab99e9938"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BPQ7RWER.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-bc7b0a9df7da26e3edd89e7421085628" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BPQ7RWER.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bc7b0a9df7da26e3edd89e7421085628"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BPQ7RWER.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 21-5 The for Loop</p>
 <p>\</p>
@@ -965,14 +966,14 @@ screen. The expr command is an arithmetic processor, and it is used here
 to increment the COUNT by 1 at each loop iteration.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8cccefca1f32361effc66b71c20990c9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SGYVLBJI.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8cccefca1f32361effc66b71c20990c9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SGYVLBJI.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-b0483ad03fa7cd18353c916ba38e71b1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SGYVLBJI.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b0483ad03fa7cd18353c916ba38e71b1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SGYVLBJI.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output of the script will be:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3bde26d380125025b1ba7762f722be98" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LPILMH3X.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3bde26d380125025b1ba7762f722be98"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LPILMH3X.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-73477368c8f0c5ce95d68e5d9b4ba389" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LPILMH3X.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-73477368c8f0c5ce95d68e5d9b4ba389"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LPILMH3X.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
 :::</p>
@@ -987,22 +988,22 @@ account creation, the passwd command will be invoked to assign the user
 the same password as their username.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-1b1e1078acf7611e2c5fdd1cc9c544d3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LBKMPM2V.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1b1e1078acf7611e2c5fdd1cc9c544d3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LBKMPM2V.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-853afb5ffb5f43872825d7f9317df389" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LBKMPM2V.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-853afb5ffb5f43872825d7f9317df389"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LBKMPM2V.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The result of the script execution below confirms the addition of three
 new user accounts:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-2a4105c2dac2a3a290634a4a0dce6177" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RX78F6SX.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2a4105c2dac2a3a290634a4a0dce6177"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RX78F6SX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-902e08c1b70e7d2148b76788180e614c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RX78F6SX.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-902e08c1b70e7d2148b76788180e614c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RX78F6SX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>If this script is re-executed without modifying the list of elements
 (usernames), the following will appear:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5549ada58d5d0b785859c080132f3ca5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Y5KNA8OX.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5549ada58d5d0b785859c080132f3ca5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Y5KNA8OX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-8d036e8d0274bf8a63a4f3a84383f4a9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Y5KNA8OX.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8d036e8d0274bf8a63a4f3a84383f4a9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Y5KNA8OX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>\</p>
 <p>::: {style=&ldquo;border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;&rdquo;}
@@ -1138,7 +1139,7 @@ content.</p>
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+    <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
         <div id="R-header" class="default-animation">
@@ -1157,12 +1158,12 @@ content.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1718973696" defer></script>
-        <script src="/js/search.js?1718973696" defer></script>
+        <script src="/js/auto-complete.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1718995629" defer></script>
+        <script src="/js/search.js?1718995629" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -1170,11 +1171,11 @@ content.</p>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
-          <li data-nav-id="/linux/21_shell_scripting/" class="active"><a class="padding" href="/linux/21_shell_scripting/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux</a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
+          <li data-nav-id="/linux/21_shell_scripting/" class="active"><a class="padding" href="/linux/21_shell_scripting/"></a></li></ul></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking</a></li>
+          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools</a></li>
+          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing</a></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -1183,10 +1184,10 @@ content.</p>
             <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -1215,7 +1216,7 @@ content.</p>
                 </div>
                 <script>window.variants && variants.markSelectedVariant();</script>
               </li>
-              <li class="footerVisitedLinks showVisitedLinks">
+              <li class="footerVisitedLinks">
                 <div class="padding menu-control">
                   <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
@@ -1233,8 +1234,8 @@ content.</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1718973696" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1718973696" defer></script>
+    <script src="/js/clipboard.min.js?1718995629" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1718995629" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -1250,20 +1251,20 @@ content.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1718973696" defer></script>
-    <script src="/js/js-yaml.min.js?1718973696" defer></script>
+    <script src="/js/d3/d3-color.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1718995629" defer></script>
+    <script src="/js/js-yaml.min.js?1718995629" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1718973696" defer></script>
+    <script src="/js/theme.js?1718995629" defer></script>
   </body>
 </html>

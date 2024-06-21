@@ -8,36 +8,36 @@
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="We are going to use Vagrant to set up two RHEL 8 servers with some custom configuration options. I will include some helpful Vagrant commands at the end if you get stuck.
 In this guide, I will be using Fedora 38 as my main operating system. I use Fedora because it is similar in features to Red Hat Linux Distributions. This will give me even more practice for the RHCSA exam as I use it in day-to-day operations.">
-    <meta name="author" content="David">
+    <meta name="author" content="David Vargas">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="We are going to use Vagrant to set up two RHEL 8 servers with some custom configuration options. I will include some helpful Vagrant commands at the end if you get stuck.
 In this guide, I will be using Fedora 38 as my main operating system. I use Fedora because it is similar in features to Red Hat Linux Distributions. This will give me even more practice for the RHCSA exam as I use it in day-to-day operations.">
-    <meta property="og:url" content="http://perfectdarkmode.com/linux/rhcsa-vagrant-lab-setup/">
+    <meta property="og:url" content="http://davidvargas.xyz/linux/rhcsa-vagrant-lab-setup/">
     <meta property="og:description" content="We are going to use Vagrant to set up two RHEL 8 servers with some custom configuration options. I will include some helpful Vagrant commands at the end if you get stuck.
 In this guide, I will be using Fedora 38 as my main operating system. I use Fedora because it is similar in features to Red Hat Linux Distributions. This will give me even more practice for the RHCSA exam as I use it in day-to-day operations.">
-    <meta property="og:locale" content="en-us">
+    <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linux">
     <meta itemprop="description" content="We are going to use Vagrant to set up two RHEL 8 servers with some custom configuration options. I will include some helpful Vagrant commands at the end if you get stuck.
 In this guide, I will be using Fedora 38 as my main operating system. I use Fedora because it is similar in features to Red Hat Linux Distributions. This will give me even more practice for the RHCSA exam as I use it in day-to-day operations.">
     <meta itemprop="wordCount" content="584">
     <title></title>
-    <link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1718973696" rel="stylesheet">
-    <link href="/css/auto-complete.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1718973696" rel="stylesheet">
-    <link href="/css/fonts.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1718973696" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1718973696" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1718973696" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1718973696" rel="stylesheet">
-    <link href="/css/print.css?1718973696" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1718973696"></script>
+    <link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1718995629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1718995629" rel="stylesheet">
+    <link href="/css/fonts.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1718995629" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1718995629" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1718995629" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1718995629" rel="stylesheet">
+    <link href="/css/print.css?1718995629" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1718995629"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.relearn.absBaseUri='http:\/\/davidvargas.xyz';
       window.index_js_url="/index.search.js";
       // variant stuff
       window.variants && variants.init( [ 'amoled' ] );
@@ -59,6 +59,7 @@ In this guide, I will be using Fedora 38 as my main operating system. I use Fedo
 
   gtag('config', 'G-23N4FSG0HM');
 </script>
+
 
   </head>
   <body class="mobile-support html" data-url="/linux/rhcsa-vagrant-lab-setup/">
@@ -129,8 +130,8 @@ In this guide, I will be using Fedora 38 as my main operating system. I use Fedo
 
 <h1 id=""></h1>
 
-<p><a href="#R-image-bdf1f24313801d92abb84b8a844d30ec" class="lightbox-link"><img alt="RHCSA Vagrant Lab" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/vagrantmultivmdeployment.jpg?width=600px" style=" height: auto; width: 600px;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bdf1f24313801d92abb84b8a844d30ec"><img alt="RHCSA Vagrant Lab" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/vagrantmultivmdeployment.jpg?width=600px"></a></p>
+<p><a href="#R-image-7f2ef9bfdfd913f4d9b0a16e2cf2d417" class="lightbox-link"><img alt="RHCSA Vagrant Lab" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/images/vagrantmultivmdeployment.jpg?width=600px" style=" height: auto; width: 600px;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7f2ef9bfdfd913f4d9b0a16e2cf2d417"><img alt="RHCSA Vagrant Lab" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/images/vagrantmultivmdeployment.jpg?width=600px"></a></p>
 <p>We are going to use Vagrant to set up two RHEL 8 servers with some custom configuration options. I will include some helpful Vagrant commands at the end if you get stuck.</p>
 <p>In this guide, I will be using Fedora 38 as my main operating system. I use Fedora because it is similar in features to Red Hat Linux Distributions. This will give me even more practice for the RHCSA exam as I use it in day-to-day operations.</p>
 <p>Note, if you are using Windows, you will need to install ssh. This can be done by installing Git. Which automatically installs ssh for you.</p>
@@ -246,7 +247,7 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+    <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
         <div id="R-header" class="default-animation">
@@ -265,12 +266,12 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1718973696" defer></script>
-        <script src="/js/search.js?1718973696" defer></script>
+        <script src="/js/auto-complete.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1718995629" defer></script>
+        <script src="/js/search.js?1718995629" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -278,11 +279,11 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
-          <li data-nav-id="/linux/rhcsa-vagrant-lab-setup/" class="active"><a class="padding" href="/linux/rhcsa-vagrant-lab-setup/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux</a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
+          <li data-nav-id="/linux/rhcsa-vagrant-lab-setup/" class="active"><a class="padding" href="/linux/rhcsa-vagrant-lab-setup/"></a></li></ul></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking</a></li>
+          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools</a></li>
+          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing</a></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -291,10 +292,10 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
             <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -323,7 +324,7 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
                 </div>
                 <script>window.variants && variants.markSelectedVariant();</script>
               </li>
-              <li class="footerVisitedLinks showVisitedLinks">
+              <li class="footerVisitedLinks">
                 <div class="padding menu-control">
                   <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
@@ -341,8 +342,8 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1718973696" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1718973696" defer></script>
+    <script src="/js/clipboard.min.js?1718995629" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1718995629" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -358,20 +359,20 @@ vagrand resume</code></pre></div><p>Restart a virtual machine:</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1718973696" defer></script>
-    <script src="/js/js-yaml.min.js?1718973696" defer></script>
+    <script src="/js/d3/d3-color.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1718995629" defer></script>
+    <script src="/js/js-yaml.min.js?1718995629" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1718973696" defer></script>
+    <script src="/js/theme.js?1718995629" defer></script>
   </body>
 </html>

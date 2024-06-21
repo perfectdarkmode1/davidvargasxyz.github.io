@@ -7,33 +7,33 @@
     <meta name="generator" content="Relearn 6.0.0+tip">
     <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="Boot Process, GRUB2, and the Linux Kernel Linux boot process: firmware, bootloader, kernel, and initialization Understand and interact with GRUB2 to boot into different targets Modify GRUB2 configuration Boot system into specific targets Reset lost or forgotten root user password Linux kernel, packages, version anatomy, and key directories Download and install a newer kernel version RHCSA Objectives Interrupt the boot process in order to gain access to a system Modify the system bootloader Multiple phases during the boot process.">
-    <meta name="author" content="David">
+    <meta name="author" content="David Vargas">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Boot Process, GRUB2, and the Linux Kernel Linux boot process: firmware, bootloader, kernel, and initialization Understand and interact with GRUB2 to boot into different targets Modify GRUB2 configuration Boot system into specific targets Reset lost or forgotten root user password Linux kernel, packages, version anatomy, and key directories Download and install a newer kernel version RHCSA Objectives Interrupt the boot process in order to gain access to a system Modify the system bootloader Multiple phases during the boot process.">
-    <meta property="og:url" content="http://perfectdarkmode.com/linux/11_boot_grub2_kernel/">
+    <meta property="og:url" content="http://davidvargas.xyz/linux/11_boot_grub2_kernel/">
     <meta property="og:description" content="Boot Process, GRUB2, and the Linux Kernel Linux boot process: firmware, bootloader, kernel, and initialization Understand and interact with GRUB2 to boot into different targets Modify GRUB2 configuration Boot system into specific targets Reset lost or forgotten root user password Linux kernel, packages, version anatomy, and key directories Download and install a newer kernel version RHCSA Objectives Interrupt the boot process in order to gain access to a system Modify the system bootloader Multiple phases during the boot process.">
-    <meta property="og:locale" content="en-us">
+    <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linux">
     <meta itemprop="description" content="Boot Process, GRUB2, and the Linux Kernel Linux boot process: firmware, bootloader, kernel, and initialization Understand and interact with GRUB2 to boot into different targets Modify GRUB2 configuration Boot system into specific targets Reset lost or forgotten root user password Linux kernel, packages, version anatomy, and key directories Download and install a newer kernel version RHCSA Objectives Interrupt the boot process in order to gain access to a system Modify the system bootloader Multiple phases during the boot process.">
     <meta itemprop="wordCount" content="4089">
     <title></title>
-    <link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1718973696" rel="stylesheet">
-    <link href="/css/auto-complete.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1718973696" rel="stylesheet">
-    <link href="/css/fonts.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1718973696" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1718973696" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1718973696" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1718973696" rel="stylesheet">
-    <link href="/css/print.css?1718973696" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1718973696"></script>
+    <link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1718995629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1718995629" rel="stylesheet">
+    <link href="/css/fonts.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1718995629" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1718995629" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1718995629" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1718995629" rel="stylesheet">
+    <link href="/css/print.css?1718995629" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1718995629"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.relearn.absBaseUri='http:\/\/davidvargas.xyz';
       window.index_js_url="/index.search.js";
       // variant stuff
       window.variants && variants.init( [ 'amoled' ] );
@@ -55,6 +55,7 @@
 
   gtag('config', 'G-23N4FSG0HM');
 </script>
+
 
   </head>
   <body class="mobile-support html" data-url="/linux/11_boot_grub2_kernel/">
@@ -567,8 +568,8 @@ timeout value when GRUB2 menu appears.</p>
 </li>
 </ul>
 <p>Append &ldquo;emergency&rdquo; to the kernel line entry:</p>
-<p><a href="#R-image-a028524fc0e24ada5a84ba286367fbf3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240321045343.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a028524fc0e24ada5a84ba286367fbf3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240321045343.png"></a></p>
+<p><a href="#R-image-17d79717cb60f126f09bc1f92073c758" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240321045343.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-17d79717cb60f126f09bc1f92073c758"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240321045343.png"></a></p>
 <p>Other options:</p>
 <ul>
 <li>&ldquo;rescue&rdquo;</li>
@@ -588,13 +589,13 @@ timeout value when GRUB2 menu appears.</p>
 <p>Modify this kernel string and append &ldquo;rd.break&rdquo; to the end of the line.</p>
 </li>
 </ol>
-<p><a href="#R-image-d383b82b46a4d1ebb114a447bb2a63aa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240321045933.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d383b82b46a4d1ebb114a447bb2a63aa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240321045933.png"></a></p>
+<p><a href="#R-image-b791b8f6973413283dde801e7eefc355" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240321045933.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b791b8f6973413283dde801e7eefc355"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240321045933.png"></a></p>
 <ol start="3">
 <li>
 <p>Press Ctrl+x when done to boot to the special shell. The system mounts the root file system read-only on the <em>/sysroot</em> directory. Make <em>/sysroot</em> appear as mounted on <em>/</em> using the <em>chroot</em> command:
-<a href="#R-image-4f21805fed0cba6f6d59a57be9de8f50" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240321050831.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4f21805fed0cba6f6d59a57be9de8f50"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240321050831.png"></a></p>
+<a href="#R-image-b8d29cd3e439c568892eb9c7bf9fbfc9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240321050831.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b8d29cd3e439c568892eb9c7bf9fbfc9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240321050831.png"></a></p>
 </li>
 <li>
 <p>Remount the root file system in read/write mode for the <em>passwd</em> command to be able to modify the <em>shadow</em> file with a new
@@ -1107,7 +1108,7 @@ A. It is called <em>systemd</em>.</p>
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+    <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
         <div id="R-header" class="default-animation">
@@ -1126,12 +1127,12 @@ A. It is called <em>systemd</em>.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1718973696" defer></script>
-        <script src="/js/search.js?1718973696" defer></script>
+        <script src="/js/auto-complete.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1718995629" defer></script>
+        <script src="/js/search.js?1718995629" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -1139,11 +1140,11 @@ A. It is called <em>systemd</em>.</p>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
-          <li data-nav-id="/linux/11_boot_grub2_kernel/" class="active"><a class="padding" href="/linux/11_boot_grub2_kernel/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux</a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
+          <li data-nav-id="/linux/11_boot_grub2_kernel/" class="active"><a class="padding" href="/linux/11_boot_grub2_kernel/"></a></li></ul></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking</a></li>
+          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools</a></li>
+          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing</a></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -1152,10 +1153,10 @@ A. It is called <em>systemd</em>.</p>
             <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -1184,7 +1185,7 @@ A. It is called <em>systemd</em>.</p>
                 </div>
                 <script>window.variants && variants.markSelectedVariant();</script>
               </li>
-              <li class="footerVisitedLinks showVisitedLinks">
+              <li class="footerVisitedLinks">
                 <div class="padding menu-control">
                   <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
@@ -1202,8 +1203,8 @@ A. It is called <em>systemd</em>.</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1718973696" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1718973696" defer></script>
+    <script src="/js/clipboard.min.js?1718995629" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1718995629" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -1219,20 +1220,20 @@ A. It is called <em>systemd</em>.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1718973696" defer></script>
-    <script src="/js/js-yaml.min.js?1718973696" defer></script>
+    <script src="/js/d3/d3-color.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1718995629" defer></script>
+    <script src="/js/js-yaml.min.js?1718995629" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1718973696" defer></script>
+    <script src="/js/theme.js?1718995629" defer></script>
   </body>
 </html>

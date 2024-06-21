@@ -9,16 +9,16 @@
     <meta name="description" content="Using GTKterm app
 Find out what port your serial cable is plugged into:
 dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled [ 1.591268] serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A [ 7.707751] systemd[1]: Created slice system-getty.slice - Slice /system/getty. [ 7.708786] systemd[1]: Reached target getty.target - Login Prompts. [ 424.829380] usb 3-6: FTDI USB Serial Device converter now attached to ttyUSB0 [ 498.">
-    <meta name="author" content="David">
+    <meta name="author" content="David Vargas">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Using GTKterm app
 Find out what port your serial cable is plugged into:
 dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled [ 1.591268] serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A [ 7.707751] systemd[1]: Created slice system-getty.slice - Slice /system/getty. [ 7.708786] systemd[1]: Reached target getty.target - Login Prompts. [ 424.829380] usb 3-6: FTDI USB Serial Device converter now attached to ttyUSB0 [ 498.">
-    <meta property="og:url" content="http://perfectdarkmode.com/tools/serial-in-on-linux/">
+    <meta property="og:url" content="http://davidvargas.xyz/tools/serial-in-on-linux/">
     <meta property="og:description" content="Using GTKterm app
 Find out what port your serial cable is plugged into:
 dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled [ 1.591268] serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A [ 7.707751] systemd[1]: Created slice system-getty.slice - Slice /system/getty. [ 7.708786] systemd[1]: Reached target getty.target - Login Prompts. [ 424.829380] usb 3-6: FTDI USB Serial Device converter now attached to ttyUSB0 [ 498.">
-    <meta property="og:locale" content="en-us">
+    <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Tools">
     <meta itemprop="description" content="Using GTKterm app
@@ -26,22 +26,22 @@ Find out what port your serial cable is plugged into:
 dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled [ 1.591268] serial8250: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A [ 7.707751] systemd[1]: Created slice system-getty.slice - Slice /system/getty. [ 7.708786] systemd[1]: Reached target getty.target - Login Prompts. [ 424.829380] usb 3-6: FTDI USB Serial Device converter now attached to ttyUSB0 [ 498.">
     <meta itemprop="wordCount" content="155">
     <title></title>
-    <link href="/css/fontawesome-all.min.css?1718973697" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718973697" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1718973697" rel="stylesheet">
-    <link href="/css/auto-complete.css?1718973697" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718973697" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1718973697" rel="stylesheet">
-    <link href="/css/fonts.css?1718973697" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718973697" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1718973697" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1718973697" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1718973697" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1718973697" rel="stylesheet">
-    <link href="/css/print.css?1718973697" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1718973697"></script>
+    <link href="/css/fontawesome-all.min.css?1718995630" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718995630" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1718995630" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718995630" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718995630" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1718995630" rel="stylesheet">
+    <link href="/css/fonts.css?1718995630" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718995630" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1718995630" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1718995630" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1718995630" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1718995630" rel="stylesheet">
+    <link href="/css/print.css?1718995630" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1718995630"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.relearn.absBaseUri='http:\/\/davidvargas.xyz';
       window.index_js_url="/index.search.js";
       // variant stuff
       window.variants && variants.init( [ 'amoled' ] );
@@ -63,6 +63,7 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
 
   gtag('config', 'G-23N4FSG0HM');
 </script>
+
 
   </head>
   <body class="mobile-support html" data-url="/tools/serial-in-on-linux/">
@@ -143,7 +144,7 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+    <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
         <div id="R-header" class="default-animation">
@@ -162,12 +163,12 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1718973697" defer></script>
-        <script src="/js/lunr/lunr.min.js?1718973697" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1718973697" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1718973697" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1718973697" defer></script>
-        <script src="/js/search.js?1718973697" defer></script>
+        <script src="/js/auto-complete.js?1718995630" defer></script>
+        <script src="/js/lunr/lunr.min.js?1718995630" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1718995630" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1718995630" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1718995630" defer></script>
+        <script src="/js/search.js?1718995630" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -175,11 +176,11 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/linux/" class=""><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/tools/" class="parent "><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-cff67d57e00d6d598d882def3568f700" class="morespace collapsible-menu">
-          <li data-nav-id="/tools/serial-in-on-linux/" class="active"><a class="padding" href="/tools/serial-in-on-linux/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/" class=""><a class="padding" href="/linux/">Linux</a></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking</a></li>
+          <li data-nav-id="/tools/" class="parent "><a class="padding" href="/tools/">Tools</a><ul id="R-subsections-cff67d57e00d6d598d882def3568f700" class="morespace collapsible-menu">
+          <li data-nav-id="/tools/serial-in-on-linux/" class="active"><a class="padding" href="/tools/serial-in-on-linux/"></a></li></ul></li>
+          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing</a></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -188,10 +189,10 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
             <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -220,7 +221,7 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
                 </div>
                 <script>window.variants && variants.markSelectedVariant();</script>
               </li>
-              <li class="footerVisitedLinks showVisitedLinks">
+              <li class="footerVisitedLinks">
                 <div class="padding menu-control">
                   <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
@@ -238,8 +239,8 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1718973697" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1718973697" defer></script>
+    <script src="/js/clipboard.min.js?1718995630" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1718995630" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -255,20 +256,20 @@ dthomas@lgfedora:~$ dmesg | grep tty [ 0.119494] printk: console [tty0] enabled 
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1718973697" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1718973697" defer></script>
-    <script src="/js/js-yaml.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-color.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1718995630" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1718995630" defer></script>
+    <script src="/js/js-yaml.min.js?1718995630" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1718973697" defer></script>
+    <script src="/js/theme.js?1718995630" defer></script>
   </body>
 </html>

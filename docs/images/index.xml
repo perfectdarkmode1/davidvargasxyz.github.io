@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>images</title>
-    <link>http://perfectdarkmode.com/images/</link>
+    <link>http://davidvargas.xyz/images/</link>
     <description></description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://perfectdarkmode.com/images/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/images/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

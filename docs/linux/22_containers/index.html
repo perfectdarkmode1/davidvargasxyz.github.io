@@ -22,7 +22,7 @@ A better home for containers
 Grasp the concepts of container images and registries
 \
 Compare pros and cons of root and rootless containers">
-    <meta name="author" content="David">
+    <meta name="author" content="David Vargas">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:description" content="Chapter 22 Containers
 Containers \
@@ -40,7 +40,7 @@ A better home for containers
 Grasp the concepts of container images and registries
 \
 Compare pros and cons of root and rootless containers">
-    <meta property="og:url" content="http://perfectdarkmode.com/linux/22_containers/">
+    <meta property="og:url" content="http://davidvargas.xyz/linux/22_containers/">
     <meta property="og:description" content="Chapter 22 Containers
 Containers \
 ::: {style=“border-style: double; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.375;”} :::
@@ -57,7 +57,7 @@ A better home for containers
 Grasp the concepts of container images and registries
 \
 Compare pros and cons of root and rootless containers">
-    <meta property="og:locale" content="en-us">
+    <meta property="og:locale" content="en_us">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linux">
     <meta itemprop="description" content="Chapter 22 Containers
@@ -78,22 +78,22 @@ Grasp the concepts of container images and registries
 Compare pros and cons of root and rootless containers">
     <meta itemprop="wordCount" content="9226">
     <title></title>
-    <link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1718973696" rel="stylesheet">
-    <link href="/css/auto-complete.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1718973696" rel="stylesheet">
-    <link href="/css/fonts.css?1718973696" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718973696" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1718973696" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1718973696" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1718973696" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1718973696" rel="stylesheet">
-    <link href="/css/print.css?1718973696" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1718973696"></script>
+    <link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1718995629" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1718995629" rel="stylesheet">
+    <link href="/css/fonts.css?1718995629" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718995629" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1718995629" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1718995629" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1718995629" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1718995629" rel="stylesheet">
+    <link href="/css/print.css?1718995629" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1718995629"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.relearn.absBaseUri='http:\/\/davidvargas.xyz';
       window.index_js_url="/index.search.js";
       // variant stuff
       window.variants && variants.init( [ 'amoled' ] );
@@ -115,6 +115,7 @@ Compare pros and cons of root and rootless containers">
 
   gtag('config', 'G-23N4FSG0HM');
 </script>
+
 
   </head>
   <body class="mobile-support html" data-url="/linux/22_containers/">
@@ -306,8 +307,8 @@ self-contained application that includes all dependencies such as
 library files, configuration files, software binaries, and services.</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-fbb374de44510570f248e3e619919204" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RBOJBHPC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fbb374de44510570f248e3e619919204"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RBOJBHPC.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-96de4a54eabb66d3587e97b931ae8ea8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RBOJBHPC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-96de4a54eabb66d3587e97b931ae8ea8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RBOJBHPC.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>This chapter presents an overview of container images, container
 registries, and containers. It shows how to interact with images and
@@ -470,8 +471,8 @@ metal hardware, in virtual machines, and to run as containers on bare
 metal servers.</a></p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-0dc4ddaab61fba2270af0c3d387cff87" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-3RXCU9W7.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0dc4ddaab61fba2270af0c3d387cff87"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-3RXCU9W7.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-9e66aebd35901015dfb5bc2c79cc5db2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-3RXCU9W7.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e66aebd35901015dfb5bc2c79cc5db2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-3RXCU9W7.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 22-1 Container Home: Bare Metal or Virtual Machine</p>
 <p>\</p>
@@ -568,8 +569,8 @@ the standard dnf command to install the package.</p>
 <p>1. Install the container-tools package:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-58124dc896ab62c114c903006dd185ce" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7S527XWZ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-58124dc896ab62c114c903006dd185ce"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7S527XWZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-ecc2349894d6ae6e645696324c1abef8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7S527XWZ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ecc2349894d6ae6e645696324c1abef8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7S527XWZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>See the skopeo and podman commands and their versions on the list of
 installed packages above. They are now available on the system for
@@ -578,8 +579,8 @@ managing images and containers.</p>
 <p>2. Verify the package installation:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-dc38422f7b8edd1092c1c42c6bc75eb1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-47PHPMF1.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dc38422f7b8edd1092c1c42c6bc75eb1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-47PHPMF1.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-28115bbf9be4e530584f7490529a19e6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-47PHPMF1.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-28115bbf9be4e530584f7490529a19e6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-47PHPMF1.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output confirms a successful installation of the container-tools
 package.</p>
@@ -700,8 +701,8 @@ containers.</p>
 below output shows the uncommented lines from the file:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-2452b26e6b034719e6424d2857a29a4b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-E973K8JL.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2452b26e6b034719e6424d2857a29a4b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-E973K8JL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-8b38041e09d5d598554c15d6d4e93fd9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-E973K8JL.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8b38041e09d5d598554c15d6d4e93fd9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-E973K8JL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output shows three registries. The podman command searches these
 registries for container images in the given order.</p>
@@ -746,8 +747,8 @@ information. Here is a sample when this command is executed as a normal
 user (user1):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-38358f5ae9309aed1dee25b65e5270ec" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EAOFWMO5.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-38358f5ae9309aed1dee25b65e5270ec"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EAOFWMO5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-3b6e24cb2ab3b6287e4c1b67314446bc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EAOFWMO5.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3b6e24cb2ab3b6287e4c1b67314446bc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EAOFWMO5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The above output is self-explanatory.</p>
 <p>\</p>
@@ -762,8 +763,8 @@ available, and so on.</p>
 version:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5ef31738a0748eddffd0dc3bad03ad34" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZVQILNPH.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ef31738a0748eddffd0dc3bad03ad34"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZVQILNPH.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5494dadafa93da57c344292fa2b5cdf6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZVQILNPH.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5494dadafa93da57c344292fa2b5cdf6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZVQILNPH.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output reveals the version (4.2.0) of the podman utility, and this
 is what you will be using to perform the forthcoming exercises.</p>
@@ -798,14 +799,14 @@ for these operations.</p>
 <p>1. Log in to the specified Red Hat registry:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-25799eb6385632b5f884a1ee082a34cd" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7L5NV1W8.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-25799eb6385632b5f884a1ee082a34cd"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7L5NV1W8.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-7e50eff1eeaa3fe565c4ae0a131705f8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7L5NV1W8.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7e50eff1eeaa3fe565c4ae0a131705f8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7L5NV1W8.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Confirm a successful login:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-ee08584525fc238de75e4070a0868f2d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MMUVBVKX.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ee08584525fc238de75e4070a0868f2d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MMUVBVKX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-4a9fd78c83e572f91c87eeb4eb42ee5e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MMUVBVKX.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4a9fd78c83e572f91c87eeb4eb42ee5e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MMUVBVKX.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>You should see your login name in the output.</p>
 <p>\</p>
@@ -813,8 +814,8 @@ for these operations.</p>
 --no-trunc option to view full output.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-58277b47556414335197a148e2f864fa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YWS0BU60.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-58277b47556414335197a148e2f864fa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YWS0BU60.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-a38b9a70bb29abb2420e0a7f314a36e3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YWS0BU60.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a38b9a70bb29abb2420e0a7f314a36e3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YWS0BU60.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>4. Select the second image rhel9/mysql-80 for this exercise. Inspect
 the image without downloading it using skopeo inspect. A long output
@@ -822,8 +823,8 @@ will be generated. The command uses the docker:// mechanism to access
 the image.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-0c854a29682541566137fac56f84f0b9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WLEXSPUR.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c854a29682541566137fac56f84f0b9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WLEXSPUR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f8d014ad7d53982fab63f03da425cdc8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WLEXSPUR.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f8d014ad7d53982fab63f03da425cdc8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WLEXSPUR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output shows older versions under RepoTags, the creation time for
 the latest version, the build date of the image, a description, and
@@ -834,14 +835,14 @@ image prior to downloading and consuming it.</p>
 using podman pull:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-b13b01b89da12448478c4a7c25069422" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-85VEEMUM.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b13b01b89da12448478c4a7c25069422"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-85VEEMUM.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-cf816c208fe2fad64eed52c704d2ee61" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-85VEEMUM.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf816c208fe2fad64eed52c704d2ee61"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-85VEEMUM.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>6. List the image to confirm the retrieval using podman images:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-68eeda1a023e71b05b65672a9ef53ad9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6EXL0CPC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-68eeda1a023e71b05b65672a9ef53ad9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6EXL0CPC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-df95cb10cdb653348feb59e662e329bc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6EXL0CPC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-df95cb10cdb653348feb59e662e329bc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6EXL0CPC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output indicates the FQIN of the image (repository), version (tag),
 image ID, creation time, and size.</p>
@@ -851,22 +852,22 @@ generate a long output. You may pipe the output to less to view one
 screenful of information at a time.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-a0ee2103199f4a521a79b33a40933125" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-K7A11DW2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a0ee2103199f4a521a79b33a40933125"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-K7A11DW2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-03d884b58d4017c7be8de19d03f69b9d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-K7A11DW2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-03d884b58d4017c7be8de19d03f69b9d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-K7A11DW2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>8. Remove the mysql-80 image from local storage using podman rmi:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6befe92c2a3afaf2f337e32a2b879e04" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MOU8AU67.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6befe92c2a3afaf2f337e32a2b879e04"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MOU8AU67.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-534a8c1fdc7d7f38e07678074bca03f6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MOU8AU67.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-534a8c1fdc7d7f38e07678074bca03f6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MOU8AU67.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The podman command shows the ID of the image after deletion.</p>
 <p>\</p>
 <p>9. Confirm the removal using podman images:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-d227feb40cb9e0e9f7607dcd74fa690d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OTL2HJWG.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d227feb40cb9e0e9f7607dcd74fa690d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OTL2HJWG.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-26249f6602a3ef1e582288fa3fa781e4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OTL2HJWG.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-26249f6602a3ef1e582288fa3fa781e4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OTL2HJWG.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The image is no longer available in the local storage, which confirms
 the removal.</p>
@@ -916,8 +917,8 @@ if it does not already exist.</p>
 <p>A sample container file is presented below:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-35becb2cbe21db0af87a17c6275a1bc1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-KSBMSM9F.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-35becb2cbe21db0af87a17c6275a1bc1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-KSBMSM9F.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-ff8ea28da968ce481609208c54cf4662" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-KSBMSM9F.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ff8ea28da968ce481609208c54cf4662"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-KSBMSM9F.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The file contains five instructions with comments to self-explain their
 purpose. The index.xhtml file may contain a basic statement such as
@@ -948,20 +949,20 @@ creation. You will use the podman command for these activities.</p>
 <p>1. Log in to the specified Red Hat registry:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3d7becfd80e9dafa1b3809e0d7f4a28b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DDBSKRK7.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d7becfd80e9dafa1b3809e0d7f4a28b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DDBSKRK7.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-70d6f4a594bc2b7f83b52cd1c12b7950" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DDBSKRK7.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-70d6f4a594bc2b7f83b52cd1c12b7950"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DDBSKRK7.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Confirm a successful login:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-b66ef51745005761b6d3a56f8e9f1e08" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-L21LI2S7.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b66ef51745005761b6d3a56f8e9f1e08"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-L21LI2S7.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-678b656dec4c4112c511b3cc38456cf6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-L21LI2S7.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-678b656dec4c4112c511b3cc38456cf6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-L21LI2S7.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Create a file called containerfile with the following code:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8c37c3e2ab04d51932dcd4e9f7da6b7d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Q0VFLFWJ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8c37c3e2ab04d51932dcd4e9f7da6b7d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Q0VFLFWJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-57293f4834884069cda44df51cb815ef" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Q0VFLFWJ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-57293f4834884069cda44df51cb815ef"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Q0VFLFWJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>4. Create a file called testfile with some random text in it and place
 it in the same directory as the containerfile.</p>
@@ -971,8 +972,8 @@ end represents the current directory and this is where both
 containerfile and testfile are located.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6d7580f2d6567cd45b395b06038d3e04" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-PQOCOQSO.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6d7580f2d6567cd45b395b06038d3e04"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-PQOCOQSO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-09df1e8d3f91a2a704c78165c59b65b8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-PQOCOQSO.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-09df1e8d3f91a2a704c78165c59b65b8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-PQOCOQSO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output indicates that podman downloaded the latest version of RHEL 9
 ubi from the specified registry, ran the echo command, uploaded the
@@ -981,8 +982,8 @@ testfile to /tmp, and applied the tag to the custom image.</p>
 <p>6. Confirm image creation:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-66554d2fdb7adcd15e9ba5a4423a2e4c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7T3F7NSO.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-66554d2fdb7adcd15e9ba5a4423a2e4c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7T3F7NSO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-929b2add2a79b13563fea39dd8564e57" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7T3F7NSO.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-929b2add2a79b13563fea39dd8564e57"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7T3F7NSO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output shows the downloaded image as well as the new custom image
 along with their image IDs, creation time, and size. Do not remove the
@@ -1024,8 +1025,8 @@ rhel8-base-os and open a terminal session (-t) for interaction (-i). Use
 the podman run command.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-87cd7aff7824a191e3a85c144c47f79b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-10ROA005.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-87cd7aff7824a191e3a85c144c47f79b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-10ROA005.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f51db5e326783c6134c7f38679b8db33" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-10ROA005.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f51db5e326783c6134c7f38679b8db33"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-10ROA005.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The above command downloaded the latest version of the specified image
 automatically even though no FQIN was provided. This is because it
@@ -1044,20 +1045,20 @@ This is an auto-generated ID.</p>
 container for verification:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-bbb6bc9d0a3348e599bfff9c5ab72921" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SRFIPI5K.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bbb6bc9d0a3348e599bfff9c5ab72921"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SRFIPI5K.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-4eb755476012937de17ffd14d82d1cb1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SRFIPI5K.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4eb755476012937de17ffd14d82d1cb1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SRFIPI5K.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Close the terminal session when done:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8dd488b6651188803727c74baf572588" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-FO8IBQK2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8dd488b6651188803727c74baf572588"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-FO8IBQK2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-b7362c2e61904d26fb7172bca1c4fa78" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-FO8IBQK2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b7362c2e61904d26fb7172bca1c4fa78"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-FO8IBQK2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>4. Delete the container using podman rm:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-4bdc766514cb67362dcc18e1273c0e11" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-8C2BNVUY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4bdc766514cb67362dcc18e1273c0e11"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-8C2BNVUY.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-4b2def05773d9dda98ea9f321ba0ef36" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-8C2BNVUY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4b2def05773d9dda98ea9f321ba0ef36"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-8C2BNVUY.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Confirm the removal with podman ps.</p>
 <p>\</p>
@@ -1081,8 +1082,8 @@ command. Use podman run with the --rm option to remove the container as
 soon as the entry point command has finished running.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-216be353c39db5584c12508bcbbc0961" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-PUT5F8WL.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-216be353c39db5584c12508bcbbc0961"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-PUT5F8WL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e40667a774846e7c9c1c2ad071756911" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-PUT5F8WL.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e40667a774846e7c9c1c2ad071756911"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-PUT5F8WL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The ls command was executed successfully, and the container was
 terminated thereafter.</p>
@@ -1090,8 +1091,8 @@ terminated thereafter.</p>
 <p>2. Confirm the container removal with podman ps:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-05352ebc0e602770509b948c428f10aa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W2BP63JE.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-05352ebc0e602770509b948c428f10aa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W2BP63JE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-b9a0d2052ad5a1a3b98c185383e11e00" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W2BP63JE.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b9a0d2052ad5a1a3b98c185383e11e00"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W2BP63JE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The container no longer exists.</p>
 <p>\</p>
@@ -1151,8 +1152,8 @@ confirm the port mapping.</p>
 search:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-a841b8f45455e944bc72d7e907057296" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LD9Q96RH.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a841b8f45455e944bc72d7e907057296"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LD9Q96RH.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-b42c1e5827af6a150a00d19fb3fbefe4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LD9Q96RH.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b42c1e5827af6a150a00d19fb3fbefe4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LD9Q96RH.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The Red Hat Container Registry has an Apache web server image called
 httpd-24-rhel7 available as evident from the output.</p>
@@ -1161,20 +1162,20 @@ httpd-24-rhel7 available as evident from the output.</p>
 the image:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6dbdbd3e22782d4a97c2c3b6a34ff5e3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-T8A77YJ9.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6dbdbd3e22782d4a97c2c3b6a34ff5e3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-T8A77YJ9.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-175a0190bd324c4e0f973452975e857d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-T8A77YJ9.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-175a0190bd324c4e0f973452975e857d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-T8A77YJ9.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Download the latest version of the Apache image using podman pull:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-dab87f774627cd0071f07f30d6c0d97b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-U4JN768V.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dab87f774627cd0071f07f30d6c0d97b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-U4JN768V.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-770911a00bcfe27c4ebe6855d1c239ba" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-U4JN768V.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-770911a00bcfe27c4ebe6855d1c239ba"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-U4JN768V.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>4. Verify the download using podman images:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6996381e2e21d7a43802ee9429b502d5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7K6QTB3O.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6996381e2e21d7a43802ee9429b502d5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7K6QTB3O.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-9624d88d979e04b90c4136b5aeb7efef" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7K6QTB3O.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9624d88d979e04b90c4136b5aeb7efef"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7K6QTB3O.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>5. Launch a container named (--name) rhel7-port-map in detached mode
 (-d) to run the containerized Apache web server with host port 10000
@@ -1182,14 +1183,14 @@ mapped to container port 8000 (-p). Use the podman run command with
 appropriate flags.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-38625694c71d801ac54063eb0d3ab218" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6RCABII7.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-38625694c71d801ac54063eb0d3ab218"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6RCABII7.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-bfa049400908e9bba927b9d781032866" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6RCABII7.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bfa049400908e9bba927b9d781032866"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6RCABII7.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>6. Verify that the container was launched successfully using podman ps:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-28ad062a93477331d5444177ea80d2a8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-AY6DSTAZ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-28ad062a93477331d5444177ea80d2a8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-AY6DSTAZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-dce952c85b61dc2dad89b7dfe35a1180" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-AY6DSTAZ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dce952c85b61dc2dad89b7dfe35a1180"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-AY6DSTAZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The container is running (up for 31 seconds and created 35 seconds ago).
 The output also indicates the port mapping.</p>
@@ -1197,8 +1198,8 @@ The output also indicates the port mapping.</p>
 <p>7. You can also use podman port to view the mapping:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-13e7ed97765d9275cc8a0bc457f220e4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NT1HBUJ0.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-13e7ed97765d9275cc8a0bc457f220e4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NT1HBUJ0.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-b4d80385bbcbb6185ff8b8174016e904" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NT1HBUJ0.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b4d80385bbcbb6185ff8b8174016e904"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NT1HBUJ0.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Now any inbound web traffic on host port 10000 will be redirected to the
 container.</p>
@@ -1222,8 +1223,8 @@ and verify each transition.</p>
 rhel7-port-map:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-d4da7f673e5bc4861723ff507b89ca44" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GOTMCQ51.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d4da7f673e5bc4861723ff507b89ca44"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GOTMCQ51.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2b861f24d51186d95ccb5e14dbb3aca0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GOTMCQ51.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b861f24d51186d95ccb5e14dbb3aca0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GOTMCQ51.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The container has been up and running for 16 minutes. It was created 16
 minutes ago as well.</p>
@@ -1233,8 +1234,8 @@ minutes ago as well.</p>
 output):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-ab527693b4b6082eeadc2c7680d48f9a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-N4O5RM30.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ab527693b4b6082eeadc2c7680d48f9a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-N4O5RM30.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-a83a04a163668733c26f80363b41b480" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-N4O5RM30.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a83a04a163668733c26f80363b41b480"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-N4O5RM30.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The container has been in stopped (Exited) state for the past 11
 seconds.</p>
@@ -1242,23 +1243,23 @@ seconds.</p>
 <p>3. Start the container and confirm with the start and ps subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-45206520888f570e5298c851103db720" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2HORXORW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-45206520888f570e5298c851103db720"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2HORXORW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-cce51f7c8fb22cd00d8325c4c331362f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2HORXORW.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cce51f7c8fb22cd00d8325c4c331362f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2HORXORW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Observe the creation and running times.</p>
 <p>\</p>
 <p>4. Stop the container and remove it using the stop and rm subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-f4743b660ac135225dacd8405659d9ed" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-874P9CLJ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f4743b660ac135225dacd8405659d9ed"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-874P9CLJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-9ddcc4ff03504d1c46e91db2c339c013" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-874P9CLJ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ddcc4ff03504d1c46e91db2c339c013"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-874P9CLJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>5. Confirm the removal using the -a option with podman ps to also
 include any stopped containers:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-7f9e353925f90fbe233a00792bbc0f7e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G3EIMFKS.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7f9e353925f90fbe233a00792bbc0f7e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G3EIMFKS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5bad4cd8a0dad02b32b78e1a470e1752" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G3EIMFKS.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5bad4cd8a0dad02b32b78e1a470e1752"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G3EIMFKS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The container no longer exists.</p>
 <p>\</p>
@@ -1307,16 +1308,16 @@ inject (-e) variables HISTSIZE and SECRET as directed. Use the specified
 container image.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-74703a65da6da2bd1f1992485ed9e0c5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-FWAEIG22.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-74703a65da6da2bd1f1992485ed9e0c5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-FWAEIG22.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-23519cfffc443dffe47c084dac08a960" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-FWAEIG22.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-23519cfffc443dffe47c084dac08a960"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-FWAEIG22.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The container is launched with a terminal opened for interaction.</p>
 <p>\</p>
 <p>2. Verify both variables using the echo command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-9295eb0f58f4ab60bfb2182b9591e478" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ID5M2D5P.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9295eb0f58f4ab60bfb2182b9591e478"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ID5M2D5P.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-d0bc415a9c7256c31aed76c58d45c886" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ID5M2D5P.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d0bc415a9c7256c31aed76c58d45c886"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ID5M2D5P.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Both variables are set and show their respective values.</p>
 <p>\</p>
@@ -1324,8 +1325,8 @@ container image.</p>
 remove it using the stop and rm subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-793900e2d2bbcd022244c834aa9abff7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MIFYAQHZ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-793900e2d2bbcd022244c834aa9abff7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MIFYAQHZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-c94640eb2ffb70289888ca8d013a1548" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MIFYAQHZ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c94640eb2ffb70289888ca8d013a1548"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MIFYAQHZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>At this point, you may want to confirm the deletion by running podman ps
 -a.</p>
@@ -1386,8 +1387,8 @@ completion of this exercise.</p>
 and confirm:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-291be12ba52814b7dbbaeb1bdb1862bc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-A16DWUCR.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-291be12ba52814b7dbbaeb1bdb1862bc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-A16DWUCR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-3538e8cbb4d5f1feab5e63be5d03bca6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-A16DWUCR.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3538e8cbb4d5f1feab5e63be5d03bca6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-A16DWUCR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Launch a root container called rhel9-persistent-data (--name) in
 interactive mode (-it) using the latest ubi9 image. Specify the
@@ -1397,15 +1398,15 @@ shown to ensure the SELinux type container_file_t is automatically set
 on the directory and files within.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-c2a24571f67e05b3a6b9124113764564" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-J58YZV29.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c2a24571f67e05b3a6b9124113764564"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-J58YZV29.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2c9d3a84f3d7478e446bacb2df7c4002" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-J58YZV29.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2c9d3a84f3d7478e446bacb2df7c4002"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-J58YZV29.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Confirm the presence of the directory inside the container with ls
 on /container_data:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-63d676cdc6e752f1ea9ca72440fef73a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YAZBQL1Y.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-63d676cdc6e752f1ea9ca72440fef73a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YAZBQL1Y.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-0b8d3ab1b3737d91e2b50530cdc11269" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YAZBQL1Y.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0b8d3ab1b3737d91e2b50530cdc11269"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YAZBQL1Y.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The host directory is available as /container_data inside the container
 with the correct SELinux type.</p>
@@ -1414,14 +1415,14 @@ with the correct SELinux type.</p>
 /container_data:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8819f5d975bb4f1f48907cd31635f68b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GUR2WY2B.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8819f5d975bb4f1f48907cd31635f68b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GUR2WY2B.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-022389f6177ec9ba8d49c482c6d21c81" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GUR2WY2B.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-022389f6177ec9ba8d49c482c6d21c81"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GUR2WY2B.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>5. Verify the file creation and the SELinux type on it:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-ae03dee37e186d2ab16742284e8cd8b0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WXFVNGBI.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae03dee37e186d2ab16742284e8cd8b0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WXFVNGBI.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-66797c663b5db3637af965b2e35a2735" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WXFVNGBI.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-66797c663b5db3637af965b2e35a2735"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WXFVNGBI.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The file inherits the SELinux type from the parent directory.</p>
 <p>\</p>
@@ -1429,16 +1430,16 @@ with the correct SELinux type.</p>
 host directory:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6928e5518ccd7f12add2592b1045f272" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LGGOCXKA.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6928e5518ccd7f12add2592b1045f272"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LGGOCXKA.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2abd70ffeeb38b3a5e7abf8b08b137ef" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LGGOCXKA.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2abd70ffeeb38b3a5e7abf8b08b137ef"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LGGOCXKA.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output indicates the exact same attributes on the file.</p>
 <p>\</p>
 <p>7. Stop and remove the container using the stop and rm subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-13c1f810830dd5e351b343eb47e75442" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SJ1XC5F5.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-13c1f810830dd5e351b343eb47e75442"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SJ1XC5F5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e009d7aa5e9426f802d9c415c340869c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SJ1XC5F5.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e009d7aa5e9426f802d9c415c340869c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SJ1XC5F5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>8. Launch a new root container called rhel8-persistent-data (--name)
 in interactive mode (-it) using the latest ubi8 image from any of the
@@ -1448,15 +1449,15 @@ the -v (volume) option. Add :Z as shown to ensure the SELinux type
 container_file_t is automatically set on the directory and files within.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-e6d75b98f86b1d361c38af69fa16afe3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TDQ6S8PC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e6d75b98f86b1d361c38af69fa16afe3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TDQ6S8PC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-9732a2cee44b09e8d129f8e9803bbb92" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TDQ6S8PC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9732a2cee44b09e8d129f8e9803bbb92"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TDQ6S8PC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>9. Confirm the presence of the directory inside the container with ls
 on /container_data2:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3b7f0fa481d84386d25ce0cf2691d23e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G3CA95LC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3b7f0fa481d84386d25ce0cf2691d23e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G3CA95LC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-a853d86261d633662dd3c11b9b00e342" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G3CA95LC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a853d86261d633662dd3c11b9b00e342"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G3CA95LC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The host directory is available as /container_data2 inside this new
 container with the correct SELinux type. The output also confirms the
@@ -1467,27 +1468,27 @@ container.</p>
 /container_data2:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-091ee6c707963ca47071108dd3526d66" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-9WEM9T51.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-091ee6c707963ca47071108dd3526d66"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-9WEM9T51.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-3acf6b6a8736af76fe786616b862a90f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-9WEM9T51.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3acf6b6a8736af76fe786616b862a90f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-9WEM9T51.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>11. Exit out of the container and confirm the existence of both files
 in the host directory:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3869da26d08d2dd0a3f5f6559be523b8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CPWY1M2L.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3869da26d08d2dd0a3f5f6559be523b8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CPWY1M2L.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e8bb8169ac494c07c3ea4894cfeda35d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CPWY1M2L.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e8bb8169ac494c07c3ea4894cfeda35d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CPWY1M2L.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>12. Stop and remove the container using the stop and rm subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-dcdb3d4804ff7208b24e3fa293f1f9b0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-KA6BCU9P.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dcdb3d4804ff7208b24e3fa293f1f9b0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-KA6BCU9P.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-bbadefcafaa6b1c1a25b8b198536923a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-KA6BCU9P.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bbadefcafaa6b1c1a25b8b198536923a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-KA6BCU9P.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>13. Re-check the presence of the files in the host directory:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-00f2040c437025acc572d2f39a287938" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7QNGAUBV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-00f2040c437025acc572d2f39a287938"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7QNGAUBV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e7c668150f2272b4843f287863a2ea54" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7QNGAUBV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e7c668150f2272b4843f287863a2ea54"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7QNGAUBV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Both files still exist and they can be shared with other containers if
 required.</p>
@@ -1560,14 +1561,14 @@ the automatic container start, stop, and deletion.</p>
 detached mode (-d) using the latest ubi9:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-aedb9e7010b2e8df8b61061f75aedc92" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GBB88YS2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-aedb9e7010b2e8df8b61061f75aedc92"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GBB88YS2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-3da66c336de21733d0cf94ff4f37540f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-GBB88YS2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3da66c336de21733d0cf94ff4f37540f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-GBB88YS2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Confirm the new container using podman ps. Note the container ID.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-abed8218c428c5b3891f5723a113d25d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MB7DJ9P4.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-abed8218c428c5b3891f5723a113d25d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MB7DJ9P4.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-333b9d93afff74e00714a95b68762f25" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-MB7DJ9P4.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-333b9d93afff74e00714a95b68762f25"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-MB7DJ9P4.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Create (generate) a service unit file called
 rootful-container.service under /etc/systemd/system while ensuring that
@@ -1577,8 +1578,8 @@ command will show the generated file content on the screen as well as
 store it in the specified file.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8f2732d5630b05e4f9e9b3facf24d028" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WPSNM6IW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8f2732d5630b05e4f9e9b3facf24d028"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WPSNM6IW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e2aad77c4f64c8cbf9c8f1bdbdb739ea" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WPSNM6IW.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e2aad77c4f64c8cbf9c8f1bdbdb739ea"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WPSNM6IW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The unit file has the same syntax as any other systemd service
 configuration file. There are three sections&mdash;Unit, Service, and
@@ -1601,8 +1602,8 @@ systemd.target, and systemd.service for additional details.</p>
 stop and rm subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-28320a01a838ceed176622995fcf1bfe" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JYMYFBQG.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-28320a01a838ceed176622995fcf1bfe"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JYMYFBQG.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-7175e1c45ba5dba13c8c721760641bee" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JYMYFBQG.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7175e1c45ba5dba13c8c721760641bee"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JYMYFBQG.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Verify the removal by running sudo podman ps -a.</p>
 <p>\</p>
@@ -1610,43 +1611,43 @@ stop and rm subcommands:</p>
 the system if required):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-f77f16b3802868a109b870d39ab9545d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-F2PU9TRV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f77f16b3802868a109b870d39ab9545d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-F2PU9TRV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-4ce05192a14358f366b835e65ca6c834" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-F2PU9TRV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4ce05192a14358f366b835e65ca6c834"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-F2PU9TRV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>6. Enable (enable) and start (--now) the container service using the
 systemctl command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-72913fad6a182edf242f07f459b5235f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QZCAXYM0.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-72913fad6a182edf242f07f459b5235f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QZCAXYM0.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-74f2fba01b18dc4d95a43e36999da84d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QZCAXYM0.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-74f2fba01b18dc4d95a43e36999da84d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QZCAXYM0.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>7. Check the running status of the new service with the systemctl
 command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-bcf0bb07ba117fc8e6543114a5ef1ecd" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RQQFVKL4.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bcf0bb07ba117fc8e6543114a5ef1ecd"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RQQFVKL4.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f324382d6fa170c7c74913dd5ca72e33" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RQQFVKL4.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f324382d6fa170c7c74913dd5ca72e33"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RQQFVKL4.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>8. Verify the launch of a new container (compare the container ID with
 that of the source root container):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-b30168b11b6e4fc764642e899e0bfe3e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-0YT1Z6EP.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b30168b11b6e4fc764642e899e0bfe3e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-0YT1Z6EP.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-697113c42e922760e8c7e1e413587982" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-0YT1Z6EP.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-697113c42e922760e8c7e1e413587982"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-0YT1Z6EP.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>9. Restart the container service using the systemctl command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-a6bbc92c54bdd1e13fa20c3883f37b0e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EQQS0107.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a6bbc92c54bdd1e13fa20c3883f37b0e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EQQS0107.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-12b928c7f1dfd82a03fb80c59a51164d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EQQS0107.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-12b928c7f1dfd82a03fb80c59a51164d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EQQS0107.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>10. Check the status of the container again. Observe the removal of the
 previous container and the launch of a new container (compare container
 IDs).</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5ef3fa4089ad1a8dded239dd827b321b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2CEM44G5.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ef3fa4089ad1a8dded239dd827b321b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2CEM44G5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f6b5514b67ac895c493e89a20cd39adc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2CEM44G5.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f6b5514b67ac895c493e89a20cd39adc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2CEM44G5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Each time the rootful-container service is restarted or server20 is
 rebooted, a new container will be launched. You can verify this by
@@ -1672,28 +1673,28 @@ container start, stop, and deletion.</p>
 <p>1. Create a user account called conuser1 and assign a simple password:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-2e23b07a8481c01b3d6fdcc1a5f88f8e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-I0KM4A0W.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e23b07a8481c01b3d6fdcc1a5f88f8e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-I0KM4A0W.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-dcb225631b9dd162517e0c9b18541e64" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-I0KM4A0W.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dcb225631b9dd162517e0c9b18541e64"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-I0KM4A0W.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Open a new terminal window on server20 and log in as conuser1.
 Create directory ~/.config/systemd/user to store a service unit file:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-e3a1a023adb7864b7c74581266a3f4c3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-AKFXDJT5.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3a1a023adb7864b7c74581266a3f4c3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-AKFXDJT5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-1a4b2623d3f0eb591cc7a115e7a97a4b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-AKFXDJT5.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1a4b2623d3f0eb591cc7a115e7a97a4b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-AKFXDJT5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Launch a new container called rootless-container (--name) in
 detached mode (-d) using the latest ubi8:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3d41a94df077d821b862f4b075d48883" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-9UWNQON2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d41a94df077d821b862f4b075d48883"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-9UWNQON2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-81b1724848bd21a29785cee81c778862" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-9UWNQON2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-81b1724848bd21a29785cee81c778862"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-9UWNQON2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>4. Confirm the new container using podman ps. Note the container ID.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-4781027879bd20fea1fb5bc7fa141221" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-A3DCN57T.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4781027879bd20fea1fb5bc7fa141221"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-A3DCN57T.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-d739d093e3460dceac845d5e7734a946" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-A3DCN57T.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d739d093e3460dceac845d5e7734a946"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-A3DCN57T.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>5. Create (generate) a service unit file called
 rootless-container.service under ~/.config/systemd/user while ensuring
@@ -1701,14 +1702,14 @@ that the next new container that will be launched based on this
 configuration will not require the source container (--new) to work:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-d6b0a71b203933e415c2c3caa8d8df14" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TOURUXBC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d6b0a71b203933e415c2c3caa8d8df14"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TOURUXBC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-78f11d8ca25c1b5bcd47236c5610ebd2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TOURUXBC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-78f11d8ca25c1b5bcd47236c5610ebd2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TOURUXBC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>6. Display the content of the unit file:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-13c588e0db0ccc6a93dba841010ecc5b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OQQEHAMZ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-13c588e0db0ccc6a93dba841010ecc5b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OQQEHAMZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-fdf050ee09bde49ff3d55de4b6187d35" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OQQEHAMZ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fdf050ee09bde49ff3d55de4b6187d35"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OQQEHAMZ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>See Exercise 22-10 earlier for an analysis of the file content.</p>
 <p>\</p>
@@ -1716,8 +1717,8 @@ configuration will not require the source container (--new) to work:</p>
 stop and rm subcommands:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-b108bb57b36c55f369b272f87dacb8ce" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-X1URDZQJ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b108bb57b36c55f369b272f87dacb8ce"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-X1URDZQJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-764d653324ca53c2352b767c20f691aa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-X1URDZQJ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-764d653324ca53c2352b767c20f691aa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-X1URDZQJ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Verify the removal by running podman ps -a.</p>
 <p>\</p>
@@ -1725,50 +1726,50 @@ stop and rm subcommands:</p>
 system if required). Use the --user option with the systemctl command.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-53f0a8cd64dbbc7fd405d1f9177f5b6b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VWPJEHDC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-53f0a8cd64dbbc7fd405d1f9177f5b6b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VWPJEHDC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2efacb1b077ed9795c08d0808120200b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VWPJEHDC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2efacb1b077ed9795c08d0808120200b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VWPJEHDC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>9. Enable (enable) and start (--now) the container service using the
 systemctl command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-fb0a343dc7a766d7d2acb29efce19ff1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JA1NY1QC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fb0a343dc7a766d7d2acb29efce19ff1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JA1NY1QC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-b377ba0b412273497a3845a9654241fa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JA1NY1QC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b377ba0b412273497a3845a9654241fa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JA1NY1QC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>10. Check the running status of the new service using the systemctl
 command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-f9e4875dd4ad428cb562c9c09846d4a0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Q0H3HJ85.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f9e4875dd4ad428cb562c9c09846d4a0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Q0H3HJ85.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-515603abeab937e504bc5b140c2224c5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Q0H3HJ85.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-515603abeab937e504bc5b140c2224c5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Q0H3HJ85.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>11. Verify the launch of a new container (compare the container ID with
 that of the source rootless container):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-56537094bb7d7c6c82d8d90ce9bab267" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-I0VC7EFD.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-56537094bb7d7c6c82d8d90ce9bab267"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-I0VC7EFD.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2cc194710a2f09e69ace4ec5fabc0e1d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-I0VC7EFD.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2cc194710a2f09e69ace4ec5fabc0e1d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-I0VC7EFD.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>12. Enable the container service to start and stop with host transition
 using the loginctl command (systemd login manager) and confirm:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-acfc7d8f2f9a3d823d839c122ec809c8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-198PLBRS.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-acfc7d8f2f9a3d823d839c122ec809c8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-198PLBRS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-3983459ee331685f64e082c2dd18f85b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-198PLBRS.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3983459ee331685f64e082c2dd18f85b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-198PLBRS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>13. Restart the container service using the systemctl command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-3f2009b961473fbfc59b080f2f1e8f7e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Q63AQ3T5.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3f2009b961473fbfc59b080f2f1e8f7e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Q63AQ3T5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-e7b48b72052d3c3aea2085a9da99f0d2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-Q63AQ3T5.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e7b48b72052d3c3aea2085a9da99f0d2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-Q63AQ3T5.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>14. Check the status of the container again. Observe the removal of the
 previous container and the launch of a new container (compare container
 IDs).</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6dc9ca2ffe439f73e1113af1d94c5235" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CSY20YV2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6dc9ca2ffe439f73e1113af1d94c5235"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CSY20YV2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-913e6e0c811efe28c9fbf025ba4caf42" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CSY20YV2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-913e6e0c811efe28c9fbf025ba4caf42"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CSY20YV2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Each time the rootless-container service is restarted or server20 is
 rebooted, a new container will be launched. You can verify this by
@@ -1988,7 +1989,7 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+    <aside id="R-sidebar" class="default-animation">
       <div id="R-header-topbar" class="default-animation"></div>
       <div id="R-header-wrapper" class="default-animation">
         <div id="R-header" class="default-animation">
@@ -2007,12 +2008,12 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1718973696" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1718973696" defer></script>
-        <script src="/js/search.js?1718973696" defer></script>
+        <script src="/js/auto-complete.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1718995629" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1718995629" defer></script>
+        <script src="/js/search.js?1718995629" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -2020,11 +2021,11 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
       <div id="R-content-wrapper" class="highlightable">
         <div id="R-topics">
           <ul class="enlarge morespace collapsible-menu">
-          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
-          <li data-nav-id="/linux/22_containers/" class="active"><a class="padding" href="/linux/22_containers/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a></li>
-          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux</a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
+          <li data-nav-id="/linux/22_containers/" class="active"><a class="padding" href="/linux/22_containers/"></a></li></ul></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking</a></li>
+          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools</a></li>
+          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing</a></li>
           </ul>
         </div>
         <div id="R-shortcuts">
@@ -2033,10 +2034,10 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
             <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
           </ul>
         </div>
-        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
         <div id="R-menu-footer">
-          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
-          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
             <ul>
               <li id="R-select-language-container" class="footerLangSwitch">
                 <div class="padding menu-control">
@@ -2065,7 +2066,7 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
                 </div>
                 <script>window.variants && variants.markSelectedVariant();</script>
               </li>
-              <li class="footerVisitedLinks showVisitedLinks">
+              <li class="footerVisitedLinks">
                 <div class="padding menu-control">
                   <i class="fa-fw fas fa-history"></i>
                   <span>&nbsp;</span>
@@ -2083,8 +2084,8 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1718973696" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1718973696" defer></script>
+    <script src="/js/clipboard.min.js?1718995629" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1718995629" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -2100,20 +2101,20 @@ interactive mode and verifying the user. (Hint: use the podman command).</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1718973696" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1718973696" defer></script>
-    <script src="/js/js-yaml.min.js?1718973696" defer></script>
+    <script src="/js/d3/d3-color.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1718995629" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1718995629" defer></script>
+    <script src="/js/js-yaml.min.js?1718995629" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1718973696" defer></script>
+    <script src="/js/theme.js?1718995629" defer></script>
   </body>
 </html>

@@ -69,8 +69,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -136,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "networking/_index.md",
+                "file": "_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "networking/_index.md",
+                "file": "_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "networking/_index.md"
+                "file": "_index.md"
               }
             }
           }
@@ -199,8 +198,9 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "fff2ae26e754eebd",
+  "active": "4c2cf21e387379b9",
   "lastOpenFiles": [
+    "networking/_index.md",
     "images/V.png",
     "images/circleportrait.PNG",
     "linux/RHCSA Notes.md",
@@ -211,7 +211,6 @@
     "now/_index (copy).md",
     "linux/_index.md",
     "_index.md",
-    "networking/_index.md",
     "linux/Archive/user_management.md",
     "linux/Archive/UNIX and Linux System Administration Handbook Fifth Edition Highlights.md",
     "linux/Archive/ubuntu_stuff.md",
@@ -237,7 +236,6 @@
     "images/Pasted image 20230113155049.png",
     "images/Pasted image 20230113053005.png",
     "images/Pasted image 20230106041104.png",
-    "images/Pasted image 20230113052543.png",
     "images/A Guide to the Good Life _ The Ancient Art of Stoic Joy by William B. Irvine.epub",
     "tools/Archive",
     "images"

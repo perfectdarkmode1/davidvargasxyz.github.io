@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://perfectdarkmode.com/networking/things_to_learn_after_ccna/</link>
+    <link>http://davidvargas.xyz/networking/things_to_learn_after_ccna/</link>
     <description>What to Learn After CCNA It’s easy to get overwhelmed with options after completing your CCNA. What do you learn next? If you are trying to get a job as a Network Engineer, you will want to check this out.&#xA;I went through dozens of job listings that mentioned CCNA. Then, tallied up the main devices/vendors, certifications, and technologies mentioned. And left out anything that wasn’t mentioned more than twice.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://perfectdarkmode.com/networking/things_to_learn_after_ccna/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/networking/things_to_learn_after_ccna/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

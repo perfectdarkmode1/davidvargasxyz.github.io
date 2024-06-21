@@ -1,4 +1,4 @@
-baseURL = 'http://perfectdarkmode.com/'
+baseURL = 'http://davidvargas.xyz/'
 languageCode = 'en-us'
 title = ''
 theme = ["github.com/McShelby/hugo-theme-relearn"]
@@ -24,11 +24,11 @@ publishDir = "docs"
   # See the config.toml file from this documentation site to have an example.
   editURL = ""
   # Author of the site, will be used in meta information
-  author.name = "David"
+  author.name = "David Vargas"
   # Description of the site, will be used in meta information
   description = "Linux, Tech, Open Source Software, Privacy"
   # Shows a checkmark for visited pages on the menu
-  showVisitedLinks = true
+  showVisitedLinks = false
   # Disable search function. It will hide search bar
   disableSearch = false
   # Disable search in hidden pages, otherwise they will be shown in search box
@@ -144,6 +144,7 @@ weight = 10
 #landingPageName = "<i class='fas fa-home'></i> Home"
 #[Languages.pir]
 #landingPageName = "<i class='fas fa-home'></i> Arrr! Homme"
+
 
 [services]
   [services.googleAnalytics]
