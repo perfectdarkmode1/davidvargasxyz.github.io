@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/tools/apache/</link>
+    <link>http://davidvargas.xyz/tools/apache/</link>
     <description>Rhel Config root: /etc/httpd Primary config file: /etc/httpd/conf/httpd.conf Module config: conf.modules.d virtual host config: conf.d Log: /var/log/httpd User: apache&#xA;httpd.conf&#xA;used include to reference other files 3 categories Global settings virtualhost instructions for requests that do not match a VirtualHost defenition Virtual host examples:&#xA;Basic authentication in Apache is configured in Location or Directory blocks&#xA;SSL might have changed its name to TLS&#xA;Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/tools/apache/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/tools/apache/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

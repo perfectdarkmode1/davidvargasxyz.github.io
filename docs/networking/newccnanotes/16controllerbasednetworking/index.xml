@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/networking/newccnanotes/16controllerbasednetworking/</link>
+    <link>http://davidvargas.xyz/networking/newccnanotes/16controllerbasednetworking/</link>
     <description>16 Controller-Based Networking Friday, October 29, 2021 2:40 PM&#xA;○ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the MAC address table (Layer 2 switches) Matching an IP packet’s destination IP address to the IP routing table (routers, Layer 3 switches)○ Encrypting the data and adding a new IP header (for virtual private network [VPN] processing)○ ○ Changing the source or destination IP address (for Network Address Translation [NAT] processing)</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/networking/newccnanotes/16controllerbasednetworking/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/networking/newccnanotes/16controllerbasednetworking/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

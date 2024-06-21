@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/about/</link>
+    <link>http://davidvargas.xyz/about/</link>
     <description>Hey, I’m David. I am a tech enthusiast interested in Linux, open source projects, Networking, scripting, programming, and cybersecurity. This is my hub where I will be teaching as I learn. This will help me pick up skills better and hopefully help others along the way.&#xA;The site name “Perfect Dark Mode” is a throwback to the game “Perfect Dark” and the best visual theme for any technology, dark mode.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

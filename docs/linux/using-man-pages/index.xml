@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/linux/using-man-pages/</link>
+    <link>http://davidvargas.xyz/linux/using-man-pages/</link>
     <description>https://www.youtube.com/watch?v=RzAkjX_9B7E&amp;t=295s&#xA;man man&#xA;h for help&#xA;q to quit&#xA;Man uses less&#xA;^ mean ctrl&#xA;^f Forward one page&#xA;^b backward one page&#xA;can use # followed by command to repeat that many times&#xA;g first line in file&#xA;G last line in file&#xA;CR means press enter&#xA;Searching /searchword&#xA;press enter to jump first occurance of searched word&#xA;n to jump to next match&#xA;N to go to previous match</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/linux/using-man-pages/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/linux/using-man-pages/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/tools/buildawebsite/</link>
+    <link>http://davidvargas.xyz/tools/buildawebsite/</link>
     <description>Word Press is great, but it is probably a lot more bloated then you need for a personal website. Enter Hugo, it has less server capacity and storage needs than Word Press. Hugo is a static site generator than takes markdown files and converts them to html.&#xA;Hosting your own website is also a lot cheaper than having a provider like Bluehost do it for you. Instead of $15 per month, I am currently paying $10 per year.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/tools/buildawebsite/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/tools/buildawebsite/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

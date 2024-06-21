@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/tools/how-to-use-templates/</link>
+    <link>http://davidvargas.xyz/tools/how-to-use-templates/</link>
     <description>Insert date or time&#xA;{{date}} {{time}}&#xA;How to use templates https://help.obsidian.md/Plugins/Templates</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/tools/how-to-use-templates/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/tools/how-to-use-templates/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

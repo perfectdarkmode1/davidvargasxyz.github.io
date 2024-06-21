@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=45779&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
@@ -26,7 +26,7 @@ Overview of basic networking concepts: hostname, IPv4, network classes, subnetti
 Change hostname of the system
 \
 Understand the concepts of network device and connection">
-    <meta property="og:url" content="http://localhost:45779/linux/15_networking_network_devices_and_network_connections/">
+    <meta property="og:url" content="http://davidvargas.xyz/linux/15_networking_network_devices_and_network_connections/">
     <meta property="og:description" content="Networking, Network Devices, and Network Connections \
 ::: {style=“border-style: double; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.375;”} :::
 \
@@ -50,22 +50,22 @@ Change hostname of the system
 Understand the concepts of network device and connection">
     <meta itemprop="wordCount" content="8531">
     <title></title>
-    <link href="/css/fontawesome-all.min.css?1718995691" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718995691" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1718995691" rel="stylesheet">
-    <link href="/css/auto-complete.css?1718995691" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718995691" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1718995691" rel="stylesheet">
-    <link href="/css/fonts.css?1718995691" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718995691" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1718995691" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1718995691" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1718995691" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1718995691" rel="stylesheet">
-    <link href="/css/print.css?1718995691" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1718995691"></script>
+    <link href="/css/fontawesome-all.min.css?1719007971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1719007971" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1719007971" rel="stylesheet">
+    <link href="/css/auto-complete.css?1719007971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1719007971" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1719007971" rel="stylesheet">
+    <link href="/css/fonts.css?1719007971" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1719007971" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1719007971" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1719007971" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1719007971" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1719007971" rel="stylesheet">
+    <link href="/css/print.css?1719007971" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1719007971"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:45779';
+      window.relearn.absBaseUri='http:\/\/davidvargas.xyz';
       window.index_js_url="/index.search.js";
       // variant stuff
       window.variants && variants.init( [ 'amoled' ] );
@@ -194,19 +194,19 @@ Understand the concepts of network device and connection">
             
           </span>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/about/" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/about/" title=""><span class="title">About</span></a>
             </div>
 
-            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/now/" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/now/" title=""><span class="title">Now</span></a>
             </div>
 
-            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/recommended/" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/recommended/" title=""><span class="title">Recommended</span></a>
             </div>
 
-            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/booknotes/" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/booknotes/" title=""><span class="title">Book Notes</span></a>
             </div>
 
-            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/contact/" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/contact/" title=""><span class="title">Contact</span></a>
             </div>
 
 
@@ -269,8 +269,8 @@ troubleshooting, and several other network services. This chapter
 provides a wealth of that information.</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-0087850fc0bd5d8bb125ebb039be8d27" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ERRJFIPY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0087850fc0bd5d8bb125ebb039be8d27"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ERRJFIPY.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-e82a6f6198ea6d6093fec8b5ea1d2a22" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ERRJFIPY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e82a6f6198ea6d6093fec8b5ea1d2a22"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ERRJFIPY.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>For a system to be able to talk to other systems, one of its network
 devices must have a connection profile attached containing a unique IP
@@ -320,8 +320,8 @@ hostname, hostnamectl, uname, and nmcli, as well as by displaying the
 content of the /etc/hostname file. Let&rsquo;s run these commands on server1:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-03cf29c9504f4613deec7f3400ac6360" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-H5CRP5OT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-03cf29c9504f4613deec7f3400ac6360"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-H5CRP5OT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-d9df7b06de3d9fb80cd540b4c9be1a9f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-H5CRP5OT.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d9df7b06de3d9fb80cd540b4c9be1a9f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-H5CRP5OT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>All the above commands displayed the same output.</p>
 <p>::: {style=&ldquo;page-break-before: always;&rdquo;}
@@ -345,22 +345,22 @@ both systems.</p>
 entry to the following:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8081e608aefe74641c31bd793da259a0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QP2K26GE.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8081e608aefe74641c31bd793da259a0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QP2K26GE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-fee56e9bb1b326b9f78933652ac2684f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QP2K26GE.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fee56e9bb1b326b9f78933652ac2684f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QP2K26GE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Execute the systemctl command to restart the systemd-hostnamed
 service and verify the new hostname with the hostname command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-388e1a090c6b5570128e53fb49310b62" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W43WEV1X.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-388e1a090c6b5570128e53fb49310b62"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W43WEV1X.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-26fd39e5ca04d7d76143c86a3e7a51ff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W43WEV1X.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-26fd39e5ca04d7d76143c86a3e7a51ff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W43WEV1X.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. To view the reflection of the new hostname in the command prompt,
 log off and log back in as user1. The new prompt will look like:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-c3835de80461851a2e18147413f6ee0a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YEUTYO6N.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c3835de80461851a2e18147413f6ee0a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YEUTYO6N.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-94836f225d83510f61e0696d53103eab" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YEUTYO6N.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-94836f225d83510f61e0696d53103eab"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YEUTYO6N.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>\</p>
 <p>On server2:</p>
@@ -369,16 +369,16 @@ log off and log back in as user1. The new prompt will look like:</p>
 server20.example.com:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-90179b9109d0d9f29b56f8e6f2fc61b3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6YWIE1SY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-90179b9109d0d9f29b56f8e6f2fc61b3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6YWIE1SY.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-351015014ab576492a89d680796a393d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6YWIE1SY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-351015014ab576492a89d680796a393d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6YWIE1SY.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. To view the reflection of the new hostname in the command prompt,
 log off and log back in as user1. You can also use the hostname command
 to view the new name.</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-84f476aa3859a8b1241e8a028a1fdc48" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-5E8TDXP3.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-84f476aa3859a8b1241e8a028a1fdc48"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-5E8TDXP3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-548e16969f2e9fbd832f99ea5f178609" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-5E8TDXP3.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-548e16969f2e9fbd832f99ea5f178609"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-5E8TDXP3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>You can also change the system hostname using the nmcli command. For
 instance, you could have used nmcli general hostname
@@ -416,8 +416,8 @@ assignments on the system. Let&rsquo;s run this command on server10 and see
 what it returns:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8f87fdc11fdc1dfb006e5440b6e632e2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DC5CHQGL.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8f87fdc11fdc1dfb006e5440b6e632e2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DC5CHQGL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-1f6bcebf224224e7f0b6d24f3a333245" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DC5CHQGL.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1f6bcebf224224e7f0b6d24f3a333245"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DC5CHQGL.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output indicates one configured network connection (number 2 above)
 called enp0s3 with IPv4 address 192.168.0.110 assigned to it. The other
@@ -556,8 +556,8 @@ perform a logical AND operation. For each matching 1 you get a 1,
 otherwise you get a 0. The following highlights the ANDed bits:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5784625c39658425f22c6b5c40f1e493" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-S525VJKR.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5784625c39658425f22c6b5c40f1e493"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-S525VJKR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5cbb600bdde74b81578f7bebc0192dd7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-S525VJKR.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5cbb600bdde74b81578f7bebc0192dd7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-S525VJKR.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>This calculation enables you to ascertain the subnet address from a
 given IP and subnet mask.</p>
@@ -595,8 +595,8 @@ defined in the /etc/protocols file. An excerpt from this file is
 provided below:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-061ccbdf961b4302c96d164eed7032e6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-E7431CE3.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-061ccbdf961b4302c96d164eed7032e6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-E7431CE3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-aad9a14b75f7ab09330c6420feee28e6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-E7431CE3.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-aad9a14b75f7ab09330c6420feee28e6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-E7431CE3.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Column 1 in the output lists the name of a protocol, followed by the
 associated port number, alias, and a short description in columns 2, 3,
@@ -638,8 +638,8 @@ defined in the /etc/services file, an excerpt of which is presented
 below:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-38f75e3a73885db695a566ec336c99ce" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CPHWPC0K.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-38f75e3a73885db695a566ec336c99ce"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CPHWPC0K.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5220c137f2da66e08898d70c6d3ddaca" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CPHWPC0K.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5220c137f2da66e08898d70c6d3ddaca"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CPHWPC0K.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Column 1 lists the official name of a network service, followed by the
 port number and transport layer protocol the service uses, optional
@@ -671,8 +671,8 @@ communication; and so on. See a sample below that shows two packets
 (-c2) sent from server10 to the IP address of server20:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-bfcffd860751830ee8851f7fb4f2fcbc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JL8F9TOU.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bfcffd860751830ee8851f7fb4f2fcbc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JL8F9TOU.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-c626f3096e1192aa939a00f2bf1cc591" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JL8F9TOU.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c626f3096e1192aa939a00f2bf1cc591"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JL8F9TOU.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Other commands, such as traceroute, also employ this protocol for route
 determination and debugging between network entities. The IPv6 version
@@ -693,8 +693,8 @@ referred to as the hardware, physical, link layer, or MAC address.</p>
 the system along with their Ethernet addresses:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-71775e615d74bfe67486b9df26bdc0a2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2F9CISML.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-71775e615d74bfe67486b9df26bdc0a2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2F9CISML.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f21ef65e767e4ce1e6974d4f6a59d99d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2F9CISML.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f21ef65e767e4ce1e6974d4f6a59d99d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2F9CISML.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>IP and hardware addresses work hand in hand, and a combination of both
 is critical to identifying the correct destination node on the network.
@@ -737,8 +737,8 @@ representation.</p>
 <p>The ip addr command also shows IPv6 addresses for the interfaces:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-997d89c523fb4f1b2029c39b055295d2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YG09ZPGB.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-997d89c523fb4f1b2029c39b055295d2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YG09ZPGB.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-7a961a1faaf9f2c47b2fdee1c75f812a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YG09ZPGB.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7a961a1faaf9f2c47b2fdee1c75f812a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YG09ZPGB.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>It returns two IPv6 addresses. The first one belongs to the loopback
 interface, and the second one is assigned to the enp0s3 connection.</p>
@@ -841,8 +841,8 @@ Select &ldquo;Internal Network&rdquo; from the drop down list next to &ldquo;Att
 See Figure 15-1.</p>
 <p>\</p>
 <p>::: {style=&ldquo;text-align: center;&rdquo;}
-<a href="#R-image-d06e194375af0bd6fdd0ce6fa975544c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-908NCBCE.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d06e194375af0bd6fdd0ce6fa975544c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-908NCBCE.jpg"></a>{height=&ldquo;100%&rdquo;}
+<a href="#R-image-2f3a913c360ae8a7ade512fef2553fcb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-908NCBCE.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2f3a913c360ae8a7ade512fef2553fcb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-908NCBCE.jpg"></a>{height=&ldquo;100%&rdquo;}
 :::</p>
 <p>Figure 15-1 VirtualBox Manager | Add Network Interface</p>
 <p>\</p>
@@ -852,8 +852,8 @@ See Figure 15-1.</p>
 verify the new interface:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-c1a2ff04ee61a1de0f581eb4b056b5bf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BZSQYGEE.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c1a2ff04ee61a1de0f581eb4b056b5bf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BZSQYGEE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-25ad77e65f5ee6555d99fd707d194291" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BZSQYGEE.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-25ad77e65f5ee6555d99fd707d194291"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BZSQYGEE.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output reveals a new network device called enp0s8. This is the
 interface that you just added to the VM.</p>
@@ -899,8 +899,8 @@ at the time of RHEL installation. The current content of the file from
 server10 are presented below:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-d8a7c27b609f3086ae05ffdc5541cdc7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-I9WYVULT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d8a7c27b609f3086ae05ffdc5541cdc7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-I9WYVULT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-0d24a6eab6f7069a21808f99f658f4fb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-I9WYVULT.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d24a6eab6f7069a21808f99f658f4fb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-I9WYVULT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The file has multiple sections. Each section defines a set of networking
 properties for the connection. The output above shows five
@@ -1041,8 +1041,8 @@ run a few examples on server10 to understand the command&rsquo;s usage.</p>
 inactive:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-963e20acc94eafaf9af9f7db74a2e1ba" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-FEGVOF1H.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-963e20acc94eafaf9af9f7db74a2e1ba"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-FEGVOF1H.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5de25d8d654a62bc468229b488e51c80" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-FEGVOF1H.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5de25d8d654a62bc468229b488e51c80"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-FEGVOF1H.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output lists two connection profiles (NAME) and the devices (DEVICE)
 they are attached to. It also shows their UUID and type.</p>
@@ -1050,8 +1050,8 @@ they are attached to. It also shows their UUID and type.</p>
 <p>To deactivate (down) the connection (c) enp0s8:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-09ff9cbe2fd5dfe2e353d0d85f016b6a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OGXVUNJ2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-09ff9cbe2fd5dfe2e353d0d85f016b6a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OGXVUNJ2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-6c35cbeee7da71ce05a17b5c12f9a388" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OGXVUNJ2.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c35cbeee7da71ce05a17b5c12f9a388"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OGXVUNJ2.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The connection profile is detached from the device, disabling the
 connection. You can check with nmcli c s.</p>
@@ -1059,8 +1059,8 @@ connection. You can check with nmcli c s.</p>
 <p>To activate (up) the connection (c) enp0s8:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-0b080001299ad24cb8f918502f1f1530" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BBQZ027O.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0b080001299ad24cb8f918502f1f1530"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BBQZ027O.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f7b8a935c13047060455ddff80f1bcb8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BBQZ027O.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f7b8a935c13047060455ddff80f1bcb8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BBQZ027O.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The connection profile is reattached to the device, enabling the
 connection. You can check with nmcli c s.</p>
@@ -1068,8 +1068,8 @@ connection. You can check with nmcli c s.</p>
 <p>To display the status (s) of all available network devices (d):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-bff3e306ab9db54bc98fd64d8085524a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7QIY5FAN.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bff3e306ab9db54bc98fd64d8085524a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7QIY5FAN.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-c10debf9bcc2d7d0b664bea63614839e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7QIY5FAN.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c10debf9bcc2d7d0b664bea63614839e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7QIY5FAN.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output shows three devices and their types, states, and the
 connection profiles attached to them. The loopback interface is not
@@ -1093,20 +1093,20 @@ the command prompt.</p>
 information to establish a connection profile:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5187681b3128de8750187d0943d146bf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WDSOD3CW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5187681b3128de8750187d0943d146bf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WDSOD3CW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5f13706dcf11427529c11565946a93de" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WDSOD3CW.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5f13706dcf11427529c11565946a93de"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WDSOD3CW.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>2. Deactivate and reactivate this interface using the nmcli command:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8766c99dccdca8c5aa6eb3c5c84308a4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EX3VEWYC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8766c99dccdca8c5aa6eb3c5c84308a4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EX3VEWYC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-04a707748dabe13e59d7d582b22b74e7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EX3VEWYC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-04a707748dabe13e59d7d582b22b74e7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EX3VEWYC.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>3. Verify the activation of the connection:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-2e0c8fdd0d585a86dee8b37f79e1706b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-R1P6M917.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e0c8fdd0d585a86dee8b37f79e1706b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-R1P6M917.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-d7a3811a3d23521bc62a969b48f3732f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-R1P6M917.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d7a3811a3d23521bc62a969b48f3732f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-R1P6M917.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The new connection profile has been applied to the new network device
 enp0s8. The connection is now ready for use. The connectivity to
@@ -1127,8 +1127,8 @@ in Exercise 15-2. You will assign the IP 172.10.10.120/24 with gateway
 <p>1. Check the presence of the new interface:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-1f68e51a6bbb01b739d76ad4b59a2aff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZKNVR3JS.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1f68e51a6bbb01b739d76ad4b59a2aff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZKNVR3JS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-eea31454e7bceee15587b82e14bb1f96" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZKNVR3JS.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eea31454e7bceee15587b82e14bb1f96"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZKNVR3JS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output signifies the existence of a new network device called
 enp0s8. It does not have a connection profile attached at the moment.</p>
@@ -1139,8 +1139,8 @@ connection name (con-name), CIDR (ip4) 172.10.10.120/24, and gateway
 (gw4) 172.10.10.1:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-bf6935cbadb6d9038b7f83b3e338e64c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BFAAEYAO.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-bf6935cbadb6d9038b7f83b3e338e64c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BFAAEYAO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-78f520827fa8ed211ddd45270ed916fa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BFAAEYAO.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-78f520827fa8ed211ddd45270ed916fa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BFAAEYAO.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>A new connection has been added, attached to the new interface, and
 activated. In addition, the command has saved the connection information
@@ -1150,8 +1150,8 @@ in a new file called enp0s8-nmconnection and stored it in the
 <p>3. Confirm the new connection status:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-0ec03a5c570cba25f7d0fae524139a31" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-0MHFB9HV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0ec03a5c570cba25f7d0fae524139a31"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-0MHFB9HV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-55eb6cbe5389b722dbbcca6b4b3e9e2e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-0MHFB9HV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-55eb6cbe5389b722dbbcca6b4b3e9e2e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-0MHFB9HV.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The output indicates the association of the new connection with the
 network device.</p>
@@ -1159,8 +1159,8 @@ network device.</p>
 <p>4. Check the content of the enp0s8-nmconnection file:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5b16b770f849d6c76ad4b668609bbf00" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-V49TV5JB.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5b16b770f849d6c76ad4b668609bbf00"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-V49TV5JB.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-f80e5144feb1f61f3d259092e8d8fbed" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-V49TV5JB.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f80e5144feb1f61f3d259092e8d8fbed"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-V49TV5JB.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>There are a number of default directives added to the connection profile
 in addition to the configuration items you entered with the nmcli
@@ -1169,8 +1169,8 @@ command above.</p>
 <p>5. Check the IP assignments for the new connection:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-5e2b3f1ca5eec020b5da048ed400e8f6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-A19ICJSS.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5e2b3f1ca5eec020b5da048ed400e8f6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-A19ICJSS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-856a530d94ab73ab4b6b981b8b48f821" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-A19ICJSS.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-856a530d94ab73ab4b6b981b8b48f821"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-A19ICJSS.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The IP is assigned to the interface. The connection will be tested later
 in this chapter.</p>
@@ -1245,8 +1245,8 @@ you want transmitted.</p>
 (server20):</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-13f0529cf21991b03459b58097f0f33d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-K8CE63IT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-13f0529cf21991b03459b58097f0f33d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-K8CE63IT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-2dbf88d619e84f9ecde05ad0ff3d20f2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-K8CE63IT.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2dbf88d619e84f9ecde05ad0ff3d20f2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-K8CE63IT.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Under &ldquo;192.168.0.120 ping statistics,&rdquo; the output depicts the number of
 packets transmitted, received, and lost. The packet loss should be 0%,
@@ -1279,8 +1279,8 @@ hostnames.</p>
 <p>1. Open the /etc/hosts file and add the following entries:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-14a2c27548d72457971976fe54989d3c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BDOZQLFQ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-14a2c27548d72457971976fe54989d3c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BDOZQLFQ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-cdb58e8c103efeec40a3b523b10dcfe2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-BDOZQLFQ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cdb58e8c103efeec40a3b523b10dcfe2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-BDOZQLFQ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The IP addresses for both connections are added for both servers.</p>
 <p>\</p>
@@ -1289,34 +1289,34 @@ hostnames.</p>
 <p>2. Open the /etc/hosts file and add the following entries:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-6bc2deee6f6b723d1381ee18dcb64558" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-XRVPK61I.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6bc2deee6f6b723d1381ee18dcb64558"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-XRVPK61I.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-5df3693d67565f2a73f8ae8beb74fa6a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-XRVPK61I.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5df3693d67565f2a73f8ae8beb74fa6a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-XRVPK61I.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>The IP addresses for both connections are added for both servers.</p>
 <p>\</p>
 <p>3. Send two packets from server10 to the IP address of server20:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-1dff20c67d7453b985727c8713820cf4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QXTVCQ9J.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1dff20c67d7453b985727c8713820cf4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QXTVCQ9J.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-03a9ee1a3ef41967d1c3ca9407914446" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QXTVCQ9J.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-03a9ee1a3ef41967d1c3ca9407914446"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QXTVCQ9J.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>4. Issue two ping packets on server10 to the hostname of server20:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-038902e814862187e53f79b498586c99" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-5QK8GN1C.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-038902e814862187e53f79b498586c99"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-5QK8GN1C.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-61d2a25be107ba95ba772a7424ad01de" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-5QK8GN1C.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-61d2a25be107ba95ba772a7424ad01de"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-5QK8GN1C.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>5. Send one packet from server10 to the IP address of server20s8:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-da0c1d1ed0152d6919966d6bdabef63f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-93A700QQ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-da0c1d1ed0152d6919966d6bdabef63f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-93A700QQ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-1cf1fe18ef1e49a1aed2ed7f87c6a3ca" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-93A700QQ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1cf1fe18ef1e49a1aed2ed7f87c6a3ca"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-93A700QQ.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>6. Issue one ping packet on server10 to the hostname of server20s8:</p>
 <p>\</p>
 <!-- raw HTML omitted -->
-<p><a href="#R-image-8dd63ff376318344c0ddd9395861f373" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LCDENG3S.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8dd63ff376318344c0ddd9395861f373"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LCDENG3S.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
+<p><a href="#R-image-96eedf6ae9dec7009e02590c91e2e706" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-LCDENG3S.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-96eedf6ae9dec7009e02590c91e2e706"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-LCDENG3S.jpg"></a>{height=&ldquo;100%&rdquo;}</p>
 <!-- raw HTML omitted -->
 <p>Steps 3 through 6 verified the connectivity to the remote server over
 both connections. Each server has two IP addresses, and each IP address
@@ -1887,12 +1887,12 @@ can be used to view the system hostname.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1718995691" defer></script>
-        <script src="/js/lunr/lunr.min.js?1718995691" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1718995691" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1718995691" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1718995691" defer></script>
-        <script src="/js/search.js?1718995691" defer></script>
+        <script src="/js/auto-complete.js?1719007971" defer></script>
+        <script src="/js/lunr/lunr.min.js?1719007971" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1719007971" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1719007971" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1719007971" defer></script>
+        <script src="/js/search.js?1719007971" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -1963,8 +1963,8 @@ can be used to view the system hostname.</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1718995691" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1718995691" defer></script>
+    <script src="/js/clipboard.min.js?1719007971" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1719007971" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -1980,20 +1980,20 @@ can be used to view the system hostname.</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1718995691" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1718995691" defer></script>
-    <script src="/js/js-yaml.min.js?1718995691" defer></script>
+    <script src="/js/d3/d3-color.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1719007971" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1719007971" defer></script>
+    <script src="/js/js-yaml.min.js?1719007971" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1718995691" defer></script>
+    <script src="/js/theme.js?1719007971" defer></script>
   </body>
 </html>

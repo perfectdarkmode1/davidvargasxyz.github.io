@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/</link>
+    <link>http://davidvargas.xyz/</link>
     <description>I’m David, I spin poi, read books, tinker, and write. Check out what I am doing Now!&#xA;I started keeping summaries, notes, and reviews of books that I am reading.&#xA;Let’s Chat! I reply to every email.&#xA;Here are the current areas of content you can find here:&#xA;Linux Stuff&#xA;Tools&#xA;Networking&#xA;Writing&#xA;&lt;— You can also click the links in the side bar.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Nov 2023 06:20:36 -0700</lastBuildDate>
-    <atom:link href="http://localhost:45779/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>http://localhost:45779/linux/</link>
+      <link>http://davidvargas.xyz/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45779/linux/</guid>
+      <guid>http://davidvargas.xyz/linux/</guid>
       <description>RHCSA Stuff RHCSA Notes RHCSA Study Tracker Redhat Exam Environment How to Study for RHCSA RHCSA Study Points RHCSA Vagrant Lab Setup Fedora My Fedora Setup Misc Using Man Pages wsl2 Labs Turn a file into a block device </description>
     </item>
     <item>
       <title>Networking</title>
-      <link>http://localhost:45779/networking/</link>
+      <link>http://davidvargas.xyz/networking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45779/networking/</guid>
+      <guid>http://davidvargas.xyz/networking/</guid>
       <description>Articles ccna_spaced_repetition resources_for_passing_ccna things_to_learn_after_ccna The formatting and images of all of my networking notes go destroyed when migrating away from OneNote. But they still come in handy all of the time.&#xA;See my networking notes:&#xA;Cisco ccnp_devnet_sandbox_setup cisco_vlan_lab cli cml_setup_in_vmware device_management_protocols dhcp_config dhcp_snooping_and_arp_inspection ethernet_lans extended_acls ip_services ipv6 ipv6_addressing_and_subnetting ipv6_config ipv6_routing l2-etherchannel lan_architecture management nat ospf_concepts ospf_config ospf_lab ospf_network_types_and_neighbors qos router_operation routing_in_the_lan rstp securing_network_devices security_architectures spanning_tree spanning_tree_protocol_concepts standard_acls static_routes switch_interfaces switchport_security_config t-shoot_routing tcp_ip_basic tcp_ip_transport_and_applications vlans wan_architecture wans_and_ip_routing what_is_a_vlan_ wireless wireless_architectures wireless_lan wireless_security Juniper cisco_to_junos_cheat_sheet consoling_in_to_mx80_from_linux juniper_cli_basics junos_fundementals junos_paste_config toggle_poe </description>
     </item>
     <item>
       <title>Tools</title>
-      <link>http://localhost:45779/tools/</link>
+      <link>http://davidvargas.xyz/tools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45779/tools/</guid>
+      <guid>http://davidvargas.xyz/tools/</guid>
       <description>Containers Calibre Web with docker distrobox vagrantguide Website Apache buildawebsite githubpageshugo hugorelearn SCSSandSASSinhugo Add Plausible to Hugo Site Obsidian Free Obsidian sync Building a Dashboard How to use Templates How to use the dataview plugin YAML In Obsidian image_to_text Tracker Plugin Setup Git gitguide Vim vimguide Vim mode in bash Misc Calibre_Server emailserver iphonemigrate nextcloud pandoc Process-bookfusion-highlights proxmox_setup rsync Serial-in-on-linux Silverblue tmuxbook VS_Codium LEGO_BRICK_LABELS-CONTACT_SHEET Upcoming Projects: Searx Create my own searx search engine</description>
     </item>
     <item>
       <title>Writing</title>
-      <link>http://localhost:45779/writing/</link>
+      <link>http://davidvargas.xyz/writing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:45779/writing/</guid>
+      <guid>http://davidvargas.xyz/writing/</guid>
       <description>I wanted a category to share what I learn about writing. So i can improve my writing skills and become a better thinker and better at helping others.&#xA;Things I Learned from Dickie Bush and Nicolas Cole’s Writing Email Course </description>
     </item>
   </channel>

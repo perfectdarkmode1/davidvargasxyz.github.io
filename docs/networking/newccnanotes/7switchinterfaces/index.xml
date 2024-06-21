@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:45779/networking/newccnanotes/7switchinterfaces/</link>
+    <link>http://davidvargas.xyz/networking/newccnanotes/7switchinterfaces/</link>
     <description>7switchinterfaces 1.0 Network Fundamentals1.1 Explain the role and function of network components 1.1.b L2 and L3 switches1.4 Describe switching concepts Configuring Speed, Duplex, and Description autonegotiate○○What speed to useenabled by default&#xA;duplex {auto | full | half} and speed {auto | 10 | 100 | 1000} ○configure the speed and duplex settings&#xA;(config - add a text description to the interface - int) # description text&#xA;show interfaces status - lists port #, Name, status, vlan, duplex, speed, and type</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:45779/networking/newccnanotes/7switchinterfaces/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://davidvargas.xyz/networking/newccnanotes/7switchinterfaces/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

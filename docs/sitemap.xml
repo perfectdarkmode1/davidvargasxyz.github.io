@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:45779/linux/</loc>
+    <loc>http://davidvargas.xyz/linux/</loc>
     <lastmod>2023-11-06T06:20:36-07:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:45779/networking/</loc>
+    <loc>http://davidvargas.xyz/networking/</loc>
   </url>
   <url>
-    <loc>http://localhost:45779/tools/</loc>
+    <loc>http://davidvargas.xyz/tools/</loc>
   </url>
   <url>
-    <loc>http://localhost:45779/writing/</loc>
+    <loc>http://davidvargas.xyz/writing/</loc>
   </url>
   <url>
-    <loc>http://localhost:45779/categories/</loc>
+    <loc>http://davidvargas.xyz/categories/</loc>
   </url>
   <url>
-    <loc>http://localhost:45779/python/basics/</loc>
+    <loc>http://davidvargas.xyz/python/basics/</loc>
   </url>
   <url>
-    <loc>http://localhost:45779/tags/</loc>
+    <loc>http://davidvargas.xyz/tags/</loc>
   </url>
 </urlset>
