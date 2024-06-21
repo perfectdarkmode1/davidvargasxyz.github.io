@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36217&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="description" content="1.0 Network Fundamentals
+1.1 Explain the role and function of network components
+1.1.a Routers
+1.2 Describe characteristics of network topology architectures
+1.2.d WAN
+Leased-Line WANs
+Physical Details of Leased Lines
+predetermined speed Full Duplex Uses two pairs of wires one for each direction Conceptually crossover Leased Circuit
+Electrical circuit (line) between 2 endpoints Serial Link (line)
+Bits flow serially Routers use serial interfaces Point to point link (line)
+two points only T1">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="WANs and IP Routing - Perfect Dark Mode">
+    <meta name="twitter:description" content="1.0 Network Fundamentals
+1.1 Explain the role and function of network components
+1.1.a Routers
+1.2 Describe characteristics of network topology architectures
+1.2.d WAN
+Leased-Line WANs
+Physical Details of Leased Lines
+predetermined speed Full Duplex Uses two pairs of wires one for each direction Conceptually crossover Leased Circuit
+Electrical circuit (line) between 2 endpoints Serial Link (line)
+Bits flow serially Routers use serial interfaces Point to point link (line)
+two points only T1">
+    <meta property="og:url" content="http://localhost:36217/networking/cisco/wans_and_ip_routing/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:title" content="WANs and IP Routing - Perfect Dark Mode">
+    <meta property="og:description" content="1.0 Network Fundamentals
+1.1 Explain the role and function of network components
+1.1.a Routers
+1.2 Describe characteristics of network topology architectures
+1.2.d WAN
+Leased-Line WANs
+Physical Details of Leased Lines
+predetermined speed Full Duplex Uses two pairs of wires one for each direction Conceptually crossover Leased Circuit
+Electrical circuit (line) between 2 endpoints Serial Link (line)
+Bits flow serially Routers use serial interfaces Point to point link (line)
+two points only T1">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Networking">
+    <meta property="article:published_time" content="2023-11-06T06:20:36-07:00">
+    <meta property="article:modified_time" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="name" content="WANs and IP Routing - Perfect Dark Mode">
+    <meta itemprop="description" content="1.0 Network Fundamentals
+1.1 Explain the role and function of network components
+1.1.a Routers
+1.2 Describe characteristics of network topology architectures
+1.2.d WAN
+Leased-Line WANs
+Physical Details of Leased Lines
+predetermined speed Full Duplex Uses two pairs of wires one for each direction Conceptually crossover Leased Circuit
+Electrical circuit (line) between 2 endpoints Serial Link (line)
+Bits flow serially Routers use serial interfaces Point to point link (line)
+two points only T1">
+    <meta itemprop="datePublished" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="dateModified" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="wordCount" content="496">
+    <title>WANs and IP Routing - Perfect Dark Mode</title>
+    <link href="http://localhost:36217/networking/cisco/wans_and_ip_routing/" rel="canonical" type="text/html" title="WANs and IP Routing - Perfect Dark Mode">
+    <link href="/networking/cisco/wans_and_ip_routing/index.xml" rel="alternate" type="application/rss+xml" title="WANs and IP Routing - Perfect Dark Mode">
+    <link href="/images/favicon.png?1716026313" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1716026315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1716026315" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1716026315" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716026315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1716026315" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1716026315" rel="stylesheet">
+    <link href="/css/fonts.css?1716026315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1716026315" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1716026315" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1716026315" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1716026315" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1716026315" rel="stylesheet">
+    <link href="/css/print.css?1716026315" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1716026315" rel="stylesheet">
+    <script src="/js/variant.js?1716026315"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:36217';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/networking/cisco/wans_and_ip_routing/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            WANs and IP Routing
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/about/" target="_blank" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/now/" target="_blank" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/recommended/" target="_blank" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/booknotes/" target="_blank" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/contact/" target="_blank" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="wans-and-ip-routing">WANs and IP Routing</h1>
+
+<p>1.0 Network Fundamentals</p>
+<p>1.1 Explain the role and function of network components</p>
+<p>1.1.a Routers</p>
+<p>1.2 Describe characteristics of network topology architectures</p>
+<p>1.2.d WAN</p>
+<p>Leased-Line WANs</p>
+<p>Physical Details of Leased Lines</p>
+<ul>
+<li>predetermined speed</li>
+<li>Full Duplex</li>
+<li>Uses two pairs of wires one for each direction</li>
+<li>Conceptually crossover</li>
+</ul>
+<p>Leased Circuit</p>
+<ul>
+<li>Electrical circuit (line) between 2 endpoints</li>
+</ul>
+<p>Serial Link (line)</p>
+<ul>
+<li>Bits flow serially</li>
+<li>Routers use serial interfaces</li>
+</ul>
+<p>Point to point link (line)</p>
+<ul>
+<li>two points only</li>
+</ul>
+<p>T1</p>
+<ul>
+<li>1.544 Mbps</li>
+</ul>
+<p>WAN link</p>
+<ul>
+<li>General term</li>
+</ul>
+<p>Private Line</p>
+<ul>
+<li>Data is private</li>
+</ul>
+<p>HDLC Data-Link Details of Leased Lines</p>
+<ul>
+<li>Leased line specifies layer 1</li>
+<li>HDLC and PPP are the most popular Layer 2 protocols used on leased lines</li>
+</ul>
+<p>HDLC</p>
+<ul>
+<li>less work than ethernet because of point to point leased line</li>
+<li>has an address field, but the destination is implied</li>
+<li>Cant use between cisco and non cisco</li>
+<li>Cisco HDLC type field is proprietary</li>
+</ul>
+<p>Comparing HDLC Header Fields to Ethernet</p>
+<p>HDLC Header</p>
+<p>Flag</p>
+<ul>
+<li>Like preamble, SFD</li>
+<li>1 byte</li>
+</ul>
+<p>Destination address</p>
+<ul>
+<li>1 byte</li>
+</ul>
+<p>Control</p>
+<ul>
+<li>No longer used</li>
+<li>1 byte</li>
+</ul>
+<p>Type</p>
+<ul>
+<li>Type of layer 3 packet inside the frame</li>
+<li>2 bytes</li>
+</ul>
+<p>Data</p>
+<p>FCS</p>
+<ul>
+<li>Error detection</li>
+<li>2 bytes</li>
+</ul>
+<p>How Router Use a WAN Data Link</p>
+<p>How routers use HDLC when sending data</p>
+<ul>
+<li>LAN1 802.3header/IP Packet/ 802.3trailer &gt;</li>
+<li>HDLC HDLCheader/IP Packet/ HDLC Trailer &gt;</li>
+<li>LAN2 802.3header/Ippacket/802.3trailer &gt;</li>
+</ul>
+<p>Leased line negatives</p>
+<ul>
+<li>Higher cost and</li>
+<li>long install times</li>
+<li>Slow speeds</li>
+</ul>
+<p>Ethernet as a WAN technology</p>
+<p>Customer Router</p>
+<ul>
+<li>CPE</li>
+</ul>
+<p>Service provider</p>
+<ul>
+<li>
+<p>point of Presence (PoP)</p>
+</li>
+<li>
+<p>Where the fiber connects at the provider</p>
+</li>
+</ul>
+<p>Common ethernet WAN names</p>
+<ul>
+<li>
+<p>Ethernet WAN</p>
+</li>
+<li>
+<p>Ethernet Line Service (E-Line)</p>
+</li>
+<li>
+<p>Ethernet emulation</p>
+</li>
+<li>
+<p>Ethernet over MPLS (EoMPLS) (Multi protocol label switching) A technology used to create ethernet service for a customer.</p>
+</li>
+<li>
+<p>Acts like simple ethernet link between two routers</p>
+</li>
+</ul>
+<p>How Routers Route IP Packets Using Ethernet Emulation</p>
+<p>EoMPLS WAN (Provider network simulating an ethernet link)</p>
+<ul>
+<li>802.3 header and trailer</li>
+</ul>
+<p>IP Routing</p>
+<ol>
+<li>
+<p>Use FCS field to ensure that the frame had no errors; if errors occurred, discard the frame.</p>
+</li>
+<li>
+<p>Discard the old data-link header and trailer, leaving the IP packet.</p>
+</li>
+<li>
+<p>Compare the IP packet’s destination IP address to the routing table, and find the route that best matches the destination address. This route identifies the outgoing interface of the router and possibly the next-hop router IP address.</p>
+</li>
+<li>
+<p>Encapsulate the IP packet inside a new data-link header and trailer, appropriate for the outgoing interface, and forward the frame</p>
+</li>
+</ol>
+<p>The IP Header (20 bytes)</p>
+<ul>
+<li>Version, Length, DS Field, Packet Length (4 bytes)</li>
+<li>Identification, Flags, Fragment Offset (4 bytes)</li>
+<li>Time to Live, Protocol, Header Checksum (4 bytes)</li>
+<li>Source IP (4 bytes)</li>
+<li>Destination IP (4 bytes)</li>
+</ul>
+<p>IP Routing Protocols</p>
+<ol>
+<li>add route for each directly connected subnet</li>
+<li>tell neighbors about routes in routing table</li>
+<li>add new routes learned to routing table, with next hop as the router the address was learned from   </li>
+</ol>
+<p>ARP</p>
+<ul>
+<li>
+<p>Ethernet broadcast arp request &gt;</p>
+</li>
+<li>
+<p>Sender IP, sender MAC, Target IP, target MAC ??</p>
+</li>
+<li>
+<p>&lt; Ethernet unicast ARP reply</p>
+</li>
+<li>
+<p>Target IP, Target MAC, Sender IP, sender MAC</p>
+</li>
+</ul>
+<p>arp -a</p>
+<ul>
+<li>to see arp cache on most operating systems</li>
+</ul>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1716026315" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1716026315" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1716026315" defer></script>
+    <script src="/js/js-yaml.min.js?1716026315" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1716026315" defer></script>
+  </body>
+</html>

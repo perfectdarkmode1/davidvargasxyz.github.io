@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="description" content="Rhel Config root: /etc/httpd Primary config file: /etc/httpd/conf/httpd.conf Module config: conf.modules.d virtual host config: conf.d Log: /var/log/httpd User: apache
+httpd.conf
+used include to reference other files 3 categories Global settings virtualhost instructions for requests that do not match a VirtualHost defenition Virtual host examples:
+Basic authentication in Apache is configured in Location or Directory blocks
+SSL might have changed its name to TLS
+Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl.">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="Rhel Config root: /etc/httpd Primary config file: /etc/httpd/conf/httpd.conf Module config: conf.modules.d virtual host config: conf.d Log: /var/log/httpd User: apache
+httpd.conf
+used include to reference other files 3 categories Global settings virtualhost instructions for requests that do not match a VirtualHost defenition Virtual host examples:
+Basic authentication in Apache is configured in Location or Directory blocks
+SSL might have changed its name to TLS
+Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl.">
+    <meta property="og:url" content="http://perfectdarkmode.com/tools/apache/">
+    <meta property="og:description" content="Rhel Config root: /etc/httpd Primary config file: /etc/httpd/conf/httpd.conf Module config: conf.modules.d virtual host config: conf.d Log: /var/log/httpd User: apache
+httpd.conf
+used include to reference other files 3 categories Global settings virtualhost instructions for requests that do not match a VirtualHost defenition Virtual host examples:
+Basic authentication in Apache is configured in Location or Directory blocks
+SSL might have changed its name to TLS
+Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Tools">
+    <meta itemprop="description" content="Rhel Config root: /etc/httpd Primary config file: /etc/httpd/conf/httpd.conf Module config: conf.modules.d virtual host config: conf.d Log: /var/log/httpd User: apache
+httpd.conf
+used include to reference other files 3 categories Global settings virtualhost instructions for requests that do not match a VirtualHost defenition Virtual host examples:
+Basic authentication in Apache is configured in Location or Directory blocks
+SSL might have changed its name to TLS
+Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl.">
+    <meta itemprop="wordCount" content="304">
+    <title></title>
+    <link href="/css/fontawesome-all.min.css?1718973697" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1718973697" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1718973697" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718973697" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1718973697" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1718973697" rel="stylesheet">
+    <link href="/css/fonts.css?1718973697" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1718973697" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1718973697" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1718973697" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1718973697" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1718973697" rel="stylesheet">
+    <link href="/css/print.css?1718973697" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1718973697"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'amoled' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23N4FSG0HM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-23N4FSG0HM');
+</script>
+
+  </head>
+  <body class="mobile-support html" data-url="/tools/apache/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/about/" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/now/" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/recommended/" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/booknotes/" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/contact/" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id=""></h1>
+
+<h4 id="rhel">Rhel</h4>
+<p>Config root: /etc/httpd
+Primary config file:  /etc/httpd/conf/httpd.conf
+Module config: conf.modules.d
+virtual host config: conf.d
+Log: /var/log/httpd
+User: apache</p>
+<p>httpd.conf</p>
+<ul>
+<li>used <code>include</code> to reference other files</li>
+<li>3 categories
+<ul>
+<li>Global settings</li>
+<li>virtualhost</li>
+<li>instructions for requests that do not match a VirtualHost defenition</li>
+</ul>
+</li>
+</ul>
+<p>Virtual host examples:</p>
+<p><a href="#R-image-ccdc7ad147247df09c017c14cc004a1c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240402045440.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ccdc7ad147247df09c017c14cc004a1c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240402045440.png"></a></p>
+<p><a href="#R-image-9d6d4b8e89a50faca0388e5b7652a06c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240402045454.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9d6d4b8e89a50faca0388e5b7652a06c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240402045454.png"></a></p>
+<p>Basic authentication in Apache is configured in Location or Directory blocks</p>
+<p>SSL might have changed its name to TLS</p>
+<p><a href="#R-image-2e32b9193cb30277039df06729465636" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240402045643.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e32b9193cb30277039df06729465636"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240402045643.png"></a></p>
+<p>Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl. The public certificates can be readable by anyone, but the key should be accessible only to the Apache master-process user, typically root. We prefer to set permissions to 444 for the certificate and 400 for the key.</p>
+<p>All versions of the actual SSL protocol (precursor to TLS) are known to be insecure and should be disabled with the SSLProtocol directive, shown above.</p>
+<p>few ciphers have known weaknesses. You can configure the web server’s supported ciphers with the SSLCipherSuite directive</p>
+<p>Mozilla Server Side TLS guide is the best resource that we are aware of for staying current</p>
+<p>on best practices for TLS. It also has a handy configuration syntax reference for Apache, NGINX, and HAProxy.</p>
+<p>certbot:</p>
+<p>/etc/letencrypt/</p>
+<p>sectigo</p>
+<p>private key
+/etc/pki/tls/private/</p>
+<p>/etc/httpd/conf/httpd.conf
+Document root /var/www/html</p>
+<p>/var/www/swim</p>
+<p>IfModule mod_ssl.c</p>
+<p>cat 00-ssl.conf
+<code>LoadModule ssl_module modules/mod_ssl.so</code></p>
+<p>cat /usr/lib64/httpd/modules/mod_ssl.so
+(filled with gibberish)</p>
+<p>/etc/httpd/conf.d/vhost_marstherm-le-ssl.conf point to the let&rsquo;s encrypt SSL config</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@marstherm conf.d]# cat vhost_marstherm-le-ssl.conf 
+&lt;IfModule mod_ssl.c&gt;
+&lt;VirtualHost *:443&gt;
+        ServerName marstherm.psi.edu
+        Redirect / https://marstherm.psi.edu/
+SSLCertificateFile /etc/letsencrypt/live/marstherm.psi.edu/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/marstherm.psi.edu/privkey.pem
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateChainFile /etc/letsencrypt/live/marstherm.psi.edu/chain.pem
+&lt;/VirtualHost&gt;
+&lt;/IfModule&gt;</code></pre></div><p>/etc/httpd/conf.d/ssl.conf point to old ssl files</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@marstherm conf.d]# cat vhost_swim-le-ssl.conf 
+&lt;IfModule mod_ssl.c&gt;
+&lt;VirtualHost *:443&gt;
+        ServerName swim.psi.edu
+        Redirect / https://swim.psi.edu/
+
+
+  &lt;Directory /var/www/swim/&gt;
+        AllowOverride FileInfo AuthConfig Limit Indexes
+        Options Indexes FollowSymLinks
+        IndexOptions FancyIndexing
+  &lt;/Directory&gt;
+
+
+SSLCertificateFile /etc/letsencrypt/live/swim.psi.edu/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/swim.psi.edu/privkey.pem
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateChainFile /etc/letsencrypt/live/swim.psi.edu/chain.pem
+&lt;/VirtualHost&gt;
+&lt;/IfModule&gt;</code></pre></div><p>added the ssl certs to the normal ssl fileand renamed to letsencryptkettest.ssl.conf</p>
+<p>also moved the original ssl.conf to current.ssl.conf</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/V.png" alt="perfect dark mode">
+
+        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1718973697" defer></script>
+        <script src="/js/lunr/lunr.min.js?1718973697" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1718973697" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1718973697" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1718973697" defer></script>
+        <script src="/js/search.js?1718973697" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/linux/" class=""><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/tools/" class="parent "><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-cff67d57e00d6d598d882def3568f700" class="morespace collapsible-menu">
+          <li data-nav-id="/tools/apache/" class="active"><a class="padding" href="/tools/apache/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/writing/" class=""><a class="padding" href="/writing/">Writing<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/tools/apache/" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-amoled" value="amoled" selected>Amoled</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1718973697" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1718973697" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1718973697" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1718973697" defer></script>
+    <script src="/js/js-yaml.min.js?1718973697" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1718973697" defer></script>
+  </body>
+</html>

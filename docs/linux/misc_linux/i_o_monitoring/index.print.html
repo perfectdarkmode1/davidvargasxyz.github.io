@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36217&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="description" content="$ iostat
+- cpu and disk usage
+cpu info section
+%user:utilization at user level
+%nice: user level w/ nice priority &amp; cpu utilization with nice priorities
+%system: system level (kernel)
+%iowait: time(s) cpu was idle when system had outstandingdisk i/o request
+%steal: involuntary wait time by cpu while hypervisor was servicing another virtual processor
+%idle: cpu idle time w/ no outstanding disk i/o request
+Disk utilization section (2nd part)
+tps: transfers per second issued to device">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="IO Monitoring - Perfect Dark Mode">
+    <meta name="twitter:description" content="$ iostat
+- cpu and disk usage
+cpu info section
+%user:utilization at user level
+%nice: user level w/ nice priority &amp; cpu utilization with nice priorities
+%system: system level (kernel)
+%iowait: time(s) cpu was idle when system had outstandingdisk i/o request
+%steal: involuntary wait time by cpu while hypervisor was servicing another virtual processor
+%idle: cpu idle time w/ no outstanding disk i/o request
+Disk utilization section (2nd part)
+tps: transfers per second issued to device">
+    <meta property="og:url" content="http://localhost:36217/linux/misc_linux/i_o_monitoring/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:title" content="IO Monitoring - Perfect Dark Mode">
+    <meta property="og:description" content="$ iostat
+- cpu and disk usage
+cpu info section
+%user:utilization at user level
+%nice: user level w/ nice priority &amp; cpu utilization with nice priorities
+%system: system level (kernel)
+%iowait: time(s) cpu was idle when system had outstandingdisk i/o request
+%steal: involuntary wait time by cpu while hypervisor was servicing another virtual processor
+%idle: cpu idle time w/ no outstanding disk i/o request
+Disk utilization section (2nd part)
+tps: transfers per second issued to device">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linux">
+    <meta property="article:published_time" content="2023-11-06T06:20:36-07:00">
+    <meta property="article:modified_time" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="name" content="IO Monitoring - Perfect Dark Mode">
+    <meta itemprop="description" content="$ iostat
+- cpu and disk usage
+cpu info section
+%user:utilization at user level
+%nice: user level w/ nice priority &amp; cpu utilization with nice priorities
+%system: system level (kernel)
+%iowait: time(s) cpu was idle when system had outstandingdisk i/o request
+%steal: involuntary wait time by cpu while hypervisor was servicing another virtual processor
+%idle: cpu idle time w/ no outstanding disk i/o request
+Disk utilization section (2nd part)
+tps: transfers per second issued to device">
+    <meta itemprop="datePublished" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="dateModified" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="wordCount" content="334">
+    <title>IO Monitoring - Perfect Dark Mode</title>
+    <link href="http://localhost:36217/linux/misc_linux/i_o_monitoring/" rel="canonical" type="text/html" title="IO Monitoring - Perfect Dark Mode">
+    <link href="/linux/misc_linux/i_o_monitoring/index.xml" rel="alternate" type="application/rss+xml" title="IO Monitoring - Perfect Dark Mode">
+    <link href="/images/favicon.png?1716026583" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1716026584" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1716026584" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1716026584" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716026584" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1716026584" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1716026584" rel="stylesheet">
+    <link href="/css/fonts.css?1716026584" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1716026584" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1716026584" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1716026584" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1716026584" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1716026584" rel="stylesheet">
+    <link href="/css/print.css?1716026584" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1716026584" rel="stylesheet">
+    <script src="/js/variant.js?1716026584"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:36217';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/linux/misc_linux/i_o_monitoring/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            IO Monitoring
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/about/" target="_blank" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/now/" target="_blank" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/recommended/" target="_blank" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/booknotes/" target="_blank" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/contact/" target="_blank" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="io-monitoring">IO Monitoring</h1>
+
+<p>$ iostat</p>
+<p>- cpu and disk usage</p>
+<p>cpu info section</p>
+<p>%user:utilization at user level</p>
+<p>%nice: user level w/ nice priority &amp; cpu utilization with nice priorities</p>
+<p>%system: system level (kernel)</p>
+<p>%iowait: time(s) cpu was idle when system had outstandingdisk i/o request</p>
+<p>%steal: involuntary wait time by cpu while hypervisor was servicing another virtual processor</p>
+<p>%idle: cpu idle time w/ no outstanding disk i/o request</p>
+<p>Disk utilization section (2nd part)</p>
+<p>tps: transfers per second issued to device</p>
+<p>transfers= i/o request to device</p>
+<p>- indeterminate size</p>
+<p>- multiple logical requests combined into a single i/o request</p>
+<p>kB_read/s: amount of data read from device</p>
+<p>kB_wrtn/s: amount of data written to device</p>
+<p>kB_read: total # read</p>
+<p>kB_wrtn: total # written</p>
+<p>Memory monitoring</p>
+<p>$ vmstat</p>
+<p>- monitor memory</p>
+<p>Feilds</p>
+<p>Procs</p>
+<p>r: # of processes for run time</p>
+<p>b: # of processes in uninterruptible sleep</p>
+<p>Memory</p>
+<p>swpd: how much virtual memory used</p>
+<p>free: how much free memory</p>
+<p>buff: how much buffer memory</p>
+<p>cache: how much cache memory</p>
+<p>Swap</p>
+<p>si: amount of memory swapped in from disk</p>
+<p>so: amount of memory swapped out to disk</p>
+<p>io</p>
+<p>bi: blocks received in from block device</p>
+<p>bo: blocks sent out to block device</p>
+<p>system</p>
+<p>in: interrupts per second</p>
+<p>cs: context switches per second</p>
+<p>CPU (time spent)</p>
+<p>us: user time</p>
+<p>sy: kernel; time</p>
+<p>id: idle</p>
+<p>wa: waiting for io</p>
+<p>Continuous Monitoring</p>
+<p>- collect, report, and save system activity information</p>
+<p>Installing sar</p>
+<p>- used for historical analysis</p>
+<p>$ sudo apt install sysstat</p>
+<p>Setting up data collection</p>
+<p>if sar doesn&rsquo;t automatically start collecting data</p>
+<p>- modify the ENABLED field in</p>
+<p>/etc/default/sysstat</p>
+<p>- then restart the service</p>
+<p>$ etc/init.d/sysstat restart</p>
+<p>Using sar</p>
+<p>$ sudo sar -q</p>
+<p>- lists details from start of the day</p>
+<p>$ sudo sar -r</p>
+<p>- list memory usage details from start of day</p>
+<p>$ sar -q /var/log/sysstat/sa02 (day)</p>
+<p>- view certain day</p>
+<p>cron jobs</p>
+<p>- used to schedule tasks (run programs)</p>
+<p>30 08 *** /home/pete/scripts/change_wallpaper</p>
+<p>(minute hour day month day of week)</p>
+<p>$ crontab -e</p>
+<p>- create a cron job by editing crontab file</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1716026584" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1716026584" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1716026584" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1716026584" defer></script>
+    <script src="/js/js-yaml.min.js?1716026584" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1716026584" defer></script>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36217&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="description" content="System V Overview (sys v) (“system five”)
+- init stops and starts essential processes
+- 3 major versions of init
+1. system V (most traditional version)
+2. upstart
+3. syst
+- Starts and stops processes sequentially
+- uses scripts to start and stop processes
+- Easy to solve dependencies (A comes before B)
+- Con: Only one service stops or starts at a time.
+- State of the machine is defined by runlevels (0-6) (varies by distro)">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Init - Perfect Dark Mode">
+    <meta name="twitter:description" content="System V Overview (sys v) (“system five”)
+- init stops and starts essential processes
+- 3 major versions of init
+1. system V (most traditional version)
+2. upstart
+3. syst
+- Starts and stops processes sequentially
+- uses scripts to start and stop processes
+- Easy to solve dependencies (A comes before B)
+- Con: Only one service stops or starts at a time.
+- State of the machine is defined by runlevels (0-6) (varies by distro)">
+    <meta property="og:url" content="http://localhost:36217/linux/misc_linux/init/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:title" content="Init - Perfect Dark Mode">
+    <meta property="og:description" content="System V Overview (sys v) (“system five”)
+- init stops and starts essential processes
+- 3 major versions of init
+1. system V (most traditional version)
+2. upstart
+3. syst
+- Starts and stops processes sequentially
+- uses scripts to start and stop processes
+- Easy to solve dependencies (A comes before B)
+- Con: Only one service stops or starts at a time.
+- State of the machine is defined by runlevels (0-6) (varies by distro)">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linux">
+    <meta property="article:published_time" content="2023-11-06T06:20:36-07:00">
+    <meta property="article:modified_time" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="name" content="Init - Perfect Dark Mode">
+    <meta itemprop="description" content="System V Overview (sys v) (“system five”)
+- init stops and starts essential processes
+- 3 major versions of init
+1. system V (most traditional version)
+2. upstart
+3. syst
+- Starts and stops processes sequentially
+- uses scripts to start and stop processes
+- Easy to solve dependencies (A comes before B)
+- Con: Only one service stops or starts at a time.
+- State of the machine is defined by runlevels (0-6) (varies by distro)">
+    <meta itemprop="datePublished" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="dateModified" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="wordCount" content="700">
+    <title>Init - Perfect Dark Mode</title>
+    <link href="http://localhost:36217/linux/misc_linux/init/" rel="canonical" type="text/html" title="Init - Perfect Dark Mode">
+    <link href="/linux/misc_linux/init/index.xml" rel="alternate" type="application/rss+xml" title="Init - Perfect Dark Mode">
+    <link href="/images/favicon.png?1716026587" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1716026588" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1716026588" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1716026588" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716026588" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1716026588" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1716026588" rel="stylesheet">
+    <link href="/css/fonts.css?1716026588" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1716026588" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1716026588" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1716026588" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1716026588" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1716026588" rel="stylesheet">
+    <link href="/css/print.css?1716026588" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1716026588" rel="stylesheet">
+    <script src="/js/variant.js?1716026588"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:36217';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/linux/misc_linux/init/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Init
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/about/" target="_blank" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/now/" target="_blank" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/recommended/" target="_blank" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/booknotes/" target="_blank" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/contact/" target="_blank" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="init">Init</h1>
+
+<p>System V Overview (sys v) (&ldquo;system five&rdquo;)</p>
+<p>- init stops and starts essential processes</p>
+<p>- 3 major versions of init</p>
+<p>1. system V (most traditional version)</p>
+<p>2. upstart</p>
+<p>3. syst</p>
+<p>- Starts and stops processes sequentially</p>
+<p>- uses scripts to start and stop processes</p>
+<p>- Easy to solve dependencies (A comes before B)</p>
+<p>- Con: Only one service stops or starts at a time.</p>
+<p>- State of the machine is defined by runlevels (0-6) (varies by distro)</p>
+<p>0: Shutdown</p>
+<p>1: Single User Mode</p>
+<p>2: multiuser mode without networking</p>
+<p>3: multiuser mode with networking</p>
+<p>4: unused</p>
+<p>5: multiuser mode w/ networking and GUI</p>
+<p>6: Reboot</p>
+<p>- systems boots and runs scripts associated with runlevel</p>
+<p>- scripts locations:</p>
+<p>/etc/rc.d/rc[runlevel number].d/</p>
+<p>/etc/init.d</p>
+<p>- Scripts that start with S(start) or K(kill) will run on startup and shutdown</p>
+<p>- numbers next to s or k are the sequence they run in</p>
+<p>/etc/rc.d/rc0.d $ ls</p>
+<p>k10 updates K80openvpn</p>
+<p>- See what runlevel your machine is booting to</p>
+<p>/etc.inittab</p>
+<p>- You can change default runlevel</p>
+<p>- slowly getting replaced</p>
+<p>- runlevels exsist in other distros to support systemv scripts</p>
+<p>System V Service</p>
+<p>Command tools to manage sysv services (not specific to sysv)</p>
+<p>List services</p>
+<p>$ service &ndash;status-all</p>
+<p>Start a service</p>
+<p>$ sudo service networking start</p>
+<p>Stop a service</p>
+<p>$ sudo service networking stop</p>
+<p>Restart a service</p>
+<p>$ sudo service networking restart</p>
+<p>Upstart</p>
+<p>developed by canonical (Ubuntu) but Ubuntu uses syst now.</p>
+<p>- Event and job driven model</p>
+<p>- improves on sysv (strict startup processes/ blocking of tasks.</p>
+<p>- To see if your system uses Upstart</p>
+<p>/usr/share/upstart (exists)</p>
+<p>- Jobs = actions that upstart performs</p>
+<p>- Events = messages that are received from other processes to trigger jobs</p>
+<p>$ ls /etc/init</p>
+<p>- see a list of jobs and their configurations</p>
+<p>- Shows how and when to start jobs</p>
+<p>- How upstart works</p>
+<p>- Loads job config files from /etc/init</p>
+<p>- when startup event occurs, run jobs triggered by it</p>
+<p>- those jobs make new events and those events trigger more jobs</p>
+<p>- Does this until all jobs are complete</p>
+<p>Upstart Jobs</p>
+<p>- no easy way to see where an event or job originated</p>
+<p>- will have to look around in /etc/iniit</p>
+<p>View Jobs</p>
+<p>$ initctl list</p>
+<p>- show jobs and their status</p>
+<p>- format: job goal/status</p>
+<p>- Will change as jobs start/ stop</p>
+<p>View specific jobs</p>
+<p>$ initctl status networking</p>
+<p>Manually start a job</p>
+<p>$ sudo initctl start networking</p>
+<p>Manually stop a job</p>
+<p>$ sudo initctl stop networking</p>
+<p>Manually restart a job</p>
+<p>$ sudo initctl restart networking</p>
+<p>Manually emit an event</p>
+<p>$ sudo initctl omit some_event</p>
+<p>Syst</p>
+<p>- Emerging standard for init</p>
+<p>- To tell if your system uses syst</p>
+<p>/use/lib/syst (exists)</p>
+<p>- Uses goals to get system up and running</p>
+<p>- targets to acheive with dependancies needed for those targets</p>
+<p>- does not follow strict sequence</p>
+<p>How syst boots</p>
+<p>1. loads config files located in /etc/syst/ system or /usr/lib/syst/system</p>
+<p>2. Determines boot goal (usually default.target)</p>
+<p>3. Finds out dependencies of boot target and activates them</p>
+<p>- boots into different targets (like run levels)</p>
+<p>poweroff.target</p>
+<p>-shutdown</p>
+<p>rescue.target</p>
+<p>-single user mode</p>
+<p>multi-user.target</p>
+<p>-multiuser with networking</p>
+<p>graphical.target</p>
+<p>-multiuser with networking and GUI</p>
+<p>reboot.target</p>
+<p>-restart</p>
+<p>default.target</p>
+<p>- usually points to graphical.target</p>
+<p>Units</p>
+<p>- the main object for syst</p>
+<p>- can also mount filesystems, monitor network sockets, etc.</p>
+<p>different types of units</p>
+<p>Service Units</p>
+<p>- end in .service</p>
+<p>- The ones that are starting and stopping</p>
+<p>Mount Units</p>
+<p>- Mount filesystems</p>
+<p>- end in .mount</p>
+<p>Target units</p>
+<p>- group together other units (which all get activated)</p>
+<p>- end in .target</p>
+<p>Syst goals</p>
+<p>Unit file/ how to control units</p>
+<p>service unit</p>
+<p>[unit]</p>
+<p>(description/ when to activate)</p>
+<p>[service]</p>
+<p>(start/stop/reload service)</p>
+<p>[install]</p>
+<p>(used for dependencies)</p>
+<p>Syst commands</p>
+<p>List units</p>
+<p>$ systemctllist-units</p>
+<p>View status of unit</p>
+<p>$ systemctl ststua networking.service</p>
+<p>start a service</p>
+<p>$ sudo systemctl start networking.service</p>
+<p>stop a service</p>
+<p>$ sudo systemctl stop networking.service</p>
+<p>restart a service</p>
+<p>$ sudo systemctl.restart networking.service</p>
+<p>Enable a unit</p>
+<p>$ sudo systemctl enable networking.service</p>
+<p>Disable a unit</p>
+<p>$ sudo systemctl disable networking.service</p>
+<p>Power States</p>
+<p>Shutdown system</p>
+<p>$ sudo shutdown -h now</p>
+<p>- power off</p>
+<p>Shutdown and specify the time</p>
+<p>$ sudo shutdown -n +2</p>
+<p>- can be in minutes</p>
+<p>Restart</p>
+<p>$ sudo shutdown -r now</p>
+<p>Reboot</p>
+<p>$ sudo reboot</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1716026588" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1716026588" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1716026588" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1716026588" defer></script>
+    <script src="/js/js-yaml.min.js?1716026588" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1716026588" defer></script>
+  </body>
+</html>

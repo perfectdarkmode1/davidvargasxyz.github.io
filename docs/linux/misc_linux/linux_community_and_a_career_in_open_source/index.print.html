@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36217&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="description" content="Distributions
+Debian
+- dpkg
+- GNU/Linux
+- Ubuntu
+- Rasbian
+Major Open source apllications
+software packages
+Debian, Ubuntu, Linux mint
+- dpkg, apt-get, and apt package managers
+- deb packages
+RedHat, Fedora, Centos
+- rpm, yum, and dnf package managers
+- rpm packages
+Dependencies = auxiliary packages needed by programs
+Individual package files operate on .dpkg and .rpm
+Catalogues (works with)
+- apt get, apt, yum, dnf
+- download new packages and their dependencies">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Open source and Linux Community - Perfect Dark Mode">
+    <meta name="twitter:description" content="Distributions
+Debian
+- dpkg
+- GNU/Linux
+- Ubuntu
+- Rasbian
+Major Open source apllications
+software packages
+Debian, Ubuntu, Linux mint
+- dpkg, apt-get, and apt package managers
+- deb packages
+RedHat, Fedora, Centos
+- rpm, yum, and dnf package managers
+- rpm packages
+Dependencies = auxiliary packages needed by programs
+Individual package files operate on .dpkg and .rpm
+Catalogues (works with)
+- apt get, apt, yum, dnf
+- download new packages and their dependencies">
+    <meta property="og:url" content="http://localhost:36217/linux/misc_linux/linux_community_and_a_career_in_open_source/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:title" content="Open source and Linux Community - Perfect Dark Mode">
+    <meta property="og:description" content="Distributions
+Debian
+- dpkg
+- GNU/Linux
+- Ubuntu
+- Rasbian
+Major Open source apllications
+software packages
+Debian, Ubuntu, Linux mint
+- dpkg, apt-get, and apt package managers
+- deb packages
+RedHat, Fedora, Centos
+- rpm, yum, and dnf package managers
+- rpm packages
+Dependencies = auxiliary packages needed by programs
+Individual package files operate on .dpkg and .rpm
+Catalogues (works with)
+- apt get, apt, yum, dnf
+- download new packages and their dependencies">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linux">
+    <meta property="article:published_time" content="2023-11-06T06:20:36-07:00">
+    <meta property="article:modified_time" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="name" content="Open source and Linux Community - Perfect Dark Mode">
+    <meta itemprop="description" content="Distributions
+Debian
+- dpkg
+- GNU/Linux
+- Ubuntu
+- Rasbian
+Major Open source apllications
+software packages
+Debian, Ubuntu, Linux mint
+- dpkg, apt-get, and apt package managers
+- deb packages
+RedHat, Fedora, Centos
+- rpm, yum, and dnf package managers
+- rpm packages
+Dependencies = auxiliary packages needed by programs
+Individual package files operate on .dpkg and .rpm
+Catalogues (works with)
+- apt get, apt, yum, dnf
+- download new packages and their dependencies">
+    <meta itemprop="datePublished" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="dateModified" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="wordCount" content="872">
+    <title>Open source and Linux Community - Perfect Dark Mode</title>
+    <link href="http://localhost:36217/linux/misc_linux/linux_community_and_a_career_in_open_source/" rel="canonical" type="text/html" title="Open source and Linux Community - Perfect Dark Mode">
+    <link href="/linux/misc_linux/linux_community_and_a_career_in_open_source/index.xml" rel="alternate" type="application/rss+xml" title="Open source and Linux Community - Perfect Dark Mode">
+    <link href="/images/favicon.png?1716026600" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1716026601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1716026601" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1716026601" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716026601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1716026601" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1716026601" rel="stylesheet">
+    <link href="/css/fonts.css?1716026601" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1716026601" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1716026601" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1716026601" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1716026601" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1716026601" rel="stylesheet">
+    <link href="/css/print.css?1716026601" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1716026601" rel="stylesheet">
+    <script src="/js/variant.js?1716026601"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:36217';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/linux/misc_linux/linux_community_and_a_career_in_open_source/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Open source and Linux Community
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/about/" target="_blank" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/now/" target="_blank" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/recommended/" target="_blank" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/booknotes/" target="_blank" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/contact/" target="_blank" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="open-source-and-linux-community">Open source and Linux Community</h1>
+
+<p>Distributions</p>
+<p>Debian</p>
+<p>- dpkg</p>
+<p>- GNU/Linux</p>
+<p>- Ubuntu</p>
+<p>- Rasbian</p>
+<p>Major Open source apllications</p>
+<p>software packages</p>
+<p>Debian, Ubuntu, Linux mint</p>
+<p>- dpkg, apt-get, and apt package managers</p>
+<p>- deb packages</p>
+<p>RedHat, Fedora, Centos</p>
+<p>- rpm, yum, and dnf package managers</p>
+<p>- rpm packages</p>
+<p>Dependencies = auxiliary packages needed by programs</p>
+<p>Individual package files operate on .dpkg and .rpm</p>
+<p>Catalogues (works with)</p>
+<p>- apt get, apt, yum, dnf</p>
+<p>- download new packages and their dependencies</p>
+<p>$ apt-cache search package-name</p>
+<p>$ apt search package_name</p>
+<p>- used to search for apps</p>
+<p>- Installation and removal of packages requires admin</p>
+<p>$ apt-get install package name</p>
+<p>$ apt install package_name</p>
+<p>- two ways to install package in Debian systems</p>
+<p>$ apt-get purge cups</p>
+<p>- uninstall program and config files</p>
+<p>$ figlet Awesome</p>
+<p>- picture text program</p>
+<p>RPM</p>
+<p>$ yum search package_name</p>
+<p>$ dnp</p>
+<p>- you can use descriptive terms to find programs by function</p>
+<p>$ yum search speaking cow (finds cowsay)</p>
+<p>$ cowsay “Linux is fun”</p>
+<p>Uninstall a package (remove keyword) (sudo)</p>
+<p>$ apt-get remove package_name</p>
+<p>$ apt remove package_name</p>
+<p>$ yum remove package_name</p>
+<p>$ dnf remove package_name</p>
+<p>- config files of removed programs are kept in the system</p>
+<p>Office Applications</p>
+<p>Apache Open Office and Libre Office</p>
+<p>- compatible with microsoft office doc types</p>
+<p>- ODF (open Document Format)</p>
+<p>- fully open and iso standardized</p>
+<p>- ensure documents can be transferred betwen operating systems &amp; applications from different vendors</p>
+<p>Main applications</p>
+<p>- writer</p>
+<p>- Calc (spreadsheets)</p>
+<p>- Impress (presentations)</p>
+<p>- Draw (vector drawing)</p>
+<p>- Math (math formulas)</p>
+<p>- Base (database</p>
+<p>Web Browsers</p>
+<p>Google Chrome &amp; Firefox</p>
+<p>Multimedia</p>
+<p>Blender (3d rendering)</p>
+<p>GIMP (photoshop)</p>
+<p>Inkscape (vector graphics editor)</p>
+<p>Audacity (audio editor)</p>
+<p>Imagemagick (cli image filetype converter</p>
+<p>VLC &amp; smplayer (video playback)</p>
+<p>Server Programs</p>
+<p>HTTP Servers</p>
+<p>- Apache</p>
+<p>- Nginx</p>
+<p>- Lighttpd</p>
+<p>PHP scripting languages</p>
+<p>- server side code</p>
+<p>Javascript</p>
+<p>- client side</p>
+<p>Popular open source relational databases</p>
+<p>- MariaDB</p>
+<p>- PostgreSQL</p>
+<p>Data Sharing</p>
+<p>NFS (Network File System)</p>
+<p>- standard way to share filesystems in Linux-only environment</p>
+<p>- read/write</p>
+<p>- share operating systems for thin clients</p>
+<p>Samba</p>
+<p>- data sharing in a mixed environment</p>
+<p>- share files and printers</p>
+<p>- associate</p>
+<p>Linux systems to a domain controller or SSSD (an authentication subsystem)</p>
+<p>Owncloud &amp; Nextcloud (fork)</p>
+<p>- fork = when one app is a spinoff of another</p>
+<p>Features</p>
+<p>- filesharing and sync</p>
+<p>- collaborative workspaces</p>
+<p>- calendar, contacts, and mail</p>
+<p>Nextcloud</p>
+<p>- private audio/ video confrencing</p>
+<p>- both offer paid versions</p>
+<p>- can install on private server for free</p>
+<p>- must be installed on a configured web server</p>
+<p>Network Administrat:cowboy: ion</p>
+<p>DNS &amp; DHCP</p>
+<p>Programming Languages</p>
+<p>- source code - human readable text file that describes what the program is doing</p>
+<p>- compiled languages - source code is converted to a binary file that can be executed by the computer</p>
+<p>- Compiler - program that converts source code to executable form</p>
+<p>- interpereted languages- interpereter reads source code and executes it&rsquo;s instructions</p>
+<p>Java Script</p>
+<p>- used for web pages</p>
+<p>C (compiled)</p>
+<p>- closely related with operating systems</p>
+<p>Java (compiled)</p>
+<p>- portable to other operating systems</p>
+<p>Perl</p>
+<p>- process text content (filtering &amp; parsing)</p>
+<p>Shell</p>
+<p>- automate complex or repetitive tasks</p>
+<p>Python</p>
+<p>- easy to use</p>
+<p>PHP</p>
+<p>- server side web</p>
+<p>- dynamic content</p>
+<p>LAMP server</p>
+<p>Linux OS/ Apache HTTPserver, My SQL, PHP</p>
+<p>Open Source Software and licensing</p>
+<p>(skipped for now)</p>
+<p>ICT Skills and working in Linux</p>
+<p>Open source Hypervisor</p>
+<p>- xen, kvm, and virtualbox</p>
+<p>Privacy issues when using the internet</p>
+<p>- almost all actions done in a browser are tracked &amp; analyzed by various parties</p>
+<p>Cookie Tracking</p>
+<p>- data sold to ad networks</p>
+<p>- like &amp; share buttons are also tracked</p>
+<p>- can use a cookie manager addon to control cookies better</p>
+<p>DNT (do not track)</p>
+<p>- setting that tells companies that they do not want to be tracked</p>
+<p>- they do not have to honor this setting</p>
+<p>“private windows”</p>
+<p>- ctrl + shift + p in firefox</p>
+<p>- new browser with no config is opened</p>
+<p>- personal data is not stored (history, passwords, cookies)</p>
+<p>- Leave no trace on computer used</p>
+<p>- good for accessing personal websites on public computers</p>
+<p>Password manager</p>
+<p>- keepass</p>
+<p>- oepn source</p>
+<p>- they won&rsquo;t make use of your data</p>
+<p>- Bitwarden</p>
+<p>- open source</p>
+<p>- cloud</p>
+<p>- can host your own bitwarden server</p>
+<p>- use a random password for every password</p>
+<p>Encryption</p>
+<p>TLS (transport layer security)</p>
+<p>- succesor of SSL</p>
+<p>- provides privacy &amp; authenticity using symmetric and public key cryptography</p>
+<p>- used with HTTPS</p>
+<p>File and email encryption with GnuPG (Gnu Privacy guard)</p>
+<p>- open source</p>
+<p>- sign, encrypt, and decrypt text, emails, files, directories, and disk partitions</p>
+<p>- public key for encrypting</p>
+<p>- private key for decrypting</p>
+<p>Disk Encryption</p>
+<p>- encrypt whole disk or partition</p>
+<p>- two basic methods</p>
+<p>- stacked</p>
+<p>- block</p>
+<p>Stacked</p>
+<p>- implemented on top of existing filesystem</p>
+<p>- stored encrypted</p>
+<p>Block</p>
+<p>- Happens below filesystem layer</p>
+<p>- makes sure everything written to a block device is encrypted</p>
+<p>- metadata, directory structure and permissions are also encrypted</p>
+<p>Dm-crypt</p>
+<p>- standard for block encryption for Linux</p>
+<p>- native in the kernel</p>
+<p>- can be used with LUKS (Linux Unified Key Setup) extension</p>
+<p>- implements a platform-independent standard for use with various tools</p>
+<p>EncFs</p>
+<p>Stackable method</p>
+<p>Veracrypt</p>
+<p>- multiplatform support</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1716026601" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1716026601" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1716026601" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1716026601" defer></script>
+    <script src="/js/js-yaml.min.js?1716026601" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1716026601" defer></script>
+  </body>
+</html>

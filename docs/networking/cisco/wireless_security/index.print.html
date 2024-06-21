@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36217&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="description" content="This chapter covers the following exam topics:
+1.0 Network Fundamentals
+1.11 Describe wireless principles
+1.11.d Encryption
+5.0 Security Fundamentals
+5.9 Describe wireless security protocols (WPA, WPA2, and WPA3)
+A comprehensive approach to wireless security focuses on the following areas:
+Identifying the endpoints of a wireless connection
+Identifying the end user (authentication)
+Protecting the wireless data from eavesdroppers (encryption)
+Protecting the wireless data from tampering (integrity)
+Authentication
+To use a wireless network, clients must first discover a basic service set (BSS) and then request permission to associate with it.">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Wireless Security - Perfect Dark Mode">
+    <meta name="twitter:description" content="This chapter covers the following exam topics:
+1.0 Network Fundamentals
+1.11 Describe wireless principles
+1.11.d Encryption
+5.0 Security Fundamentals
+5.9 Describe wireless security protocols (WPA, WPA2, and WPA3)
+A comprehensive approach to wireless security focuses on the following areas:
+Identifying the endpoints of a wireless connection
+Identifying the end user (authentication)
+Protecting the wireless data from eavesdroppers (encryption)
+Protecting the wireless data from tampering (integrity)
+Authentication
+To use a wireless network, clients must first discover a basic service set (BSS) and then request permission to associate with it.">
+    <meta property="og:url" content="http://localhost:36217/networking/cisco/wireless_security/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:title" content="Wireless Security - Perfect Dark Mode">
+    <meta property="og:description" content="This chapter covers the following exam topics:
+1.0 Network Fundamentals
+1.11 Describe wireless principles
+1.11.d Encryption
+5.0 Security Fundamentals
+5.9 Describe wireless security protocols (WPA, WPA2, and WPA3)
+A comprehensive approach to wireless security focuses on the following areas:
+Identifying the endpoints of a wireless connection
+Identifying the end user (authentication)
+Protecting the wireless data from eavesdroppers (encryption)
+Protecting the wireless data from tampering (integrity)
+Authentication
+To use a wireless network, clients must first discover a basic service set (BSS) and then request permission to associate with it.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Networking">
+    <meta property="article:published_time" content="2023-11-06T06:20:36-07:00">
+    <meta property="article:modified_time" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="name" content="Wireless Security - Perfect Dark Mode">
+    <meta itemprop="description" content="This chapter covers the following exam topics:
+1.0 Network Fundamentals
+1.11 Describe wireless principles
+1.11.d Encryption
+5.0 Security Fundamentals
+5.9 Describe wireless security protocols (WPA, WPA2, and WPA3)
+A comprehensive approach to wireless security focuses on the following areas:
+Identifying the endpoints of a wireless connection
+Identifying the end user (authentication)
+Protecting the wireless data from eavesdroppers (encryption)
+Protecting the wireless data from tampering (integrity)
+Authentication
+To use a wireless network, clients must first discover a basic service set (BSS) and then request permission to associate with it.">
+    <meta itemprop="datePublished" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="dateModified" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="wordCount" content="491">
+    <title>Wireless Security - Perfect Dark Mode</title>
+    <link href="http://localhost:36217/networking/cisco/wireless_security/" rel="canonical" type="text/html" title="Wireless Security - Perfect Dark Mode">
+    <link href="/networking/cisco/wireless_security/index.xml" rel="alternate" type="application/rss+xml" title="Wireless Security - Perfect Dark Mode">
+    <link href="/images/favicon.png?1716026313" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1716026315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1716026315" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1716026315" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716026315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1716026315" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1716026315" rel="stylesheet">
+    <link href="/css/fonts.css?1716026315" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1716026315" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1716026315" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1716026315" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1716026315" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1716026315" rel="stylesheet">
+    <link href="/css/print.css?1716026315" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1716026315" rel="stylesheet">
+    <script src="/js/variant.js?1716026315"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:36217';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/networking/cisco/wireless_security/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Wireless Security
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/about/" target="_blank" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/now/" target="_blank" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/recommended/" target="_blank" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/booknotes/" target="_blank" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/contact/" target="_blank" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="wireless-security">Wireless Security</h1>
+
+<p>This chapter covers the following exam topics:</p>
+<p>1.0 Network Fundamentals</p>
+<p>1.11 Describe wireless principles</p>
+<p>1.11.d Encryption</p>
+<p>5.0 Security Fundamentals</p>
+<p>5.9 Describe wireless security protocols (WPA, WPA2, and WPA3)</p>
+<p>A comprehensive approach to wireless security focuses on the following areas:</p>
+<p>Identifying the endpoints of a wireless connection</p>
+<p>Identifying the end user (authentication)</p>
+<p>Protecting the wireless data from eavesdroppers (encryption)</p>
+<p>Protecting the wireless data from tampering (integrity)</p>
+<p>Authentication</p>
+<p>To use a wireless network, clients must first discover a basic service set (BSS) and then request permission to associate with it. Clients should be authenticated by some means before they can become functioning members of the wireless LAN.</p>
+<p>A fake AP could also send spoofed management frames to disassociate or deauthenticate legitimate and active clients, just to disrupt normal network operation.</p>
+<p>To prevent this type of man-in-the-middle attack, the client should authenticate the AP before the client itself is authenticated</p>
+<p>Message Privacy</p>
+<p>data should be encrypted for its journey through free space. This is accomplished by encrypting the data payload in each wireless frame just prior to being transmitted, then decrypting it as it is received. The idea is to use an encryption method that the transmitter and receiver share, so the data can be encrypted and decrypted successfully.</p>
+<p>the AP should securely negotiate a unique encryption key to use for each associated client.</p>
+<p>No other device should know about or be able to use the same keys to eavesdrop and decrypt the data.</p>
+<p>The AP also maintains a “group key” that it uses when it needs to send encrypted data to all clients in its cell at one time. Each of the associated clients uses the same group key to decrypt the data.</p>
+<p>Message Integrity</p>
+<p>what if someone managed to alter the contents along the way? The recipient would have a very difficult time discovering that the original data had been modified.</p>
+<p>A message integrity check (MIC) is a security tool that can protect against data tampering.</p>
+<p>a way for the sender to add a secret stamp inside the encrypted data frame. The stamp is based on the contents of the data bits to be transmitted. Once the recipient decrypts the frame, it can compare the secret stamp to its own idea of what the stamp should be, based on the data bits that were received. If the two stamps are identical, the recipient can safely assume that the data has not been tampered with.</p>
+<p>![1. Original Data
+2. Compute MIC
+nihaol 23
+nihao 123
+6. Compare MICs
+5. Compute MIC
+3. Encrypt Data + MIC
+Client
+4. Decrypt
+niha0123
+741 fcb64901d</p>
+<p>Wireless Client Authentication Methods</p>
+<ol>
+<li>Open Authentication</li>
+</ol>
+<p>original 802.11 standard offered only two choices to authenticate a client: open authentication and WEP.</p>
+<p>Open authentication is true to its name; it offers open access to a WLAN. The only requirement is that a client must use an 802.11 authentication request before it attempts to associate with an AP. No other credentials are needed.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1716026315" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1716026315" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1716026315" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1716026315" defer></script>
+    <script src="/js/js-yaml.min.js?1716026315" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1716026315" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="description" content="This chapter describes the following major topics:
+Master Boot Record vs. GUID Partition Table Identify and understand disk partitions The concept of thin provisioning, and its benefits Create and delete partition on MBR disk Create and delete partition on GPT disk Overview of Virtual Data Optimizer and how it conserves storage Create and delete a Virtual Data Optimizer volume RHCSA Objectives:
+List, create, and delete partitions on MBR and GPT disks Configure disk compression Data is stored on disks that are logically divided into partitions.">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="This chapter describes the following major topics:
+Master Boot Record vs. GUID Partition Table Identify and understand disk partitions The concept of thin provisioning, and its benefits Create and delete partition on MBR disk Create and delete partition on GPT disk Overview of Virtual Data Optimizer and how it conserves storage Create and delete a Virtual Data Optimizer volume RHCSA Objectives:
+List, create, and delete partitions on MBR and GPT disks Configure disk compression Data is stored on disks that are logically divided into partitions.">
+    <meta property="og:url" content="http://perfectdarkmode.com/linux/rhcsa/13_basic_storage_partitioning/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:description" content="This chapter describes the following major topics:
+Master Boot Record vs. GUID Partition Table Identify and understand disk partitions The concept of thin provisioning, and its benefits Create and delete partition on MBR disk Create and delete partition on GPT disk Overview of Virtual Data Optimizer and how it conserves storage Create and delete a Virtual Data Optimizer volume RHCSA Objectives:
+List, create, and delete partitions on MBR and GPT disks Configure disk compression Data is stored on disks that are logically divided into partitions.">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linux">
+    <meta itemprop="description" content="This chapter describes the following major topics:
+Master Boot Record vs. GUID Partition Table Identify and understand disk partitions The concept of thin provisioning, and its benefits Create and delete partition on MBR disk Create and delete partition on GPT disk Overview of Virtual Data Optimizer and how it conserves storage Create and delete a Virtual Data Optimizer volume RHCSA Objectives:
+List, create, and delete partitions on MBR and GPT disks Configure disk compression Data is stored on disks that are logically divided into partitions.">
+    <meta itemprop="wordCount" content="3974">
+    <title></title>
+    <link href="/images/favicon.png?1717686346" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1717686347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1717686347" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1717686347" rel="stylesheet">
+    <link href="/css/auto-complete.css?1717686347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1717686347" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1717686347" rel="stylesheet">
+    <link href="/css/fonts.css?1717686347" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1717686347" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1717686347" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1717686347" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1717686347" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1717686347" rel="stylesheet">
+    <link href="/css/print.css?1717686347" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1717686347"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/perfectdarkmode.com';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-23N4FSG0HM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-23N4FSG0HM');
+</script>
+
+  </head>
+  <body class="mobile-support html" data-url="/linux/rhcsa/13_basic_storage_partitioning/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#storage-management-overview">Storage Management Overview</a></li>
+      </ul>
+    </li>
+    <li><a href="#master-boot-record-mbr">Master Boot Record (MBR)</a></li>
+    <li><a href="#guid-partition-table-gpt">GUID Partition Table (GPT)</a>
+      <ul>
+        <li><a href="#disk-partitions">Disk Partitions</a></li>
+        <li><a href="#lsblk-command">lsblk command</a></li>
+        <li><a href="#fdisk-and-parted-commands">fdisk and <em>parted</em> commands</a></li>
+        <li><a href="#storage-management-tools">Storage Management Tools</a></li>
+        <li><a href="#thin-provisioning">Thin Provisioning</a></li>
+        <li><a href="#adding-storage-for-practice">Adding Storage for Practice</a></li>
+        <li><a href="#lab-add-required-storage-to-server2">Lab: Add Required Storage to server2</a></li>
+        <li><a href="#parted-command-partition-editor">parted Command (<em>partition editor</em>)</a></li>
+        <li><a href="#lab--create-an-mbr-partition">Lab:  Create an MBR Partition</a></li>
+        <li><a href="#lab-delete-an-mbr-partition">Lab: Delete an MBR Partition</a></li>
+        <li><a href="#gpt-storage-management-with-gdisk">GPT Storage Management with gdisk</a></li>
+        <li><a href="#lab-create-a-gpt-partition">Lab: Create a GPT Partition</a></li>
+        <li><a href="#lab-delete-a-gpt-partition">Lab: Delete a GPT Partition</a></li>
+      </ul>
+    </li>
+    <li><a href="#storage-optimization-with-virtual-data-optimizer-vdo">Storage Optimization with Virtual Data Optimizer (VDO)</a>
+      <ul>
+        <li><a href="#how-vdo-conserves-storage-space">How VDO Conserves Storage Space</a></li>
+        <li><a href="#vdo-and-vdostats-commands">vdo and vdostats commands</a></li>
+        <li><a href="#lab-install-software-and-activate-vdo">Lab: Install Software and Activate VDO</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/about/" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/now/" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/recommended/" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/booknotes/" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/contact/" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id=""></h1>
+
+<p>This chapter describes the following major topics:</p>
+<ul>
+<li>Master Boot Record vs. GUID Partition Table</li>
+<li>Identify and understand disk partitions</li>
+<li>The concept of thin provisioning, and its benefits</li>
+<li>Create and delete partition on MBR disk</li>
+<li>Create and delete partition on GPT disk</li>
+<li>Overview of Virtual Data Optimizer and how it conserves storage</li>
+<li>Create and delete a Virtual Data Optimizer volume</li>
+</ul>
+<p>RHCSA Objectives:</p>
+<ul>
+<li>List, create, and delete partitions on MBR and GPT disks</li>
+<li>Configure disk compression</li>
+</ul>
+<p>Data is stored on disks that are logically divided into
+partitions.</p>
+<p>A partition can exist on a portion of a disk, on an entire
+disk, or it may span multiple disks.</p>
+<p>Each partition is accessed and managed independent of other partitions and may contain a file system or swap space.</p>
+<p>Partitioning information is stored at special disk locations
+that the system references at boot time.</p>
+<p>RHEL offers a number of tools for partition management.</p>
+<p>Partitions created with a combination of most of these tools can coexist on a single disk.</p>
+<p>Thin provisioning is a powerful feature that guarantees an efficient use of storage space by allocating only what is needed and by storing data at adjacent locations.</p>
+<p>Many storage management solutions incorporate thin
+provisioning technology in their core configuration.</p>
+<p>Virtual Disk Optimizer (VDO) is one of the newer storage management solutions incorporated in RHEL.</p>
+<p>It capitalizes on thin provisioning, de-duplication, and compression technologies to conserve storage space,
+improve data throughput, and save money.</p>
+<h3 id="storage-management-overview">Storage Management Overview</h3>
+<p>partition information is stored on the disk in a small region, which is read by the operating system at boot time.</p>
+<p>This region is referred to as the <em>Master Boot Record</em> (MBR) on the BIOS-based systems, and <em>GUID
+Partition Table</em> (GPT) on the UEFI-based systems.</p>
+<p>At system boot, the BIOS/UEFI</p>
+<ul>
+<li>scans all storage devices,</li>
+<li>detects the presence of MBR/GPT areas,</li>
+<li>identifies the boot disks,</li>
+<li>loads the bootloader program in memory from the default boot disk,</li>
+<li>executes the boot code to read the partition table and identify the <em>/boot</em> partition,</li>
+<li>loads the kernel in memory, and passes control over to it.</li>
+</ul>
+<p>Though MBR and GPT are designed for different PC firmware types, their job is essentially the same: to store
+disk partition information and the boot code.</p>
+<h2 id="master-boot-record-mbr">Master Boot Record (MBR)</h2>
+<ul>
+<li>resides on the first sector of the boot disk. MBR</li>
+<li>was the preferred choice for saving partition table information on x86-based computers.</li>
+<li>However, with the arrival of bigger and larger hard drives, a newer firmware specification (UEFI) was introduced.</li>
+<li>MBR is still widely used, but its use is diminishing in favor of UEFI.</li>
+</ul>
+<p>MBR allows the creation of three types of partition&mdash;<em>primary</em>, <em>extended</em>, and <em>logical</em>&mdash;on a single disk.</p>
+<ul>
+<li>primary and logical
+<ul>
+<li>can be used for data storage;</li>
+</ul>
+</li>
+<li>extended
+<ul>
+<li>a mere enclosure for holding the logical partitions and it is not meant for data storage.</li>
+</ul>
+</li>
+<li>supports the creation of up to four primary partitions numbered 1 through 4 at a time.</li>
+<li>In case additional partitions are required, one of the primary partitions must be deleted and replaced with an extended partition to be able to add logical partitions (up to 11) within that extended partition.</li>
+<li>Numbering for logical partitions begins at 5.</li>
+<li>supports a maximum of 14 usable partitions (3 primary and 11 logical) on a single disk.</li>
+<li>Cannot address storage space beyond 2TB. This is due to its 32-bit nature and its 512-byte disk sector size.</li>
+<li>non-redundant; the record it contains is not replicated, resulting in an unbootable system in the event of corruption.</li>
+<li>If your disk is smaller than 2TB and you don&rsquo;t intend to build more than 14 usable partitions, you can use MBR without issues.</li>
+</ul>
+<h2 id="guid-partition-table-gpt">GUID Partition Table (GPT)</h2>
+<ul>
+<li><em>Globally Unique Identifiers</em> (GUID) <em>Partition Table</em> (GPT)  This new standard</li>
+<li>ability to construct up to 128 partitions (no concept of extended or logical partitions),</li>
+<li>utilize disks larger than 2TB,</li>
+<li>use 4KB sector size,</li>
+<li>store a copy of the partition information before the end of the disk for redundancy.</li>
+<li>Allows a BIOS-based system to boot from a GPT disk using the bootloader program stored in a protective MBR at the first disk sector. In addition, the</li>
+<li>UEFI firmware also supports the secure boot feature
+<ul>
+<li>allows signed binaries to boot.</li>
+</ul>
+</li>
+</ul>
+<h3 id="disk-partitions">Disk Partitions</h3>
+<ul>
+<li>Care must be taken when adding a new partition to elude data corruption with overlapping an extant partition or wasting storage by leaving unused space between adjacent partitions.</li>
+<li>On <em>server1</em>, the disk that was allocated at the time of installation is recognized as <em>sda</em> (<strong>s</strong> for SATA, SAS, or SCSI device) <strong>d</strong>isk <strong>a</strong>, with the first partition identified as <em>sda1</em> and the second partition as <em>sda2</em>. Any subsequent disks added to the system will be known as <em>sdb</em>, <em>sdc</em>, <em>sdd</em>, and so on, and will use 1, 2, 3, <em>etc.</em> for partition numbering.</li>
+</ul>
+<h3 id="lsblk-command">lsblk command</h3>
+<ul>
+<li>list disk and partition information.</li>
+</ul>
+<p>View the current storage status on <em>server1</em>:
+<code>lsblk</code></p>
+<p>Output:</p>
+<ul>
+<li>reveals the presence of one 10GB disk, <em>sda</em>, with two partitions:
+<ul>
+<li><em>sda1</em> and <em>sda2</em>.</li>
+<li>The first partition holds <em>/boot</em>, and the second one is an LVM object encapsulating <em>root</em> and <em>swap</em> logical volumes within it.</li>
+<li>Both <em>sda1</em> and <em>sda2</em> partitions occupy the entire disk capacity.</li>
+</ul>
+</li>
+<li><em>sr0</em> represents the ISO image mounted as an optical medium.</li>
+</ul>
+<h3 id="fdisk-and-parted-commands">fdisk and <em>parted</em> commands</h3>
+<ul>
+<li>expose disk and partitioning information.</li>
+</ul>
+<p>Run <em>fdisk</em> with -l and see what it reveals:
+<code>fdisk -l</code></p>
+<p>output:
+Top Block</p>
+<ul>
+<li>size of <em>sda</em> in GBs, bytes, and sectors</li>
+<li>type of disk label (dos) the disk has</li>
+<li>disk&rsquo;s geometry<br>
+Second block</li>
+<li>two disk partitions:
+<ul>
+<li>sda1 as the bootable partition marked with *</li>
+<li>sda2 as an LVM  partition. It also exposes the starting and ending sector numbers, size in 1KB blocks, and type of each partition.</li>
+</ul>
+</li>
+<li>identifiers
+<ul>
+<li>83 and 8e are hexadecimal values for the partition types.
+last two blocks</li>
+</ul>
+</li>
+<li>Specific to the LVM logical volumes that exist within the <em>sda2</em> partition.</li>
+</ul>
+<h3 id="storage-management-tools">Storage Management Tools</h3>
+<ul>
+<li><em>parted</em>, gdisk, VDO, LVM, and Stratis.</li>
+<li>Partitions created with a combination of most of these tools</li>
+<li>toolsets can coexist on the same disk.</li>
+</ul>
+<p><em>parted</em></p>
+<ul>
+<li>simple tool that understands both MBR and GPT formats.</li>
+</ul>
+<p><em>gdisk</em></p>
+<ul>
+<li>designed to support the GPT format only</li>
+<li>may be used as a replacement of <em>parted</em>.</li>
+</ul>
+<p>VDO</p>
+<ul>
+<li>Disk optimizer software that takes advantage of certain technologies to minimize the overall data footprint on storage devices.</li>
+</ul>
+<p>LVM</p>
+<ul>
+<li>feature-rich logical volume management solution that gives flexibility in storage management.</li>
+</ul>
+<p>Stratis</p>
+<ul>
+<li>capitalizes on thin provisioning to create volumes much larger in size than the underlying storage devices they are built upon.</li>
+</ul>
+<h3 id="thin-provisioning">Thin Provisioning</h3>
+<ul>
+<li>Allows for an economical allocation and utilization of storage space by moving arbitrary data blocks to contiguous locations, which results in empty block elimination.</li>
+<li>With thin provisioning support in VDO, LVM, and Stratis, you can create a <em>thin pool</em> of storage space and assign volumes much larger storage space than the physical capacity of the pool.</li>
+<li>Workloads begin consuming the actual allocated space for data writing.</li>
+<li>When a preset custom threshold (80%, for instance) on the actual consumption of the physical storage in the pool is reached, expand the pool dynamically by adding more physical storage to it.</li>
+<li>The volumes will automatically start exploiting the new space right away.</li>
+<li>helps prevent spending more money upfront.</li>
+</ul>
+<h3 id="adding-storage-for-practice">Adding Storage for Practice</h3>
+<ul>
+<li>Need 4x250MB, 1x4GB, and 2x1GB virtual disks for storage exercises.</li>
+</ul>
+<h3 id="lab-add-required-storage-to-server2">Lab: Add Required Storage to server2</h3>
+<ul>
+<li>add the required storage disks to <em>server2</em> using VirtualBox.</li>
+<li>start VirtualBox and add 4x250MB, 1x4GB, and 2x1GB disks to <em>server2</em></li>
+</ul>
+<ol>
+<li>
+<p>Start VirtualBox on your Windows/Mac computer and highlight server2</p>
+</li>
+<li>
+<p>Click Settings at the top and then Storage on the window that
+pops up. Click on &ldquo;Controller: SATA&rdquo; to select it.</p>
+</li>
+</ol>
+<p><a href="#R-image-19169398ec307848e5cd6b09a7673e82" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="Pasted%20image%2020240413054446.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-19169398ec307848e5cd6b09a7673e82"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="Pasted%20image%2020240413054446.png"></a></p>
+<ol start="3">
+<li>
+<p>Click on the right-side icon next to &ldquo;Controller: SATA&rdquo; to add a hard disk.</p>
+</li>
+<li>
+<p>Follow this sequence to add a 250MB disk: Click &ldquo;Create new disk&rdquo;, &ldquo;VDI (Virtualization Disk Image)&rdquo;, &ldquo;Dynamically allocated&rdquo;, and adjust the size to 250MB. Assign the disk a unique name.</p>
+</li>
+<li>
+<p>Click Create to create and attach the disk to the VM.</p>
+</li>
+<li>
+<p>Repeat steps to add the other required disks</p>
+</li>
+<li>
+<p>The final list of disks should look similar to what is shown</p>
+</li>
+<li>
+<p>Power on <em>RHEL8-VM2</em> to boot RHEL 8 in it.</p>
+</li>
+<li>
+<p>run <code>lsblk</code> command to verify the new storage:
+<code>lsblk</code></p>
+</li>
+</ol>
+<p><strong>MBR Storage Management with parted</strong></p>
+<h3 id="parted-command-partition-editor">parted Command (<em>partition editor</em>)</h3>
+<ul>
+<li>used to partition disks. This program</li>
+<li>may be run interactively or directly from the command prompt. It</li>
+<li>understands and supports both MBR and GPT schemes, and</li>
+<li>can be used to create up to 128 partitions on a single GPT disk.</li>
+<li>subcommands for viewing, labeling, adding, naming, and deleting partitions.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Subcommand</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>print</td>
+<td>Displays the partition table that includes disk geometry and partition number, start and end, size, type, file system type, and relevant flags.</td>
+</tr>
+<tr>
+<td>mklabel</td>
+<td>Applies a label to the disk. Common labels are gpt and msdos.</td>
+</tr>
+<tr>
+<td>mkpart</td>
+<td>Makes a new partition</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Assigns a name to a partition</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>Removes the specified partition</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>use the /dev/sdb disk for these exercises.</li>
+<li>After making a partition, use the <em>print</em> subcommand to ensure you created what you wanted.</li>
+<li>/proc/partitions is also updated to reflect the results of partition management operations.</li>
+</ul>
+<h3 id="lab--create-an-mbr-partition">Lab:  Create an MBR Partition</h3>
+<ul>
+<li>assign partition type &ldquo;msdos&rdquo; to /dev/sdb for using it as an MBR disk.</li>
+<li>create and confirm a 100MB primary partition on the disk.</li>
+</ul>
+<ol>
+<li>Execute <em>parted</em> on /dev/sdb to view the current partition information:
+<code>parted /dev/sdb print</code></li>
+</ol>
+<ul>
+<li>Notice the error on line 1 of the output, indicating an unrecognized label.</li>
+<li>Disk must be labeled before it can be partitioned.</li>
+</ul>
+<ol start="2">
+<li>Assign disk label &ldquo;msdos&rdquo; to the disk with mklabel. (performed only once on a disk.)
+<code>parted /dev/sdb mklabel msdos</code></li>
+</ol>
+<p>The <em>print</em> subcommand confirms the successful application of the label.
+<code>parted /dev/sdb print</code></p>
+<p>To use the GPT partition table type, run <code>parted /dev/sdb mklabel gpt</code> instead.</p>
+<ol start="3">
+<li>
+<p>Create a 100MB primary partition starting at 1MB (beginning of the disk) using mkpart:
+<code>parted /dev/sdb mkpart primary 1 101m</code></p>
+</li>
+<li>
+<p>Verify the new partition with <em>print</em>:
+<code>parted /dev/sdb print</code></p>
+</li>
+</ol>
+<ul>
+<li>Partition numbering begins at 1 by default.</li>
+</ul>
+<ol start="5">
+<li>Confirm the new partition with the <code>lsblk</code> command:
+<code>lsblk /dev/sdb</code></li>
+</ol>
+<ul>
+<li>Different tools will have variance in reporting partition sizes. Ignore minor differences.</li>
+</ul>
+<ol start="6">
+<li>Check /proc/partitions also:
+<code>cat /proc/partitions | grep sdb</code></li>
+</ol>
+<ul>
+<li>The virtual file is also updated with the new partition information.</li>
+</ul>
+<h3 id="lab-delete-an-mbr-partition">Lab: Delete an MBR Partition</h3>
+<ul>
+<li>Delete the <em>sdb1</em> partition and confirm the deletion.</li>
+</ul>
+<ol>
+<li>
+<p>Execute <em>parted</em> on /dev/sdb with the <code>rm</code> subcommand to remove partition number 1:
+<code>parted /dev/sdb rm 1</code></p>
+</li>
+<li>
+<p>Confirm the partition deletion with <em>print</em>:
+<code>parted /dev/sdb print</code></p>
+</li>
+<li>
+<p>Check /proc/partitions:
+<code>cat /proc/partitions | grep sdb</code></p>
+</li>
+</ol>
+<ul>
+<li>The virtual file has the partition entry deleted as well.</li>
+<li>can also run the <code>lsblk</code> command for further verification.</li>
+<li>Knowing either parted or gdisk for the exam is enough.</li>
+</ul>
+<h3 id="gpt-storage-management-with-gdisk">GPT Storage Management with gdisk</h3>
+<h4 id="gdisk-gpt-disk-command">gdisk (GPT disk) command</h4>
+<ul>
+<li>
+<p>partitions disks using the GPT format.</p>
+</li>
+<li>
+<p>text-based, menu-driven program</p>
+</li>
+<li>
+<p>show, add, verify, modify, and delete partitions among other operations.</p>
+</li>
+<li>
+<p>can create up to 128 partitions on a single disk on systems with UEFI firmware.</p>
+</li>
+<li>
+<p>Specify a disk device name such as /dev/sdc/ with the command.</p>
+</li>
+<li>
+<p>Type <em>help</em> or <em>?</em> at the prompt to view available subcommands.</p>
+</li>
+</ul>
+<p><code>gdisk /dev/sdc</code></p>
+<h3 id="lab-create-a-gpt-partition">Lab: Create a GPT Partition</h3>
+<ul>
+<li>assign partition type &ldquo;gpt&rdquo; to /dev/sdc for using it as a GPT disk.</li>
+<li>create and confirm a 200MB partition on the disk.</li>
+</ul>
+<ol>
+<li>
+<p>Execute <em>gdisk</em> on /dev/sdc/ to view the current partition information:
+<code>gdisk /dev/sdc</code></p>
+</li>
+<li>
+<p>Assign &ldquo;gpt&rdquo; as the partition table type to the disk using the o subcommand. Enter &ldquo;y&rdquo; for confirmation to proceed. This operation is
+performed only once on a disk.</p>
+</li>
+<li>
+<p>Run the <em>p</em> subcommand to view disk information and confirm the GUID partition table creation:</p>
+</li>
+<li>
+<p>Create the first partition of size 200MB starting at the default sector with default type &ldquo;Linux filesystem&rdquo; using the <em>n</em> subcommand:</p>
+</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Command (? for help): n
+Partition number (1-128, default 1): 
+First sector (34-511966, default = 2048) or {+-}size{KMGTP}: 
+Last sector (2048-511966, default = 511966) or {+-}size{KMGTP}: +200M
+Current type is 8300 (Linux filesystem)
+Hex code or GUID (L to show codes, Enter = 8300): 
+Changed type of partition to &#39;Linux filesystem&#39;</code></pre></div><ol start="5">
+<li>
+<p>Verify the new partition with <em>p</em>:</p>
+</li>
+<li>
+<p>Run <em>w</em> to write the partition information to the partition table and exit out of the interface. Enter &ldquo;y&rdquo; to confirm when prompted.</p>
+</li>
+</ol>
+<ul>
+<li>You may need to run the partprobe command after exiting the gdisk utility to update the kernel of the changes.
+<code>partprobe</code></li>
+</ul>
+<ol start="7">
+<li>Verify the new partition by issuing either of the following at the command prompt:
+<code>grep sdc /proc/partitions</code>
+<code>lsblk /dev/sdc</code></li>
+</ol>
+<h3 id="lab-delete-a-gpt-partition">Lab: Delete a GPT Partition</h3>
+<p>In this exercise, you will delete the <em>sdc1</em> partition that was created in <a href="/linux/rhcsa/13_basic_storage_partitioning/#part0025_split_001.html#id_366">Exercise 13-4</a>{.calibre5} and confirm the removal.</p>
+<ol>
+<li>
+<p>Execute <em>gdisk</em> on /dev/sdc/ and run <code>d1</code> at the utility&rsquo;s prompt to delete partition number 1:
+<code>gdisk /dev/sdc</code>
+<code>d1</code></p>
+</li>
+<li>
+<p>Confirm the partition deletion with <em>p</em>:</p>
+</li>
+<li>
+<p>Write the updated partition information to the disk with <code>w</code> and quit <em>gdisk</em>:</p>
+</li>
+<li>
+<p>Verify the partition deletion by issuing either of the following at the command prompt:
+<code>grep sdc /proc/partitions</code>
+<code>lsblk /dev/sdc</code></p>
+</li>
+</ol>
+<h2 id="storage-optimization-with-virtual-data-optimizer-vdo">Storage Optimization with Virtual Data Optimizer (VDO)</h2>
+<p>VDO</p>
+<ul>
+<li>device driver layer that sits between the operating system kernel and the physical storage devices.</li>
+<li>conserve disk space</li>
+<li>improve data throughput</li>
+<li>save on storage cost.</li>
+<li>employs thin provisioning, de-duplication, and compression technologies</li>
+<li>runs in the background and processes inbound data through the three stages on VDO-enabled volumes.</li>
+<li>not a CPU-or memory-intensive process; it consumes a low amount of system resources.</li>
+</ul>
+<h3 id="how-vdo-conserves-storage-space">How VDO Conserves Storage Space</h3>
+<p>thin provisioning (Stage 1)</p>
+<ul>
+<li>identify and eliminate empty (zero-byte) data blocks. (zero-block elimination).</li>
+<li>removes randomization of data blocks by moving in-use data blocks to contiguous locations on the storage device.</li>
+</ul>
+<p>de-duplication (Stage 2)</p>
+<ul>
+<li>If VDO detects that new data is an identical copy of some existing data, it makes an internal note of it but does not actually write the redundant data to the disk.</li>
+<li>implemented in RHEL with the inclusion of a kernel module called <em>UDS</em> (<em>Universal Deduplication Service</em>). T</li>
+</ul>
+<p>kvdo (Stage 3)</p>
+<ul>
+<li>kernel module</li>
+<li>compresses the residual data blocks and consolidates them on a lower number of blocks.</li>
+<li>results in a further drop in storage space utilization.</li>
+</ul>
+<p><strong>Creating and Managing VDO Volumes</strong></p>
+<ul>
+<li>VDO volumes can be initialized for use just like disk partitions, or they can be used as LVM physical volumes.</li>
+</ul>
+<h3 id="vdo-and-vdostats-commands">vdo and vdostats commands</h3>
+<ul>
+<li>Create, manage, and monitor volumes.</li>
+<li>vdo command is used to create and perform essential operations on VDO volumes</li>
+<li>vdostats command is employed to monitor usage statistics of the underlying physical storage device.</li>
+</ul>
+<p>VDO subcommands</p>
+<table>
+<thead>
+<tr>
+<th><strong>Subcommand</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td>Adds a new VDO volume on the specified block device</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Returns the status and attributes of VDO volumes</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Lists the names of all started VDO volumes</td>
+</tr>
+<tr>
+<td>start</td>
+<td>Starts a VDO volume</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>Stops a VDO volume</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lab-install-software-and-activate-vdo">Lab: Install Software and Activate VDO</h3>
+<ul>
+<li>install the VDO software packages</li>
+<li>start the VDO service, and mark it for autostart on subsequent system reboots.</li>
+</ul>
+<ol>
+<li>
+<p>Install packages <em>vdo</em> and <em>kmod-kvdo</em>:
+<code>dnf install vdo kmod-kvdo -y</code></p>
+</li>
+<li>
+<p>Start the service and enable it to start automatically on future system reboots:</p>
+</li>
+</ol>
+<p><a href="#R-image-03ca0938fd2f7b5ad6c37488fdc10dbe" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00681.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-03ca0938fd2f7b5ad6c37488fdc10dbe"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00681.jpeg"></a>{.image2}</p>
+<p>3[.]{.c19}Check the operational status of the service:</p>
+<p><a href="#R-image-6eb0c0f25472b268a30e13937432a075" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00682.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6eb0c0f25472b268a30e13937432a075"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00682.jpeg"></a>{.image2}</p>
+<p>The relevant packages for VDO are installed, and the VDO service is
+started and activated. This concludes the exercise.</p>
+<p><strong>Exercise 13-7: Create a VDO Volume</strong></p>
+<p>This exercise should be done on <em>server2</em> as <em>user1</em> with <em>sudo</em> where
+required.</p>
+<p>In this exercise, you will create a volume called <em>vdo-vol1</em> of logical
+size 16GB on **dev<em>sdf</em> disk (the actual size of **dev<em>sdf</em> is 4GB). You
+will list the volume and display its status information. You will also
+show the activation status of the compression and de-duplication
+features.</p>
+<p>1[.]{.c19}Create a volume called <em>vdo-vol1</em> (--name) on the **dev<em>sdf</em>
+device (--device) with a logical size of 16GB (--vdoLogicalSize) and
+slab size of 128MB (--vdoSlabSize):</p>
+<p><a href="#R-image-7098b21294f276e1119e1d6c73c1281e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00683.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7098b21294f276e1119e1d6c73c1281e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00683.jpeg"></a>{.image2}</p>
+<p><a href="#R-image-16bf3fb6d34d709af51499dd8e809d5b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00002.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-16bf3fb6d34d709af51499dd8e809d5b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00002.jpeg"></a>{.image} Increase the amount of memory allocated
+to the virtual machine to 2GB if the output complains about insufficient
+memory.</p>
+<p><a href="#R-image-66cbc5f48a901d639ec29f8590eb577e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00002.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-66cbc5f48a901d639ec29f8590eb577e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00002.jpeg"></a>{.image} If the logical size is not specified, the
+VDO volume will have the same size as the underlying disk (<em>dev</em>sdf in
+this case).</p>
+<p><a href="#R-image-191761d2af46bc08961d19319bc7b16d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00002.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-191761d2af46bc08961d19319bc7b16d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00002.jpeg"></a>{.image} The slab size is the size of the
+increment by which VDO volumes grow. This value must be a power of two
+between 128MB and 32GB; the default is 2GB. The default unit of size
+specification is MB.</p>
+<p>2[.]{.c19}List the new volume using the <em>vdo</em> and <em>lsblk</em> commands:</p>
+<p><a href="#R-image-23c31498f4088080323421e3000156ee" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00684.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-23c31498f4088080323421e3000156ee"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00684.jpeg"></a>{.image2}</p>
+<p>As indicated, the major number for the VDO volume is 253, which is
+associated with the device mapper kernel driver. The output also shows
+the logical volume size (16GB) and type (vdo). It also depicts the disk
+(<em>sdf</em>) that houses the volume, along with its actual size (4GB).</p>
+<p>3[.]{.c19}Display the usage status of the volume:</p>
+<p><a href="#R-image-cc7c44968a8d3ac0471f24b942a768e2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00685.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cc7c44968a8d3ac0471f24b942a768e2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00685.jpeg"></a>{.image2}</p>
+<p>The size of the actual disk is 4GB. Due to thin provisioning, the system
+allowed you to create the VDO volume much larger in size (4 times) than
+the physical disk capacity.</p>
+<p>4[.]{.c19}Show detailed statistics for the volume including
+configuration information:</p>
+<p><a href="#R-image-20ebe806311f8dcad2607dcb6646c662" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00686.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-20ebe806311f8dcad2607dcb6646c662"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00686.jpeg"></a>{.image2}</p>
+<p>The output will expose over one hundred different settings for the
+volume.</p>
+<p>5[.]{.c19}Display detailed statistics for the volume including
+configuration information:</p>
+<p><a href="#R-image-14404a3bd586eea740fea20d514613c0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00687.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-14404a3bd586eea740fea20d514613c0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00687.jpeg"></a>{.image2}</p>
+<p>The status includes volume, kernel module, and configuration
+information. It also provides a detailed look at volume-specific
+elements.</p>
+<p>6[.]{.c19}Show the activation status of the compression and
+de-duplication features:</p>
+<p><a href="#R-image-09713bae9eaeccd441605d7411658f75" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00688.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-09713bae9eaeccd441605d7411658f75"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00688.jpeg"></a>{.image2}</p>
+<p>Both compression and de-duplication features are activated by default on
+new VDO volumes. This concludes the exercise.</p>
+<p><strong>Exercise 13-8: Delete a VDO Volume</strong></p>
+<p>This exercise should be done on <em>server2</em> as <em>user1</em> with <em>sudo</em> where
+required.</p>
+<p>In this exercise, you will delete the <em>vdo-vol1</em> volume that was created
+in <a href="/linux/rhcsa/13_basic_storage_partitioning/#part0025_split_000.html#page_316">Exercise 13-7</a>{.calibre5} and
+confirm the removal.</p>
+<p>1[.]{.c19}Verify that the volume still exists with the <em>vdo</em> and <em>lsblk</em>
+commands:</p>
+<p><a href="#R-image-9dc0061cf7d8fab09c94d6bdb218c62e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00689.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9dc0061cf7d8fab09c94d6bdb218c62e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00689.jpeg"></a>{.image2}</p>
+<p>2[.]{.c19}Specify the name (--name) of the volume with the <em>vdo</em>
+command to delete:</p>
+<p><a href="#R-image-ae3205ce0cb8e8fa0bedae0deb65ed3c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00690.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ae3205ce0cb8e8fa0bedae0deb65ed3c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00690.jpeg"></a>{.image2}</p>
+<p>3[.]{.c19}Confirm the removal with the <em>vdo</em> and <em>lsblk</em> commands:</p>
+<p><a href="#R-image-86d91af8cdb334b2fd4f3dabdfffed5f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="images/00691.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-86d91af8cdb334b2fd4f3dabdfffed5f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="images/00691.jpeg"></a>{.image2}</p>
+<p>The volume has been deleted successfully as reported in the above
+outputs.</p>
+<p>[<strong>EXAM TIP:</strong>]{.c56} Make sure that you run the lsblk command before
+attempting any storage task. The VDO task is usually performed on the
+biggest sized available disk.</p>
+<p>You will recreate VDO volumes in <a href="/linux/rhcsa/13_basic_storage_partitioning/#part0027_split_000.html#page_345">Chapter
+15</a>{.calibre5} &ldquo;Local File Systems
+and Swap&rdquo; for use as file systems and swap areas.</p>
+<p><strong>[Chapter]{#part0025_split_001.html#id_371 .calibre10} Summary</strong></p>
+<p>This chapter started with an overview of how and where disk partitioning
+information is stored. It presented a comparison between the two common
+schemes and explained which one to use and in which situation. A little
+later, we touched briefly on the common storage management solutions
+available in RHEL.</p>
+<p>We examined the concept of thin provisioning and realized the benefits
+associated with this technology.</p>
+<p>Next, we carved up available disk devices using both MBR and GPT
+partitioning schemes. We demonstrated the partition creation, display,
+and delete operations by running one command directly at the command
+prompt and launching the other in interactive mode.</p>
+<p>The last topic of the chapter focused on a storage management solution
+that was introduced in RHEL not too long ago. This solution exploits the
+underlying thin provisioning, de-duplication, and compression
+technologies to save cost, ensure efficient use of storage space, and
+improve data throughput. We performed a couple of exercises in the end
+to demonstrate the creation and deletion of volumes using this solution.</p>
+<p><strong>[Review]{#part0025_split_001.html#id_372 .calibre10} Questions</strong></p>
+<p>1[.]{.c19}What is missing in the command <em>vdo create --name vdo1
+--vdoLogicalSize 16GB --vdoSlabSize 128MB</em>?
+1[.]{.c19}The storage device (--device) name is missing from the
+command provided.</p>
+<p>2[.]{.c19}What is the maximum number of usable partitions that can be
+created on a GPT disk?</p>
+<p>3[.]{.c19}Which kernel module is responsible for data block compression
+in VDO volumes?</p>
+<p>4[.]{.c19}What are the three techniques VDO volumes employ for storage
+conservation?</p>
+<p>5[.]{.c19}What would the command <em>parted <em>dev</em>sdc mkpart pri 1 200m</em> do?</p>
+<p>6[.]{.c19}Where is the partition table information stored on BIOS-based
+systems?</p>
+<p>7[.]{.c19}What is the name of the technology that VDO employs to remove
+randomization of data blocks?</p>
+<p>8[.]{.c19}What would <em>sdd3</em> represent?</p>
+<p>9[.]{.c19}Which command can be used to view the usage statistics of VDO
+volumes?</p>
+<p>10[.]{.c23}Thin provisioning technology allows us to create logical
+volumes of sizes larger than the actual physical storage size. True or
+False?</p>
+<p>11[.]{.c23}You have an unused VDO volume called <em>vdo1</em> on **dev<em>sdf</em>
+disk and you try to delete it. You run <em>vdo remove --device <em>dev</em>sdf</em>,
+but the removal fails. What are you doing wrong?</p>
+<p>12[.]{.c23}What is the maximum number of usable partitions that can be
+created on an MBR disk?</p>
+<p>13[.]{.c23}What would the command <em>systemctl --now enable vdo</em> do?</p>
+<p>14[.]{.c23}The <em>gdisk</em> utility can be used to store partition
+information in MBR format. True or False?</p>
+<p>15[.]{.c23}What would the command <em>parted <em>dev</em>sdd mklabel msdos</em> do?</p>
+<p>16[.]{.c23}VDO is a memory-intensive storage optimization solution and
+should not be used. True or False?</p>
+<p>17[.]{.c23}Which file in the <em>/proc</em> file system stores the in-memory
+partitioning information?</p>
+<p>18[.]{.c23}You have created a VDO volume and you want to check whether
+compression is enabled. Which command would you use?</p>
+<p>19[.]{.c23}Deduplication is the process of zero-block elimination. True
+or False?</p>
+<p><strong>[Answers]{#part0025_split_001.html#id_373 .calibre10} to Review
+Questions</strong></p>
+<p>2[.]{.c19}128.</p>
+<p>3[.]{.c19}The <em>kvdo</em> module is responsible for compressing data blocks
+in VDO volumes.</p>
+<p>4[.]{.c19}VDO volumes use thin provisioning, de-duplication, and
+compression techniques for storage conservation.</p>
+<p>5[.]{.c19}The command provided will create a primary partition of size
+200MB on the <em>sdc</em> disk starting at the beginning of the disk.</p>
+<p>6[.]{.c19}The partition table information is stored on the Master Boot
+Record.</p>
+<p>7[.]{.c19}VDO employs thin provisioning technology to remove data block
+randomization.</p>
+<p>8[.]{.c19}<em>sdd3</em> represents the third partition on the fourth disk.</p>
+<p>9[.]{.c19}The <em>vdostats</em> command can be used to view VDO volume usage
+statistics.</p>
+<p>10[.]{.c23}True.</p>
+<p>11[.]{.c23}The correct command would be <em>vdo remove --name vdo1</em>.</p>
+<p>12[.]{.c23}14.</p>
+<p>13[.]{.c23}The command provided will start the VDO service and enable it
+to autostart on system reboots.</p>
+<p>14[.]{.c23}False. The <em>gdisk</em> tool is only for GPT type tables.</p>
+<p>15[.]{.c23}The command provided will apply msdos label to the <em>sdd</em>
+disk.</p>
+<p>16[.]{.c23}False. VDO uses low memory and other compute resources.</p>
+<p>17[.]{.c23}The <em>partitions</em> file.</p>
+<p>18[.]{.c23}You can issue the <em>vdo status</em> command and pipe the output to
+<em>grep</em> for the pattern &ldquo;compression&rdquo;.</p>
+<p>19[.]{.c23}False. Deduplication is the process of removing blocks of
+identical data.</p>
+<p><strong>[Do-]{#part0025_split_001.html#id_374 .calibre10}It-Yourself Challenge
+Labs</strong></p>
+<p>The following labs are useful to strengthen most of the concepts and
+topics learned in this chapter. It is expected that you perform the labs
+without external help. A step-by-step guide is not supplied, as the
+knowledge and skill required to implement the lab has already been
+disseminated in the chapter; however, hints to the relevant major
+topic(s) are included.</p>
+<p>Add more storage to <em>server2</em> if required.</p>
+<p><strong>[Lab]{#part0025_split_001.html#id_375 .calibre10} 13-1: Create and
+Remove Partitions with parted</strong></p>
+<p>As <em>user1</em> with <em>sudo</em> on <em>server2</em>, create a 100MB primary partition on
+one of the available 250MB disks (<em>lsblk</em>) by invoking the <em>parted</em>
+utility directly at the command prompt. Apply label &ldquo;msdos&rdquo; if the disk
+is new. Create another 100MB partition by running <em>parted</em> interactively
+while ensuring that the second partition won&rsquo;t overlap the first. Verify
+the label and the partitions. Remove both partitions from the command
+prompt. (Hint: MBR Storage Management with parted).</p>
+<p><strong>[Lab]{#part0025_split_001.html#id_376 .calibre10} 13-2: Create and
+Remove Partitions with gdisk</strong></p>
+<p>As <em>user1</em> with <em>sudo</em> on <em>server2</em>, create two 80MB partitions on one
+of the 250MB disks (<em>lsblk</em>) using the <em>gdisk</em> utility. Make sure the
+partitions won&rsquo;t overlap. Verify the partitions. You may delete the
+partitions if you want. (Hint: GPT Storage Management with gdisk).</p>
+<p><strong>[Lab]{#part0025_split_001.html#id_377 .calibre10} 13-3: Create and
+Delete VDO Volumes</strong></p>
+<p>As <em>user1</em> with <em>sudo</em> on <em>server2</em>, check to see if VDO software is
+installed and the VDO service is enabled and started. Identify the 4GB
+disk with the <em>lsblk</em> command, and make sure that it is not in use.
+Create a volume <em>testvdo</em> with a logical size 16GB on the 4GB disk using
+the <em>vdo</em> command. Select an appropriate slab size for the volume.
+Verify the volume creation with the <em>vdo</em>, <em>lsblk</em>, and <em>vdostats</em>
+commands. (Hint: Storage Optimization with Virtual Data Optimizer).</p>
+<p><strong>[Lab]{#part0025_split_001.html#id_378 .calibre10} 13-4: Disable and
+Enable VDO Volume Features</strong></p>
+<p>As <em>user1</em> with <em>sudo</em> on <em>server2</em>, use the <em>vdostats</em> command to check
+whether compression and de-duplication are enabled for the volume
+created in Lab 13-3. Use the <em>vdo</em> command with disableCompression and
+disableDeduplication subcommands to disable compression and
+de-duplication, and verify with <em>vdostats</em>. Reactivate both features and
+confirm activation. You may delete the volume if you want. (Hint:
+Storage Optimization with Virtual Data Optimizer).</p>
+<p>[]{#part0026_split_000.html}</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<img src="/images/perfectlogo.png" alt="perfect dark mode">
+
+        </div>
+
+        <search>
+          <div class="searchbox default-animation">
+            <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1717686347" defer></script>
+        <script src="/js/lunr/lunr.min.js?1717686347" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1717686347" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1717686347" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1717686347" defer></script>
+        <script src="/js/search.js?1717686347" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/linux/" class="parent "><a class="padding" href="/linux/">Linux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9e5aaccdf48687824ccd3b3097af8e41" class="morespace collapsible-menu">
+          <li data-nav-id="/linux/fedora_setup/" class=""><a class="padding" href="/linux/fedora_setup/">Fedora Desktop Setup<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/rhcsavagrantlabsetup/" class=""><a class="padding" href="/linux/rhcsavagrantlabsetup/">RHCSA Lab Using Vagrant<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/rhcsanotes/" class=""><a class="padding" href="/linux/rhcsanotes/">RHCSA Notes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/linux/rhcsa/13_basic_storage_partitioning/" class="active"><a class="padding" href="/linux/rhcsa/13_basic_storage_partitioning/"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/networking/" class=""><a class="padding" href="/networking/">Networking<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ec0ce2ce30f7ea4f73b681ec6981b84f" class="morespace collapsible-menu">
+          <li data-nav-id="/networking/ccna_spaced_repetition/" class=""><a class="padding" href="/networking/ccna_spaced_repetition/">How to Study for CCNA<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/networking/resources_for_passing_ccna/" class=""><a class="padding" href="/networking/resources_for_passing_ccna/">Resources I used to Pass CCNA<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/networking/things_to_learn_after_ccna/" class=""><a class="padding" href="/networking/things_to_learn_after_ccna/">What to Learn After CCNA<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/tools/" class=""><a class="padding" href="/tools/">Tools<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-cff67d57e00d6d598d882def3568f700" class="morespace collapsible-menu">
+          <li data-nav-id="/tools/process-bookfusion-highlights/" class=""><a class="padding" href="/tools/process-bookfusion-highlights/">How to Process Bookfusion Highlights in Vim<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/tools/nextcloud/" class=""><a class="padding" href="/tools/nextcloud/">Nextcloud Guide<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/tools/hugorelearn/" class=""><a class="padding" href="/tools/hugorelearn/">How to Set up Hugo Relearn Theme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/tools/buildawebsite/" class=""><a class="padding" href="/tools/buildawebsite/">Building a Minimalist Website with Hugo<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/tools/calibre-web-with-docker/" class=""><a class="padding" href="/tools/calibre-web-with-docker/">Calibre Web With Docker<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="https://github.com/perfectdarkmode1"><i class='fab fa-fw fa-github'></i> GitHub</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/linux/rhcsa/13_basic_storage_partitioning/" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-zen-dark" value="zen-dark" selected>Zen Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1717686347" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1717686347" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1717686347" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1717686347" defer></script>
+    <script src="/js/js-yaml.min.js?1717686347" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1717686347" defer></script>
+  </body>
+</html>

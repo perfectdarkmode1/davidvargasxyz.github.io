@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=36217&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 6.0.0+tip">
+    <meta name="description" content="Boot Process Overview 4 stages
+1 BIOS
+initialize hardware and use POST to check hardware 2 Bootloader
+loads kernel into memory starts kernel w/ parameters GRUB is a common bootloader 3 Kernel
+initializes devices and memory load up the init process 4 init
+starts and stop essential service process on the system 3 major implementations of init
+Boot process: BIOS BIOS
+performs integrity checks
+main goal: find the system bootloader">
+    <meta name="author" content="David">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Boot - Perfect Dark Mode">
+    <meta name="twitter:description" content="Boot Process Overview 4 stages
+1 BIOS
+initialize hardware and use POST to check hardware 2 Bootloader
+loads kernel into memory starts kernel w/ parameters GRUB is a common bootloader 3 Kernel
+initializes devices and memory load up the init process 4 init
+starts and stop essential service process on the system 3 major implementations of init
+Boot process: BIOS BIOS
+performs integrity checks
+main goal: find the system bootloader">
+    <meta property="og:url" content="http://localhost:36217/linux/misc_linux/boot_the_system/">
+    <meta property="og:site_name" content="Perfect Dark Mode">
+    <meta property="og:title" content="Boot - Perfect Dark Mode">
+    <meta property="og:description" content="Boot Process Overview 4 stages
+1 BIOS
+initialize hardware and use POST to check hardware 2 Bootloader
+loads kernel into memory starts kernel w/ parameters GRUB is a common bootloader 3 Kernel
+initializes devices and memory load up the init process 4 init
+starts and stop essential service process on the system 3 major implementations of init
+Boot process: BIOS BIOS
+performs integrity checks
+main goal: find the system bootloader">
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Linux">
+    <meta property="article:published_time" content="2023-11-06T06:20:36-07:00">
+    <meta property="article:modified_time" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="name" content="Boot - Perfect Dark Mode">
+    <meta itemprop="description" content="Boot Process Overview 4 stages
+1 BIOS
+initialize hardware and use POST to check hardware 2 Bootloader
+loads kernel into memory starts kernel w/ parameters GRUB is a common bootloader 3 Kernel
+initializes devices and memory load up the init process 4 init
+starts and stop essential service process on the system 3 major implementations of init
+Boot process: BIOS BIOS
+performs integrity checks
+main goal: find the system bootloader">
+    <meta itemprop="datePublished" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="dateModified" content="2023-11-06T06:20:36-07:00">
+    <meta itemprop="wordCount" content="396">
+    <title>Boot - Perfect Dark Mode</title>
+    <link href="http://localhost:36217/linux/misc_linux/boot_the_system/" rel="canonical" type="text/html" title="Boot - Perfect Dark Mode">
+    <link href="/linux/misc_linux/boot_the_system/index.xml" rel="alternate" type="application/rss+xml" title="Boot - Perfect Dark Mode">
+    <link href="/images/favicon.png?1716026522" rel="icon" type="image/png">
+    <link href="/css/fontawesome-all.min.css?1716026523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1716026523" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1716026523" rel="stylesheet">
+    <link href="/css/auto-complete.css?1716026523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1716026523" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1716026523" rel="stylesheet">
+    <link href="/css/fonts.css?1716026523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1716026523" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1716026523" rel="stylesheet">
+    <link href="/css/theme-zen-dark.css?1716026523" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1716026523" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1716026523" rel="stylesheet">
+    <link href="/css/print.css?1716026523" rel="stylesheet" media="print">
+    <link href="/css/format-print.css?1716026523" rel="stylesheet">
+    <script src="/js/variant.js?1716026523"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:36217';
+      window.index_js_url="/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'zen-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/linux/misc_linux/boot_the_system/">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-back" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="history.back()" type="button" title=""><i class="fa-fw fas fa-chevron-left"></i></button>
+            </div>
+
+
+
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Boot
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-about" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/about/" target="_blank" title=""><i class="fa-fw fas fa-address-card"></i> <span class="title">About</span></a>
+            </div>
+            <div class="topbar-button topbar-button-now" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/now/" target="_blank" title=""><i class="fa-fw fas fa-play"></i> <span class="title">Now</span></a>
+            </div>
+            <div class="topbar-button topbar-button-recommended" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/recommended/" target="_blank" title=""><i class="fa-fw fas fa-thumbs-up"></i> <span class="title">Recommended</span></a>
+            </div>
+            <div class="topbar-button topbar-button-booknotes" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/booknotes/" target="_blank" title=""><i class="fa-fw fas fa-file"></i> <span class="title">Book Notes</span></a>
+            </div>
+            <div class="topbar-button topbar-button-contact" data-content-empty="show" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="https://perfectdarkmode.com/contact/" target="_blank" title=""><i class="fa-fw fas fa-envelope"></i> <span class="title">Contact</span></a>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="boot">Boot</h1>
+
+<h4 id="boot-process-overview">Boot Process Overview</h4>
+<p>4 stages</p>
+<p>1 BIOS</p>
+<ul>
+<li>initialize hardware and use POST to check hardware</li>
+</ul>
+<p>2 Bootloader</p>
+<ul>
+<li>loads kernel into memory</li>
+<li>starts kernel w/ parameters</li>
+<li>GRUB is a common bootloader</li>
+</ul>
+<p>3 Kernel</p>
+<ul>
+<li>initializes devices and memory</li>
+<li>load up the init process</li>
+</ul>
+<p>4 init</p>
+<ul>
+<li>starts and stop essential service process on the system</li>
+</ul>
+<p>3 major implementations of init</p>
+<ul>
+<li>Boot process: BIOS</li>
+</ul>
+<p>BIOS</p>
+<p>performs integrity checks</p>
+<p>main goal: find the system bootloader</p>
+<p>boots hard drive &gt; search for boot block &gt; look at MBR or GPT</p>
+<p>Majority of Linux uses BIOS</p>
+<p>MBR</p>
+<p>located in the 1st 512 bytes of 1st sector on HD</p>
+<p>contains code to load the program that loads the bootloader</p>
+<p>GPT</p>
+<p>Intended for use with EFI</p>
+<p>UEFI &gt; succesor to BIOS</p>
+<p>1st sector is reserved for a “protective MBR”</p>
+<p>Makes it possible to boot to a BIOS-based machine</p>
+<p>UEFI</p>
+<p>stores startup info in a .efi file</p>
+<p>.efi is stored on EFI system partition on the hardware</p>
+<p>EFI system partition</p>
+<p>- contains boot loader</p>
+<p>Boot process: Bootloader</p>
+<p>responsible for:</p>
+<p>- booting into an OS</p>
+<p>- selecting kernel to use</p>
+<p>- Specify Kernel Parameters</p>
+<p>- GRUB, LILO, efilinux, coreboot, SYSLINUX</p>
+<p>View kernel parameters</p>
+<p>enter GRUB menu on startup using ‘e’ key</p>
+<p>- initrd - Location of initial RAM disk</p>
+<p>- BOOT_IMAGE - location of kernel image</p>
+<p>- root - root filesystem location</p>
+<p>kernel is often represented here by UUID or device name such as /dev/sda1</p>
+<p>- ro - mounts the filesystem as read-only</p>
+<p>Boot Process: Kernel</p>
+<p>initd vs initramfs</p>
+<p>Initrd (initial RAM disk)</p>
+<p>- was used as a temporary root folder to get bootup drivers</p>
+<p>Initramfs</p>
+<p>- Temporary root filesystem built into the kernel to load drivers for root filesystem</p>
+<p>Mounting the root filesystem</p>
+<p>- Creates the root device and mounts thge root partition</p>
+<p>- Root partition is first mounted in read-only mode</p>
+<p>- so fsck can safely check system integrity</p>
+<p>- Then root system is mounted in read-write mode</p>
+<p>- Kernel then locates init program and executes it</p>
+<p>Boot Process: Init</p>
+<p>3 implementations of init</p>
+<p>1. System V init (sysv)</p>
+<p>- traditional version</p>
+<p>- Sequencially starts and stops processes based on startup scripts</p>
+<p>- state of machine is denoted by run levels</p>
+<p>- Each run level starts/stops machine in a different way</p>
+<p>2. Upstart</p>
+<p>- found on older Ubuntu installations</p>
+<p>3. Syst</p>
+<p>- new standard for init</p>
+<p>- goal oriented</p>
+<p>- attempts to satisfy goal&rsquo;s dependencies</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard.min.js?1716026523" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1716026523" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/js/d3/d3-color.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1716026523" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1716026523" defer></script>
+    <script src="/js/js-yaml.min.js?1716026523" defer></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
+    <script>
+      window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
+    </script>
+    <script src="/js/theme.js?1716026523" defer></script>
+  </body>
+</html>
