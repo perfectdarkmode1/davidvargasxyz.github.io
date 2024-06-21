@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recommended</title>
-    <link>http://davidvargas.xyz/recommended/</link>
+    <link>http://localhost:45779/recommended/</link>
     <description>These are books I have read and would recommend. I do not agree with every word in every single book. And there are a lot more to add to this list. So far I have added some favorites.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://davidvargas.xyz/recommended/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45779/recommended/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

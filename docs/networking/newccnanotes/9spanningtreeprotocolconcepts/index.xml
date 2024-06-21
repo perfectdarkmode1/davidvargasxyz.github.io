@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://davidvargas.xyz/networking/newccnanotes/9spanningtreeprotocolconcepts/</link>
+    <link>http://localhost:45779/networking/newccnanotes/9spanningtreeprotocolconcepts/</link>
     <description>9 Spanning Tree Protocol Concepts 2.0 Network Access 2.4 Configure and verify (Layer 2/Layer 3) EtherChannel (LACP)2.5 Describe the need for and basic operations of Rapid PVST+ Spanning Tree Protocol and identify basic operations 2.5.a Root port, root bridge (primary/secondary), and other port names2.5.b Port states (forwarding/blocking) 2.5.c PortFast benefits RSTP is most common nowCisco defaults to RSTP&#xA;MAC table instability The switches arrive on different ports.MAC address tables keep changing because frames with the same source MAC</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://davidvargas.xyz/networking/newccnanotes/9spanningtreeprotocolconcepts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45779/networking/newccnanotes/9spanningtreeprotocolconcepts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

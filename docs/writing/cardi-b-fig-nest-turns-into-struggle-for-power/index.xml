@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://davidvargas.xyz/writing/cardi-b-fig-nest-turns-into-struggle-for-power/</link>
+    <link>http://localhost:45779/writing/cardi-b-fig-nest-turns-into-struggle-for-power/</link>
     <description>While my wife and I where doing dishes last night. Three plump figs lay on the counter. Ripe and ready to be devoured.&#xA;I don’t want those figs in here! What about the wasps?&#xA;There are no wasps in the figs honey.&#xA;How do you know? I bet there are wasps in them right now! We are going to wake up with wasps all over the house!&#xA;No honey. No wasps.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://davidvargas.xyz/writing/cardi-b-fig-nest-turns-into-struggle-for-power/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45779/writing/cardi-b-fig-nest-turns-into-struggle-for-power/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

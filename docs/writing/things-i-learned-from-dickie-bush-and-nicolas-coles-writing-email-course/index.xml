@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://davidvargas.xyz/writing/things-i-learned-from-dickie-bush-and-nicolas-coles-writing-email-course/</link>
+    <link>http://localhost:45779/writing/things-i-learned-from-dickie-bush-and-nicolas-coles-writing-email-course/</link>
     <description>I went through Dickie Bush and Nicolas Cole’s email course on writing online. This course was great overall. Short and concise and has given me the motivation, by providing good reasons, to commit to consistently writing online.&#xA;Here are my key takeaways:&#xA;10 Problems beginner writers face. Distractions (Write about them if you have to) Over-editing (Spend your first year focusing on ideas) Perfectionism (Create junk!) Procrastination (Get back in the boat before you drown) Self-confidence (Build confidence by writing a ton) Generating Ideas (Use the Endless Idea Generator) Impostor Syndrome (Figure out how you can be different, not better) Writing consistently (Consistency &gt; talent) Choosing a platform (Medium, Twitter, Quora, LinkedIn, Typeshare) Finding time to write (You don’t find time, you make it) Find out your why.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://davidvargas.xyz/writing/things-i-learned-from-dickie-bush-and-nicolas-coles-writing-email-course/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:45779/writing/things-i-learned-from-dickie-bush-and-nicolas-coles-writing-email-course/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
