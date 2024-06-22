@@ -110,7 +110,7 @@ publishDir = "docs"
 [[menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub"
 identifier = "ds"
-url = "https://github.com/perfectdarkmode1"
+url = "https://github.com/davidvargasxyz"
 weight = 10
 
 # [[menu.shortcuts]]
@@ -146,9 +146,6 @@ weight = 10
 #landingPageName = "<i class='fas fa-home'></i> Arrr! Homme"
 
 
-[services]
-  [services.googleAnalytics]
-  ID = 'G-23N4FSG0HM'
 
 
 
