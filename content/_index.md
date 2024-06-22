@@ -7,7 +7,7 @@ I'm David, I spin poi, read books, tinker, and write. Check out what I am doing 
 
 I started keeping [summaries, notes, and reviews](booknotes/_index.md) of books that I am reading. 
 
-[Let's Chat!](https://perfectdarkmode.com/contact/) I reply to every email. 
+[Let's Chat!](https://davidvargas.xyz/contact/) I reply to every email. 
 
 Here are the current areas of content you can find here:
 
