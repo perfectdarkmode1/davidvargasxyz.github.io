@@ -81,8 +81,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -148,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/Archive/boot_the_system.md",
+                "file": "_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -165,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/Archive/boot_the_system.md",
+                "file": "_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -188,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/Archive/boot_the_system.md"
+                "file": "_index.md"
               }
             }
           }
@@ -211,8 +210,9 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "1822445a3bd90caa",
+  "active": "4c2cf21e387379b9",
   "lastOpenFiles": [
+    "linux/Archive/boot_the_system.md",
     "_index.md",
     "linux/13_Storage_Management.md",
     "linux/RHCSA Notes.md",
@@ -221,7 +221,6 @@
     "images/V.png",
     "images/circleportrait.PNG",
     "linux/6_Adv_user_management.md",
-    "linux/Archive/boot_the_system.md",
     "linux/Using Man Pages.md",
     "now/now.md",
     "now/_index (copy).md",
