@@ -5,7 +5,7 @@ Here are my notes from Asghar Gori's RHCSA book. Buy the book or read the review
 
 Track my RHCSA progress: [RHCSA Study Tracker](RHCSA%20Study%20Tracker.md)
 
-- [1_installation](1_installation.md)
+- [Installation](Installation.md)
 - [2_interaction](2_interaction.md)
 - [3_file_management](3_file_management.md)
 - [4_adv_file_management](4_adv_file_management.md)
@@ -18,7 +18,7 @@ Track my RHCSA progress: [RHCSA Study Tracker](RHCSA%20Study%20Tracker.md)
 - [11_boot_grub2_kernel](11_boot_grub2_kernel.md)
 - [12_sysinit_logging_tuning](12_sysinit_logging_tuning.md)
 - [13_Storage_Management](13_Storage_Management.md)
-- [14_Local_File_Systems_and_Swap](14_Local_File_Systems_and_Swap.md)
+- [Local File Systems and Swap](Local%20File%20Systems%20and%20Swap.md)
 - [15_Networking_Network_Devices_and_Network_Connections](15_Networking_Network_Devices_and_Network_Connections.md)
 - [16_Network File System](16_Network%20File%20System.md)
 - [17_Hostname_resolution_and_time_synchronization](17_Hostname_resolution_and_time_synchronization.md)

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>http://davidvargas.xyz/linux/local-file-systems-and-swap/</link>
+    <description>Local File Systems and Swap Topics File system benefits, categories, and types Ext3/Ext4, XFS, VFAT, and ISO9660 File system administration commandset Mount and unmount file systems manually and persistently Determine and use UUID \&#xA;Apply and use file system label&#xA;\&#xA;Monitor file system and directory usage&#xA;\&#xA;Create and mount different types of local file systems in partitions&#xA;\&#xA;Create, mount, and resize Ext4 and XFS file systems in LVM</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://davidvargas.xyz/linux/local-file-systems-and-swap/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

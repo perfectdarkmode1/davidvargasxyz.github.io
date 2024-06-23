@@ -15,22 +15,10 @@
               "type": "markdown",
               "state": {
                 "file": "_index.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "pinned": true
-            }
-          },
-          {
-            "id": "1822445a3bd90caa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "linux/Archive/boot_the_system.md",
-                "mode": "source",
-                "source": false
-              }
             }
           },
           {
@@ -46,42 +34,43 @@
             }
           },
           {
-            "id": "fff2ae26e754eebd",
+            "id": "e44ced2f06592381",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "networking/_index.md",
+                "file": "linux/Local File Systems and Swap.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "84fbb7adc0a365f6",
+            "id": "f434c0e02ce672a6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/Using Man Pages.md",
+                "file": "booknotes/Million Dollar Weekend.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e8d932cdcea990d8",
+            "id": "ec6a020fd160465a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linux/13_Storage_Management.md",
+                "file": "booknotes/Dopamine_Nation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -147,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_index.md",
+                "file": "linux/RHCSA Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_index.md",
+                "file": "linux/RHCSA Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_index.md"
+                "file": "linux/RHCSA Notes.md"
               }
             }
           }
@@ -210,18 +199,27 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "4c2cf21e387379b9",
+  "active": "47088973e11a4d94",
   "lastOpenFiles": [
-    "linux/Archive/boot_the_system.md",
+    "booknotes/Million Dollar Weekend.md",
+    "booknotes/Dopamine_Nation.md",
+    "booknotes/_index.md",
     "_index.md",
-    "linux/13_Storage_Management.md",
-    "linux/RHCSA Notes.md",
+    "tools/Process-bookfusion-highlights.md",
+    "booknotes/Million Dollar Weekend.md~",
+    "tools/_index.md",
+    "linux/Local File Systems and Swap.md",
+    "linux/RHCSA Study Tracker.md",
+    "linux/Installation.md",
     "linux/_index.md",
+    "linux/RHCSA Notes.md",
+    "linux/13_Storage_Management.md",
+    "linux/Using Man Pages.md",
     "networking/_index.md",
+    "linux/Archive/boot_the_system.md",
     "images/V.png",
     "images/circleportrait.PNG",
     "linux/6_Adv_user_management.md",
-    "linux/Using Man Pages.md",
     "now/now.md",
     "now/_index (copy).md",
     "linux/Archive/user_management.md",
@@ -232,14 +230,6 @@
     "linux/Archive/text_fu.md",
     "linux/Archive/tar.md",
     "linux/Archive/skills_that_go_with_bash_scripting.md",
-    "linux/Archive/switching_to_linux.md",
-    "linux/Archive/scp_command.md",
-    "networking/ccna_spaced_repetition.md",
-    "networking/things_to_learn_after_ccna.md",
-    "networking/resources_for_passing_ccna.md",
-    "writing/Nat Elison's SEO course.md",
-    "tools/vimguide.md",
-    "writing/_index.md",
     "tools/LEGO_BRICK_LABELS-CONTACT_SHEET.pdf",
     "images/Pasted image 20230113155124.png",
     "images/Pasted image 20230113155438.png",

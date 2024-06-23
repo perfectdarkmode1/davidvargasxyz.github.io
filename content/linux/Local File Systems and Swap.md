@@ -1,33 +1,12 @@
 
+### Local File Systems and Swap
 
-
-### Local File Systems and Swap {.style3}
-
-\
-
-\
-
-#### This chapter describes the following major topics:
-
-\
-
-Understand file systems and their benefits, categories, and types
-
-\
-
-Review file system types: Ext3/Ext4, XFS, VFAT, and ISO9660
-
-\
-
-Know file system administration commandset
-
-\
-
-Mount and unmount file systems manually and persistently
-
-\
-
-Determine and use UUID
+## Topics
+- File system benefits, categories, and types
+- Ext3/Ext4, XFS, VFAT, and ISO9660
+- File system administration commandset
+- Mount and unmount file systems manually and persistently
+- Determine and use UUID
 
 \
 

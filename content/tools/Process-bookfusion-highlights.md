@@ -28,7 +28,9 @@ Now, I want to get rid of the `> ` on each line:
 ![](/images/Pasted%20image%2020240414035218.png)
 
 Almost there, you'll notice there are 6 empty lines in between each highlight. Let's shrink those down into one: 
-`:%s/\(\n\)\{3,}/\r\r/g`
+```
+:%s/\(\n\)\{3,}/\r\r/g
+```
 
 
 ![](/images/Pasted%20image%2020240414035716.png)
