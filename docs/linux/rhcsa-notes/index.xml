@@ -3,7 +3,7 @@
   <channel>
     <title></title>
     <link>http://davidvargas.xyz/linux/rhcsa-notes/</link>
-    <description> Here are my notes from Asghar Gori’s RHCSA book. Buy the book or read the reviews here.&#xA;Track my RHCSA progress: RHCSA Study Tracker&#xA;Installation 2_interaction 3_file_management 4_adv_file_management 5_basic_user_management 6_Adv_user_management 7_bash_shell 8_process_and_task_scheduling 9_basic_package_management 10_adv_package_management 11_boot_grub2_kernel 12_sysinit_logging_tuning 13_Storage_Management Local File Systems and Swap 15_Networking_Network_Devices_and_Network_Connections 16_Network File System 17_Hostname_resolution_and_time_synchronization 18_The_Secure_Shell_Service 19_The_Linux_Firewall 20_Security_Enhanced_Linux 21_Shell_Scripting 22_Containers Sample_exam_1 Sample_exam_2 Sample_exam_3 Sample_exam_4 </description>
+    <description> Here are my notes from Asghar Gori’s RHCSA book. Buy the book or read the reviews here.&#xA;Track my RHCSA progress: RHCSA Study Tracker&#xA;Installation Interaction File Management Advanced File Management Basic User Management Advanced User Management Bash Process and Task Scheduling Basic Package Management Advanced Package Management Boot Grub2 Kernel Sysinit Logging Tuning Storage Management Local File Systems and Swap Networking Network Devices and Network Connections Network File System Hostname Resolution and Time Synchronization The Secure Shell Service The Linux Firewall Security Enhanced Linux Shell Scripting 22_Containers Sample Exam 1 Sample exam 2 Sample Exam 3 Sample Exam 4 </description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://davidvargas.xyz/linux/rhcsa-notes/index.xml" rel="self" type="application/rss+xml" />

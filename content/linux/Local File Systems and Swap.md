@@ -1,5 +1,5 @@
 
-### Local File Systems and Swap
+# Local File Systems and Swap
 
 ## Topics
 - File system benefits, categories, and types
@@ -7,32 +7,14 @@
 - File system administration commandset
 - Mount and unmount file systems manually and persistently
 - Determine and use UUID
-
-\
-
-Apply and use file system label
-
-\
-
-Monitor file system and directory usage
-
-\
-
-Create and mount different types of local file systems in partitions
-
-\
-
-Create, mount, and resize Ext4 and XFS file systems in LVM
-
-\
-
-Understand, create, and activate swap in partitions and LVM
-
-\
+- Apply and use file system label
+- Monitor file system and directory usage
+- Create and mount different types of local file systems in partitions
+- Create, mount, and resize Ext4 and XFS file systems in LVM
+- Understand, create, and activate swap in partitions and LVM
 
 #### RHCSA Objectives:
 
-\
 
 30\. Configure systems to mount file systems at boot by Universally
 Unique ID (UUID) or label
@@ -45,269 +27,135 @@ detail in Chapter 13 )
 
 35\. Extend existing logical volumes (more details in Chapter 13 also)
 
-::: {style="page-break-before: always;"}
-:::
 
-\
+File systems 
 
-File systems are the most common structures created in partitions and
-volumes regardless of the underlying storage management solution
-employed. They are logical containers employed for file storage and can
-be optimized, resized, mounted, and unmounted independently. They must
-be connected to the directory hierarchy in order to be accessed by users
-and applications. This may be accomplished automatically at system boot
-or manually as required. File systems can be mounted or unmounted using
-their unique identifiers, labels, or device files. There is a whole slew
-of commands available for file system creation and administration; some
-of them are file system type specific while others are general.
+- can be optimized, resized, mounted, and unmounted independently.
+- must be connected to the directory hierarchy in order to be accessed by users and applications. This may be accomplished automatically at system boot or manually as required. File systems 
+- can be mounted or unmounted using their unique identifiers, labels, or device files. \
 
-\
+swap space. Swapping 
+- provides a mechanism to move out and in pages of idle data between physical memory and swap. 
+- Swap areas act as extensions to the physical memory, and they 
+- may be activated or deactivated independent of swap spaces located in other partitions and volumes.
 
-The other common structure created in partitions and logical volumes is
-the swap space. Swapping provides a mechanism to move out and in pages
-of idle data between physical memory and swap. Swap areas act as
-extensions to the physical memory, and they may be activated or
-deactivated independent of swap spaces located in other partitions and
-volumes.
+## File Systems and File System Types 
 
-\
+- Each file system is created in a discrete partition, VDO volume, or logical volume. 
+- A typical production RHEL system usually has numerous file systems. 
+- During OS installation, only two file systems---/ and /boot---are created in the default disk layout, but you can design a custom disk layout and construct separate containers to store dissimilar
+information. 
+- Typical additional file systems that may be created during an installation are /home, /opt, /tmp, /usr, and /var. 
+- The two mandatory file systems---/ and /boot---are required for installation and booting.
 
-::: {style="text-align: center;"}
-![](image-C4JHBXJI.jpg){height="100%"}
-:::
+Storing disparate data in distinct file systems versus storing all data in a single file system offers the following advantages:
 
-This chapter elaborates on file systems and swap, and demonstrates their
-creation and management in several exercises. It also highlights the
-tools to monitor their usage.
+- Make any file system accessible (mount) or inaccessible (unmount) to users independent of other file systems. This hides or reveals information contained in that file system.
+- Perform file system repair activities on individual file systems
+- Keep dissimilar data in separate file systems
+- Optimize or tune each file system independently
+- Grow or shrink a file system independent of other file systems
 
-::: {style="page-break-before: always;"}
-:::
+3 types of file system: disk-based, network-based, and memory-based.
 
-[]{#chapter0432.html}
+**Disk-based**
+- typically created on physical drives using SATA, USB, Fibre Channel, and other technologies. 
+ 
+**Network-based** 
+- essentially disk-based file systems shared over the network for remote access. 
+- 
+**Memory-based** 
+- virtual
+- created at system startup and destroyed when the system goes down.
 
-## File Systems and File System Types {.style3}
-
-\
-
-A file system is a logical container that stores files and directories.
-Each file system is created in a discrete partition, VDO volume, or
-logical volume. A typical production RHEL system usually has numerous
-file systems. During OS installation, only two file systems---/ and
-/boot---are created in the default disk layout, but you can design a
-custom disk layout and construct separate containers to store dissimilar
-information. Typical additional file systems that may be created during
-an installation are /home, /opt, /tmp, /usr, and /var. The two mandatory
-file systems---/ and /boot---are required for installation and booting.
-
-\
-
-Storing disparate data in distinct file systems versus storing all data
-in a single file system offers the following advantages:
-
-\
-
-Make any file system accessible (mount) or inaccessible (unmount) to
-users independent of other file systems. This hides or reveals
-information contained in that file system.
-
-\
-
-Perform file system repair activities on individual file systems
-
-\
-
-Keep dissimilar data in separate file systems
-
-\
-
-Optimize or tune each file system independently
-
-\
-
-Grow or shrink a file system independent of other file systems
-
-\
-
-RHEL supports several types of file system that may be categorized in
-three basic groups: disk-based, network-based, and memory-based.
-Disk-based file systems are typically created on physical drives using
-SATA, USB, Fibre Channel, and other technologies. Network-based file
-systems are essentially disk-based file systems shared over the network
-for remote access. Memory-based file systems are virtual; they are
-created at system startup and destroyed when the system goes down.
-Disk-based and network-based file systems store information
-persistently, while any data saved in virtual file systems does not
+Disk-based and network-based file systems store information persistently, while any data saved in virtual file systems does not
 survive across system reboots.
 
-\
 
-[Table 14-1 lists and explains various common disk- and network-based
-supported file system types.](#chapter0432.html)
+  Ext3
+    -  Disk                   
+    -  The third generation of the extended filesystem. It supports metadata journaling for faster recovery, offer superior reliability, allows the creation of up to 32,000 subdirectories, and supports larger file systems and bigger files than its predecessor.
 
-\
+  Ext4
+    - Disk
+    - successor to Ext3. It 
+    - supports all features of Ext3 in addition to:
+	    - a larger file system size, 
+	    - bigger file size, an 
+	    - unlimited number of subdirectories, 
+	    - metadata and quota journaling, and 
+	    - extended user attributes.
 
-  ----------------------- ----------------------- -----------------------
-  File System Type        Category                Description
+  XFS                     
+    - Disk 
+    - XFS is a highly scalable and high-performing 64-bit file system. It
+    - supports:
+	    - metadata journaling for faster crash recovery, and 
+	    - online defragmentation, expansion, quota journaling, and extended user attributes. XFS is the 
+	- default file system type in RHEL 9.
 
-  Ext3                    Disk                    The third generation of
-                                                  the extended file
-                                                  system. It supports
-                                                  metadata journaling for
-                                                  faster recovery, offers
-                                                  superior reliability,
-                                                  allows the creation of
-                                                  up to 32,000
-                                                  subdirectories, and
-                                                  supports larger file
-                                                  systems and bigger
-                                                  files than its
-                                                  predecessor.
+  VFAT                    
+  - Disk                 
+  - used for post-Windows 95 file system formats on hard disks, USB drives, and floppy disks.
 
-  Ext4                    Disk                    The fourth generation
-                                                  of the extended file
-                                                  system developed as the
-                                                  successor to Ext3. It
-                                                  supports all features
-                                                  of Ext3 in addition to
-                                                  a larger file system
-                                                  size, bigger file size,
-                                                  an unlimited number of
-                                                  subdirectories,
-                                                  metadata and quota
-                                                  journaling, and
-                                                  extended user
-                                                  attributes.
+  ISO9660                 
+  - Disk                    This is 
+  - used for optical file systems such as CD and DVD.
 
-  XFS                     Disk                    XFS is a highly
-                                                  scalable and
-                                                  high-performing 64-bit
-                                                  file system. It
-                                                  supports metadata
-                                                  journaling for faster
-                                                  crash recovery, and
-                                                  online defragmentation,
-                                                  expansion, quota
-                                                  journaling, and
-                                                  extended user
-                                                  attributes. XFS is the
-                                                  default file system
-                                                  type in RHEL 9.
+  NFS - (Network File System.)          
+  - Network                
+  - shared directory or file system for remote access by other Linux systems.
 
-  VFAT                    Disk                    This file system is
-                                                  used for post-Windows
-                                                  95 file system formats
-                                                  on hard disks, USB
-                                                  drives, and floppy
-                                                  disks.
+  AutoFS  (Auto File System)               
+  - Network 
+  - NFS file system set to mount and unmount automatically on remote client systems.
 
-  ISO9660                 Disk                    This is used for
-                                                  optical file systems
-                                                  such as CD and DVD.
+## Extended File Systems
 
-  NFS                     Network                 Network File System. A
-                                                  shared directory or
-                                                  file system for remote
-                                                  access by other Linux
-                                                  systems.
+- first generation is obsolete and is no longer supported
+- second, third, and fourth generations are currently available and supported. 
+- fourth generation is the latest in the series and is superior in features and enhancements to its predecessors.
+- structure is built on a partition or logical volume at the time of file system creation. This structure is divided into two sets: 
+	- **first set** holds the file system's **metadata** and it is very tiny. 
+		- includes superblock
+			- keeps vital file system structural information:
+				- type
+				- size
+				- status of the file system
+				- number of data blocks it contains
+				- automatically replicated and maintained at various known locations throughout the file system. 
+				- primary superblock
+					- superblock at the beginning of the file system 
+				- backup superblocks. 
+					- I used to supplant the corrupted or lost primary superblock to bring the file system back to its normal state.
+					- Copy of the primary
+		- contains the inode table
+			- maintains a list of index node (inode) numbers. 
+			- Each file is assigned an **inode number** at the time of its creation, and the inode number
+				- holds the file's attributes such as:
+					- type, 
+					- permissions, 
+					- ownership, 
+					- owning group, 
+					- size
+					- last access/modification time
+					- holds and keeps track of the pointers to the actual data blocks where the file contents are located.
+	- **second set** stores the actual data, and it occupies almost the entire partition or the logical volume (VDO and LVM) space.\
 
-  AutoFS                  Network                 Auto File System. An
-                                                  NFS file system set to
-                                                  mount and unmount
-                                                  automatically on remote
-                                                  client systems.
-  ----------------------- ----------------------- -----------------------
+**journaling** 
+- Supported by Ext3 and Ext4
+- provides the ability to recover swiftly after a system crash.
+- keep track of recent changes in their metadata in a journal (or log). 
+- Each metadata update is written in its entirety to the journal after completion. 
+- The system peruses the journal of each extended file system following the reboot after a crash to determine if there are any errors, 
+- Lets the system recover the file system rapidly using the latest metadata information stored in its journal.
 
-::: {style="page-break-before: always;"}
-:::
+- Ext3 that supports file systems up to 16TiB and files up to 2TiB, 
+- Ext4 supports very large file systems up to 1EiB (ExbiByte) and files up to 16TiB (TebiByte).
+	- uses a series of contiguous physical blocks on the hard disk called extents, resulting in improved read and write performance with reduced fragmentation. 
+	- supports extended user attributes, metadata and quota journaling, etc.
 
-\
-
-Table 14-1 File System Types
-
-\
-
-This chapter covers Ext3, Ext4, XFS, and VFAT file systems at length. It
-also touches upon mounting and unmounting ISO9660. For a brief
-discussion on memory-based file systems, see Chapter 02 "Initial
-Interaction with the System". NFS and AutoFS are discussed in Chapter 16
-"Network File System".
-
-::: {style="page-break-before: always;"}
-:::
-
-[]{#chapter0433.html}
-
-## Extended File Systems {.style3}
-
-\
-
-Extended file systems have been part of RHEL for many years. The first
-generation is obsolete and is no longer supported. The second, third,
-and fourth generations are currently available and supported. The fourth
-generation is the latest in the series and is superior in features and
-enhancements to its predecessors.
-
-\
-
-The structure of an extended file system is built on a partition or
-logical volume at the time of file system creation. This structure is
-divided into two sets. The first set holds the file system's metadata
-and it is very tiny. The second set stores the actual data, and it
-occupies almost the entire partition or the logical volume (VDO and LVM)
-space.
-
-\
-
-The metadata includes the superblock, which keeps vital file system
-structural information, such as the type, size, and status of the file
-system, and the number of data blocks it contains. Since the superblock
-holds such critical information, it is automatically replicated and
-maintained at various known locations throughout the file system. The
-superblock at the beginning of the file system is referred to as the
-primary superblock, and all of its copies as backup superblocks. If the
-primary superblock is corrupted or lost, it renders the file system
-inaccessible. One of the backup superblocks is then used to supplant the
-corrupted or lost primary superblock to bring the file system back to
-its normal state.
-
-\
-
-The metadata also contains the inode table, which maintains a list of
-index node (inode) numbers. Each file is assigned an inode number at the
-time of its creation, and the inode number holds the file's attributes
-such as its type, permissions, ownership, owning group, size, and last
-access/modification time. The inode also holds and keeps track of the
-pointers to the actual data blocks where the file contents are located.
-
-\
-
-The Ext3 and Ext4 file systems support a journaling mechanism that
-provides them with the ability to recover swiftly after a system crash.
-Both Ext3 and Ext4 file systems keep track of recent changes in their
-metadata in a journal (or log). Each metadata update is written in its
-entirety to the journal after completion. The system peruses the journal
-of each extended file system following the reboot after a crash to
-determine if there are any errors, and it recovers the file system
-rapidly using the latest metadata information stored in its journal.
-
-\
-
-In contrast to Ext3 that supports file systems up to 16TiB and files up
-to 2TiB, Ext4 supports very large file systems up to 1EiB (ExbiByte) and
-files up to 16TiB (TebiByte). Additionally, Ext4 uses a series of
-contiguous physical blocks on the hard disk called extents, resulting in
-improved read and write performance with reduced fragmentation. Ext4
-supports extended user attributes, metadata and quota journaling, and so
-on.
-
-::: {style="page-break-before: always;"}
-:::
-
-[]{#chapter0434.html}
-
-## XFS File System {.style3}
-
-\
+## XFS File System
 
 The X File System (XFS) is a high-performing 64-bit extent-based
 journaling file system type. XFS allows the creation of file systems and
@@ -333,12 +181,9 @@ XFS uses sophisticated techniques in its architecture for speedy
 input/output performance. It can be snapshot in a mounted, active state.
 The snapshot can then be used for backup or other purposes.
 
-::: {style="page-break-before: always;"}
-:::
 
-[]{#chapter0435.html}
 
-## VFAT File System {.style3}
+## VFAT File System 
 
 \
 
@@ -363,11 +208,6 @@ VFAT file system may be created on hard drives, but it is primarily used
 on removable media, such as floppy and USB flash drives, for exchanging
 data between Linux and Windows.
 
-::: {style="page-break-before: always;"}
-:::
-
-[]{#chapter0436.html}
-
 ## ISO9660 File System
 
 \
@@ -379,12 +219,7 @@ format between computers. The ISO9660 format originated from the
 High-Sierra File System (HSFS) format, and it has now been enhanced to
 include innovative features.
 
-::: {style="page-break-before: always;"}
-:::
-
-[]{#chapter0437.html}
-
-## File System Management {.style3}
+## File System Management 
 
 \
 
@@ -408,24 +243,13 @@ the completion of the exercises.
 Here is a listing of the block devices to confirm the current state of
 the disks:
 
-\
-
-<div>
-
-![](image-VHZU6DE4.jpg){height="100%"}
-
-</div>
+![](image-VHZU6DE4.jpg)
 
 The output verifies the unused state and availability status for all the
 disks---sdb through sdf. You should be able to reuse them in the
 exercises in this chapter.
 
-::: {style="page-break-before: always;"}
-:::
-
-[]{#chapter0438.html}
-
-## File System Administration Commands {.style3}
+## File System Administration Commands 
 
 \
 
@@ -488,8 +312,8 @@ administration commands.
   umount                              Unmounts a file system
   ----------------------------------- -----------------------------------
 
-::: {style="page-break-before: always;"}
-:::
+ 
+
 
 \
 
@@ -499,12 +323,12 @@ Table 14-2 File System Management Commands
 
 Most of these commands are used in this chapter.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0439.html}
 
-## Mounting and Unmounting File Systems {.style3}
+
+
+## Mounting and Unmounting File Systems 
 
 \
 
@@ -525,11 +349,11 @@ XFS file systems only:
 
 \
 
-<div>
 
-![](image-VWY2F9RB.jpg){height="100%"}
 
-</div>
+![](image-VWY2F9RB.jpg)
+
+
 
 The "-t xfs" option makes the command to only show the file systems
 initialized with the XFS type. The mount command is also used for
@@ -581,8 +405,8 @@ comma-separated options. Table 14-3 describes some common options.
                                       (read/write)
   ----------------------------------- -----------------------------------
 
-::: {style="page-break-before: always;"}
-:::
+ 
+
 
 \
 
@@ -599,12 +423,12 @@ a specific type of file system. The kernel removes the corresponding
 file system entry from the /proc/self/mounts file after it has been
 successfully disconnected.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0440.html}
 
-## Determining the UUID of a File System {.style3}
+
+
+## Determining the UUID of a File System 
 
 \
 
@@ -635,11 +459,11 @@ follows to determine its UUID:
 
 \
 
-<div>
 
-![](image-QC3A8ZPT.jpg){height="100%"}
 
-</div>
+![](image-QC3A8ZPT.jpg)
+
+
 
 The UUID reported by the above commands for the /boot file system is
 \"22d05484-6ae1-4ef8-a37d-abab674a5e35\". If you grep for the string
@@ -659,12 +483,12 @@ volume; however, it need not be used in the fstab file, as the device
 files associated with the logical volumes are always unique and
 persistent.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0441.html}
 
-## Labeling a File System {.style3}
+
+
+## Labeling a File System 
 
 \
 
@@ -682,11 +506,11 @@ determine its label:
 
 \
 
-<div>
 
-![](image-T0YGDGYK.jpg){height="100%"}
 
-</div>
+![](image-T0YGDGYK.jpg)
+
+
 
 The output discloses that there is currently no label assigned to the
 /boot file system.
@@ -705,11 +529,11 @@ label "bootfs" on its device file, and remount it:
 
 \
 
-<div>
 
-![](image-ZTTYTIQQ.jpg){height="100%"}
 
-</div>
+![](image-ZTTYTIQQ.jpg)
+
+
 
 You can confirm the new label by executing sudo xfs_admin -l /dev/sda1
 or sudo lsblk -f /dev/sda1.
@@ -732,12 +556,12 @@ volume; however, it is not recommended for use in the fstab file, as the
 device files for logical volumes are always unique and remain persistent
 across system reboots.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0442.html}
 
-## Automatically Mounting a File System at Reboots {.style3}
+
+
+## Automatically Mounting a File System at Reboots 
 
 \
 
@@ -760,16 +584,16 @@ currently has the following three entries:
 
 \
 
-<div>
 
-![](image-NS29U6SW.jpg){height="100%"}
 
-</div>
+![](image-NS29U6SW.jpg)
+
+
 
 \
 
-::: {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-:::
+ {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
+
 
 \
 
@@ -780,8 +604,8 @@ both file system and swap entries.
 
 \
 
-::: {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-:::
+ {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
+
 
 \
 
@@ -833,12 +657,12 @@ system types.
 This file is edited manually, so care must be observed to circumvent
 syntax and typing errors.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0443.html}
 
-## Monitoring File System Usage {.style3}
+
+
+## Monitoring File System Usage 
 
 \
 
@@ -856,11 +680,11 @@ Let's run this command with the -h option on server2:
 
 \
 
-<div>
 
-![](image-VIH3K0C2.jpg){height="100%"}
 
-</div>
+![](image-VIH3K0C2.jpg)
+
+
 
 The output shows the file system device file or type in column 1,
 followed by the total, used, and available spaces in columns 2, 3, and
@@ -888,12 +712,12 @@ xfs)
 You may use -h with any of these examples to print information in
 human-readable format.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0444.html}
 
-## Calculating Disk Usage {.style3}
+
+
+## Calculating Disk Usage 
 
 \
 
@@ -911,31 +735,31 @@ summary:
 
 \
 
-<div>
 
-![](image-OYE5SIWK.jpg){height="100%"}
 
-</div>
+![](image-OYE5SIWK.jpg)
+
+
 
 To add a "total" row to the output and with numbers displayed in KBs:
 
 \
 
-<div>
 
-![](image-03KMEUMA.jpg){height="100%"}
 
-</div>
+![](image-03KMEUMA.jpg)
+
+
 
 Try this command with different options on the /usr/sbin/lvm file and
 observe the results.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0445.html}
 
-## Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions {.style3}
+
+
+## Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions 
 
 \
 
@@ -958,43 +782,43 @@ file system in it and mount it on /xfsfs1.
 
 \
 
-<div>
 
-![](image-2Y88M0ZP.jpg){height="100%"}
 
-</div>
+![](image-2Y88M0ZP.jpg)
+
+
 
 2\. Create 2 x 100MB primary partitions on sdb with the parted command:
 
 \
 
-<div>
 
-![](image-DSWD45L9.jpg){height="100%"}
 
-</div>
+![](image-DSWD45L9.jpg)
+
+
 
 3\. Initialize the first partition (sdb1) with Ext4 file system type
 using the mkfs command:
 
 \
 
-<div>
 
-![](image-UWG2ZP0Y.jpg){height="100%"}
 
-</div>
+![](image-UWG2ZP0Y.jpg)
+
+
 
 4\. Initialize the second partition (sdb2) with VFAT file system type
 using the mkfs command:
 
 \
 
-<div>
 
-![](image-22LNR8Q6.jpg){height="100%"}
 
-</div>
+![](image-22LNR8Q6.jpg)
+
+
 
 5\. Initialize the whole disk (sdc) with the XFS file system type using
 the mkfs.xfs command. Add the -f flag to force the removal of any old
@@ -1002,78 +826,78 @@ partitioning or labeling information from the disk.
 
 \
 
-<div>
 
-![](image-CKMHXG0C.jpg){height="100%"}
 
-</div>
+![](image-CKMHXG0C.jpg)
+
+
 
 6\. Determine the UUIDs for all three file systems using the lsblk
 command:
 
 \
 
-<div>
 
-![](image-0P41TVWG.jpg){height="100%"}
 
-</div>
+![](image-0P41TVWG.jpg)
+
+
 
 7\. Open the /etc/fstab file, go to the end of the file, and append
 entries for the file systems for persistence using their UUIDs:
 
 \
 
-<div>
 
-![](image-5V6Z5MZM.jpg){height="100%"}
 
-</div>
+![](image-5V6Z5MZM.jpg)
+
+
 
 8\. Create mount points /ext4fs1, /vfatfs1, and /xfsfs1 for the three
 file systems using the mkdir command:
 
 \
 
-<div>
 
-![](image-ARCK90F6.jpg){height="100%"}
 
-</div>
+![](image-ARCK90F6.jpg)
+
+
 
 9\. Mount the new file systems using the mount command. This command
 will fail if there are any invalid or missing information in the file.
 
 \
 
-<div>
 
-![](image-1VIDXU3P.jpg){height="100%"}
 
-</div>
+![](image-1VIDXU3P.jpg)
+
+
 
 10\. View the mount and availability status as well as the types of all
 three file systems using the df command:
 
 \
 
-<div>
 
-![](image-26Z74LOW.jpg){height="100%"}
 
-</div>
+![](image-26Z74LOW.jpg)
+
+
 
 The output verifies the creation and availability status of the three
 file systems. They are added to the fstab file for persistence. A system
 reboot at this point will remount them automatically. These file systems
 may now be used to store files.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0446.html}
 
-## Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes {.style3}
+
+
+## Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes 
 
 \
 
@@ -1098,33 +922,33 @@ usage.
 
 \
 
-<div>
 
-![](image-ZNAS86YQ.jpg){height="100%"}
 
-</div>
+![](image-ZNAS86YQ.jpg)
+
+
 
 2\. Initialize the sdd1 partition for use in LVM using the pvcreate
 command:
 
 \
 
-<div>
 
-![](image-XTVY1S8C.jpg){height="100%"}
 
-</div>
+![](image-XTVY1S8C.jpg)
+
+
 
 3\. Create the volume group vgfs with a PE size of 16MB using the
 physical volume sdd1:
 
 \
 
-<div>
 
-![](image-W6V3KOJT.jpg){height="100%"}
 
-</div>
+![](image-W6V3KOJT.jpg)
+
+
 
 \
 
@@ -1138,22 +962,22 @@ vgfs using the lvcreate command:
 
 \
 
-<div>
 
-![](image-TYHEPQ9I.jpg){height="100%"}
 
-</div>
+![](image-TYHEPQ9I.jpg)
+
+
 
 5\. Format the ext4vol logical volume with the Ext4 file system type
 using the mkfs.ext4 command:
 
 \
 
-<div>
 
-![](image-J0ADC230.jpg){height="100%"}
 
-</div>
+![](image-J0ADC230.jpg)
+
+
 
 You may alternatively use sudo mkfs -t ext4 /dev/vgfs/ext4vol.
 
@@ -1164,11 +988,11 @@ the mkfs.xfs command:
 
 \
 
-<div>
 
-![](image-6NMGL0VI.jpg){height="100%"}
 
-</div>
+![](image-6NMGL0VI.jpg)
+
+
 
 You may use sudo mkfs -t xfs /dev/vgfs/xfsvol instead.
 
@@ -1179,32 +1003,32 @@ entries for the file systems for persistence using their device files:
 
 \
 
-<div>
 
-![](image-JIZ01CSU.jpg){height="100%"}
 
-</div>
+![](image-JIZ01CSU.jpg)
+
+
 
 8\. Create mount points /ext4fs2 and /xfsfs2 using the mkdir command:
 
 \
 
-<div>
 
-![](image-YCZ3J60S.jpg){height="100%"}
 
-</div>
+![](image-YCZ3J60S.jpg)
+
+
 
 9\. Mount the new file systems using the mount command. This command
 will fail if there is any invalid or missing information in the file.
 
 \
 
-<div>
 
-![](image-7VJ6GFLV.jpg){height="100%"}
 
-</div>
+![](image-7VJ6GFLV.jpg)
+
+
 
 Fix any issues in the file if reported.
 
@@ -1215,11 +1039,11 @@ new LVM file systems using the lsblk and df commands:
 
 \
 
-<div>
 
-![](image-YGHO41IZ.jpg){height="100%"}
 
-</div>
+![](image-YGHO41IZ.jpg)
+
+
 
 The lsblk command output illustrates the LVM logical volumes (ext4vol
 and xfsvol), the disk they are located on (sdd), the sizes (80MB), and
@@ -1233,12 +1057,12 @@ are added to the fstab file for persistence, meaning future system
 reboots will remount them automatically. They may now be used to store
 files.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0447.html}
 
-## Exercise 14-3: Resize Ext4 and XFS File Systems in LVM Logical Volumes {.style3}
+
+
+## Exercise 14-3: Resize Ext4 and XFS File Systems in LVM Logical Volumes 
 
 \
 
@@ -1260,29 +1084,29 @@ single command. You will verify the new extensions.
 
 \
 
-<div>
 
-![](image-N1S4ZEQ8.jpg){height="100%"}
 
-</div>
+![](image-N1S4ZEQ8.jpg)
+
+
 
 2\. Confirm the new size of vgfs using the vgs and vgdisplay commands:
 
 \
 
-<div>
 
-![](image-HUYFRPBH.jpg){height="100%"}
 
-</div>
+![](image-HUYFRPBH.jpg)
+
+
 
 \
 
-<div>
 
-![](image-M47AUSQL.jpg){height="100%"}
 
-</div>
+![](image-M47AUSQL.jpg)
+
+
 
 There are now two physical volumes in the volume group and the total
 size increased to 400MiB.
@@ -1296,11 +1120,11 @@ signifies an addition to the current size.
 
 \
 
-<div>
 
-![](image-EIAUIGSP.jpg){height="100%"}
 
-</div>
+![](image-EIAUIGSP.jpg)
+
+
 
 The resize subcommand instructs the fsadm command to grow the file
 system to the full length of the specified logical volume.
@@ -1312,33 +1136,33 @@ system to the full length of the specified logical volume.
 
 \
 
-<div>
 
-![](image-ZWXJ43LJ.jpg){height="100%"}
 
-</div>
+![](image-ZWXJ43LJ.jpg)
+
+
 
 5\. Verify the new extensions to both logical volumes using the lvs
 command. You may also issue the lvdisplay or vgdisplay command instead.
 
 \
 
-<div>
 
-![](image-RV52MD1F.jpg){height="100%"}
 
-</div>
+![](image-RV52MD1F.jpg)
+
+
 
 6\. Check the new sizes and the current mount status for both file
 systems using the df and lsblk commands:
 
 \
 
-<div>
 
-![](image-O1J4S4SQ.jpg){height="100%"}
 
-</div>
+![](image-O1J4S4SQ.jpg)
+
+
 
 The outputs reflect the new sizes (128MB) for both file systems. They
 also indicate their mount status.
@@ -1347,12 +1171,12 @@ also indicate their mount status.
 
 This concludes the exercise.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0448.html}
 
-## Exercise 14-4: Create and Mount XFS File System in LVM VDO Volume {.style3}
+
+
+## Exercise 14-4: Create and Mount XFS File System in LVM VDO Volume 
 
 \
 
@@ -1374,31 +1198,31 @@ availability and usage.
 
 \
 
-<div>
 
-![](image-RIKR613A.jpg){height="100%"}
 
-</div>
+![](image-RIKR613A.jpg)
+
+
 
 2\. Create vgvdo1 volume group using the vgcreate command:
 
 \
 
-<div>
 
-![](image-CJ3HB6FP.jpg){height="100%"}
 
-</div>
+![](image-CJ3HB6FP.jpg)
+
+
 
 3\. Display basic information about the volume group:
 
 \
 
-<div>
 
-![](image-HBLFK52R.jpg){height="100%"}
 
-</div>
+![](image-HBLFK52R.jpg)
+
+
 
 The volume group contains a total of 1279 PEs.
 
@@ -1410,11 +1234,11 @@ allocated and the -V option for the amount of virtual space (20GB).
 
 \
 
-<div>
 
-![](image-2XDC7EWH.jpg){height="100%"}
 
-</div>
+![](image-2XDC7EWH.jpg)
+
+
 
 Confirm with a y when prompted to wipe old signatures.
 
@@ -1425,19 +1249,19 @@ logical volume and the physical volume:
 
 \
 
-<div>
 
-![](image-NU4QU06N.jpg){height="100%"}
 
-</div>
+![](image-NU4QU06N.jpg)
+
+
 
 \
 
-<div>
 
-![](image-G4EYBOGA.jpg){height="100%"}
 
-</div>
+![](image-G4EYBOGA.jpg)
+
+
 
 The output reflects the creation of two logical volumes: a pool called
 /dev/vgvdo1/vpool0 and a volume called /dev/vgvdo1/lvvdo1.
@@ -1448,11 +1272,11 @@ The output reflects the creation of two logical volumes: a pool called
 
 \
 
-<div>
 
-![](image-SVVL6JGY.jpg){height="100%"}
 
-</div>
+![](image-SVVL6JGY.jpg)
+
+
 
 The output shows the virtual volume size (20GB) and the underlying disk
 size (5GB).
@@ -1467,11 +1291,11 @@ information from the disk.
 
 \
 
-<div>
 
-![](image-XHACPUN9.jpg){height="100%"}
 
-</div>
+![](image-XHACPUN9.jpg)
+
+
 
 8\. Open the /etc/fstab file, go to the end of the file, and append the
 following entry for the file system for persistent mounts using its
@@ -1479,32 +1303,32 @@ device file:
 
 \
 
-<div>
 
-![](image-AU8TDGE5.jpg){height="100%"}
 
-</div>
+![](image-AU8TDGE5.jpg)
+
+
 
 9\. Create the mount point /xfsvdo1 using the mkdir command:
 
 \
 
-<div>
 
-![](image-U6XSRERT.jpg){height="100%"}
 
-</div>
+![](image-U6XSRERT.jpg)
+
+
 
 10\. Mount the new file system using the mount command. This command
 will fail if there are any invalid or missing information in the file.
 
 \
 
-<div>
 
-![](image-K8DOB3ZN.jpg){height="100%"}
 
-</div>
+![](image-K8DOB3ZN.jpg)
+
+
 
 The mount command with the -a flag is a validation test for the fstab
 file. It should always be executed after updating this file and before
@@ -1517,11 +1341,11 @@ VDO file system using the lsblk and df commands:
 
 \
 
-<div>
 
-![](image-WVWQLFHC.jpg){height="100%"}
 
-</div>
+![](image-WVWQLFHC.jpg)
+
+
 
 The lsblk command output illustrates the VDO volume name (lvvdo1), the
 disk it is located on (sdf), the actual size (5GB) and the virtual size
@@ -1540,12 +1364,12 @@ used to store files.
 
 Refer to Chapter 13 "Storage Management" for details on VDO.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0449.html}
 
-## Swap and its Management {.style3}
+
+
+## Swap and its Management 
 
 \
 
@@ -1594,12 +1418,12 @@ and new processes are only allowed to be started when the system
 discovers that the available physical memory has climbed above the
 threshold level and thrashing has ceased.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0450.html}
 
-## Determining Current Swap Usage {.style3}
+
+
+## Determining Current Swap Usage 
 
 \
 
@@ -1623,11 +1447,11 @@ of the output. Here is a sample output from server2:
 
 \
 
-<div>
 
-![](image-X5OW4QON.jpg){height="100%"}
 
-</div>
+![](image-X5OW4QON.jpg)
+
+
 
 The output indicates that the system has 1.7GiB of total memory of which
 1.0GiB is in use and 443MiB is free. It also shows on the same line the
@@ -1656,20 +1480,20 @@ screenshot with free. Here are the relevant fields from this file:
 
 \
 
-<div>
 
-![](image-V1DJ6BRY.jpg){height="100%"}
 
-</div>
+![](image-V1DJ6BRY.jpg)
+
+
 
 This data depicts the usage of the system's runtime memory and swap.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0451.html}
 
-## Prioritizing Swap Spaces {.style3}
+
+
+## Prioritizing Swap Spaces 
 
 \
 
@@ -1683,12 +1507,12 @@ and 32767 with -2 being the default. A higher value of "pri" sets a
 higher priority for the corresponding swap region. For swap areas with
 an identical priority, the system alternates between them.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0452.html}
 
-## Swap Administration Commands {.style3}
+
+
+## Swap Administration Commands 
 
 \
 
@@ -1700,12 +1524,12 @@ other two commands, or set it up for automatic activation by placing an
 entry in the fstab file. The fstab file accepts the swap area's device
 file, UUID, or label.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0453.html}
 
-## Exercise 14-5: Create and Activate Swap in Partition and Logical Volume {.style3}
+
+
+## Exercise 14-5: Create and Activate Swap in Partition and Logical Volume 
 
 \
 
@@ -1724,8 +1548,8 @@ tools to validate the activation.
 
 \
 
-::: {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-:::
+ {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
+
 
 \
 
@@ -1733,8 +1557,8 @@ EXAM TIP: Use the lsblk command to determine available disk space.
 
 \
 
-::: {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-:::
+ {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
+
 
 \
 
@@ -1744,11 +1568,11 @@ volume group to determine available space for a new 40MB partition and a
 
 \
 
-<div>
 
-![](image-479W71MV.jpg){height="100%"}
 
-</div>
+![](image-479W71MV.jpg)
+
+
 
 The outputs show 49MB (250MB minus 201MB) free space on the sdb disk and
 144MB free space in the volume group.
@@ -1760,33 +1584,33 @@ command:
 
 \
 
-<div>
 
-![](image-ALDICG61.jpg){height="100%"}
 
-</div>
+![](image-ALDICG61.jpg)
+
+
 
 3\. Create logical volume swapvol of size 144MB in vgs using the
 lvcreate command:
 
 \
 
-<div>
 
-![](image-7U0JHKDJ.jpg){height="100%"}
 
-</div>
+![](image-7U0JHKDJ.jpg)
+
+
 
 4\. Construct swap structures in sdb3 and swapvol using the mkswap
 command:
 
 \
 
-<div>
 
-![](image-VL5QVXNY.jpg){height="100%"}
 
-</div>
+![](image-VL5QVXNY.jpg)
+
+
 
 5\. Edit the fstab file and add entries for both swap areas for
 auto-activation on reboots. Obtain the UUID for partition swap with
@@ -1795,16 +1619,16 @@ their priorities.
 
 \
 
-<div>
 
-![](image-W8FIIC8U.jpg){height="100%"}
 
-</div>
+![](image-W8FIIC8U.jpg)
+
+
 
 \
 
-::: {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-:::
+ {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
+
 
 \
 
@@ -1813,8 +1637,8 @@ to add entries to the fstab file.
 
 \
 
-::: {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-:::
+ {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
+
 
 \
 
@@ -1823,11 +1647,11 @@ swapon command:
 
 \
 
-<div>
 
-![](image-WLC5BSTD.jpg){height="100%"}
 
-</div>
+![](image-WLC5BSTD.jpg)
+
+
 
 There is one 2GB swap area on the system and it is configured at the
 default priority of -2.
@@ -1838,11 +1662,11 @@ default priority of -2.
 
 \
 
-<div>
 
-![](image-S9UJB0TV.jpg){height="100%"}
 
-</div>
+![](image-S9UJB0TV.jpg)
+
+
 
 The command would display errors if there are any issues with swap
 entries in the fstab file.
@@ -1854,11 +1678,11 @@ entries in the fstab file.
 
 \
 
-<div>
 
-![](image-IGWVFJ1X.jpg){height="100%"}
 
-</div>
+![](image-IGWVFJ1X.jpg)
+
+
 
 The activation of the two new swap regions is confirmed from the above
 outputs. Their sizes and priorities are also visible. The device mapper
@@ -1872,20 +1696,20 @@ Swap and Total lines:
 
 \
 
-<div>
 
-![](image-31DA1VNU.jpg){height="100%"}
 
-</div>
+![](image-31DA1VNU.jpg)
+
+
 
 The total swap is now 2.2GiB. This concludes the exercise.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0454.html}
 
-## Chapter Summary {.style3}
+
+
+## Chapter Summary 
 
 \
 
@@ -1915,12 +1739,12 @@ they work. We performed exercises on creating, activating, viewing,
 deactivating, and removing swap spaces, as well as configuring them for
 auto-activation at system reboots.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0455.html}
 
-## Review Questions {.style3}
+
+
+## Review Questions 
 
 \
 
@@ -2002,12 +1826,12 @@ memory and swap in the system?
 28\. Name three commands that can be employed to view the UUID of an XFS
 file system?
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0456.html}
 
-## Answers to Review Questions {.style3}
+
+
+## Answers to Review Questions 
 
 \
 
@@ -2075,12 +1899,12 @@ XFS.
 28\. You can use the xfs_admin, lsblk, and blkid commands to view the
 UUID of an XFS file system.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0457.html}
 
-## Do-It-Yourself Challenge Labs {.style3}
+
+
+## Do-It-Yourself Challenge Labs 
 
 \
 
@@ -2097,12 +1921,12 @@ Use the lab environment built specifically for end-of-chapter labs. See
 sub-section "Lab Environment for End-of-Chapter Labs" in Chapter 01
 "Local Installation" for details.
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0458.html}
 
-## Lab 14-1: Create VFAT, Ext4, and XFS File Systems in Partitions and Mount Persistently {.style3}
+
+
+## Lab 14-1: Create VFAT, Ext4, and XFS File Systems in Partitions and Mount Persistently 
 
 \
 
@@ -2116,10 +1940,10 @@ file systems, and add them to the fstab file. Unmount all three file
 systems manually, and execute mount -a to mount them all. Run df -h for
 verification. (Hint: File System Management).
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0459.html}
+
+
 
 Lab 14-2: Create XFS File System in LVM VDO Volume and Mount
 Persistently
@@ -2133,12 +1957,12 @@ type. Create mount point /vdofs5, and mount it manually. Unmount the
 file system manually and execute mount -a to mount it back. Run df -h to
 confirm. (Hint: File System Management).
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0460.html}
 
-## Lab 14-3: Create Ext4 and XFS File Systems in LVM Volumes and Mount Persistently {.style3}
+
+
+## Lab 14-3: Create Ext4 and XFS File Systems in LVM Volumes and Mount Persistently 
 
 \
 
@@ -2152,12 +1976,12 @@ Add the file system information to the fstab file using their device
 files. Unmount the file systems manually, and execute mount -a to mount
 them back. Run df -h to confirm. (Hint: File System Management).
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0461.html}
 
-## Lab 14-4: Extend Ext4 and XFS File Systems in LVM Volumes {.style3}
+
+
+## Lab 14-4: Extend Ext4 and XFS File Systems in LVM Volumes 
 
 \
 
@@ -2167,12 +1991,12 @@ Expand logical volumes lv200 and lv300 along with the underlying file
 systems to 200MB and 250MB. Use the vgs, pvs, lvs, vgdisplay, and df
 commands for verification. (Hint: File System Management).
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0462.html}
 
-## Lab 14-5: Create Swap in Partition and LVM Volume and Activate Persistently {.style3}
+
+
+## Lab 14-5: Create Swap in Partition and LVM Volume and Activate Persistently 
 
 \
 
@@ -2193,7 +2017,7 @@ the fstab file for the new swap area using its device file. Execute
 swapon -a to activate it. Run swapon - s to confirm activation. (Hint:
 Swap and its Management).
 
-::: {style="page-break-before: always;"}
-:::
+ 
 
-[]{#chapter0463.html}
+
+

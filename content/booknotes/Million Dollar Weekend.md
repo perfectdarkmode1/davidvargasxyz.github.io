@@ -94,7 +94,7 @@ fully embrace what I call the NOW, Not How Habit.
 1.  Most people: Overthink first, act later.
 2.  Every successful entrepreneur: Act first, figure it out later
 
-Any analysis ahead of action is purely speculation
+Any analysis ahead of action is purely speculation.
 
 a simple mission to hit a monthly revenue number is the most effective
 form of early motivation.
@@ -1888,14 +1888,6 @@ After you’ve had a great meeting
 with that person, thank your original friend and ask the new one for a
 referral.
 
-your life is shaped by your willingness to face your fears. Remember,
-just keep going no matter
 
-what
-
-Achieving your dreams comes down to one question: How many times are
-you willing to get back up after falling down? Entrepreneurship is
-nothing more than the ability to come up with ideas and the courage to
-try them out
 
 
