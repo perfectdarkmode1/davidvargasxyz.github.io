@@ -22,12 +22,36 @@
             }
           },
           {
-            "id": "cfd1516338f956b3",
+            "id": "28413063bbe247bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "linux/Local File Systems and Swap.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "15830acc2e70306b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "booknotes/Million Dollar Weekend.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2c0fa00b211c4c90",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "booknotes/Million Dollar Weekend.md",
                 "mode": "source",
                 "source": false
               }
@@ -164,34 +188,35 @@
       "obsidian-file-cleaner:Clean files": false
     }
   },
-  "active": "cfd1516338f956b3",
+  "active": "28413063bbe247bd",
   "lastOpenFiles": [
+    "booknotes/Million Dollar Weekend.md",
+    "_index.md",
+    "booknotes/_index.md",
+    "booknotes/The Power of Positive Dog Training.md",
+    "booknotes/The Truth.md",
+    "booknotes/The 12 Week Year.md",
+    "booknotes/123 Magic.md",
+    "booknotes/Bliss of the Celibate.md",
+    "booknotes/Dopamine Nation.md",
+    "booknotes/Master Reading List.md",
+    "booknotes/Playful Parenting.md",
+    "booknotes/Reading List.md",
+    "booknotes/The Psychology of Money.md",
+    "booknotes/The Blog Startup.md",
+    "now/_index.md",
+    "linux/Local File Systems and Swap.md",
+    "linux/RHCSA Study Tracker.md",
+    "linux/rhcsa/RHCSA_Tracker.md",
+    "linux/rhcsa",
+    "now/Projects.md",
+    "now/quit_caffeine.md",
     "linux/RHCSA Notes.md",
     "linux/_index.md",
-    "_index.md",
+    "linux/Containers.md",
+    "linux/Containers Lesson.md",
     "linux/Shell Scripting.md",
-    "booknotes/Million Dollar Weekend.md",
-    "booknotes/Dopamine_Nation.md",
     "networking/ccna_spaced_repetition.md",
-    "tools/Process-bookfusion-highlights.md",
-    "linux/Sample Exam 3.md",
-    "linux/Sample Exam 4.md",
-    "linux/Sample exam 2.md",
-    "linux/Sample Exam 1.md",
-    "linux/Security Enhanced Linux.md",
-    "linux/The Linux Firewall.md",
-    "linux/The Secure Shell Service.md",
-    "linux/Hostname Resolution and Time Synchronization.md",
-    "linux/Network File System.md",
-    "linux/Networking Network Devices and Network Connections.md",
-    "linux/Storage Management.md",
-    "linux/Sysinit Logging Tuning.md",
-    "linux/Boot Grub2 Kernel.md",
-    "linux/Advanced Package Management.md",
-    "linux/Basic Package Management.md",
-    "linux/Process and Task Scheduling.md",
-    "linux/Bash.md",
-    "linux/Advanced User Management.md",
     "linux/Local File Systems and Swap.md~",
     "images/image-0A8W8M1U.jpg",
     "images/Pasted image 20240414040338.png",

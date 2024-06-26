@@ -4,7 +4,7 @@
 ![Million Dollar Weekend](https://m.media-amazon.com/images/I/711Oi-AKX1L._SL1500_.jpg?classes=inline&height=175px)
 
 
-This was a very insightful book. Knowing the balance between pain and pleasure is essential to living in modern day society. Where scarcity is no longer an issue. Our brains are not adapted for a world of abundance. So the forces that kept us alive for thousands of years, are now making us miserable. Consider this a primer into understanding addiction and over consumption. And steps you can take to mitigate this. 
+I took a lot of highlights with this one. Motivational, inspiring, and practical. I will be coming back to these notes over and over as I embark on my business ventures. Don't be afraid to ask for what you want. In fact, develop your asking powers like a muscle. Also, don't try to figure out how to do something before you start. Just start and figure out how along the way. 
 
 ---
 
@@ -65,309 +65,162 @@ And if you can’t experiment, you can’t do business.
 Business is an amazing opportunity to learn about yourself, play with ideas, solve your own problems, help other people, and get paid all
 the while.
 
-Approaching it this way will free up your imagination, make you less judgy and critical of yourself, and allow you to open yourself up to the kind of playful experimentation I want you to
-practice.
+Approaching it this way will free up your imagination, make you less judgy and critical of yourself, and allow you to open yourself up to playful experimentation.
 
-Limiting time to a weekend forces you to become inventive, focuses your attention only on the
-things that matter, and shows you how much more you can do with limitations
+Limiting time to a weekend forces you to become inventive, focuses your attention only on the things that matter, and shows you how much more you can do with limitations.
 
-The most powerful growth tool today for solopreneurs is a system of
-content creation, audience building, and email marketing
+The most powerful growth tool today for solopreneurs is a system of content creation, audience building, and email marketing.
 
-You’ll need a different approach and different system to organize your
-days—one that optimizes for your overall happiness above all else. (Or
+You’ll need a different approach and different system to organize your days—one that optimizes for your overall happiness above all else. (Or
 why do any of it, right?)
 
-There are two mistakes one can make along the road to truth . . . not going all the way, and not starting.
-—Buddha
+There are two mistakes one can make along the road to truth . . . not going all the way, and not starting. —Buddha
 
-focus above all else on being a starter, an experimenter, a learner
+Focus above all else on being a starter, an experimenter, a learner.
 
-Defining yourself by the things you do each day (the process) will get
-you to where you want to be quicker and more joyfully than measuring
-yourself against other
+Defining yourself by the things you do each day (the process) will get you to where you want to be quicker and more joyfully than measuring
+yourself against others.
 
-The Magic of NOW, Not How
+## The Magic of NOW, Not How.
 
-fully embrace what I call the NOW, Not How Habit.
+Fully embrace what I call the NOW, Not How Habit.
 
 1.  Most people: Overthink first, act later.
-2.  Every successful entrepreneur: Act first, figure it out later
+2.  Every successful entrepreneur: Act first, figure it out later.
 
 Any analysis ahead of action is purely speculation.
 
-a simple mission to hit a monthly revenue number is the most effective
-form of early motivation.
+A simple mission to hit a monthly revenue number is the most effective form of early motivation.
 
-you first need to choose your Freedom Number
+You first need to choose your Freedom Number.
 
 What can YOU do in your business to make money this week? Today? Right now?
 
-if you commit to nothing, you’ll be distracted by everything
+If you commit to nothing, you’ll be distracted by everything.
 
-The Freedom Number helps us not get lost in abstraction or complexity; it reminds us the mechanics of business are simple
+The Freedom Number helps us not get lost in abstraction or complexity; it reminds us the mechanics of business are simple.
 
-Choosing your Freedom Number.Start by choosing a short-term monthly revenue goal—your
-Freedom Number—and make it a number that doesn’t scare you. 
+### Choosing your Freedom Number. 
 
-Who you are, what you have, and what you know right now
-are more than enough to get going
+Start by choosing a short-term monthly revenue goal—your Freedom Number—and make it a number that doesn’t scare you. 
 
-Love rejections! Collect them like treasure! Set rejection goals. I
-shoot for a hundred rejections
+Who you are, what you have, and what you know right now are more than enough to get going.
 
-each week, because if you work that hard to get so many noes, my
-little Noah’le, in them you will find a few yeses, too.”
+Love rejections! Collect them like treasure! Set rejection goals. I shoot for a hundred rejections each week, because if you work that hard to get so many noes, in them you will find a few yeses, too.
 
-the upside of asking is unlimited and the downside is minimal
+The upside of asking is unlimited and the downside is minimal.
 
-What did you guys fail at this week?”
-
-Be persistent. almost every no you get can
-
-eventually become a yes. Persistence will reveal that most noes are
+Be persistent. almost every no you get can eventually become a yes. Persistence will reveal that most noes are
 actually a “not now.”
 
-Follow Up! Studies show that if you initially get a no, your follow-up
-ask is TWICE as likely to get a yes.
+Follow Up! Studies show that if you initially get a no, your follow-up ask is TWICE as likely to get a yes.
 
-Selling is helping. If you
+Selling is helping. 
 
-believe your product or service improves the lives of your customers,
-sales is just education. You’re helping people out
+If you believe your product or service improves the lives of your customers, sales is just education.
 
-If you believe your product or service can fulfill a true need, it’s
-your moral
+If you believe your product or service can fulfill a true need, it’s your moral obligation to sell it.—Zig Ziglar
 
-obligation to sell it.—Zig Ziglar
-
-three Ws of business
+Three Ws of business:
 
 * Who you are selling to
 * What problem you’re solving
 * Where they are
 
-sell ideas to a small early adopter group before you’ve built the product (or spent a cent) in order to validate that
+Sell ideas to a small early adopter group before you’ve built the product (or spent a cent) in order to validate that
 there is a market that will pay. 
 
-When in doubt, solve your own problems. If you are willing to pay for
-a solution, it’s likely others are, too. And at least you’ll have one
-happy customer—yourself
+When in doubt, solve your own problems. If you are willing to pay for a solution, it’s likely others are, too. And at least you’ll have one
+happy customer—yourself.
 
+Minimum viable product or MVP. Create the simplest possible version of what you’re offering and start selling it right away.
 
-minimum viable product or MVP. Instead of trying
+That way, instead of endlessly refining something in a vacuum, you use feedback from actual customers to incrementally develop an offering
+people absolutely want to buy.
 
-create the simplest possible version of what you’re
-offering and start selling it right away
+Create opportunities within the context of who they are, what they know, and especially who they know.
 
-That way, instead of endlessly refining something in a vacuum, you use
-feedback from actual customers to incrementally develop an offering
-people absolutely want to buy
+Validation process begins with potential customers in the entrepreneur’s orbit. Actual people with names. Tribes you belong to or are interested in, most of whom are already self-organized online. 
 
-focus on the conversation with the customers, a dynamic back-and-forth that will
-help you iterate your product in terms of what the customer wants
-before you make or spend a thing.
+Who do you have easy access to that you’d be EXCITED to help? 
 
-create opportunities within the context of who
-they are, what they know, and especially who they know.
+The better you understand your target group, the better you can speak to them. The more specifically you can speak to their problems, the
+better and easier you can sell or test products.
 
-validation process begins with potential customers in the
-entrepreneur’s orbit. Actual people with names. Tribes you belong to
-or are interested in, most of whom are already self-organized online. 
+This process prioritizes communication with people, through starting (taking the first iteration of your solution straight to customers)
+and asking (engaging them in a conversation to determine how your solution can best fix their problem). Business creation should always
+be a conversation.
 
-Who
-do you have easy access to that you’d be EXCITED to help? 
+## Become a Problem Seeker
 
-The better you understand your target group, the better you can speak
-to them. The more specifically you can speak to their problems, the
-better and easier you can sell (or test products
+The best entrepreneurs are the most dissatisfied. They’re always thinking of how things can be better.
 
-this process prioritizes communication with people, through starting
-(taking the first iteration of your solution straight to customers)
-and asking (engaging them in a conversation to determine how your
-solution can best fix their problem). Business creation should always
-be a conversation
+Your frustrations—and the frustrations of others—are your business opportunities
 
-Become a Problem Seeker
-
-The best entrepreneurs are the most dissatisfied. They’re always
-thinking of how things can be better.
-
-Your frustrations—and the frustrations of
-
-others—are your business opportunities
-
-The number of things that can be better are endless—which is a gold
-mine for newbie entrepreneurs
-
-The crucial first step toward entrepreneurship is to study your own
-unhappiness and to think of solutions (aka business opportunities) for
+The crucial first step toward entrepreneurship is to study your own unhappiness and to think of solutions (aka business opportunities) for
 you to sell.
 
-1.  What’s the most painful (aka valuable) problem you can solve for
-    people . . .
-2.  That you also have passion for and/or unique expertise in . . .
+What’s the most painful (aka valuable) problem you can solve for people . . .
+That you also have passion for and/or unique expertise in . . .
+For the largest niche possible that you belong to and understand.
 
-For the largest niche possible that
+Focus on your Zone of Influence here (your existing community): 
 
-you belong to and understand
+### Solve Your Own Problems
 
-focus on your Zone of Influence here (your existing community): the
-150 followers you have on TikTok, the 200 in
-
-your local Taco Aficionados group, the 300 in the WhatsApp group for
-your mountain biking club (not to mention the 143,000 in the subreddit
-r/mountainbiking). Your job as a problem seeker is to go to a
-community of yours.
-
-1\. Solve Your Own Problems
-
-When you intentionally practice problem-spotting, eventually it
-becomes something your mind just does automatically
-
-four questions to get you going:
-
-1.  What is one thing this morning that irritated me?
+What is one thing this morning that irritated me?
 
 What is one thing on my to-do list that’s been there over a week?
 
 What is one thing that I regularly fail to do well?
 
-What is one thing I wanted to buy recently only to find out that no
-one
+What is one thing I wanted to buy recently only to find out that no one made it?
 
-made it?
-
-keep a notebook close by and jot down things that bother me
-
-CHALLENGESolve your own problems.Use the questions to find three
-ideas. Write those down in your MDW Journal
+Keep a notebook close by and jot down things that bother you.
 
 It’s easier to sell to a large group of people who’ve already spent
-money on a product or
+money on a product or service.
 
-service
+Bestsellers are your best friends. Accessorize an existing product.
 
-CHALLENGEBestsellers are your best
+Write down all the bad, crazy, and nonsense ideas that come into your mind.
 
-friends.Write down two accessorizing ideas in your MDW Journal.
-
-write down all the bad, crazy, and nonsense ideas that come into your
-mind. DO NOT EDIT YOURSELF
-
-3\. Marketplaces
-
-studying the marketplaces where people are TRYING to spend money
-
-CHALLENGEMarketplaces
-
-Visit a marketplace like Etsy, Facebook Marketplace, Craigslist, or
-eBay and write at least one idea for a product or service in your MDW
-Journal.
+Studying the marketplaces where people are TRYING to spend money
 
 Search Engine Queries
 
-It’s much easier to sell something when people ALREADY want it. There
-are 3 billion Google searches every day, giving you a direct line to
-customers’ thoughts and needs
+It’s much easier to sell something when people ALREADY want it. There are 3 billion Google searches every day, giving you a direct line to customers’ thoughts and needs
 
-To access these thoughts, you’ll want to work backwards from a problem
-people want
+AnswerThePublic.com will find the most googled questions around whatever keyword you input.
 
-solved (a query) toward a solution they may be willing to pay for
-
-there are now search listening tools that make this even easier (like
-AnswerThePublic.com, which will find the most googled questions around
-whatever keyword
-
-you input
-
-Is the potential solution a vitamin (a nice-to-have) or a painkiller
-(a must-have)?
+Is the potential solution a vitamin (a nice-to-have) or a painkiller (a must-have)?
 
 r/SomebodyMakeThis
 
-CHALLENGESearch engine queries
-
-Use search engine questions and Reddit forums to find two more ideas.
-Write them in your MDW Journal
-
-take your list of ten plus ideas, and eliminate the ones
-
-that you’re not excited about
-
-If the top three ideas are screaming, “Me! Me! Me!” your work is done.
-
-Step 1. Find $1 Million Worth of
-
-Customers
-
-You don’t want to be begging them to buy. What you want when you’re
-opening a taco restaurant is a starving crowd.
-
-two key questions to answer to make sure it’s a million-dollar
+Two key questions to answer to make sure it’s a million-dollar
 opportunity:
 
-Is the overall market dying, flat, or
+Is the overall market dying, flat, or growing? You want flat or ideally growing!
+Is this a million-dollar opportunity? To figure that out, we have to know the number of potential customers and the price of your product.
 
-1.  growing? You want flat or ideally growing!
-2.  Is this a million-dollar opportunity? To figure that out, we have
-    to know the number of potential customers and the price of your
+I use Google Trends and Facebook Ads to answer those questions.
 
-product
+Evaluate the size and growth potential of my target market.
 
-check to see if there are enough customers who’d want to buy your
-beard oil. Market size is the single most important variable to
-quickly understanding the potential of any project.
+Is the market growing or dying? Search Google Trends.
 
-I use Google Trends and Facebook Ads to answer those questions
+How many potential customers are there? Use Facebook Ads to research your market size. They let you type in the keyword of whatever business category you’re thinking about and see the approximate audience size. 
 
-evaluate the size and growth potential of my target market
+You can also use the Facebook Ads Library to see every single active ad running on Facebook for your keyword and location, which is super helpful for uncovering competitors and getting ideas for your own marketing efforts other groups you could think of targeting.
 
-uncover the data that shows how
+Other categories to search: 
+- Locals
+- More niche
+- Demographics-based
 
-big and growing your market is by answering the following questions:
+## Step 2. Is This a Million-Dollar Opportunity?
 
-1.  Is the market growing or dying? Search Google Trends for the terms
-    “beard” and “beard grooming” and compare their search popularity
-
-to similar terms (for example, “haircuts,” “razors”) and how that’s
-changed over the last few months and years. With Google Trends you are
-just looking to see how the graphs are trending – ideally up and to
-the right
-
-How many potential customers are there? I’d highly recommend using
-Facebook Ads to
-
-research your market size. Facebook is pretty much the entire world,
-and what’s phenomenal is that they actually let you type in the
-keyword of whatever business category you’re thinking about and see
-the
-
-approximate audience size. You can also use the Facebook Ads Library
-to see every single active ad running on Facebook for your keyword and
-location, which is super helpful for uncovering competitors and
-getting
-
-ideas for your own marketing efforts
-
-other groups you could think of targeting
-
-Locals
-
-More niche
-
-Demographics-based
-
-Step 2. Is This a Million-Dollar
-
-Opportunity?
-
-major things you’re looking for
-
-Pick a price point you think will be
-
-ideal for your customer
+Pick a price point you think will be ideal for your customer.
 
 1.  Multiply that by the number of ideal customers.
 2.  Does that equal at least a million dollars? Yes or no?

@@ -1,8 +1,8 @@
-# The Blog Startup
+# The Blog Startup (8/10)
 
 ![The Blog Startup](https://m.media-amazon.com/images/I/61Lm6P0rPsL._SL1360_.jpg?classes=inline&height=175px)
 
-[The Blog Startup - By Meera Kothand](The_Blog_Startup.md)
+[The Blog Startup - By Meera Kothand](The%20Blog%20Startup.md)
 Date Read: 2024-04-14. How Strongly I Recommend It: 8/10
 
 If you are wanting to blog as a business, you need a sound strategy and business model. Filled with practical tips on identifying your audience, email strategy, branding, marketing, things to watch out for, etc. Definitely read this if you are wanting to start a blog.

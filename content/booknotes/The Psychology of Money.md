@@ -1,4 +1,5 @@
 # The Psychology of Money (10/10)
+
 ![The Psychology of Money](https://m.media-amazon.com/images/I/71aG0m9XRcL._SL1500_.jpg?classes=inline&height=175px)
 
 Holy cow was this eye opening. Not only in regards to money, but the principles apply to many aspects of life. Strong story telling, clear and concise. Worth reading multiple times. 

@@ -1,3 +1,5 @@
+# The Power of Positive Dog Training (10/10)
+
 ![The Power of Positive Dog Training](https://m.media-amazon.com/images/I/61fUL8I9owL._SL1500_.jpg?classes=inline&height=175px)
 
 This book is a no BS guide to dog training without being a jerk. Any dog can be training with progressive reinforcement techniques. The author even explains why aversive training not only doesn’t work, but it makes problems sprout up in other areas of your dogs life. Loaded with how-to’s on all of the basic things you should treat your dogs and dealing with common problems.

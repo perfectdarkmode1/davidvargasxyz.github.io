@@ -157,8 +157,7 @@ survive across system reboots.
 
 ## XFS File System
 
-The X File System (XFS) is a high-performing 64-bit extent-based
-journaling file system type. XFS allows the creation of file systems and
+- high-performing 64-bit extent-based journaling file system type. XFS allows the creation of file systems and
 files up to 8EiB (ExbiByte). It does not run file system checks at
 system boot; rather, it relies on you to use the xfs_repair utility to
 manually fix any issues. XFS sets the extended user attributes and

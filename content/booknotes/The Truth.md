@@ -1,4 +1,4 @@
-# The Truth (8/10)
+# The Truth (7/10)
 
 ![The Truth](https://m.media-amazon.com/images/I/61IVFSjZE5L._SL1500_.jpg?classes=inline&height=175px)
 

@@ -21,7 +21,7 @@ You can use these notes to remember key points. Or to help decide if a book is g
 
 ![Dopamine Nation](https://m.media-amazon.com/images/I/91lcJzqYNtL._SL1500_.jpg?classes=inline&height=175px)
 
-[Dopamine Nation](Dopamine_Nation.md) (10/10)
+[Dopamine Nation](Dopamine%20Nation.md) (10/10)
 
 This was a very insightful book. Knowing the balance between pain and pleasure is essential to living in modern day society. Where scarcity is no longer an issue. Our brains are not adapted for a world of abundance. So the forces that kept us alive for thousands of years, are now making us miserable. Consider this a primer into understanding addiction and over consumption. And steps you can take to mitigate this. 
 
@@ -36,15 +36,23 @@ Holy cow was this eye opening. Not only in regards to money, but the principles 
 
 ![The Power of Positive Dog Training](https://m.media-amazon.com/images/I/61fUL8I9owL._SL1500_.jpg?classes=inline&height=175px)
 
-[The Power of Positive Dog Training](thepowerofpositivedogtraining.md) (10/10)
+[The Power of Positive Dog Training](The%20Power%20of%20Positive%20Dog%20Training.md) (10/10)
 
 This book is a no BS guide to dog training without being a jerk. Any dog can be training with progressive reinforcement techniques. The author even explains why aversive training not only doesn't work, but it makes problems sprout up in other areas of your dogs life. Loaded with how-to's on all of the basic things you should treat your dogs and dealing with common problems. 
 
 ---
 
+![Million Dollar Weekend](https://m.media-amazon.com/images/I/711Oi-AKX1L._SL1500_.jpg?classes=inline&height=175px)
+
+[Million Dollar Weekend](Million%20Dollar%20Weekend.md) (8/10)
+
+I took a lot of highlights with this one. Motivational, inspiring, and practical. I will be coming back to these notes over and over as I embark on my business ventures. Don't be afraid to ask for what you want. In fact, develop your asking powers like a muscle. Also, don't try to figure out how to do something before you start. Just start and figure out how along the way. 
+
+---
+
 ![The 12 Week Year](https://m.media-amazon.com/images/I/71ZMsYuwELL._SL1500_.jpg?classes=inline&height=175px)
 
-[The 12 Week Year](The_12_Week_Year.md) (8/10)
+[The 12 Week Year](The%2012%20Week%20Year.md) (8/10)
 
 This second half of the book was almost an identical copy of the second half of the book. But still filled with solid advice on establishing a vision, settings goals, measuring the effectiveness of your actions, and other tidbits about being effective and taking action. 
 
@@ -56,6 +64,6 @@ I highly advise you make your own outline so you do not have to read everything 
 
 ![The Blog Startup](https://m.media-amazon.com/images/I/61Lm6P0rPsL._SL1360_.jpg?classes=inline&height=175px)
 
-[The Blog Startup - By Meera Kothand](The_Blog_Startup.md) (8/10)
+[The Blog Startup - By Meera Kothand](The%20Blog%20Startup.md) (8/10)
 
 If you are wanting to blog as a business, you need a sound strategy and business model. Filled with practical tips on identifying your audience, email strategy, branding, marketing, things to watch out for, etc. Definitely read this if you are wanting to start a blog.
