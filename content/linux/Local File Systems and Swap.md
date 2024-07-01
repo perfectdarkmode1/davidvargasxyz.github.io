@@ -157,772 +157,470 @@ survive across system reboots.
 
 ## XFS File System
 
-- high-performing 64-bit extent-based journaling file system type. XFS allows the creation of file systems and
-files up to 8EiB (ExbiByte). It does not run file system checks at
-system boot; rather, it relies on you to use the xfs_repair utility to
-manually fix any issues. XFS sets the extended user attributes and
-certain mount options by default on new file systems. It enables
-defragmentation on mounted and active file systems to keep as much data
-in contiguous blocks as possible for faster access. The only major
-caveat with using XFS is its inability to shrink.
-
-\
-
-Like Ext3 and Ext4, XFS also uses journaling for metadata operations,
-guaranteeing the consistency of the file system against abnormal or
-forced unmounting. The journal information is read and any pending
-metadata transactions are replayed when the XFS file system is
-remounted.
-
-\
-
-XFS uses sophisticated techniques in its architecture for speedy
-input/output performance. It can be snapshot in a mounted, active state.
-The snapshot can then be used for backup or other purposes.
-
-
+- high-performing 64-bit extent-based journaling file system type. XFS 
+- allows the creation of file systems and files up to 8EiB (ExbiByte). It 
+- does not run file system checks at system boot; rather, it 
+- relies on you to use the xfs_repair utility to manually fix any issues. XFS 
+- sets the extended user attributes and certain mount options by default on new file systems. It 
+- enables defragmentation on mounted and active file systems to keep as much data in contiguous blocks as possible for faster access. 
+- inability to shrink.
+- uses journaling for metadata operations, guaranteeing the consistency of the file system against abnormal or forced unmounting. The
+- journal information is read and any pending metadata transactions are replayed when the XFS file system is remounted.
+- speedy input/output performance. It 
+- can be snapshot in a mounted, active state.
 
 ## VFAT File System 
 
-\
-
-VFAT (Virtual File Allocation Table) is an extension to the legacy FAT
-file system type, also called FAT16, that was introduced in early
-versions of MS-DOS. The support for FAT16 was later added to Microsoft
-Windows, MacOS, and some UNIX versions, enabling them to read and write
-files written in that format. FAT16 had limitations; it was designed to
-use no more than 8.3 characters in filenames, limiting filenames to a
-maximum of eight characters plus three characters as an extension.
-Moreover, it only allowed filenames to begin with a letter or number and
-to not contain spaces. FAT16 treated lowercase and uppercase letters
-alike.
-
-\
-
-VFAT was introduced with Microsoft Windows 95 and it has since been
-available. It supports 255 characters in filenames including spaces and
-periods; however, it still does not differentiate between lowercase and
-uppercase letters. VFAT support was added to Linux several years ago. A
-VFAT file system may be created on hard drives, but it is primarily used
-on removable media, such as floppy and USB flash drives, for exchanging
-data between Linux and Windows.
+- extension to the legacy FAT file system (FAT16)
+- supports 255 characters in filenames including spaces and periods; however, it still  
+- does not differentiate between lowercase and uppercase letters. 
+- primarily used on removable media, such as floppy and USB flash drives, for exchanging data between Linux and Windows.
 
 ## ISO9660 File System
 
-\
-
-This file system type conforms to the ISO 9660 standard, hence the name.
-It is used for removable optical disc media such as CD/DVD drives for
-transporting software and patches, and operating system images in ISO
-format between computers. The ISO9660 format originated from the
-High-Sierra File System (HSFS) format, and it has now been enhanced to
-include innovative features.
+- used for removable optical disc media such as CD/DVD drives
 
 ## File System Management 
 
-\
 
-Managing file systems involves such operations as creating, mounting,
-labeling, viewing, growing, shrinking, unmounting, and removing them.
-These management tasks are common to both Extended and XFS types. Most
-of these functions are also applicable to VFAT and a few to optical file
-systems.
+### File System Administration Commands 
 
-\
-
-In Chapter 13, you created several partitions and logical volumes.
-However, you did not initialize them with a file system type, and
-therefore you could not mount or use them. Later, you destroyed all the
-partitions and the volumes that were created. You also deleted the LVM
-volume group. All the disks were returned to their unused state after
-the completion of the exercises.
-
-\
-
-Here is a listing of the block devices to confirm the current state of
-the disks:
-
-![](image-VHZU6DE4.jpg)
-
-The output verifies the unused state and availability status for all the
-disks---sdb through sdf. You should be able to reuse them in the
-exercises in this chapter.
-
-## File System Administration Commands 
-
-\
-
-In order to create and manage file systems, RHEL offers a number of
-commands of which some are limited to their operations on the Extended,
-XFS, or VFAT file system type, while others are general and applicable
-to all file system types. Table 14-2 describes common file system
-administration commands.
-
-\
-
-  ----------------------------------- -----------------------------------
-  Command                             Description
-
-  Extended File System                
-
-  e2label                             Modifies the label of a file system
-
-  tune2fs                             Tunes or displays file system
-                                      attributes
-
-  XFS                                 
-
-  xfs_admin                           Tunes file system attributes
-
-  xfs_growfs                          Extends the size of a file system
-
-  xfs_info                            Exhibits information about a file
-                                      system
-
-  VFAT                                
-
-  General File System Commands        
-
-  blkid                               Displays block device attributes
-                                      including their UUIDs and labels
-
-  df                                  Reports file system utilization
-
-  du                                  Calculates disk usage of
-                                      directories and file systems
-
-  fsadm                               Resizes a file system. This command
-                                      is automatically invoked when the
-                                      lvresize command is run with the -r
-                                      switch.
-
-  lsblk                               Lists block devices and file
-                                      systems and their attributes
-                                      including their UUIDs and labels
-
-  mkfs                                Creates a file system. Use the -t
-                                      option and specify ext3, ext4,
-                                      vfat, or xfs file system type.
-
-  mount                               Mounts a file system for user
-                                      access. Displays currently mounted
-                                      file systems.
-
-  umount                              Unmounts a file system
-  ----------------------------------- -----------------------------------
-
- 
+- Some are limited to their operations on the Extended, XFS, or VFAT file system type, while  
+- others are general and applicable to all file system types. 
 
 
-\
+#### Extended File System                
 
-Table 14-2 File System Management Commands
+e2label                             
+  - Modifies the label of a file system
 
-\
+tune2fs                             
+  - Tunes or displays file system attributes
 
-Most of these commands are used in this chapter.
+#### XFS                                 
 
- 
+xfs_admin                           
+ - Tunes file system attributes
 
+xfs_growfs                          
+  - Extends the size of a file system
 
+xfs_info                            
+- Exhibits information about a file system
 
+#### VFAT                                
 
-## Mounting and Unmounting File Systems 
+#### General File System Commands        
 
-\
+blkid                               
+  - Displays block device attributes including their UUIDs and labels
 
-In order to enable users to access files and application programs in a
-file system, the file system must be connected to the directory
-structure at a desired attachment point, which is referred to as the
-mount point. A mount point in essence is any empty directory that is
-created and used for this purpose.
+df                                  
+  - Reports file system utilization
 
-\
+du                                  
+- Calculates disk usage of directories and file systems
 
-There are many file systems already mounted on your system, such as the
-root file system mounted on / and the boot file system mounted on /boot.
-Both of them are empty directories and are reserved to connect the two
-file systems to the directory hierarchy. You can use the mount command
-to view information about mounted file systems. The following shows the
+fsadm                               
+- Resizes a file system. This command is automatically invoked when the lvresize command is run with the -r switch.
+
+lsblk                               
+- Lists block devices and file systems and their attributes including their UUIDs and labels
+
+mkfs                                
+- Creates a file system. Use the -t option and specify ext3, ext4, vfat, or xfs file system type.
+
+mount                               
+- Mounts a file system for user access. Displays currently mounted file systems.
+
+umount                              
+- Unmounts a file system
+
+### Mounting and Unmounting File Systems 
+
+- file system must be connected to the directory structure at a desired attachment point, (mount point) 
+- A mount point in essence is any empty directory that is created and used for this purpose.
+
+use the mount command to view information about mounted file systems. The following shows the
 XFS file systems only:
+```
+[root@server2 ~]# mount -t xfs
+/dev/mapper/rhel-root on / type xfs (rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/sda1 on /boot type xfs (rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+```
 
-\
+#### Mount command
+-t option 
+- type. 
 
+- used for mounting a file system to a mount point
+- performed with the root user privileges.
+- requires the absolute pathnames of the file system block device and the mount point name. 
+- accepts the UUID or label of the file system in lieu of the block device name. 
+- mount all or a specific type of file system. 
+- Upon successful mount, the kernel places an entry for the file system in the /proc/self/mounts file.
+- A mount point should be empty when an attempt is made to mount a file system on it, otherwise the content of the mount point will hide.
+- the mount point must not be in use or the mount attempt will fail.
 
+auto (noauto)                       
+- Mounts (does not mount) the file system when the -a option is specified
 
-![](image-VWY2F9RB.jpg)
+defaults                            
+- Mounts a file system with all the default values (async, auto, rw, etc.)
 
+`_netdev`                         
+- Used for a file system that requires network connectivity in place before it can be mounted. NFS is an example.
 
+remount                             
+- Remounts an already mounted file system to enable or disable an option
 
-The "-t xfs" option makes the command to only show the file systems
-initialized with the XFS type. The mount command is also used for
-mounting a file system to a mount point, and this action is performed
-with the root user privileges. The command requires the absolute
-pathnames of the file system block device and the mount point name. It
-also accepts the UUID or label of the file system in lieu of the block
-device name. Options are available with this command to mount all or a
-specific type of file system. The mount command is also used to mount
-other types of file systems such as those located in removable media.
-Upon successful mount, the kernel places an entry for the file system in
-the /proc/self/mounts file.
+ro (rw)                             
+- Mounts a file system read-only read/write)
 
-\
-
-A mount point should be empty when an attempt is made to mount a file
-system on it, otherwise the content of the mount point will hide. As
-well, the mount point must not be in use or the mount attempt will fail.
-
-\
-
-The mount command supports numerous options that may be used as required
-to override its default behavior. We can also specify multiple
-comma-separated options. Table 14-3 describes some common options.
-
-\
-
-  ----------------------------------- -----------------------------------
-  Option                              Description
-
-  auto (noauto)                       Mounts (does not mount) the file
-                                      system when the -a option is
-                                      specified
-
-  defaults                            Mounts a file system with all the
-                                      default values (async, auto, rw,
-                                      etc.)
-
-  \_netdev                            Used for a file system that
-                                      requires network connectivity in
-                                      place before it can be mounted. NFS
-                                      is an example.
-
-  remount                             Remounts an already mounted file
-                                      system to enable or disable an
-                                      option
-
-  ro (rw)                             Mounts a file system read-only
-                                      (read/write)
-  ----------------------------------- -----------------------------------
-
- 
-
-
-\
-
-Table 14-3 Common mount Command Options
-
-\
-
-The opposite of the mount command is umount, which is used to detach a
-file system from the directory hierarchy and make it inaccessible to
-users and applications. This command expects the absolute pathname to
-the block device containing the file system or its mount point name in
-order to detach it. Options are available with umount to unmount all or
-a specific type of file system. The kernel removes the corresponding
-file system entry from the /proc/self/mounts file after it has been
-successfully disconnected.
-
- 
-
-
-
-
+#### umount Command
+- used to detach a file system from the directory hierarchy and make it inaccessible to users and applications. 
+- expects the absolute pathname to the block device containing the file system or its mount point name in order to detach it. 
+- umount to unmount all or a specific type of file system. 
+- kernel removes the corresponding file system entry from the /proc/self/mounts file after it has been successfully disconnected.
 ## Determining the UUID of a File System 
 
-\
+- Every Extended and XFS file system has a 128-bit (32 hexadecimal characters) UUID (Universally Unique IDentifier) assigned to it at the time of its creation. In contrast, 
+- UUIDs assigned to vfat file systems are 32-bit (8 hexadecimal characters) in length. 
+- Assigning a UUID makes the file system unique among many other file systems that potentially exist on the system. 
+- persistent across system reboots. 
+- used by default in RHEL 9 in the /etc/fstab file for any file system that is created by the system in a standard partition.
 
-Every Extended and XFS file system has a 128-bit (32 hexadecimal
-characters) UUID (Universally Unique IDentifier) assigned to it at the
-time of its creation. In contrast, UUIDs assigned to vfat file systems
-are 32-bit (8 hexadecimal characters) in length. Assigning a UUID makes
-the file system unique among many other file systems that potentially
-exist on the system. The primary benefit of using a UUID is the fact
-that it always stays persistent across system reboots. UUIDs are used by
-default in RHEL 9 in the /etc/fstab file for any file system that is
-created by the system in a standard partition.
+- RHEL attempts to mount all file systems listed in the /etc/fstab file at reboots. 
+- Each file system has an associated device file and UUID, but may or may not have a corresponding label. 
+- The system checks for the presence of each file system's device file, UUID, or label, and then attempts to mount it.
 
-\
+Determine the UUID of /boot
+```
+[root@server2 ~]# lsblk | grep boot
+├─sda1          8:1    0    1G  0 part /boot
+```
+```
+[root@server2 ~]# sudo xfs_admin -u /dev/sda1
+UUID = 630568e1-608f-4603-9b97-e27f82c7d4b4
 
-RHEL attempts to mount all file systems listed in the /etc/fstab file at
-reboots. Each file system has an associated device file and UUID, but
-may or may not have a corresponding label. The system checks for the
-presence of each file system's device file, UUID, or label, and then
-attempts to mount it.
+[root@server2 ~]# sudo blkid /dev/sda1
+/dev/sda1: UUID="630568e1-608f-4603-9b97-e27f82c7d4b4" TYPE="xfs" PARTUUID="7dcb43e4-01"
 
-\
+[root@server2 ~]# sudo lsblk -f /dev/sda1
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda1 xfs                630568e1-608f-4603-9b97-e27f82c7d4b4  616.1M    36% /boot
+```
 
-The /boot file system, for instance, is located in a partition and the
-device file associated with it is on server2 is /dev/sda1. You can use
-the xfs_admin command, the blkid command, or the lsblk command as
-follows to determine its UUID:
+For extended file systems, you can use the `tune2fs`, `blkid`, or `lsblk` commands to determine the UUID.
 
-\
-
-
-
-![](image-QC3A8ZPT.jpg)
-
-
-
-The UUID reported by the above commands for the /boot file system is
-\"22d05484-6ae1-4ef8-a37d-abab674a5e35\". If you grep for the string
-"boot" on the /etc/fstab file, you will see that the system uses this
-UUID to mount /boot. A discussion on the /etc/fstab file is provided
-later in this chapter.
-
-\
-
-For extended file systems, you can use the tune2fs command in addition
-to the blkid and lsblk commands to determine the UUID.
-
-\
-
-A UUID is also assigned to a file system that is created in a VDO or LVM
-volume; however, it need not be used in the fstab file, as the device
-files associated with the logical volumes are always unique and
-persistent.
-
- 
-
-
-
+A UUID is also assigned to a file system that is created in a VDO or LVM volume; however, it need not be used in the fstab file, as the device
+files associated with the logical volumes are always unique and persistent.
 
 ## Labeling a File System 
 
-\
+- A unique label may be used instead of a UUID to keep the file system association with its device file exclusive and persistent across system reboots. 
+- A label is limited to a maximum of 12 characters on the XFS file system 
+- 16 characters on the Extended file system. 
+- By default, no labels are assigned to a file system at the time of its creation.
 
-A unique label may be used instead of a UUID to keep the file system
-association with its device file exclusive and persistent across system
-reboots. A label is limited to a maximum of 12 characters on the XFS
-file system and 16 characters on the Extended file system. By default,
-no labels are assigned to a file system at the time of its creation.
-
-\
-
-The /boot file system is located in the /dev/sda1 partition and its type
-is XFS. You can use the xfs_admin or the lsblk command as follows to
+The /boot file system is located in the /dev/sda1 partition and its type is XFS. You can use the xfs_admin or the lsblk command as follows to
 determine its label:
+```
+[root@server2 ~]# sudo xfs_admin -l /dev/sda1
+label = ""
 
-\
+[root@server2 ~]# sudo lsblk -f /dev/sda1
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda1 xfs                630568e1-608f-4603-9b97-e27f82c7d4b4  616.1M    36% /boot
+```
 
+- not needed on a file system if you intend to use its UUID or if it is created in a logical volume
+- you can still apply one using the `xfs_admin` command with the `-L` option. 
+- Labeling an XFS file system requires that the target file system be unmounted.
 
+unmount /boot, set the label "bootfs" on its device file, and remount it:
+```
+[root@server2 ~]# sudo umount /boot
+[root@server2 ~]# sudo xfs_admin -L bootfs /dev/sda1
+writing all SBs
+new label = "bootfs"
 
-![](image-T0YGDGYK.jpg)
+```
 
+confirm the new label by executing `sudo xfs_admin -l /dev/sda1` or `sudo lsblk -f /dev/sda1`.
 
+For extended file systems, you can use the `e2label` command to apply a label and the `tune2fs`, `blkid`, and `lsblk` commands to view and verify.
 
-The output discloses that there is currently no label assigned to the
-/boot file system.
+Now you can replace the `UUID=\"22d05484-6ae1-4ef8-a37d-abab674a5e35`\" for /boot in the fstab file with `LABEL=bootfs`, and unmount and remount /boot as demonstrated above for confirmation.
+```
+[root@server2 ~]# mount /boot
+mount: (hint) your fstab has been modified, but systemd still uses
+       the old version; use 'systemctl daemon-reload' to reload.
+```
 
-\
-
-A label is not needed on a file system if you intend to use its UUID or
-if it is created in a logical volume; however, you can still apply one
-using the xfs_admin command with the -L option. Labeling an XFS file
-system requires that the target file system be unmounted.
-
-\
-
-The following example demonstrates the steps to unmount /boot, set the
-label "bootfs" on its device file, and remount it:
-
-\
-
-
-
-![](image-ZTTYTIQQ.jpg)
-
-
-
-You can confirm the new label by executing sudo xfs_admin -l /dev/sda1
-or sudo lsblk -f /dev/sda1.
-
-\
-
-For extended file systems, you can use the e2label command to apply a
-label and the tune2fs, blkid, and lsblk commands to view and verify.
-
-\
-
-Now you can replace the UUID=\"22d05484-6ae1-4ef8-a37d-abab674a5e35\"
-for /boot in the fstab file with LABEL=bootfs, and unmount and remount
-/boot as demonstrated above for confirmation.
-
-\
-
-A label may also be applied to a file system created in a logical
-volume; however, it is not recommended for use in the fstab file, as the
-device files for logical volumes are always unique and remain persistent
-across system reboots.
-
- 
-
-
-
+A label may also be applied to a file system created in a logical volume; however, it is not recommended for use in the fstab file, as the
+device files for logical volumes are always unique and remain persistent across system reboots.
 
 ## Automatically Mounting a File System at Reboots 
 
-\
+## /etc/fstab
+- File systems defined in the /etc/fstab file are mounted automatically at reboots. 
+- must contain proper and complete information for each listed file system. 
+- An incomplete or inaccurate entry might leave the system in an undesirable or unbootable state. 
+- only need to specify one of the four attributes---block device name, UUID, label, or mount point---of the file system that you wish to mount manually with the mount command. 
+- The mount command obtains the rest of the information from this file. 
+- only need to specify one of these attributes with the umount command to detach it from the directory hierarchy.
+- contains entries for file systems that are created at the time of installation. 
 
-File systems defined in the /etc/fstab file are mounted automatically at
-reboots. This file must contain proper and complete information for each
-listed file system. An incomplete or inaccurate entry might leave the
-system in an undesirable or unbootable state. Another benefit of adding
-entries to this file is that you only need to specify one of the four
-attributes---block device name, UUID, label, or mount point---of the
-file system that you wish to mount manually with the mount command. The
-mount command obtains the rest of the information from this file.
-Similarly, you only need to specify one of these attributes with the
-umount command to detach it from the directory hierarchy.
+```
+[root@server2 ~]# cat /etc/fstab
 
-\
+#
+# /etc/fstab
+# Created by anaconda on Sun Feb 25 12:11:47 2024
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/rhel-root   /                       xfs     defaults        0 0
+LABEL=bootfs /boot                   xfs     defaults        0 0
+/dev/mapper/rhel-swap   none                    swap    defaults        0 0
+```
 
-The default fstab file contains entries for file systems that are
-created at the time of installation. On server2, for instance, this file
-currently has the following three entries:
+EXAM TIP: Any missing or invalid entry in this file may render the system unbootable. You will have to boot the system in emergency mode to
+fix this file. Ensure that you understand each field in the file for both file system and swap entries.
 
-\
-
-
-
-![](image-NS29U6SW.jpg)
-
-
-
-\
-
- {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-
-
-\
-
-EXAM TIP: Any missing or invalid entry in this file may render the
-system unbootable. You will have to boot the system in emergency mode to
-fix this file. Ensure that you understand each field in the file for
-both file system and swap entries.
-
-\
-
- {style="border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;"}
-
-
-\
-
-The format of this file is such that each row is broken out into six
-columns to identify the required attributes for each file system to be
+The format of this file is such that each row is broken out into six columns to identify the required attributes for each file system to be
 successfully mounted. Here is what the columns contain:
 
-\
+Column 1: 
+- physical or virtual device path where the file system is resident, or its associated UUID or label. 
+- can be entries for network file systems here as well.
 
-Column 1: Defines the physical or virtual device path where the file
-system is resident, or its associated UUID or label. There can be
-entries for network file systems here as well.
+Column 2: 
+- Identifies the mount point for the file system. 
+- swap partitions, use either "none" or "swap".
 
-Column 2: Identifies the mount point for the file system. For swap
-partitions, use either "none" or "swap".
+Column 3: 
+- type of file system such as Ext3, Ext4, XFS, VFAT, or ISO9660. 
+- For swap, the type "swap" is used.  
+- may use "auto" instead to leave it up to the mount command to determine the type of the file system.
 
-Column 3: Specifies the type of file system such as Ext3, Ext4, XFS,
-VFAT, or ISO9660. For swap, the type "swap" is used. You may use "auto"
-instead to leave it up to the mount command to determine the type of the
-file system.
+Column 4: 
+- Identifies one or more comma-separated options to be used when mounting the file system. 
+- consult the manual pages of the mount command or the fstab file for additional options and details.
 
-Column 4: Identifies one or more comma-separated options to be used when
-mounting the file system. See Table 15-3 for a description of some of
-the options, consult the manual pages of the mount command or the fstab
-file for additional options and details.
+Column 5: 
+- used by the dump utility to ascertain the file systems that need to be dumped. 
+- value of 0 (or the absence of this column) disables this check. 
+- This field is applicable only on Extended file systems; 
+- XFS does not use it.
 
-Column 5: Is used by the dump utility to ascertain the file systems that
-need to be dumped. A value of 0 (or the absence of this column) disables
-this check. This field is applicable only on Extended file systems; XFS
-does not use it.
+Column 6: 
+- sequence number in which to run the e2fsck (file system check and repair utility for Extended file system types) utility on the file system at system boot. 
+- By default, 0 is used for memory-based, remote, and removable file systems, 1 for /, and 2 for /boot and other physical file systems. 0 can also be used for /, /boot, and other physical file systems you don't want to be checked or repaired. 
+- applicable only on Extended file systems; 
+- XFS does not use it.
 
-Column 6: Expresses the sequence number in which to run the e2fsck (file
-system check and repair utility for Extended file system types) utility
-on the file system at system boot. By default, 0 is used for
-memory-based, remote, and removable file systems, 1 for /, and 2 for
-/boot and other physical file systems. 0 can also be used for /, /boot,
-and other physical file systems you don't want to be checked or
-repaired. This field is applicable only on Extended file systems; XFS
-does not use it.
-
-\
-
-A 0 in columns 5 and 6 for XFS, virtual, remote, and removable file
-system types has no meaning. You do not need to add them for these file
-system types.
-
-\
-
-This file is edited manually, so care must be observed to circumvent
-syntax and typing errors.
-
- 
-
-
-
+- 0 in columns 5 and 6 for XFS, virtual, remote, and removable file system types has no meaning. You do not need to add them for these file system types.
 
 ## Monitoring File System Usage 
 
-\
-
-On a live system, you'll often need to check file system usage to know
-if a mounted file system requires an expansion for growth or a clean up
-to generate free space. This involves examining the used and available
-spaces for a file system. The df (disk free) command has been used for
-this purpose. It reports usage details for mounted file systems. By
-default, this command reports the numbers in KBs unless the -m or -h
-option is specified to view the sizes in MBs or human-readable format.
-
-\
+### df (disk free) command 
+- reports usage details for mounted file systems.
+- reports the numbers in KBs unless the -m or -h option is specified to view the sizes in MBs or human-readable format.
 
 Let's run this command with the -h option on server2:
+```
+[root@server2 ~]# df -h
+Filesystem             Size  Used Avail Use% Mounted on
+devtmpfs               4.0M     0  4.0M   0% /dev
+tmpfs                  888M     0  888M   0% /dev/shm
+tmpfs                  356M  5.1M  351M   2% /run
+/dev/mapper/rhel-root   17G  2.0G   15G  12% /
+tmpfs                  178M     0  178M   0% /run/user/0
+/dev/sda1              960M  344M  617M  36% /boot
 
-\
+```
 
+Column 1:
+- file system device file or type
 
+Columns 2, 3, 4, 5, 6
+- total, used, and available spaces in and the usage percentage and mount point
 
-![](image-VIH3K0C2.jpg)
+Useful flags
 
+-T 
+- add the file system type to the output (example: df -hT)
 
+-x 
+- exclude the specified file system type from the output (example: df -hx tmpfs)
 
-The output shows the file system device file or type in column 1,
-followed by the total, used, and available spaces in columns 2, 3, and
-4, and the usage percentage and mount point in the last two columns.
+-t 
+- limit the output to a specific file system type (example: df -t xfs)
 
-\
-
-There are a few other useful flags available with the df command that
-can produce modified output. These flags include:
-
-\
-
--T to add the file system type to the output (example: df -hT)
-
--x to exclude the specified file system type from the output (example:
-df -hx tmpfs)
-
--t to limit the output to a specific file system type (example: df -t
-xfs)
-
--i to show inode information (example: df -hi)
-
-\
-
-You may use -h with any of these examples to print information in
-human-readable format.
-
- 
-
-
-
+-i
+- show inode information (example: df -hi)
 
 ## Calculating Disk Usage 
 
-\
+### du command
+- reports the amount of space a file or directory occupies. 
+- -m or -h option to view the output in MBs or human-readable format. In addition, you can 
+- view a usage summary with the -s switch and a grand total with -c.
 
-In contrast to the df command that returns usage information for an
-entire file system, the du command reports the amount of space a file or
-directory occupies. By default, it shows the output in KBs; however, you
-can use the -m or -h option to view the output in MBs or human-readable
-format. In addition, you can view a usage summary with the -s switch and
-a grand total with -c.
+Run this command on the /usr/bin directory to view the usage summary:
+```
+[root@server2 ~]# du -sh /usr/bin
+151M	/usr/bin
 
-\
+```
 
-Let's run this command on the /usr/bin directory to view the usage
-summary:
+Add a "total" row to the output and with numbers displayed in KBs:
+```
+[root@server2 ~]# du -sc /usr/bin
+154444	/usr/bin
+154444	total
+```
 
-\
+```
+[root@server2 ~]# du -sch /usr/bin
+151M	/usr/bin
+151M	total
+```
 
+Try this command with different options on the /usr/sbin/lvm file and observe the results.
 
+## Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions (server2)
 
-![](image-OYE5SIWK.jpg)
-
-
-
-To add a "total" row to the output and with numbers displayed in KBs:
-
-\
-
-
-
-![](image-03KMEUMA.jpg)
-
-
-
-Try this command with different options on the /usr/sbin/lvm file and
-observe the results.
-
- 
-
-
-
-
-## Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions 
-
-\
-
-This exercise should be done on server2 as user1 with sudo where
-required.
-
-\
-
-In this exercise, you will create 2 x 100MB partitions on the /dev/sdb
-disk, initialize them separately with the Ext4 and VFAT file system
-types, define them for persistence using their UUIDs, create mount
-points called /ext4fs1 and /vfatfs1, attach them to the directory
-structure, and verify their availability and usage. Moreover, you will
-use the disk /dev/sdc and repeat the above procedure to establish an XFS
-file system in it and mount it on /xfsfs1.
-
-\
+- create 2 x 100MB partitions on the /dev/sdb disk, 
+- initialize them separately with the Ext4 and VFAT file system types, 
+- define them for persistence using their UUIDs, 
+- create mount points called /ext4fs1 and /vfatfs1, 
+- attach them to the directorystructure
+- verify their availability and usage
+- you will use the disk /dev/sdc and repeat the above procedure to establish an XFS file system in it and mount it on /xfsfs1.
 
 1\. Apply the label "msdos" to the sdb disk using the parted command:
+```
+[root@server20 ~]# sudo parted /dev/sdb mklabel msdos
+Warning: The existing disk label on /dev/sdb will be destroyed and all data on this disk will be
+lost. Do you want to continue?
+Yes/No? y                                                                 
+Information: You may need to update /etc/fstab.
 
-\
-
-
-
-![](image-2Y88M0ZP.jpg)
-
-
+```
 
 2\. Create 2 x 100MB primary partitions on sdb with the parted command:
+```
+[root@server20 ~]# sudo parted /dev/sdb mkpart primary 1 101m
+Information: You may need to update /etc/fstab.
 
-\
+[root@server20 ~]# sudo parted /dev/sdb mkpart primary 102 201m
+Information: You may need to update /etc/fstab.
 
+```
 
+3\. Initialize the first partition (sdb1) with Ext4 file system type using the mkfs command:
+```
+[root@server20 ~]# sudo mkfs -t ext4 /dev/sdb1
+mke2fs 1.46.5 (30-Dec-2021)
+/dev/sdb1 contains a LVM2_member file system
+Proceed anyway? (y,N) y
+Creating filesystem with 97280 1k blocks and 24288 inodes
+Filesystem UUID: 73db0582-7183-42aa-951d-2f48b7712597
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
 
-![](image-DSWD45L9.jpg)
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done 
+```
 
+4\. Initialize the second partition (sdb2) with VFAT file system type using the mkfs command:
+```
+[root@server20 ~]# sudo mkfs -t vfat /dev/sdb2
+mkfs.fat 4.2 (2021-01-31)
+```
 
+5\. Initialize the whole disk (sdc) with the XFS file system type using the mkfs.xfs command. Add the -f flag to force the removal of any old partitioning or labeling information from the disk.
+```
+[root@server20 ~]# sudo mkfs.xfs /dev/sdc -f 
+Filesystem should be larger than 300MB.
+Log size should be at least 64MB.
+Support for filesystems like this one is deprecated and they will not be supported in future releases.
+meta-data=/dev/sdc               isize=512    agcount=4, agsize=16000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=64000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=1368, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+```
 
-3\. Initialize the first partition (sdb1) with Ext4 file system type
-using the mkfs command:
+6\. Determine the UUIDs for all three file systems using the lsblk command:
+```
+[root@server2 ~]# lsblk -f /dev/sdb /dev/sdc
+NAME   FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sdb                                                                           
+├─sdb1 ext4   1.0         0bdd22d0-db53-40bb-8cc7-36efc9184196                
+└─sdb2 vfat   FAT16       FB3A-6572                                           
+sdc    xfs                91884326-9686-4569-96fa-9adb02c1f6f4>)
+```
 
-\
-
-
-
-![](image-UWG2ZP0Y.jpg)
-
-
-
-4\. Initialize the second partition (sdb2) with VFAT file system type
-using the mkfs command:
-
-\
-
-
-
-![](image-22LNR8Q6.jpg)
-
-
-
-5\. Initialize the whole disk (sdc) with the XFS file system type using
-the mkfs.xfs command. Add the -f flag to force the removal of any old
-partitioning or labeling information from the disk.
-
-\
-
-
-
-![](image-CKMHXG0C.jpg)
-
-
-
-6\. Determine the UUIDs for all three file systems using the lsblk
-command:
-
-\
-
-
-
-![](image-0P41TVWG.jpg)
-
-
-
-7\. Open the /etc/fstab file, go to the end of the file, and append
-entries for the file systems for persistence using their UUIDs:
-
-\
-
-
-
-![](image-5V6Z5MZM.jpg)
-
-
+7\. Open the /etc/fstab file, go to the end of the file, and append entries for the file systems for persistence using their UUIDs:
+```
+UUID=0bdd22d0-db53-40bb-8cc7-36efc9184196 /ext4fs1 ext4 defaults 0 0                
+UUID=FB3A-6572 /vfatfs1 vfat defaults 0 0                                          
+UUID=91884326-9686-4569-96fa-9adb02c1f6f4 /xfsfs1 xfs defaults 0 0
+```
 
 8\. Create mount points /ext4fs1, /vfatfs1, and /xfsfs1 for the three
 file systems using the mkdir command:
+`[root@server2 ~]# sudo mkdir /ext4fs1 /vfatfs1 /xfsfs1`
 
-\
+9\. Mount the new file systems using the mount command. This command will fail if there are any invalid or missing information in the file.
+```
+[root@server2 ~]# sudo mount -a
+mount: (hint) your fstab has been modified, but systemd still uses
+       the old version; use 'systemctl daemon-reload' to reload.
+```
 
+10\. View the mount and availability status as well as the types of all three file systems using the df command:
+```
+[root@server2 ~]# df -hT
+Filesystem            Type      Size  Used Avail Use% Mounted on
+devtmpfs              devtmpfs  4.0M     0  4.0M   0% /dev
+tmpfs                 tmpfs     888M     0  888M   0% /dev/shm
+tmpfs                 tmpfs     356M  5.1M  351M   2% /run
+/dev/mapper/rhel-root xfs        17G  2.0G   15G  12% /
+/dev/sda1             xfs       960M  344M  617M  36% /boot
+tmpfs                 tmpfs     178M     0  178M   0% /run/user/0
+/dev/sdb1             ext4       84M   14K   77M   1% /ext4fs1
+/dev/sdb2             vfat       95M     0   95M   0% /vfatfs1
+/dev/sdc              xfs       245M   15M  231M   6% /xfsfs1
+```
 
-
-![](image-ARCK90F6.jpg)
-
-
-
-9\. Mount the new file systems using the mount command. This command
-will fail if there are any invalid or missing information in the file.
-
-\
-
-
-
-![](image-1VIDXU3P.jpg)
-
-
-
-10\. View the mount and availability status as well as the types of all
-three file systems using the df command:
-
-\
-
-
-
-![](image-26Z74LOW.jpg)
+## Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes (server2)
 
 
-
-The output verifies the creation and availability status of the three
-file systems. They are added to the fstab file for persistence. A system
-reboot at this point will remount them automatically. These file systems
-may now be used to store files.
-
- 
-
-
-
-
-## Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes 
-
-\
-
-This exercise should be done on server2 as user1 with sudo where
-required.
-
-\
-
-In this exercise, you will create a volume group called vgfs comprised
-of a 172MB physical volume created in a partition on the /dev/sdd disk.
-The PE size for the volume group should be set at 16MB. You will create
-two logical volumes called ext4vol and xfsvol of sizes 80MB each and
-initialize them with the Ext4 and XFS file system types. You will ensure
-that both file systems are persistently defined using their logical
-volume device filenames. You will create mount points called /ext4fs2
-and /xfsfs2, mount the file systems, and verify their availability and
-usage.
-
-\
+- create a volume group called vgfs comprised of a 172MB physical volume created in a partition on the /dev/sdd disk.
+- The PE size for the volume group should be set at 16MB. You will 
+- create two logical volumes called ext4vol and xfsvol of sizes 80MB each and initialize them with the Ext4 and XFS file system types.
+- ensure that both file systems are persistently defined using their logical volume device filenames. 
+- create mount points called /ext4fs2 and /xfsfs2, 
+- mount the file systems, and 
+- verify their availability and usage.
 
 1\. Create a 172MB partition on the sdd disk using the parted command:
-
-\
-
-
-
 ![](image-ZNAS86YQ.jpg)
 
 

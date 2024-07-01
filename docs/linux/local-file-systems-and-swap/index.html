@@ -16,20 +16,20 @@
     <meta property="og:type" content="article">
     <meta property="article:section" content="Linux">
     <meta itemprop="description" content="Local File Systems and Swap Topics File system benefits, categories, and types Ext3/Ext4, XFS, VFAT, and ISO9660 File system administration commandset Mount and unmount file systems manually and persistently Determine and use UUID Apply and use file system label Monitor file system and directory usage Create and mount different types of local file systems in partitions Create, mount, and resize Ext4 and XFS file systems in LVM Understand, create, and activate swap in partitions and LVM RHCSA Objectives: 30.">
-    <meta itemprop="wordCount" content="8482">
+    <meta itemprop="wordCount" content="8024">
     <title></title>
-    <link href="/images/logo.svg?1719371293" rel="icon" type="image/svg+xml">
-    <link href="/css/fontawesome-all.min.css?1719371294" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1719371294" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1719371294" rel="stylesheet">
-    <link href="/css/auto-complete.css?1719371294" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1719371294" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1719371294" rel="stylesheet">
-    <link href="/css/fonts.css?1719371294" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1719371294" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1719371294" rel="stylesheet">
-    <link href="/css/theme-amoled.css?1719371294" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-relearn-dark.css?1719371294" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1719371294" rel="stylesheet">
-    <link href="/css/print.css?1719371294" rel="stylesheet" media="print">
-    <script src="/js/variant.js?1719371294"></script>
+    <link href="/images/logo.svg?1719844859" rel="icon" type="image/svg+xml">
+    <link href="/css/fontawesome-all.min.css?1719844860" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1719844860" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1719844860" rel="stylesheet">
+    <link href="/css/auto-complete.css?1719844860" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1719844860" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1719844860" rel="stylesheet">
+    <link href="/css/fonts.css?1719844860" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1719844860" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1719844860" rel="stylesheet">
+    <link href="/css/theme-amoled.css?1719844860" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-relearn-dark.css?1719844860" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1719844860" rel="stylesheet">
+    <link href="/css/print.css?1719844860" rel="stylesheet" media="print">
+    <script src="/js/variant.js?1719844860"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -85,16 +85,28 @@
     <li><a href="#xfs-file-system">XFS File System</a></li>
     <li><a href="#vfat-file-system">VFAT File System</a></li>
     <li><a href="#iso9660-file-system">ISO9660 File System</a></li>
-    <li><a href="#file-system-management">File System Management</a></li>
-    <li><a href="#file-system-administration-commands">File System Administration Commands</a></li>
-    <li><a href="#mounting-and-unmounting-file-systems">Mounting and Unmounting File Systems</a></li>
+    <li><a href="#file-system-management">File System Management</a>
+      <ul>
+        <li><a href="#file-system-administration-commands">File System Administration Commands</a></li>
+        <li><a href="#mounting-and-unmounting-file-systems">Mounting and Unmounting File Systems</a></li>
+      </ul>
+    </li>
     <li><a href="#determining-the-uuid-of-a-file-system">Determining the UUID of a File System</a></li>
     <li><a href="#labeling-a-file-system">Labeling a File System</a></li>
     <li><a href="#automatically-mounting-a-file-system-at-reboots">Automatically Mounting a File System at Reboots</a></li>
-    <li><a href="#monitoring-file-system-usage">Monitoring File System Usage</a></li>
-    <li><a href="#calculating-disk-usage">Calculating Disk Usage</a></li>
-    <li><a href="#exercise-14-1-create-and-mount-ext4-vfat-and-xfs-file-systems-in-partitions">Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions</a></li>
-    <li><a href="#exercise-14-2-create-and-mount-ext4-and-xfs-file-systems-in-lvm-logical-volumes">Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes</a></li>
+    <li><a href="#etcfstab">/etc/fstab</a></li>
+    <li><a href="#monitoring-file-system-usage">Monitoring File System Usage</a>
+      <ul>
+        <li><a href="#df-disk-free-command">df (disk free) command</a></li>
+      </ul>
+    </li>
+    <li><a href="#calculating-disk-usage">Calculating Disk Usage</a>
+      <ul>
+        <li><a href="#du-command">du command</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercise-14-1-create-and-mount-ext4-vfat-and-xfs-file-systems-in-partitions-server2">Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions (server2)</a></li>
+    <li><a href="#exercise-14-2-create-and-mount-ext4-and-xfs-file-systems-in-lvm-logical-volumes-server2">Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes (server2)</a></li>
     <li><a href="#exercise-14-3-resize-ext4-and-xfs-file-systems-in-lvm-logical-volumes">Exercise 14-3: Resize Ext4 and XFS File Systems in LVM Logical Volumes</a></li>
     <li><a href="#exercise-14-4-create-and-mount-xfs-file-system-in-lvm-vdo-volume">Exercise 14-4: Create and Mount XFS File System in LVM VDO Volume</a></li>
     <li><a href="#swap-and-its-management">Swap and its Management</a></li>
@@ -353,475 +365,455 @@ survive across system reboots.</p>
 </ul>
 <h2 id="xfs-file-system">XFS File System</h2>
 <ul>
-<li>high-performing 64-bit extent-based journaling file system type. XFS allows the creation of file systems and
-files up to 8EiB (ExbiByte). It does not run file system checks at
-system boot; rather, it relies on you to use the xfs_repair utility to
-manually fix any issues. XFS sets the extended user attributes and
-certain mount options by default on new file systems. It enables
-defragmentation on mounted and active file systems to keep as much data
-in contiguous blocks as possible for faster access. The only major
-caveat with using XFS is its inability to shrink.</li>
+<li>high-performing 64-bit extent-based journaling file system type. XFS</li>
+<li>allows the creation of file systems and files up to 8EiB (ExbiByte). It</li>
+<li>does not run file system checks at system boot; rather, it</li>
+<li>relies on you to use the xfs_repair utility to manually fix any issues. XFS</li>
+<li>sets the extended user attributes and certain mount options by default on new file systems. It</li>
+<li>enables defragmentation on mounted and active file systems to keep as much data in contiguous blocks as possible for faster access.</li>
+<li>inability to shrink.</li>
+<li>uses journaling for metadata operations, guaranteeing the consistency of the file system against abnormal or forced unmounting. The</li>
+<li>journal information is read and any pending metadata transactions are replayed when the XFS file system is remounted.</li>
+<li>speedy input/output performance. It</li>
+<li>can be snapshot in a mounted, active state.</li>
 </ul>
-<p>\</p>
-<p>Like Ext3 and Ext4, XFS also uses journaling for metadata operations,
-guaranteeing the consistency of the file system against abnormal or
-forced unmounting. The journal information is read and any pending
-metadata transactions are replayed when the XFS file system is
-remounted.</p>
-<p>\</p>
-<p>XFS uses sophisticated techniques in its architecture for speedy
-input/output performance. It can be snapshot in a mounted, active state.
-The snapshot can then be used for backup or other purposes.</p>
 <h2 id="vfat-file-system">VFAT File System</h2>
-<p>\</p>
-<p>VFAT (Virtual File Allocation Table) is an extension to the legacy FAT
-file system type, also called FAT16, that was introduced in early
-versions of MS-DOS. The support for FAT16 was later added to Microsoft
-Windows, MacOS, and some UNIX versions, enabling them to read and write
-files written in that format. FAT16 had limitations; it was designed to
-use no more than 8.3 characters in filenames, limiting filenames to a
-maximum of eight characters plus three characters as an extension.
-Moreover, it only allowed filenames to begin with a letter or number and
-to not contain spaces. FAT16 treated lowercase and uppercase letters
-alike.</p>
-<p>\</p>
-<p>VFAT was introduced with Microsoft Windows 95 and it has since been
-available. It supports 255 characters in filenames including spaces and
-periods; however, it still does not differentiate between lowercase and
-uppercase letters. VFAT support was added to Linux several years ago. A
-VFAT file system may be created on hard drives, but it is primarily used
-on removable media, such as floppy and USB flash drives, for exchanging
-data between Linux and Windows.</p>
+<ul>
+<li>extension to the legacy FAT file system (FAT16)</li>
+<li>supports 255 characters in filenames including spaces and periods; however, it still</li>
+<li>does not differentiate between lowercase and uppercase letters.</li>
+<li>primarily used on removable media, such as floppy and USB flash drives, for exchanging data between Linux and Windows.</li>
+</ul>
 <h2 id="iso9660-file-system">ISO9660 File System</h2>
-<p>\</p>
-<p>This file system type conforms to the ISO 9660 standard, hence the name.
-It is used for removable optical disc media such as CD/DVD drives for
-transporting software and patches, and operating system images in ISO
-format between computers. The ISO9660 format originated from the
-High-Sierra File System (HSFS) format, and it has now been enhanced to
-include innovative features.</p>
+<ul>
+<li>used for removable optical disc media such as CD/DVD drives</li>
+</ul>
 <h2 id="file-system-management">File System Management</h2>
-<p>\</p>
-<p>Managing file systems involves such operations as creating, mounting,
-labeling, viewing, growing, shrinking, unmounting, and removing them.
-These management tasks are common to both Extended and XFS types. Most
-of these functions are also applicable to VFAT and a few to optical file
-systems.</p>
-<p>\</p>
-<p>In Chapter 13, you created several partitions and logical volumes.
-However, you did not initialize them with a file system type, and
-therefore you could not mount or use them. Later, you destroyed all the
-partitions and the volumes that were created. You also deleted the LVM
-volume group. All the disks were returned to their unused state after
-the completion of the exercises.</p>
-<p>\</p>
-<p>Here is a listing of the block devices to confirm the current state of
-the disks:</p>
-<p><a href="#R-image-3186b929e7184f7e3c081a92ec9eeb6b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VHZU6DE4.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3186b929e7184f7e3c081a92ec9eeb6b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VHZU6DE4.jpg"></a></p>
-<p>The output verifies the unused state and availability status for all the
-disks&mdash;sdb through sdf. You should be able to reuse them in the
-exercises in this chapter.</p>
-<h2 id="file-system-administration-commands">File System Administration Commands</h2>
-<p>\</p>
-<p>In order to create and manage file systems, RHEL offers a number of
-commands of which some are limited to their operations on the Extended,
-XFS, or VFAT file system type, while others are general and applicable
-to all file system types. Table 14-2 describes common file system
-administration commands.</p>
-<p>\</p>
-<hr>
-<p>Command                             Description</p>
-<p>Extended File System</p>
-<p>e2label                             Modifies the label of a file system</p>
-<p>tune2fs                             Tunes or displays file system
-attributes</p>
-<p>XFS</p>
-<p>xfs_admin                           Tunes file system attributes</p>
-<p>xfs_growfs                          Extends the size of a file system</p>
-<p>xfs_info                            Exhibits information about a file
-system</p>
-<p>VFAT</p>
-<p>General File System Commands</p>
-<p>blkid                               Displays block device attributes
-including their UUIDs and labels</p>
-<p>df                                  Reports file system utilization</p>
-<p>du                                  Calculates disk usage of
-directories and file systems</p>
-<p>fsadm                               Resizes a file system. This command
-is automatically invoked when the
-lvresize command is run with the -r
-switch.</p>
-<p>lsblk                               Lists block devices and file
-systems and their attributes
-including their UUIDs and labels</p>
-<p>mkfs                                Creates a file system. Use the -t
-option and specify ext3, ext4,
-vfat, or xfs file system type.</p>
-<p>mount                               Mounts a file system for user
-access. Displays currently mounted
-file systems.</p>
-<p>umount                              Unmounts a file system</p>
-<hr>
-<p>\</p>
-<p>Table 14-2 File System Management Commands</p>
-<p>\</p>
-<p>Most of these commands are used in this chapter.</p>
-<h2 id="mounting-and-unmounting-file-systems">Mounting and Unmounting File Systems</h2>
-<p>\</p>
-<p>In order to enable users to access files and application programs in a
-file system, the file system must be connected to the directory
-structure at a desired attachment point, which is referred to as the
-mount point. A mount point in essence is any empty directory that is
-created and used for this purpose.</p>
-<p>\</p>
-<p>There are many file systems already mounted on your system, such as the
-root file system mounted on / and the boot file system mounted on /boot.
-Both of them are empty directories and are reserved to connect the two
-file systems to the directory hierarchy. You can use the mount command
-to view information about mounted file systems. The following shows the
+<h3 id="file-system-administration-commands">File System Administration Commands</h3>
+<ul>
+<li>Some are limited to their operations on the Extended, XFS, or VFAT file system type, while</li>
+<li>others are general and applicable to all file system types.</li>
+</ul>
+<h4 id="extended-file-system">Extended File System</h4>
+<p>e2label</p>
+<ul>
+<li>Modifies the label of a file system</li>
+</ul>
+<p>tune2fs</p>
+<ul>
+<li>Tunes or displays file system attributes</li>
+</ul>
+<h4 id="xfs">XFS</h4>
+<p>xfs_admin</p>
+<ul>
+<li>Tunes file system attributes</li>
+</ul>
+<p>xfs_growfs</p>
+<ul>
+<li>Extends the size of a file system</li>
+</ul>
+<p>xfs_info</p>
+<ul>
+<li>Exhibits information about a file system</li>
+</ul>
+<h4 id="vfat">VFAT</h4>
+<h4 id="general-file-system-commands">General File System Commands</h4>
+<p>blkid</p>
+<ul>
+<li>Displays block device attributes including their UUIDs and labels</li>
+</ul>
+<p>df</p>
+<ul>
+<li>Reports file system utilization</li>
+</ul>
+<p>du</p>
+<ul>
+<li>Calculates disk usage of directories and file systems</li>
+</ul>
+<p>fsadm</p>
+<ul>
+<li>Resizes a file system. This command is automatically invoked when the lvresize command is run with the -r switch.</li>
+</ul>
+<p>lsblk</p>
+<ul>
+<li>Lists block devices and file systems and their attributes including their UUIDs and labels</li>
+</ul>
+<p>mkfs</p>
+<ul>
+<li>Creates a file system. Use the -t option and specify ext3, ext4, vfat, or xfs file system type.</li>
+</ul>
+<p>mount</p>
+<ul>
+<li>Mounts a file system for user access. Displays currently mounted file systems.</li>
+</ul>
+<p>umount</p>
+<ul>
+<li>Unmounts a file system</li>
+</ul>
+<h3 id="mounting-and-unmounting-file-systems">Mounting and Unmounting File Systems</h3>
+<ul>
+<li>file system must be connected to the directory structure at a desired attachment point, (mount point)</li>
+<li>A mount point in essence is any empty directory that is created and used for this purpose.</li>
+</ul>
+<p>use the mount command to view information about mounted file systems. The following shows the
 XFS file systems only:</p>
-<p>\</p>
-<p><a href="#R-image-5c52e94b746a64dd104a845758c7de65" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VWY2F9RB.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c52e94b746a64dd104a845758c7de65"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VWY2F9RB.jpg"></a></p>
-<p>The &ldquo;-t xfs&rdquo; option makes the command to only show the file systems
-initialized with the XFS type. The mount command is also used for
-mounting a file system to a mount point, and this action is performed
-with the root user privileges. The command requires the absolute
-pathnames of the file system block device and the mount point name. It
-also accepts the UUID or label of the file system in lieu of the block
-device name. Options are available with this command to mount all or a
-specific type of file system. The mount command is also used to mount
-other types of file systems such as those located in removable media.
-Upon successful mount, the kernel places an entry for the file system in
-the /proc/self/mounts file.</p>
-<p>\</p>
-<p>A mount point should be empty when an attempt is made to mount a file
-system on it, otherwise the content of the mount point will hide. As
-well, the mount point must not be in use or the mount attempt will fail.</p>
-<p>\</p>
-<p>The mount command supports numerous options that may be used as required
-to override its default behavior. We can also specify multiple
-comma-separated options. Table 14-3 describes some common options.</p>
-<p>\</p>
-<hr>
-<p>Option                              Description</p>
-<p>auto (noauto)                       Mounts (does not mount) the file
-system when the -a option is
-specified</p>
-<p>defaults                            Mounts a file system with all the
-default values (async, auto, rw,
-etc.)</p>
-<p>_netdev                            Used for a file system that
-requires network connectivity in
-place before it can be mounted. NFS
-is an example.</p>
-<p>remount                             Remounts an already mounted file
-system to enable or disable an
-option</p>
-<p>ro (rw)                             Mounts a file system read-only
-(read/write)</p>
-<hr>
-<p>\</p>
-<p>Table 14-3 Common mount Command Options</p>
-<p>\</p>
-<p>The opposite of the mount command is umount, which is used to detach a
-file system from the directory hierarchy and make it inaccessible to
-users and applications. This command expects the absolute pathname to
-the block device containing the file system or its mount point name in
-order to detach it. Options are available with umount to unmount all or
-a specific type of file system. The kernel removes the corresponding
-file system entry from the /proc/self/mounts file after it has been
-successfully disconnected.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# mount -t xfs
+/dev/mapper/rhel-root on / type xfs (rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota)
+/dev/sda1 on /boot type xfs (rw,relatime,seclabel,attr2,inode64,logbufs=8,logbsize=32k,noquota)</code></pre></div><h4 id="mount-command">Mount command</h4>
+<p>-t option</p>
+<ul>
+<li>
+<p>type.</p>
+</li>
+<li>
+<p>used for mounting a file system to a mount point</p>
+</li>
+<li>
+<p>performed with the root user privileges.</p>
+</li>
+<li>
+<p>requires the absolute pathnames of the file system block device and the mount point name.</p>
+</li>
+<li>
+<p>accepts the UUID or label of the file system in lieu of the block device name.</p>
+</li>
+<li>
+<p>mount all or a specific type of file system.</p>
+</li>
+<li>
+<p>Upon successful mount, the kernel places an entry for the file system in the /proc/self/mounts file.</p>
+</li>
+<li>
+<p>A mount point should be empty when an attempt is made to mount a file system on it, otherwise the content of the mount point will hide.</p>
+</li>
+<li>
+<p>the mount point must not be in use or the mount attempt will fail.</p>
+</li>
+</ul>
+<p>auto (noauto)</p>
+<ul>
+<li>Mounts (does not mount) the file system when the -a option is specified</li>
+</ul>
+<p>defaults</p>
+<ul>
+<li>Mounts a file system with all the default values (async, auto, rw, etc.)</li>
+</ul>
+<p><code>_netdev</code></p>
+<ul>
+<li>Used for a file system that requires network connectivity in place before it can be mounted. NFS is an example.</li>
+</ul>
+<p>remount</p>
+<ul>
+<li>Remounts an already mounted file system to enable or disable an option</li>
+</ul>
+<p>ro (rw)</p>
+<ul>
+<li>Mounts a file system read-only read/write)</li>
+</ul>
+<h4 id="umount-command">umount Command</h4>
+<ul>
+<li>used to detach a file system from the directory hierarchy and make it inaccessible to users and applications.</li>
+<li>expects the absolute pathname to the block device containing the file system or its mount point name in order to detach it.</li>
+<li>umount to unmount all or a specific type of file system.</li>
+<li>kernel removes the corresponding file system entry from the /proc/self/mounts file after it has been successfully disconnected.</li>
+</ul>
 <h2 id="determining-the-uuid-of-a-file-system">Determining the UUID of a File System</h2>
-<p>\</p>
-<p>Every Extended and XFS file system has a 128-bit (32 hexadecimal
-characters) UUID (Universally Unique IDentifier) assigned to it at the
-time of its creation. In contrast, UUIDs assigned to vfat file systems
-are 32-bit (8 hexadecimal characters) in length. Assigning a UUID makes
-the file system unique among many other file systems that potentially
-exist on the system. The primary benefit of using a UUID is the fact
-that it always stays persistent across system reboots. UUIDs are used by
-default in RHEL 9 in the /etc/fstab file for any file system that is
-created by the system in a standard partition.</p>
-<p>\</p>
-<p>RHEL attempts to mount all file systems listed in the /etc/fstab file at
-reboots. Each file system has an associated device file and UUID, but
-may or may not have a corresponding label. The system checks for the
-presence of each file system&rsquo;s device file, UUID, or label, and then
-attempts to mount it.</p>
-<p>\</p>
-<p>The /boot file system, for instance, is located in a partition and the
-device file associated with it is on server2 is /dev/sda1. You can use
-the xfs_admin command, the blkid command, or the lsblk command as
-follows to determine its UUID:</p>
-<p>\</p>
-<p><a href="#R-image-408efcd2ebf287a6cffc272565158a4f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-QC3A8ZPT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-408efcd2ebf287a6cffc272565158a4f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-QC3A8ZPT.jpg"></a></p>
-<p>The UUID reported by the above commands for the /boot file system is
-&quot;22d05484-6ae1-4ef8-a37d-abab674a5e35&quot;. If you grep for the string
-&ldquo;boot&rdquo; on the /etc/fstab file, you will see that the system uses this
-UUID to mount /boot. A discussion on the /etc/fstab file is provided
-later in this chapter.</p>
-<p>\</p>
-<p>For extended file systems, you can use the tune2fs command in addition
-to the blkid and lsblk commands to determine the UUID.</p>
-<p>\</p>
-<p>A UUID is also assigned to a file system that is created in a VDO or LVM
-volume; however, it need not be used in the fstab file, as the device
-files associated with the logical volumes are always unique and
-persistent.</p>
+<ul>
+<li>
+<p>Every Extended and XFS file system has a 128-bit (32 hexadecimal characters) UUID (Universally Unique IDentifier) assigned to it at the time of its creation. In contrast,</p>
+</li>
+<li>
+<p>UUIDs assigned to vfat file systems are 32-bit (8 hexadecimal characters) in length.</p>
+</li>
+<li>
+<p>Assigning a UUID makes the file system unique among many other file systems that potentially exist on the system.</p>
+</li>
+<li>
+<p>persistent across system reboots.</p>
+</li>
+<li>
+<p>used by default in RHEL 9 in the /etc/fstab file for any file system that is created by the system in a standard partition.</p>
+</li>
+<li>
+<p>RHEL attempts to mount all file systems listed in the /etc/fstab file at reboots.</p>
+</li>
+<li>
+<p>Each file system has an associated device file and UUID, but may or may not have a corresponding label.</p>
+</li>
+<li>
+<p>The system checks for the presence of each file system&rsquo;s device file, UUID, or label, and then attempts to mount it.</p>
+</li>
+</ul>
+<p>Determine the UUID of /boot</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# lsblk | grep boot
+├─sda1          8:1    0    1G  0 part /boot</code></pre></div><div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# sudo xfs_admin -u /dev/sda1
+UUID = 630568e1-608f-4603-9b97-e27f82c7d4b4
+
+[root@server2 ~]# sudo blkid /dev/sda1
+/dev/sda1: UUID=&#34;630568e1-608f-4603-9b97-e27f82c7d4b4&#34; TYPE=&#34;xfs&#34; PARTUUID=&#34;7dcb43e4-01&#34;
+
+[root@server2 ~]# sudo lsblk -f /dev/sda1
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda1 xfs                630568e1-608f-4603-9b97-e27f82c7d4b4  616.1M    36% /boot</code></pre></div><p>For extended file systems, you can use the <code>tune2fs</code>, <code>blkid</code>, or <code>lsblk</code> commands to determine the UUID.</p>
+<p>A UUID is also assigned to a file system that is created in a VDO or LVM volume; however, it need not be used in the fstab file, as the device
+files associated with the logical volumes are always unique and persistent.</p>
 <h2 id="labeling-a-file-system">Labeling a File System</h2>
-<p>\</p>
-<p>A unique label may be used instead of a UUID to keep the file system
-association with its device file exclusive and persistent across system
-reboots. A label is limited to a maximum of 12 characters on the XFS
-file system and 16 characters on the Extended file system. By default,
-no labels are assigned to a file system at the time of its creation.</p>
-<p>\</p>
-<p>The /boot file system is located in the /dev/sda1 partition and its type
-is XFS. You can use the xfs_admin or the lsblk command as follows to
+<ul>
+<li>A unique label may be used instead of a UUID to keep the file system association with its device file exclusive and persistent across system reboots.</li>
+<li>A label is limited to a maximum of 12 characters on the XFS file system</li>
+<li>16 characters on the Extended file system.</li>
+<li>By default, no labels are assigned to a file system at the time of its creation.</li>
+</ul>
+<p>The /boot file system is located in the /dev/sda1 partition and its type is XFS. You can use the xfs_admin or the lsblk command as follows to
 determine its label:</p>
-<p>\</p>
-<p><a href="#R-image-de9e5578fa13d95953fbf3adf8831303" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-T0YGDGYK.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-de9e5578fa13d95953fbf3adf8831303"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-T0YGDGYK.jpg"></a></p>
-<p>The output discloses that there is currently no label assigned to the
-/boot file system.</p>
-<p>\</p>
-<p>A label is not needed on a file system if you intend to use its UUID or
-if it is created in a logical volume; however, you can still apply one
-using the xfs_admin command with the -L option. Labeling an XFS file
-system requires that the target file system be unmounted.</p>
-<p>\</p>
-<p>The following example demonstrates the steps to unmount /boot, set the
-label &ldquo;bootfs&rdquo; on its device file, and remount it:</p>
-<p>\</p>
-<p><a href="#R-image-c28f4acc47971cd98c2ec5e2dfc5a0ea" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZTTYTIQQ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c28f4acc47971cd98c2ec5e2dfc5a0ea"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZTTYTIQQ.jpg"></a></p>
-<p>You can confirm the new label by executing sudo xfs_admin -l /dev/sda1
-or sudo lsblk -f /dev/sda1.</p>
-<p>\</p>
-<p>For extended file systems, you can use the e2label command to apply a
-label and the tune2fs, blkid, and lsblk commands to view and verify.</p>
-<p>\</p>
-<p>Now you can replace the UUID=&quot;22d05484-6ae1-4ef8-a37d-abab674a5e35&quot;
-for /boot in the fstab file with LABEL=bootfs, and unmount and remount
-/boot as demonstrated above for confirmation.</p>
-<p>\</p>
-<p>A label may also be applied to a file system created in a logical
-volume; however, it is not recommended for use in the fstab file, as the
-device files for logical volumes are always unique and remain persistent
-across system reboots.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# sudo xfs_admin -l /dev/sda1
+label = &#34;&#34;
+
+[root@server2 ~]# sudo lsblk -f /dev/sda1
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sda1 xfs                630568e1-608f-4603-9b97-e27f82c7d4b4  616.1M    36% /boot</code></pre></div><ul>
+<li>not needed on a file system if you intend to use its UUID or if it is created in a logical volume</li>
+<li>you can still apply one using the <code>xfs_admin</code> command with the <code>-L</code> option.</li>
+<li>Labeling an XFS file system requires that the target file system be unmounted.</li>
+</ul>
+<p>unmount /boot, set the label &ldquo;bootfs&rdquo; on its device file, and remount it:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# sudo umount /boot
+[root@server2 ~]# sudo xfs_admin -L bootfs /dev/sda1
+writing all SBs
+new label = &#34;bootfs&#34;</code></pre></div><p>confirm the new label by executing <code>sudo xfs_admin -l /dev/sda1</code> or <code>sudo lsblk -f /dev/sda1</code>.</p>
+<p>For extended file systems, you can use the <code>e2label</code> command to apply a label and the <code>tune2fs</code>, <code>blkid</code>, and <code>lsblk</code> commands to view and verify.</p>
+<p>Now you can replace the <code>UUID=\&quot;22d05484-6ae1-4ef8-a37d-abab674a5e35</code>&quot; for /boot in the fstab file with <code>LABEL=bootfs</code>, and unmount and remount /boot as demonstrated above for confirmation.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# mount /boot
+mount: (hint) your fstab has been modified, but systemd still uses
+       the old version; use &#39;systemctl daemon-reload&#39; to reload.</code></pre></div><p>A label may also be applied to a file system created in a logical volume; however, it is not recommended for use in the fstab file, as the
+device files for logical volumes are always unique and remain persistent across system reboots.</p>
 <h2 id="automatically-mounting-a-file-system-at-reboots">Automatically Mounting a File System at Reboots</h2>
-<p>\</p>
-<p>File systems defined in the /etc/fstab file are mounted automatically at
-reboots. This file must contain proper and complete information for each
-listed file system. An incomplete or inaccurate entry might leave the
-system in an undesirable or unbootable state. Another benefit of adding
-entries to this file is that you only need to specify one of the four
-attributes&mdash;block device name, UUID, label, or mount point&mdash;of the
-file system that you wish to mount manually with the mount command. The
-mount command obtains the rest of the information from this file.
-Similarly, you only need to specify one of these attributes with the
-umount command to detach it from the directory hierarchy.</p>
-<p>\</p>
-<p>The default fstab file contains entries for file systems that are
-created at the time of installation. On server2, for instance, this file
-currently has the following three entries:</p>
-<p>\</p>
-<p><a href="#R-image-25aa1d7ed81f1e8c70084e915d463031" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NS29U6SW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-25aa1d7ed81f1e8c70084e915d463031"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NS29U6SW.jpg"></a></p>
-<p>\</p>
-<p>{style=&ldquo;border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;&rdquo;}</p>
-<p>\</p>
-<p>EXAM TIP: Any missing or invalid entry in this file may render the
-system unbootable. You will have to boot the system in emergency mode to
-fix this file. Ensure that you understand each field in the file for
-both file system and swap entries.</p>
-<p>\</p>
-<p>{style=&ldquo;border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;&rdquo;}</p>
-<p>\</p>
-<p>The format of this file is such that each row is broken out into six
-columns to identify the required attributes for each file system to be
+<h2 id="etcfstab">/etc/fstab</h2>
+<ul>
+<li>File systems defined in the /etc/fstab file are mounted automatically at reboots.</li>
+<li>must contain proper and complete information for each listed file system.</li>
+<li>An incomplete or inaccurate entry might leave the system in an undesirable or unbootable state.</li>
+<li>only need to specify one of the four attributes&mdash;block device name, UUID, label, or mount point&mdash;of the file system that you wish to mount manually with the mount command.</li>
+<li>The mount command obtains the rest of the information from this file.</li>
+<li>only need to specify one of these attributes with the umount command to detach it from the directory hierarchy.</li>
+<li>contains entries for file systems that are created at the time of installation.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# cat /etc/fstab
+
+#
+# /etc/fstab
+# Created by anaconda on Sun Feb 25 12:11:47 2024
+#
+# Accessible filesystems, by reference, are maintained under &#39;/dev/disk/&#39;.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run &#39;systemctl daemon-reload&#39; to update systemd
+# units generated from this file.
+#
+/dev/mapper/rhel-root   /                       xfs     defaults        0 0
+LABEL=bootfs /boot                   xfs     defaults        0 0
+/dev/mapper/rhel-swap   none                    swap    defaults        0 0</code></pre></div><p>EXAM TIP: Any missing or invalid entry in this file may render the system unbootable. You will have to boot the system in emergency mode to
+fix this file. Ensure that you understand each field in the file for both file system and swap entries.</p>
+<p>The format of this file is such that each row is broken out into six columns to identify the required attributes for each file system to be
 successfully mounted. Here is what the columns contain:</p>
-<p>\</p>
-<p>Column 1: Defines the physical or virtual device path where the file
-system is resident, or its associated UUID or label. There can be
-entries for network file systems here as well.</p>
-<p>Column 2: Identifies the mount point for the file system. For swap
-partitions, use either &ldquo;none&rdquo; or &ldquo;swap&rdquo;.</p>
-<p>Column 3: Specifies the type of file system such as Ext3, Ext4, XFS,
-VFAT, or ISO9660. For swap, the type &ldquo;swap&rdquo; is used. You may use &ldquo;auto&rdquo;
-instead to leave it up to the mount command to determine the type of the
-file system.</p>
-<p>Column 4: Identifies one or more comma-separated options to be used when
-mounting the file system. See Table 15-3 for a description of some of
-the options, consult the manual pages of the mount command or the fstab
-file for additional options and details.</p>
-<p>Column 5: Is used by the dump utility to ascertain the file systems that
-need to be dumped. A value of 0 (or the absence of this column) disables
-this check. This field is applicable only on Extended file systems; XFS
-does not use it.</p>
-<p>Column 6: Expresses the sequence number in which to run the e2fsck (file
-system check and repair utility for Extended file system types) utility
-on the file system at system boot. By default, 0 is used for
-memory-based, remote, and removable file systems, 1 for /, and 2 for
-/boot and other physical file systems. 0 can also be used for /, /boot,
-and other physical file systems you don&rsquo;t want to be checked or
-repaired. This field is applicable only on Extended file systems; XFS
-does not use it.</p>
-<p>\</p>
-<p>A 0 in columns 5 and 6 for XFS, virtual, remote, and removable file
-system types has no meaning. You do not need to add them for these file
-system types.</p>
-<p>\</p>
-<p>This file is edited manually, so care must be observed to circumvent
-syntax and typing errors.</p>
+<p>Column 1:</p>
+<ul>
+<li>physical or virtual device path where the file system is resident, or its associated UUID or label.</li>
+<li>can be entries for network file systems here as well.</li>
+</ul>
+<p>Column 2:</p>
+<ul>
+<li>Identifies the mount point for the file system.</li>
+<li>swap partitions, use either &ldquo;none&rdquo; or &ldquo;swap&rdquo;.</li>
+</ul>
+<p>Column 3:</p>
+<ul>
+<li>type of file system such as Ext3, Ext4, XFS, VFAT, or ISO9660.</li>
+<li>For swap, the type &ldquo;swap&rdquo; is used.</li>
+<li>may use &ldquo;auto&rdquo; instead to leave it up to the mount command to determine the type of the file system.</li>
+</ul>
+<p>Column 4:</p>
+<ul>
+<li>Identifies one or more comma-separated options to be used when mounting the file system.</li>
+<li>consult the manual pages of the mount command or the fstab file for additional options and details.</li>
+</ul>
+<p>Column 5:</p>
+<ul>
+<li>used by the dump utility to ascertain the file systems that need to be dumped.</li>
+<li>value of 0 (or the absence of this column) disables this check.</li>
+<li>This field is applicable only on Extended file systems;</li>
+<li>XFS does not use it.</li>
+</ul>
+<p>Column 6:</p>
+<ul>
+<li>
+<p>sequence number in which to run the e2fsck (file system check and repair utility for Extended file system types) utility on the file system at system boot.</p>
+</li>
+<li>
+<p>By default, 0 is used for memory-based, remote, and removable file systems, 1 for /, and 2 for /boot and other physical file systems. 0 can also be used for /, /boot, and other physical file systems you don&rsquo;t want to be checked or repaired.</p>
+</li>
+<li>
+<p>applicable only on Extended file systems;</p>
+</li>
+<li>
+<p>XFS does not use it.</p>
+</li>
+<li>
+<p>0 in columns 5 and 6 for XFS, virtual, remote, and removable file system types has no meaning. You do not need to add them for these file system types.</p>
+</li>
+</ul>
 <h2 id="monitoring-file-system-usage">Monitoring File System Usage</h2>
-<p>\</p>
-<p>On a live system, you&rsquo;ll often need to check file system usage to know
-if a mounted file system requires an expansion for growth or a clean up
-to generate free space. This involves examining the used and available
-spaces for a file system. The df (disk free) command has been used for
-this purpose. It reports usage details for mounted file systems. By
-default, this command reports the numbers in KBs unless the -m or -h
-option is specified to view the sizes in MBs or human-readable format.</p>
-<p>\</p>
+<h3 id="df-disk-free-command">df (disk free) command</h3>
+<ul>
+<li>reports usage details for mounted file systems.</li>
+<li>reports the numbers in KBs unless the -m or -h option is specified to view the sizes in MBs or human-readable format.</li>
+</ul>
 <p>Let&rsquo;s run this command with the -h option on server2:</p>
-<p>\</p>
-<p><a href="#R-image-77b9eb491f712d9462a1b18ec48ba6e6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VIH3K0C2.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-77b9eb491f712d9462a1b18ec48ba6e6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VIH3K0C2.jpg"></a></p>
-<p>The output shows the file system device file or type in column 1,
-followed by the total, used, and available spaces in columns 2, 3, and
-4, and the usage percentage and mount point in the last two columns.</p>
-<p>\</p>
-<p>There are a few other useful flags available with the df command that
-can produce modified output. These flags include:</p>
-<p>\</p>
-<p>-T to add the file system type to the output (example: df -hT)</p>
-<p>-x to exclude the specified file system type from the output (example:
-df -hx tmpfs)</p>
-<p>-t to limit the output to a specific file system type (example: df -t
-xfs)</p>
-<p>-i to show inode information (example: df -hi)</p>
-<p>\</p>
-<p>You may use -h with any of these examples to print information in
-human-readable format.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# df -h
+Filesystem             Size  Used Avail Use% Mounted on
+devtmpfs               4.0M     0  4.0M   0% /dev
+tmpfs                  888M     0  888M   0% /dev/shm
+tmpfs                  356M  5.1M  351M   2% /run
+/dev/mapper/rhel-root   17G  2.0G   15G  12% /
+tmpfs                  178M     0  178M   0% /run/user/0
+/dev/sda1              960M  344M  617M  36% /boot</code></pre></div><p>Column 1:</p>
+<ul>
+<li>file system device file or type</li>
+</ul>
+<p>Columns 2, 3, 4, 5, 6</p>
+<ul>
+<li>total, used, and available spaces in and the usage percentage and mount point</li>
+</ul>
+<p>Useful flags</p>
+<p>-T</p>
+<ul>
+<li>add the file system type to the output (example: df -hT)</li>
+</ul>
+<p>-x</p>
+<ul>
+<li>exclude the specified file system type from the output (example: df -hx tmpfs)</li>
+</ul>
+<p>-t</p>
+<ul>
+<li>limit the output to a specific file system type (example: df -t xfs)</li>
+</ul>
+<p>-i</p>
+<ul>
+<li>show inode information (example: df -hi)</li>
+</ul>
 <h2 id="calculating-disk-usage">Calculating Disk Usage</h2>
-<p>\</p>
-<p>In contrast to the df command that returns usage information for an
-entire file system, the du command reports the amount of space a file or
-directory occupies. By default, it shows the output in KBs; however, you
-can use the -m or -h option to view the output in MBs or human-readable
-format. In addition, you can view a usage summary with the -s switch and
-a grand total with -c.</p>
-<p>\</p>
-<p>Let&rsquo;s run this command on the /usr/bin directory to view the usage
-summary:</p>
-<p>\</p>
-<p><a href="#R-image-0aa2ebf78014acf8ad5449e4542f02ba" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-OYE5SIWK.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0aa2ebf78014acf8ad5449e4542f02ba"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-OYE5SIWK.jpg"></a></p>
-<p>To add a &ldquo;total&rdquo; row to the output and with numbers displayed in KBs:</p>
-<p>\</p>
-<p><a href="#R-image-32ed8b14e88928d8c52e75dbac91073a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-03KMEUMA.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-32ed8b14e88928d8c52e75dbac91073a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-03KMEUMA.jpg"></a></p>
-<p>Try this command with different options on the /usr/sbin/lvm file and
-observe the results.</p>
-<h2 id="exercise-14-1-create-and-mount-ext4-vfat-and-xfs-file-systems-in-partitions">Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions</h2>
-<p>\</p>
-<p>This exercise should be done on server2 as user1 with sudo where
-required.</p>
-<p>\</p>
-<p>In this exercise, you will create 2 x 100MB partitions on the /dev/sdb
-disk, initialize them separately with the Ext4 and VFAT file system
-types, define them for persistence using their UUIDs, create mount
-points called /ext4fs1 and /vfatfs1, attach them to the directory
-structure, and verify their availability and usage. Moreover, you will
-use the disk /dev/sdc and repeat the above procedure to establish an XFS
-file system in it and mount it on /xfsfs1.</p>
-<p>\</p>
+<h3 id="du-command">du command</h3>
+<ul>
+<li>reports the amount of space a file or directory occupies.</li>
+<li>-m or -h option to view the output in MBs or human-readable format. In addition, you can</li>
+<li>view a usage summary with the -s switch and a grand total with -c.</li>
+</ul>
+<p>Run this command on the /usr/bin directory to view the usage summary:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# du -sh /usr/bin
+151M	/usr/bin</code></pre></div><p>Add a &ldquo;total&rdquo; row to the output and with numbers displayed in KBs:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# du -sc /usr/bin
+154444	/usr/bin
+154444	total</code></pre></div><div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# du -sch /usr/bin
+151M	/usr/bin
+151M	total</code></pre></div><p>Try this command with different options on the /usr/sbin/lvm file and observe the results.</p>
+<h2 id="exercise-14-1-create-and-mount-ext4-vfat-and-xfs-file-systems-in-partitions-server2">Exercise 14-1: Create and Mount Ext4, VFAT, and XFS File Systems in Partitions (server2)</h2>
+<ul>
+<li>create 2 x 100MB partitions on the /dev/sdb disk,</li>
+<li>initialize them separately with the Ext4 and VFAT file system types,</li>
+<li>define them for persistence using their UUIDs,</li>
+<li>create mount points called /ext4fs1 and /vfatfs1,</li>
+<li>attach them to the directorystructure</li>
+<li>verify their availability and usage</li>
+<li>you will use the disk /dev/sdc and repeat the above procedure to establish an XFS file system in it and mount it on /xfsfs1.</li>
+</ul>
 <p>1. Apply the label &ldquo;msdos&rdquo; to the sdb disk using the parted command:</p>
-<p>\</p>
-<p><a href="#R-image-28b6d2fc4d91def89ab4b66e446fd4d6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2Y88M0ZP.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-28b6d2fc4d91def89ab4b66e446fd4d6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2Y88M0ZP.jpg"></a></p>
-<p>2. Create 2 x 100MB primary partitions on sdb with the parted command:</p>
-<p>\</p>
-<p><a href="#R-image-176895bc0f79f6160bf371d51eedbe4a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-DSWD45L9.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-176895bc0f79f6160bf371d51eedbe4a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-DSWD45L9.jpg"></a></p>
-<p>3. Initialize the first partition (sdb1) with Ext4 file system type
-using the mkfs command:</p>
-<p>\</p>
-<p><a href="#R-image-2588e0db23de6ec6752dbb6dfc1b26d7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-UWG2ZP0Y.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2588e0db23de6ec6752dbb6dfc1b26d7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-UWG2ZP0Y.jpg"></a></p>
-<p>4. Initialize the second partition (sdb2) with VFAT file system type
-using the mkfs command:</p>
-<p>\</p>
-<p><a href="#R-image-5f24b7cca56df338e1490f5b881dee1a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-22LNR8Q6.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5f24b7cca56df338e1490f5b881dee1a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-22LNR8Q6.jpg"></a></p>
-<p>5. Initialize the whole disk (sdc) with the XFS file system type using
-the mkfs.xfs command. Add the -f flag to force the removal of any old
-partitioning or labeling information from the disk.</p>
-<p>\</p>
-<p><a href="#R-image-5e1112a1b160cb47947dfa3e6b399ce8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CKMHXG0C.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5e1112a1b160cb47947dfa3e6b399ce8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CKMHXG0C.jpg"></a></p>
-<p>6. Determine the UUIDs for all three file systems using the lsblk
-command:</p>
-<p>\</p>
-<p><a href="#R-image-951095e08064fc0e1480620092216bf4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-0P41TVWG.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-951095e08064fc0e1480620092216bf4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-0P41TVWG.jpg"></a></p>
-<p>7. Open the /etc/fstab file, go to the end of the file, and append
-entries for the file systems for persistence using their UUIDs:</p>
-<p>\</p>
-<p><a href="#R-image-664d9f31271a84e252412df2981d8a3e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-5V6Z5MZM.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-664d9f31271a84e252412df2981d8a3e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-5V6Z5MZM.jpg"></a></p>
-<p>8. Create mount points /ext4fs1, /vfatfs1, and /xfsfs1 for the three
-file systems using the mkdir command:</p>
-<p>\</p>
-<p><a href="#R-image-b2f8bd30dec3aa9f9ae88cf278e8253c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ARCK90F6.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b2f8bd30dec3aa9f9ae88cf278e8253c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ARCK90F6.jpg"></a></p>
-<p>9. Mount the new file systems using the mount command. This command
-will fail if there are any invalid or missing information in the file.</p>
-<p>\</p>
-<p><a href="#R-image-74a8eceb7132191e97f63bfe5e6218ec" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-1VIDXU3P.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-74a8eceb7132191e97f63bfe5e6218ec"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-1VIDXU3P.jpg"></a></p>
-<p>10. View the mount and availability status as well as the types of all
-three file systems using the df command:</p>
-<p>\</p>
-<p><a href="#R-image-2b80a8189e86a81c392fe2143150fc01" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-26Z74LOW.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b80a8189e86a81c392fe2143150fc01"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-26Z74LOW.jpg"></a></p>
-<p>The output verifies the creation and availability status of the three
-file systems. They are added to the fstab file for persistence. A system
-reboot at this point will remount them automatically. These file systems
-may now be used to store files.</p>
-<h2 id="exercise-14-2-create-and-mount-ext4-and-xfs-file-systems-in-lvm-logical-volumes">Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes</h2>
-<p>\</p>
-<p>This exercise should be done on server2 as user1 with sudo where
-required.</p>
-<p>\</p>
-<p>In this exercise, you will create a volume group called vgfs comprised
-of a 172MB physical volume created in a partition on the /dev/sdd disk.
-The PE size for the volume group should be set at 16MB. You will create
-two logical volumes called ext4vol and xfsvol of sizes 80MB each and
-initialize them with the Ext4 and XFS file system types. You will ensure
-that both file systems are persistently defined using their logical
-volume device filenames. You will create mount points called /ext4fs2
-and /xfsfs2, mount the file systems, and verify their availability and
-usage.</p>
-<p>\</p>
-<p>1. Create a 172MB partition on the sdd disk using the parted command:</p>
-<p>\</p>
-<p><a href="#R-image-c482d3e84c6d7e8270fe945326bf2d5c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZNAS86YQ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c482d3e84c6d7e8270fe945326bf2d5c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZNAS86YQ.jpg"></a></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server20 ~]# sudo parted /dev/sdb mklabel msdos
+Warning: The existing disk label on /dev/sdb will be destroyed and all data on this disk will be
+lost. Do you want to continue?
+Yes/No? y                                                                 
+Information: You may need to update /etc/fstab.</code></pre></div><p>2. Create 2 x 100MB primary partitions on sdb with the parted command:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server20 ~]# sudo parted /dev/sdb mkpart primary 1 101m
+Information: You may need to update /etc/fstab.
+
+[root@server20 ~]# sudo parted /dev/sdb mkpart primary 102 201m
+Information: You may need to update /etc/fstab.</code></pre></div><p>3. Initialize the first partition (sdb1) with Ext4 file system type using the mkfs command:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server20 ~]# sudo mkfs -t ext4 /dev/sdb1
+mke2fs 1.46.5 (30-Dec-2021)
+/dev/sdb1 contains a LVM2_member file system
+Proceed anyway? (y,N) y
+Creating filesystem with 97280 1k blocks and 24288 inodes
+Filesystem UUID: 73db0582-7183-42aa-951d-2f48b7712597
+Superblock backups stored on blocks: 
+	8193, 24577, 40961, 57345, 73729
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done </code></pre></div><p>4. Initialize the second partition (sdb2) with VFAT file system type using the mkfs command:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server20 ~]# sudo mkfs -t vfat /dev/sdb2
+mkfs.fat 4.2 (2021-01-31)</code></pre></div><p>5. Initialize the whole disk (sdc) with the XFS file system type using the mkfs.xfs command. Add the -f flag to force the removal of any old partitioning or labeling information from the disk.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server20 ~]# sudo mkfs.xfs /dev/sdc -f 
+Filesystem should be larger than 300MB.
+Log size should be at least 64MB.
+Support for filesystems like this one is deprecated and they will not be supported in future releases.
+meta-data=/dev/sdc               isize=512    agcount=4, agsize=16000 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1    bigtime=1 inobtcount=1 nrext64=0
+data     =                       bsize=4096   blocks=64000, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=1368, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0</code></pre></div><p>6. Determine the UUIDs for all three file systems using the lsblk command:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# lsblk -f /dev/sdb /dev/sdc
+NAME   FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+sdb                                                                           
+├─sdb1 ext4   1.0         0bdd22d0-db53-40bb-8cc7-36efc9184196                
+└─sdb2 vfat   FAT16       FB3A-6572                                           
+sdc    xfs                91884326-9686-4569-96fa-9adb02c1f6f4&gt;)</code></pre></div><p>7. Open the /etc/fstab file, go to the end of the file, and append entries for the file systems for persistence using their UUIDs:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>UUID=0bdd22d0-db53-40bb-8cc7-36efc9184196 /ext4fs1 ext4 defaults 0 0                
+UUID=FB3A-6572 /vfatfs1 vfat defaults 0 0                                          
+UUID=91884326-9686-4569-96fa-9adb02c1f6f4 /xfsfs1 xfs defaults 0 0</code></pre></div><p>8. Create mount points /ext4fs1, /vfatfs1, and /xfsfs1 for the three
+file systems using the mkdir command:
+<code>[root@server2 ~]# sudo mkdir /ext4fs1 /vfatfs1 /xfsfs1</code></p>
+<p>9. Mount the new file systems using the mount command. This command will fail if there are any invalid or missing information in the file.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# sudo mount -a
+mount: (hint) your fstab has been modified, but systemd still uses
+       the old version; use &#39;systemctl daemon-reload&#39; to reload.</code></pre></div><p>10. View the mount and availability status as well as the types of all three file systems using the df command:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[root@server2 ~]# df -hT
+Filesystem            Type      Size  Used Avail Use% Mounted on
+devtmpfs              devtmpfs  4.0M     0  4.0M   0% /dev
+tmpfs                 tmpfs     888M     0  888M   0% /dev/shm
+tmpfs                 tmpfs     356M  5.1M  351M   2% /run
+/dev/mapper/rhel-root xfs        17G  2.0G   15G  12% /
+/dev/sda1             xfs       960M  344M  617M  36% /boot
+tmpfs                 tmpfs     178M     0  178M   0% /run/user/0
+/dev/sdb1             ext4       84M   14K   77M   1% /ext4fs1
+/dev/sdb2             vfat       95M     0   95M   0% /vfatfs1
+/dev/sdc              xfs       245M   15M  231M   6% /xfsfs1</code></pre></div><h2 id="exercise-14-2-create-and-mount-ext4-and-xfs-file-systems-in-lvm-logical-volumes-server2">Exercise 14-2: Create and Mount Ext4 and XFS File Systems in LVM Logical Volumes (server2)</h2>
+<ul>
+<li>create a volume group called vgfs comprised of a 172MB physical volume created in a partition on the /dev/sdd disk.</li>
+<li>The PE size for the volume group should be set at 16MB. You will</li>
+<li>create two logical volumes called ext4vol and xfsvol of sizes 80MB each and initialize them with the Ext4 and XFS file system types.</li>
+<li>ensure that both file systems are persistently defined using their logical volume device filenames.</li>
+<li>create mount points called /ext4fs2 and /xfsfs2,</li>
+<li>mount the file systems, and</li>
+<li>verify their availability and usage.</li>
+</ul>
+<p>1. Create a 172MB partition on the sdd disk using the parted command:
+<a href="#R-image-c8e8bce7a4b5c33caf9aae504f93a6b7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZNAS86YQ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c8e8bce7a4b5c33caf9aae504f93a6b7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZNAS86YQ.jpg"></a></p>
 <p>2. Initialize the sdd1 partition for use in LVM using the pvcreate
 command:</p>
 <p>\</p>
-<p><a href="#R-image-ca8fc9971aea58437bc0594bef7885fb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-XTVY1S8C.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ca8fc9971aea58437bc0594bef7885fb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-XTVY1S8C.jpg"></a></p>
+<p><a href="#R-image-837e4805a0dbfbb5c333ce894414bb89" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-XTVY1S8C.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-837e4805a0dbfbb5c333ce894414bb89"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-XTVY1S8C.jpg"></a></p>
 <p>3. Create the volume group vgfs with a PE size of 16MB using the
 physical volume sdd1:</p>
 <p>\</p>
-<p><a href="#R-image-fb3ae6c2b35ac154a56be6e1347f5506" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W6V3KOJT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fb3ae6c2b35ac154a56be6e1347f5506"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W6V3KOJT.jpg"></a></p>
+<p><a href="#R-image-9b2d7da42697808b3a264ba46549e148" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W6V3KOJT.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9b2d7da42697808b3a264ba46549e148"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W6V3KOJT.jpg"></a></p>
 <p>\</p>
 <p>The PE size is not easy to alter after a volume group creation, so
 ensure it is defined as required at creation.</p>
@@ -829,43 +821,43 @@ ensure it is defined as required at creation.</p>
 <p>4. Create two logical volumes ext4vol and xfsvol of size 80MB each in
 vgfs using the lvcreate command:</p>
 <p>\</p>
-<p><a href="#R-image-c0d046fcfeabd9e7539bed908d5d63c7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TYHEPQ9I.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c0d046fcfeabd9e7539bed908d5d63c7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TYHEPQ9I.jpg"></a></p>
+<p><a href="#R-image-69fd38e2b26ccfa95f1094af2e5df48a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-TYHEPQ9I.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-69fd38e2b26ccfa95f1094af2e5df48a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-TYHEPQ9I.jpg"></a></p>
 <p>5. Format the ext4vol logical volume with the Ext4 file system type
 using the mkfs.ext4 command:</p>
 <p>\</p>
-<p><a href="#R-image-2dd44ba232a8faff2cfc4a0a0f781baf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-J0ADC230.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2dd44ba232a8faff2cfc4a0a0f781baf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-J0ADC230.jpg"></a></p>
+<p><a href="#R-image-af1f8e239b759f983bf37184652f69a2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-J0ADC230.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-af1f8e239b759f983bf37184652f69a2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-J0ADC230.jpg"></a></p>
 <p>You may alternatively use sudo mkfs -t ext4 /dev/vgfs/ext4vol.</p>
 <p>\</p>
 <p>6. Format the xfsvol logical volume with the XFS file system type using
 the mkfs.xfs command:</p>
 <p>\</p>
-<p><a href="#R-image-9e4584bb5c27cfb00c11ce47cb5b8d89" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6NMGL0VI.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e4584bb5c27cfb00c11ce47cb5b8d89"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6NMGL0VI.jpg"></a></p>
+<p><a href="#R-image-52bc5fb2c9f18c5c3127c26c22bc1f6f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-6NMGL0VI.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-52bc5fb2c9f18c5c3127c26c22bc1f6f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-6NMGL0VI.jpg"></a></p>
 <p>You may use sudo mkfs -t xfs /dev/vgfs/xfsvol instead.</p>
 <p>\</p>
 <p>7. Open the /etc/fstab file, go to the end of the file, and append
 entries for the file systems for persistence using their device files:</p>
 <p>\</p>
-<p><a href="#R-image-58912de15c90ee577f22b2eb63a4cd9b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JIZ01CSU.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-58912de15c90ee577f22b2eb63a4cd9b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JIZ01CSU.jpg"></a></p>
+<p><a href="#R-image-ab768b8fa2b10ec1cb97ea33ec4776ea" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-JIZ01CSU.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ab768b8fa2b10ec1cb97ea33ec4776ea"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-JIZ01CSU.jpg"></a></p>
 <p>8. Create mount points /ext4fs2 and /xfsfs2 using the mkdir command:</p>
 <p>\</p>
-<p><a href="#R-image-f2c4fd2cb45397381e386fd460021023" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YCZ3J60S.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2c4fd2cb45397381e386fd460021023"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YCZ3J60S.jpg"></a></p>
+<p><a href="#R-image-bd8034cad98d324bd6e64db8cae1692a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YCZ3J60S.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bd8034cad98d324bd6e64db8cae1692a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YCZ3J60S.jpg"></a></p>
 <p>9. Mount the new file systems using the mount command. This command
 will fail if there is any invalid or missing information in the file.</p>
 <p>\</p>
-<p><a href="#R-image-cdf60243ff3be6ba8a4580ab9e159ece" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7VJ6GFLV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cdf60243ff3be6ba8a4580ab9e159ece"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7VJ6GFLV.jpg"></a></p>
+<p><a href="#R-image-4ab0d9d718a0e978b6f28581397ca5d8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7VJ6GFLV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4ab0d9d718a0e978b6f28581397ca5d8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7VJ6GFLV.jpg"></a></p>
 <p>Fix any issues in the file if reported.</p>
 <p>\</p>
 <p>10. View the mount and availability status as well as the types of the
 new LVM file systems using the lsblk and df commands:</p>
 <p>\</p>
-<p><a href="#R-image-b76e9629545bfe1e7374913af222d1bf" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YGHO41IZ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b76e9629545bfe1e7374913af222d1bf"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YGHO41IZ.jpg"></a></p>
+<p><a href="#R-image-3faa36819a4b35f43ef7de819f6dd774" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-YGHO41IZ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3faa36819a4b35f43ef7de819f6dd774"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-YGHO41IZ.jpg"></a></p>
 <p>The lsblk command output illustrates the LVM logical volumes (ext4vol
 and xfsvol), the disk they are located on (sdd), the sizes (80MB), and
 the mount points (/ext4fs2 and /xfsfs2) where the file system are
@@ -889,15 +881,15 @@ single command. You will verify the new extensions.</p>
 <p>\</p>
 <p>1. Initialize the sde disk and add it to the vgfs volume group:</p>
 <p>\</p>
-<p><a href="#R-image-a3167349037576f1986dda009fb108f9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-N1S4ZEQ8.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a3167349037576f1986dda009fb108f9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-N1S4ZEQ8.jpg"></a></p>
+<p><a href="#R-image-747616850afc1858352f79d436ac9c3f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-N1S4ZEQ8.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-747616850afc1858352f79d436ac9c3f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-N1S4ZEQ8.jpg"></a></p>
 <p>2. Confirm the new size of vgfs using the vgs and vgdisplay commands:</p>
 <p>\</p>
-<p><a href="#R-image-343ec9bd927d4c334b59782e0eefd5a5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-HUYFRPBH.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-343ec9bd927d4c334b59782e0eefd5a5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-HUYFRPBH.jpg"></a></p>
+<p><a href="#R-image-2e864a7799fefc3b9a6af463dcde18ba" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-HUYFRPBH.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2e864a7799fefc3b9a6af463dcde18ba"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-HUYFRPBH.jpg"></a></p>
 <p>\</p>
-<p><a href="#R-image-077d9fe8170e8d3abca8e5d8a00a123b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-M47AUSQL.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-077d9fe8170e8d3abca8e5d8a00a123b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-M47AUSQL.jpg"></a></p>
+<p><a href="#R-image-cd103f5ae795f9b0aa303a2c5fc1f711" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-M47AUSQL.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cd103f5ae795f9b0aa303a2c5fc1f711"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-M47AUSQL.jpg"></a></p>
 <p>There are now two physical volumes in the volume group and the total
 size increased to 400MiB.</p>
 <p>\</p>
@@ -906,26 +898,26 @@ using the lvextend and fsadm command pair. Make sure to use an uppercase
 L to specify the size. The default unit is MiB. The plus sign (+)
 signifies an addition to the current size.</p>
 <p>\</p>
-<p><a href="#R-image-f64bc17b1e30b68570eae1367d58c706" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EIAUIGSP.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f64bc17b1e30b68570eae1367d58c706"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EIAUIGSP.jpg"></a></p>
+<p><a href="#R-image-313f87dbfd871f2255efc52fc906842b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-EIAUIGSP.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-313f87dbfd871f2255efc52fc906842b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-EIAUIGSP.jpg"></a></p>
 <p>The resize subcommand instructs the fsadm command to grow the file
 system to the full length of the specified logical volume.</p>
 <p>\</p>
 <p>4. Grow the logical volume xfsvol and the file system (-r) it holds by
 (+) 40MB using the lvresize command:</p>
 <p>\</p>
-<p><a href="#R-image-1bdb9920b96a374c190fe9e12539fcd5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZWXJ43LJ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1bdb9920b96a374c190fe9e12539fcd5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZWXJ43LJ.jpg"></a></p>
+<p><a href="#R-image-a75b642df526cbda5eb8cdd776ca8f4f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ZWXJ43LJ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a75b642df526cbda5eb8cdd776ca8f4f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ZWXJ43LJ.jpg"></a></p>
 <p>5. Verify the new extensions to both logical volumes using the lvs
 command. You may also issue the lvdisplay or vgdisplay command instead.</p>
 <p>\</p>
-<p><a href="#R-image-35b6f0bcb6ac28d1f7c88e3d267e4571" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RV52MD1F.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-35b6f0bcb6ac28d1f7c88e3d267e4571"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RV52MD1F.jpg"></a></p>
+<p><a href="#R-image-0b7eb2f4aaa75a49b94eaa018d634c2c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RV52MD1F.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0b7eb2f4aaa75a49b94eaa018d634c2c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RV52MD1F.jpg"></a></p>
 <p>6. Check the new sizes and the current mount status for both file
 systems using the df and lsblk commands:</p>
 <p>\</p>
-<p><a href="#R-image-42194496b84c088d9a38e941fb1e42cb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-O1J4S4SQ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-42194496b84c088d9a38e941fb1e42cb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-O1J4S4SQ.jpg"></a></p>
+<p><a href="#R-image-9ca09b3a388bcee55aae980caf7f2dfd" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-O1J4S4SQ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9ca09b3a388bcee55aae980caf7f2dfd"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-O1J4S4SQ.jpg"></a></p>
 <p>The outputs reflect the new sizes (128MB) for both file systems. They
 also indicate their mount status.</p>
 <p>\</p>
@@ -944,41 +936,41 @@ availability and usage.</p>
 <p>\</p>
 <p>1. Initialize the sdf disk using the pvcreate command:</p>
 <p>\</p>
-<p><a href="#R-image-e051306c0f239f852b565ccf6c71efe8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RIKR613A.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e051306c0f239f852b565ccf6c71efe8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RIKR613A.jpg"></a></p>
+<p><a href="#R-image-27a7c3f6314e16fc1f7db4d0b072f453" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-RIKR613A.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-27a7c3f6314e16fc1f7db4d0b072f453"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-RIKR613A.jpg"></a></p>
 <p>2. Create vgvdo1 volume group using the vgcreate command:</p>
 <p>\</p>
-<p><a href="#R-image-b9bec5e151b2e4055c47c8d91894e75c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CJ3HB6FP.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b9bec5e151b2e4055c47c8d91894e75c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CJ3HB6FP.jpg"></a></p>
+<p><a href="#R-image-5393bdd557b787339d67cd5c84e558c9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-CJ3HB6FP.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5393bdd557b787339d67cd5c84e558c9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-CJ3HB6FP.jpg"></a></p>
 <p>3. Display basic information about the volume group:</p>
 <p>\</p>
-<p><a href="#R-image-e3c1e13ae533d526b4e0b69827b6c575" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-HBLFK52R.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e3c1e13ae533d526b4e0b69827b6c575"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-HBLFK52R.jpg"></a></p>
+<p><a href="#R-image-1e6331d91e7f9b4c87c77e35d6c88b52" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-HBLFK52R.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1e6331d91e7f9b4c87c77e35d6c88b52"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-HBLFK52R.jpg"></a></p>
 <p>The volume group contains a total of 1279 PEs.</p>
 <p>\</p>
 <p>4. Create a VDO volume called lvvdo1 using the lvcreate command. Use
 the -l option to specify the number of logical extents (1279) to be
 allocated and the -V option for the amount of virtual space (20GB).</p>
 <p>\</p>
-<p><a href="#R-image-688ed917aac9c967b3d0a760089db879" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2XDC7EWH.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-688ed917aac9c967b3d0a760089db879"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2XDC7EWH.jpg"></a></p>
+<p><a href="#R-image-9af8a81fbfac43b0658688e0411b9e89" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-2XDC7EWH.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9af8a81fbfac43b0658688e0411b9e89"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-2XDC7EWH.jpg"></a></p>
 <p>Confirm with a y when prompted to wipe old signatures.</p>
 <p>\</p>
 <p>5. Display detailed information about the volume group including the
 logical volume and the physical volume:</p>
 <p>\</p>
-<p><a href="#R-image-7d1f756a45008eae6f7dab94a1b5f037" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NU4QU06N.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7d1f756a45008eae6f7dab94a1b5f037"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NU4QU06N.jpg"></a></p>
+<p><a href="#R-image-58603bceaee6f9177548e342699334b3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-NU4QU06N.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-58603bceaee6f9177548e342699334b3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-NU4QU06N.jpg"></a></p>
 <p>\</p>
-<p><a href="#R-image-47ba7b68a45347ba2b54c14de8718e7b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G4EYBOGA.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-47ba7b68a45347ba2b54c14de8718e7b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G4EYBOGA.jpg"></a></p>
+<p><a href="#R-image-a30fea21ed4728c6d45c343f10621a72" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-G4EYBOGA.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a30fea21ed4728c6d45c343f10621a72"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-G4EYBOGA.jpg"></a></p>
 <p>The output reflects the creation of two logical volumes: a pool called
 /dev/vgvdo1/vpool0 and a volume called /dev/vgvdo1/lvvdo1.</p>
 <p>\</p>
 <p>6. Display the new VDO volume creation using the lsblk command:</p>
 <p>\</p>
-<p><a href="#R-image-b6fd271d67aae59f5509a8e26cf1f749" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SVVL6JGY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b6fd271d67aae59f5509a8e26cf1f749"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SVVL6JGY.jpg"></a></p>
+<p><a href="#R-image-ad5f4200568bb6c17648d1d85af1179b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-SVVL6JGY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ad5f4200568bb6c17648d1d85af1179b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-SVVL6JGY.jpg"></a></p>
 <p>The output shows the virtual volume size (20GB) and the underlying disk
 size (5GB).</p>
 <p>\</p>
@@ -988,23 +980,23 @@ mkfs.xfs command. The VDO volume device file is
 flag to force the removal of any old partitioning or labeling
 information from the disk.</p>
 <p>\</p>
-<p><a href="#R-image-437d706cb9c25af83d07b740fcf34a7b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-XHACPUN9.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-437d706cb9c25af83d07b740fcf34a7b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-XHACPUN9.jpg"></a></p>
+<p><a href="#R-image-05dca3de2a6b9d54b4e7a66fcd8b5318" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-XHACPUN9.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-05dca3de2a6b9d54b4e7a66fcd8b5318"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-XHACPUN9.jpg"></a></p>
 <p>8. Open the /etc/fstab file, go to the end of the file, and append the
 following entry for the file system for persistent mounts using its
 device file:</p>
 <p>\</p>
-<p><a href="#R-image-7491568eb39c37b131f9731acf962c6c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-AU8TDGE5.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7491568eb39c37b131f9731acf962c6c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-AU8TDGE5.jpg"></a></p>
+<p><a href="#R-image-34eedb129ff595f4e2407bbada5cc987" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-AU8TDGE5.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-34eedb129ff595f4e2407bbada5cc987"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-AU8TDGE5.jpg"></a></p>
 <p>9. Create the mount point /xfsvdo1 using the mkdir command:</p>
 <p>\</p>
-<p><a href="#R-image-6fd2b524c3fe35fe7e99d537965ea49f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-U6XSRERT.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6fd2b524c3fe35fe7e99d537965ea49f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-U6XSRERT.jpg"></a></p>
+<p><a href="#R-image-d6626ce8b27024891ec488055bbf60fa" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-U6XSRERT.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d6626ce8b27024891ec488055bbf60fa"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-U6XSRERT.jpg"></a></p>
 <p>10. Mount the new file system using the mount command. This command
 will fail if there are any invalid or missing information in the file.</p>
 <p>\</p>
-<p><a href="#R-image-7810b39efa85b3fa80de772db088c25f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-K8DOB3ZN.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7810b39efa85b3fa80de772db088c25f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-K8DOB3ZN.jpg"></a></p>
+<p><a href="#R-image-55cbf0eef556e4919cead9f6f414bceb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-K8DOB3ZN.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-55cbf0eef556e4919cead9f6f414bceb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-K8DOB3ZN.jpg"></a></p>
 <p>The mount command with the -a flag is a validation test for the fstab
 file. It should always be executed after updating this file and before
 rebooting the server to avoid landing the system in an unbootable state.</p>
@@ -1012,8 +1004,8 @@ rebooting the server to avoid landing the system in an unbootable state.</p>
 <p>11. View the mount and availability status as well as the type of the
 VDO file system using the lsblk and df commands:</p>
 <p>\</p>
-<p><a href="#R-image-c74a97151f1f5dee8a83ade6ca6cbcd6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WVWQLFHC.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c74a97151f1f5dee8a83ade6ca6cbcd6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WVWQLFHC.jpg"></a></p>
+<p><a href="#R-image-3a77fce3a4e6af328113ecd0f3ff3733" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WVWQLFHC.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3a77fce3a4e6af328113ecd0f3ff3733"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WVWQLFHC.jpg"></a></p>
 <p>The lsblk command output illustrates the VDO volume name (lvvdo1), the
 disk it is located on (sdf), the actual size (5GB) and the virtual size
 (20GB), and the mount point (/xfsvdo1) where the file system is
@@ -1084,8 +1076,8 @@ otherwise -k for KB, -m for MB, -g for GB, and so on are also supported.
 Add -t with the command to display a line with the &ldquo;total&rdquo; at the bottom
 of the output. Here is a sample output from server2:</p>
 <p>\</p>
-<p><a href="#R-image-cb4d6f00e3e2e67a94a27d861faa42c0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-X5OW4QON.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cb4d6f00e3e2e67a94a27d861faa42c0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-X5OW4QON.jpg"></a></p>
+<p><a href="#R-image-fe08f309d1439bc3bbdafea2545ef3a1" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-X5OW4QON.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fe08f309d1439bc3bbdafea2545ef3a1"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-X5OW4QON.jpg"></a></p>
 <p>The output indicates that the system has 1.7GiB of total memory of which
 1.0GiB is in use and 443MiB is free. It also shows on the same line the
 current memory usages by temporary (tmpfs) file systems (11MiB) and
@@ -1105,8 +1097,8 @@ seconds (-s) and to display the output twice (-c).</p>
 default, and they are slightly off from what is shown in the above
 screenshot with free. Here are the relevant fields from this file:</p>
 <p>\</p>
-<p><a href="#R-image-ba59bd573be7605ab6732dc7ae7fd60e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-V1DJ6BRY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ba59bd573be7605ab6732dc7ae7fd60e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-V1DJ6BRY.jpg"></a></p>
+<p><a href="#R-image-c373401cb7e145cec34d87a88041227c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-V1DJ6BRY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c373401cb7e145cec34d87a88041227c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-V1DJ6BRY.jpg"></a></p>
 <p>This data depicts the usage of the system&rsquo;s runtime memory and swap.</p>
 <h2 id="prioritizing-swap-spaces">Prioritizing Swap Spaces</h2>
 <p>\</p>
@@ -1151,33 +1143,33 @@ tools to validate the activation.</p>
 volume group to determine available space for a new 40MB partition and a
 144MB logical volume:</p>
 <p>\</p>
-<p><a href="#R-image-7335a67ef6efab10a839da8a055d9404" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-479W71MV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7335a67ef6efab10a839da8a055d9404"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-479W71MV.jpg"></a></p>
+<p><a href="#R-image-f0460e24d7c5cf83931f12dfb71a533d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-479W71MV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f0460e24d7c5cf83931f12dfb71a533d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-479W71MV.jpg"></a></p>
 <p>The outputs show 49MB (250MB minus 201MB) free space on the sdb disk and
 144MB free space in the volume group.</p>
 <p>\</p>
 <p>2. Create a partition called sdb3 of size 40MB using the parted
 command:</p>
 <p>\</p>
-<p><a href="#R-image-36240fcd98b1be46fe0e78b7807fa5cd" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ALDICG61.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-36240fcd98b1be46fe0e78b7807fa5cd"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ALDICG61.jpg"></a></p>
+<p><a href="#R-image-6a5b6d8dc59a1cd3409f8ab4f397d54e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-ALDICG61.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6a5b6d8dc59a1cd3409f8ab4f397d54e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-ALDICG61.jpg"></a></p>
 <p>3. Create logical volume swapvol of size 144MB in vgs using the
 lvcreate command:</p>
 <p>\</p>
-<p><a href="#R-image-8065bb6c4117d35a62bdfb95b649d6e0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7U0JHKDJ.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8065bb6c4117d35a62bdfb95b649d6e0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7U0JHKDJ.jpg"></a></p>
+<p><a href="#R-image-bdaaba36f41163ea0e3d3e6acf4fe2ff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-7U0JHKDJ.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bdaaba36f41163ea0e3d3e6acf4fe2ff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-7U0JHKDJ.jpg"></a></p>
 <p>4. Construct swap structures in sdb3 and swapvol using the mkswap
 command:</p>
 <p>\</p>
-<p><a href="#R-image-6671d94dc5a9a74dad4624e44386dd60" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VL5QVXNY.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6671d94dc5a9a74dad4624e44386dd60"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VL5QVXNY.jpg"></a></p>
+<p><a href="#R-image-29ee64b8ae5125d8fac3bb5aa68dafb9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-VL5QVXNY.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-29ee64b8ae5125d8fac3bb5aa68dafb9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-VL5QVXNY.jpg"></a></p>
 <p>5. Edit the fstab file and add entries for both swap areas for
 auto-activation on reboots. Obtain the UUID for partition swap with
 lsblk -f /dev/sdb3 and use the device file for logical volume. Specify
 their priorities.</p>
 <p>\</p>
-<p><a href="#R-image-f721c5896633316a50f14f194400fdf9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W8FIIC8U.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f721c5896633316a50f14f194400fdf9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W8FIIC8U.jpg"></a></p>
+<p><a href="#R-image-09527e9675719f227784a7d6165dd7e4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-W8FIIC8U.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-09527e9675719f227784a7d6165dd7e4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-W8FIIC8U.jpg"></a></p>
 <p>\</p>
 <p>{style=&ldquo;border-style: solid; border-color: rgb(0, 0, 0); border-top-width: 1px; width: 0.0625;&rdquo;}</p>
 <p>\</p>
@@ -1189,23 +1181,23 @@ to add entries to the fstab file.</p>
 <p>6. Determine the current amount of swap space on the system using the
 swapon command:</p>
 <p>\</p>
-<p><a href="#R-image-d0ffc59160857307d724941bc0fdd5ff" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WLC5BSTD.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d0ffc59160857307d724941bc0fdd5ff"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WLC5BSTD.jpg"></a></p>
+<p><a href="#R-image-860b18a75ad828575901fa30766de5f2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-WLC5BSTD.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-860b18a75ad828575901fa30766de5f2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-WLC5BSTD.jpg"></a></p>
 <p>There is one 2GB swap area on the system and it is configured at the
 default priority of -2.</p>
 <p>\</p>
 <p>7. Activate the new swap regions using the swapon command:</p>
 <p>\</p>
-<p><a href="#R-image-6b9122fdc8e47eba22a6390c2611c471" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-S9UJB0TV.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6b9122fdc8e47eba22a6390c2611c471"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-S9UJB0TV.jpg"></a></p>
+<p><a href="#R-image-23d115f590d0182fbb1d9a98e1afdf36" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-S9UJB0TV.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-23d115f590d0182fbb1d9a98e1afdf36"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-S9UJB0TV.jpg"></a></p>
 <p>The command would display errors if there are any issues with swap
 entries in the fstab file.</p>
 <p>\</p>
 <p>8. Confirm the activation using the swapon command or by viewing the
 /proc/swaps file:</p>
 <p>\</p>
-<p><a href="#R-image-3d97768e30e3bf1b5871c442b401ca32" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-IGWVFJ1X.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d97768e30e3bf1b5871c442b401ca32"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-IGWVFJ1X.jpg"></a></p>
+<p><a href="#R-image-301f0da01803724affb7e679d029a299" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-IGWVFJ1X.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-301f0da01803724affb7e679d029a299"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-IGWVFJ1X.jpg"></a></p>
 <p>The activation of the two new swap regions is confirmed from the above
 outputs. Their sizes and priorities are also visible. The device mapper
 device files for the logical volumes and the device file for the
@@ -1214,8 +1206,8 @@ partition swap are also exhibited.</p>
 <p>9. Issue the free command to view the reflection of swap numbers on the
 Swap and Total lines:</p>
 <p>\</p>
-<p><a href="#R-image-ef2437686e6bb50fcd0b0e91118c95c2" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-31DA1VNU.jpg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ef2437686e6bb50fcd0b0e91118c95c2"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-31DA1VNU.jpg"></a></p>
+<p><a href="#R-image-19ac353ee334e958f192b1821fecd9f3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="image-31DA1VNU.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-19ac353ee334e958f192b1821fecd9f3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="image-31DA1VNU.jpg"></a></p>
 <p>The total swap is now 2.2GiB. This concludes the exercise.</p>
 <h2 id="chapter-summary">Chapter Summary</h2>
 <p>\</p>
@@ -1424,12 +1416,12 @@ Swap and its Management).</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1719371294" defer></script>
-        <script src="/js/lunr/lunr.min.js?1719371294" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1719371294" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1719371294" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1719371294" defer></script>
-        <script src="/js/search.js?1719371294" defer></script>
+        <script src="/js/auto-complete.js?1719844860" defer></script>
+        <script src="/js/lunr/lunr.min.js?1719844860" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1719844860" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1719844860" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1719844860" defer></script>
+        <script src="/js/search.js?1719844860" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation">
         <hr class="padding">
@@ -1500,8 +1492,8 @@ Swap and its Management).</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1719371294" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1719371294" defer></script>
+    <script src="/js/clipboard.min.js?1719844860" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1719844860" defer></script>
     <script>
       function useMathJax( config ){
         window.MathJax = Object.assign( window.MathJax || {}, {
@@ -1517,20 +1509,20 @@ Swap and its Management).</p>
       useMathJax( JSON.parse("{}") );
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="/js/d3/d3-color.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1719371294" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1719371294" defer></script>
-    <script src="/js/js-yaml.min.js?1719371294" defer></script>
+    <script src="/js/d3/d3-color.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1719844860" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1719844860" defer></script>
+    <script src="/js/js-yaml.min.js?1719844860" defer></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" defer></script>
     <script>
       window.themeUseMermaid = JSON.parse("{ \"theme\": \"default\" }");
     </script>
-    <script src="/js/theme.js?1719371294" defer></script>
+    <script src="/js/theme.js?1719844860" defer></script>
   </body>
 </html>

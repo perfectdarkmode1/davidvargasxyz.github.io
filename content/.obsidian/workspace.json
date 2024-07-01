@@ -8,21 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4c2cf21e387379b9",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_index.md",
-                "mode": "preview",
-                "source": false
-              },
-              "pinned": true
-            }
-          },
-          {
-            "id": "28413063bbe247bd",
+            "id": "3f8eac0b36d7e95e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,24 +20,12 @@
             }
           },
           {
-            "id": "15830acc2e70306b",
+            "id": "348c898a413e71aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "booknotes/Million Dollar Weekend.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2c0fa00b211c4c90",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "booknotes/Million Dollar Weekend.md",
+                "file": "now/_index.md",
                 "mode": "source",
                 "source": false
               }
@@ -124,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linux/Local File Systems and Swap.md",
+                "file": "now/_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linux/Local File Systems and Swap.md",
+                "file": "now/_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linux/Local File Systems and Swap.md"
+                "file": "now/_index.md"
               }
             }
           }
@@ -188,10 +162,16 @@
       "obsidian-file-cleaner:Clean files": false
     }
   },
-  "active": "28413063bbe247bd",
+  "active": "348c898a413e71aa",
   "lastOpenFiles": [
-    "booknotes/Million Dollar Weekend.md",
+    "linux/Local File Systems and Swap.md",
     "_index.md",
+    "booknotes/Million Dollar Weekend.md",
+    "booknotes/The Relationship Handbook.md",
+    "writing/caffeine-bird.md",
+    "tools/Process-bookfusion-highlights.md",
+    "linux/RHCSA Study Tracker.md",
+    "linux/_index.md",
     "booknotes/_index.md",
     "booknotes/The Power of Positive Dog Training.md",
     "booknotes/The Truth.md",
@@ -205,18 +185,12 @@
     "booknotes/The Psychology of Money.md",
     "booknotes/The Blog Startup.md",
     "now/_index.md",
-    "linux/Local File Systems and Swap.md",
-    "linux/RHCSA Study Tracker.md",
     "linux/rhcsa/RHCSA_Tracker.md",
     "linux/rhcsa",
     "now/Projects.md",
     "now/quit_caffeine.md",
     "linux/RHCSA Notes.md",
-    "linux/_index.md",
     "linux/Containers.md",
-    "linux/Containers Lesson.md",
-    "linux/Shell Scripting.md",
-    "networking/ccna_spaced_repetition.md",
     "linux/Local File Systems and Swap.md~",
     "images/image-0A8W8M1U.jpg",
     "images/Pasted image 20240414040338.png",

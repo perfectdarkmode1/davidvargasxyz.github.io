@@ -2,7 +2,7 @@
 
 This is a page to help me stay focused and keep track of what I am doing. It is also to show others what I am currently working on and thinking about. Credit goes to Derek Sivers for starting a "Now" page movement. Read about "Now" pages [here](https://nownownow.com/about).
 
-Updated: 06-25-2024
+Updated: 07-01-2024
 ## Career
 
 I am currently a Linux System Administrator. I am studying for Red Hat's RHCSA exam. My goal is to take the test at the end of September 2024. Follow my progress here: [RHCSA Study Tracker](RHCSA%20Study%20Tracker.md)
@@ -13,14 +13,14 @@ Goal is to study for 30 minutes per day.
 ## What I am Reading
 
 
-![The Relationship Handbook](https://m.media-amazon.com/images/I/51aT-7cH88L.jpg?classes=inline&height=175px)
+![Playful Parenting](https://m.media-amazon.com/images/I/71Z8lnOQgmL._SL1200_.jpg?classes=inline&height=175px)
 
 
 ## Health
 
-I am currently slowly tapering off of caffeine by -25mg every week. Current Daily: 325mg
+I am currently slowly tapering off of caffeine by -25mg every week. Current Daily: 300mg
 
-Also running every other day and eating less junk. 
+Also running every day and eating less junk. 
 
 
 ## Things to Learn
